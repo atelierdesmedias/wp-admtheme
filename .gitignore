@@ -1,0 +1,11 @@
+*~
+*#
+*.local.perso.ini
+vendor/*
+CoziGP/cache/*
+
+.buildpath
+.project
+.settings
+.idea
+
