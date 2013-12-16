@@ -56,13 +56,12 @@
 <body <?php body_class(); ?> >
 	<div class="hfeed container">
 		<header role="banner">
-			<hgroup>
-					<h1 class="site-title"><span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span></h1>
-					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-				</hgroup>
+            <div class="site-title">
+                <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
+                    <img class="site-logo" src="<?php echo get_template_directory_uri(); ?>/images/logo-atelier-des-medias.png" alt="Logo de <?php bloginfo('name'); ?>"/>
+                </a>
+            </div>
 
-	
-			
 			<nav class="main-menu" id="menu" role="navigation">
 				<h3 class="assistive-text"><?php _e( 'Main menu', 'themename' ); ?></h3>			
 				
