@@ -1,7 +1,42 @@
 @import "normalize.scss";
 
-/* ADM cutom styles */
+/* ADM custom general styles */
+body {
+  background: #EDECE4;
+
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #0F0F0F;
+  line-height: 1.5;
+}
+p {
+  margin-top: 1.5em;
+}
+
+
+/* ADM layout style */
 .container {
   width: 920px;
   margin: 0 auto;
+}
+
+
+/* ADM entry style */
+.entry-title {
+  padding: 10px 20px;
+  
+  background: #88BA2D;
+
+  font-family: "Arial Narrow", Arial, sans-serif;
+  font-size: 2em;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: white;
+}
+.entry-content {
+  background: white;
+  padding: 10px 20px;
+  font-size: 0.8em;
+}
+.entry-content > p:first-child {
+  margin-top: 0;
 }
