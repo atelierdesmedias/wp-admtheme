@@ -54,7 +54,7 @@
 	</head>
 
 <body <?php body_class(); ?> >
-	<div class="hfeed container">
+	<div class="container">
 		<header role="banner">
             <div class="site-title">
                 <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
@@ -62,7 +62,7 @@
                 </a>
             </div>
 
-			<nav class="main-menu" id="menu" role="navigation">				
+			<nav class="site-menu" id="menu" role="navigation">				
 				<?php   
 					wp_nav_menu( array( 'container_class' => 'menu', 'theme_location' => 'primary' ) );
                 ?>
