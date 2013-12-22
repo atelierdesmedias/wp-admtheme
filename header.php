@@ -62,21 +62,14 @@
                 </a>
             </div>
 
-			<nav class="main-menu" id="menu" role="navigation">
-				<h3 class="assistive-text"><?php _e( 'Main menu', 'themename' ); ?></h3>			
-				
-				<div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'themename' ); ?>"><?php _e( 'Skip to primary content', 'themename' ); ?></a>
-				</div>
-
+			<nav class="main-menu" id="menu" role="navigation">				
 				<?php   
-					// wp_nav_menu( array( 'container_class' => 'menu main-navigation', 'theme_location' => 'primary','walker' => new Has_Subnav_Walker() ) );  
 					wp_nav_menu( array( 'container_class' => 'menu', 'theme_location' => 'primary' ) );
-					?>
+                ?>
 			</nav>
-
 		</header>
 
-		<div class="line gut">
+		<div class="contentWrapper">
 
 			<?php 
 			//  If it's not a page (= a blog post, archive, etc) we display the sidebar on the right side 

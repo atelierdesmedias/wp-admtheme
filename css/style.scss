@@ -1,12 +1,25 @@
 @import "normalize.scss";
+@import "mixins.scss";
+
+
+/* Variables */
+$color-green-light: #88BA2D;
+$color-grey-dark: #545353;
+
 
 /* ADM custom general styles */
 body {
   background: #EDECE4;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   color: #0F0F0F;
   line-height: 1.5;
+}
+* {
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
 }
 p {
   margin-top: 1.5em;
@@ -20,11 +33,92 @@ p {
 }
 
 
+/* ADM Header */
+header {
+  @include clearfix;
+}
+.site-title {
+  float: left;
+  width: 360px;
+  margin-right: 2em;
+}
+.site-logo {
+  max-width: 100%;
+}
+/* Main menu */
+.main-menu {
+  margin-left: 400px;
+  margin-top: 90px;
+  font-size: 14px;
+  position: relative;
+}
+.menu-link {
+  display: none;
+}
+.menu > ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.menu a {
+  display: inline-block;
+  position: relative;
+  border-bottom: 5px transparent solid;
+  
+  color: $color-grey-dark;
+  text-decoration: none;
+}
+.menu a:hover,
+.menu a:focus,
+.menu a:active {
+  text-decoration: underline;
+}
+.menu > ul {
+  > .page_item:hover,
+  > .current_page_item,
+  > .current_page_ancestor {
+    > .children {
+      display: block;
+    }
+    > a:before {
+      @include arrow(5px, 10px, up, $color-green-light);
+      position: absolute;
+      left: 50%;
+      bottom: -5px;
+      margin-left: -5px;
+    }
+  }
+}
+/* Main menu level 2 */
+.menu .children {
+  display: none;
+  position: absolute;
+  width: 100%;
+  padding: 0.5em;
+  
+  background: $color-green-light;
+  
+  color: white;
+  line-height: 1;
+  
+  .page_item {
+    display: inline;
+  }
+  .page_item + .page_item::before {
+    content: " • ";
+  }
+  a {
+    color: white;
+    border-bottom: 0;
+  }
+}
+
+
 /* ADM entry style */
 .entry-title {
   padding: 10px 20px;
   
-  background: #88BA2D;
+  background: $color-green-light;
 
   font-family: "Arial Narrow", Arial, sans-serif;
   font-size: 2em;
