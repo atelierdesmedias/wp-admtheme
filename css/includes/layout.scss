@@ -49,6 +49,7 @@ h2 {
 /* ADM Header */
 header {
   @include clearfix;
+  margin-bottom: 1em;
 }
 .site-title {
   float: left;
@@ -59,8 +60,8 @@ header {
   max-width: 100%;
 }
 .site-menu {
+  margin: 90px 0;
   margin-left: 400px;
-  margin-top: 90px;
   font-size: 14px;
   position: relative;
 }

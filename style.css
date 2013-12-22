@@ -94,7 +94,7 @@ h2 { font-size: 1.8em; }
 .container { width: 920px; margin: 0 auto; }
 
 /* ADM Header */
-header { zoom: 1; }
+header { zoom: 1; margin-bottom: 1em; }
 header:before, header:after { content: ""; display: table; }
 header:after { clear: both; }
 
@@ -102,7 +102,7 @@ header:after { clear: both; }
 
 .site-logo { max-width: 100%; }
 
-.site-menu { margin-left: 400px; margin-top: 90px; font-size: 14px; position: relative; }
+.site-menu { margin: 90px 0; margin-left: 400px; font-size: 14px; position: relative; }
 
 /* ADM entry style */
 .entry-title { padding: 10px 20px; background: #88ba2d; color: white; }
