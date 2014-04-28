@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+jQuery(function($) {
 
 	// Make the menu keyboard accessible !!
 	$(".main-menu a").focus(function() {
@@ -55,5 +55,4 @@ jQuery(document).ready(function($) {
 	add_toggle_links();
 
 	$(window).bind("resize", add_toggle_links);
-
 });

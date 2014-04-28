@@ -2,36 +2,22 @@
   
 
 /*** clean ups and enhancements, uncomment to use */
-require_once('functions/wordpress_cleanup.php'); //admin cleanups 
-// require_once('functions/custom_post_types.php'); // boiler template for CPT
-require_once('functions/script_style_cleanups.php'); // javascript cleanups
-// require_once('functions/remove-comments-absolute.php'); //to remove comments completely
-require_once ( 'functions/theme-options.php' );
+require_once('functions/custom_post_types.php');
 
-
-/**
- * Make theme available for translation
- * Translations can be filed in the /languages/ directory
- */
-load_theme_textdomain( 'themename', get_template_directory() . '/languages' );
-
-$locale = get_locale();
-$locale_file = get_template_directory() . "/languages/$locale.php";
-if ( is_readable( $locale_file ) )
-	require_once( $locale_file );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
-if ( ! isset( $content_width ) )
-	$content_width = 640;
+if ( ! isset( $content_width ) ) {
+    $content_width = 640;
+}
 
 
 /**
  * This theme uses wp_nav_menus() for the header menu, utility menu and footer menu.
  */
 register_nav_menus( array(
-	'primary' => __( 'Primary Menu', 'themename' )
+	'primary' => __( 'Primary Menu', 'adm' )
 ) );
 
 
