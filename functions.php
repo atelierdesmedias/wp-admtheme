@@ -21,14 +21,6 @@ register_nav_menus( array(
 ) );
 
 
-
-/**
- *	This theme supports editor styles
- */
-
-add_editor_style("/css/editor-style.css");
-
-
 /**** Add some theme support, uncomment what you need ****/
 /** 
  * Add default posts and comments RSS feed links to head
