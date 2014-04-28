@@ -23,7 +23,10 @@ abstract class CustomType {
      */
     public function __construct() {
         $this->id = $this->plugin.'_'.$this->id;
-        $this->taxonomy_id = $this->id.'_category';
+        $this->taxonomy_id = $this->id.'_tag';
+        
+        $this->consolidate_fields_attribute();
+        $this->consolidate_columns_attribute();
         
         add_action( 'init', array($this, 'add_post_type') );
         add_action( 'init', array($this, 'add_taxonomy') );
@@ -48,7 +51,7 @@ abstract class CustomType {
                 'description' => $this->description,
                 'public' => true,
                 'supports' => $this->supports,
-                'rewrite' => array('slug' => $this->name),
+                'rewrite' => array('slug' => strtolower($this->name)),
                 'capability_type' => 'page',
                 'has_archive' => true,
             )
@@ -153,9 +156,13 @@ abstract class CustomType {
             $field_value = get_post_meta( $post->ID, '_'.$field_id, true );
     
             // Display the form, using the current value.
-            echo '<label for="'.$namespace_field_id.'">'.$field_data['label'].'</label> ';
-            echo '<input type="text" id="'.$namespace_field_id.'" name="'.$namespace_field_id.'"';
-            echo ' value="' . esc_attr( $field_value ) . '" size="25" />';
+            $html = '<div class="custom-field">';
+            $html .= '<label for="'.$namespace_field_id.'" class="custom-field__label">'.$field_data['label'].'</label>';
+            $html .= '<input type="text" id="'.$namespace_field_id.'" name="'.$namespace_field_id.'"';
+            $html .= ' value="' . esc_attr( $field_value ) . '" size="25" class="custom-field__input"/>';
+            $html .= '</div>';
+            
+            echo $html;
         }
     }
     
@@ -165,14 +172,7 @@ abstract class CustomType {
         );
         
         foreach ($this->columns as $column_id => $column_label) {
-            if (is_numeric($column_id)) {
-                $column_id = $column_label;
-                if ( $column_data = $this->get_custom_field_data($column_id) ) {
-                    $columns[$column_id] = $column_data['label'];
-                }
-            } else {
-                $columns[$column_id] = $column_label;
-            }
+            $columns[$column_id] = $column_label;
         }
 
         return $columns;
@@ -197,6 +197,30 @@ abstract class CustomType {
                 esc_url(add_query_arg( array( 'post' => $post_id, 'action' => 'edit' ), 'post.php' )),
                 esc_html( $field_value )
             );
+        }
+    }
+
+    protected function consolidate_fields_attribute() {
+        foreach (array_keys($this->fields) as $meta_box_id) {
+            foreach ($this->fields[$meta_box_id]['fields'] as $field_id => $field_data) {
+                if (is_string($field_data)) {
+                    $this->fields[$meta_box_id]['fields'][$field_id] = array(
+                        'label' => $field_data
+                    );
+                }
+            }
+        }
+    }
+
+    protected function consolidate_columns_attribute() {
+        foreach ($this->columns as $column_id => $column_label) {
+            if (is_numeric($column_id)) {
+                unset($this->columns[$column_id]);
+                $column_id = $column_label;
+                if ( $column_data = $this->get_custom_field_data($column_id) ) {
+                    $this->columns[$column_id] = $column_data['label'];
+                }
+            }
         }
     }
     

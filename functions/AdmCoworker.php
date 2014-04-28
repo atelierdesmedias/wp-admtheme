@@ -12,27 +12,48 @@ class AdmCoworker extends CustomType {
     protected $supports = array( 'title', 'thumbnail' );
 
     protected $fields = array(
-        'infos' => array( 
-            'label' => 'Informations',
+        'contact' => array( 
+            'label' => 'Contact',
             'fields' => array(
-                'first_name' => array(
-                    'label' => 'Prénom'
-                )
+                'first_name' => 'Prénom',
+                'last_name' => 'Nom',
+                'company' => 'Entreprise',
+                'Phone1' => 'Téléphone fixe perso',
+                'Phone2' => 'Téléphone mobile perso',
+                'Phone3' => 'Téléphone mobile pro',
+                'address' => 'Adresse',
+                'email' => 'E-mail perso',
+                'emailpro' => 'E-mail professionnel',
+                'metier' => 'Métier'
+            )
+        ),
+
+        'description' => array(
+            'label' => 'Description',
+            'fields' => array(
+                'public_quiesttu' => 'Qui es-tu ?',
+                'public_quefaistu' => 'Que fais-tu ?',
+                'public_pourquoicoworking' => 'Pourquoi le coworking ?',
+                'public_enable' => 'Profil public ?'
             )
         ),
 
         'social' => array(
-            'label' => 'Social',
+            'label' => 'Sur le web',
             'fields' => array(
-                'facebook' => array(
-                    'label' => 'Facebook'
-                )
+                'facebook' => 'Facebook',
+                'twitter' => 'Twitter',
+                'viadeo' => 'Viadeo',
+                'linkedin' => 'Linkedin',
+                'Skype' => 'Skype',
+                'Pinterest' => 'Pinterest',
+                'GooglePlus' => 'GooglePlus'
             )
         )
     );
     protected $columns = array(
         'title' => 'Titre',
         'first_name',
-        'last-name'
+        'last_name'
     );
 }
