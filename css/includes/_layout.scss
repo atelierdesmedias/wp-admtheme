@@ -68,6 +68,27 @@ header {
 
 
 /* ADM entry style */
+.content,
+.entry-content {
+  overflow: hidden;
+}
+.content-preside {
+  float: left;
+  width: 220px;
+  margin-right: 10px;
+}
+.content-aside {
+  float: right;
+  width: 220px;
+  margin-left: 10px;
+}
+.content-bandeau {
+  margin-bottom: 20px;
+}
+.content-bandeauImage {
+  display: block;
+  max-width: 100%;
+}
 .entry-title {
   padding: 10px 20px;
 

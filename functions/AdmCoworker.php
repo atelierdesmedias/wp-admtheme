@@ -24,6 +24,9 @@ class AdmCoworker extends CustomType {
                 'address' => 'Adresse',
                 'email' => 'E-mail perso',
                 'emailpro' => 'E-mail professionnel',
+                'website1' => 'Site web 1',
+                'website2' => 'Site web 2',
+                'website3' => 'Site web 3',
                 'metier' => 'Métier'
             )
         ),

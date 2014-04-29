@@ -16,8 +16,8 @@
             
             <div class="entry-content">
                 <?php the_content(); ?>
-                <?php wp_link_pages(array('before' => '<div class="page-link">' . __('Pages:', 'themename'), 'after' => '</div>')); ?>
-                <?php edit_post_link(__('Edit', 'themename'), '<span class="edit-link">', '</span>'); ?>
+                <?php wp_link_pages(array('before' => '<div class="page-link">Pages : ', 'after' => '</div>')); ?>
+                <?php edit_post_link('Editer', '<span class="edit-link">', '</span>'); ?>
             </div>
         </article>
     </section>
