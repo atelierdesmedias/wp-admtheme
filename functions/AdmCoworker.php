@@ -18,22 +18,23 @@ class AdmCoworker extends CustomType {
                 'first_name' => 'Prénom',
                 'last_name' => 'Nom',
                 'company' => 'Entreprise',
-                'Phone1' => 'Téléphone fixe perso',
-                'Phone2' => 'Téléphone mobile perso',
-                'Phone3' => 'Téléphone mobile pro',
+                'metier' => 'Métier',
+                'phone' => 'Téléphone fixe perso',
+                'phone2' => 'Téléphone mobile perso',
+                'phone3' => 'Téléphone mobile pro',
                 'address' => 'Adresse',
                 'email' => 'E-mail perso',
                 'emailpro' => 'E-mail professionnel',
                 'website1' => 'Site web 1',
                 'website2' => 'Site web 2',
-                'website3' => 'Site web 3',
-                'metier' => 'Métier'
+                'website3' => 'Site web 3'
             )
         ),
 
         'description' => array(
             'label' => 'Description',
             'fields' => array(
+                'citation' => 'Citation',
                 'public_quiesttu' => 'Qui es-tu ?',
                 'public_quefaistu' => 'Que fais-tu ?',
                 'public_pourquoicoworking' => 'Pourquoi le coworking ?',
@@ -44,13 +45,13 @@ class AdmCoworker extends CustomType {
         'social' => array(
             'label' => 'Sur le web',
             'fields' => array(
-                'facebook' => 'Facebook',
-                'twitter' => 'Twitter',
-                'viadeo' => 'Viadeo',
-                'linkedin' => 'Linkedin',
-                'Skype' => 'Skype',
-                'Pinterest' => 'Pinterest',
-                'GooglePlus' => 'GooglePlus'
+                'facebook' => 'facebook',
+                'twitter' => 'twitter',
+                'viadeo' => 'viadeo',
+                'linkedin' => 'linkedin',
+                'Skype' => 'skype',
+                'Pinterest' => 'pinterest',
+                'GooglePlus' => 'googleplus'
             )
         )
     );
