@@ -12,7 +12,7 @@
             <div class="coworker-title">
                 <div class="coworker-first-name"><?= $coworker->get('first_name'); ?></div>
                 <div class="coworker-last-name"><?= $coworker->get('last_name'); ?></div>
-                <div class="coworker-company"><?= $coworker->get('company'); ?></div>
+                <div class="coworker-company"><?= $coworker->get('metier'); ?></div>
             </div>
             <div class="coworker-social">
                 Facebook, Twitter, etc.
@@ -35,8 +35,8 @@
             
             <aside class="content-aside coworker-contact">
                 <?php if ($coworker->has('Phone3')): ?>
-                    <a class="coworker-phone" href="tel:<?= $coworker->get('Phone3'); ?>">
-                        <?= $coworker->get('Phone3'); ?>
+                    <a class="coworker-phone" href="tel:<?= $coworker->get('phone3'); ?>">
+                        <?= $coworker->get('phone3'); ?>
                     </a>
                 <?php endif; ?>
                 <?php if ($coworker->has('emailpro')): ?>
@@ -45,9 +45,9 @@
                     </a>
                 <?php endif; ?>
                 <?php for ($i=1; $i<=3; $i++): ?>
-                    <?php if ($coworker->has('website'.$i)): ?>
-                        <a class="coworker-website" href="<?= $coworker->get('website'.$i); ?>">
-                            <?= $coworker->get('website'.$i); ?>
+                    <?php if ($coworker->has('website1'.$i)): ?>
+                        <a class="coworker-website" href="<?= $coworker->get('website1'.$i); ?>">
+                            <?= $coworker->get('website1'.$i); ?>
                         </a>
                     <?php endif; ?>
                 <?php endfor; ?>
