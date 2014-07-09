@@ -1,5 +1,5 @@
 <?php
 
-require_once(__DIR__.'/AdmCoworker.php');
+require_once(__DIR__.'/CoworkerType.php');
 
-new AdmCoworker();
+new CoworkerType();

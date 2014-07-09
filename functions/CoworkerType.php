@@ -2,7 +2,7 @@
 
 require_once(__DIR__.'/CustomType.php');
 
-class AdmCoworker extends CustomType {
+class CoworkerType extends CustomType {
 
     protected $plugin = 'adm';
     protected $id = 'coworker';

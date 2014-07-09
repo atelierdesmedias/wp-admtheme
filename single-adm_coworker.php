@@ -1,28 +1,8 @@
 <?php get_header(); ?>
 <?php the_post(); ?>
 <?php 
-    class Coworker {
-        protected $post;
-        protected $data;
-        protected $terms;
-        public function __construct($post) {
-            $this->post = $post;
-            $this->data = get_post_custom();
-            $this->terms = wp_get_post_terms( $post->ID, 'adm_coworker_tag' );
-        }
-        public function has($attribute) {
-            return !empty($this->data['_'.$attribute][0]);
-        }
-        public function get($attribute) {
-            if ($this->has($attribute)) {
-                return $this->data['_'.$attribute][0];
-            }
-        }
-        public function getTags() {
-            return $this->terms;
-        }
-    }
-    $coworker = new Coworker($post);
+    require_once(__DIR__.'/functions/CoworkerModel.php');
+    $coworker = new CoworkerModel($post);
 ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
         <aside class="content-preside">
