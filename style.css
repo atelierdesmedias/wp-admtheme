@@ -260,6 +260,7 @@ h2 {
 header {
   zoom: 1;
   margin-bottom: 1em;
+  position: relative;
 }
 header:before, header:after {
   content: "";
@@ -400,6 +401,17 @@ header:after {
 .menu .sub-menu a {
   color: white;
   border-bottom: 0;
+}
+
+/* social icons*/
+.social-links {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.social-links li {
+  list-style: none;
 }
 
 /* Colors */
