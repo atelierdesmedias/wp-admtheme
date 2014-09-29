@@ -1,0 +1,121 @@
+@import "../_mixins";
+@import "../_variables";
+
+// #home-coworkers
+// -----------------------------
+#home-coworkers{
+  padding-top: 32px;
+}
+
+// #home-coworkers-filterlist
+// -----------------------------
+#home-coworkers-filterlist{
+  display: block;
+  margin: 0;
+  padding: 0;
+  .home-coworkers-filterlist-item{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 11px;
+    color: #7E7E7E;
+    margin: 0 2px 6px 0;
+    a{
+      display: inline-block;
+      vertical-align: top;
+      font-size: 11px;
+      color: #7E7E7E;
+      text-decoration: none;
+      padding: 4px 11px 4px;
+      background: #fff;
+    }
+  }
+}
+
+// #home-coworkers-list
+// -----------------------------
+#home-coworkers-list{
+  margin: 18px 0 0 0;
+  display: block;
+  padding: 0;
+  .home-coworkers-list-item{
+    list-style: none;
+    display: inline-block;
+    width: 172px;
+    height: 234px;
+    background: #fff;
+    margin: 0 0 13px 11px;
+    vertical-align: top;
+    &:first-child, &:nth-child(6n){
+      margin: 0 0 0 0;
+    }
+    a{
+      text-decoration: none;
+      img{
+        width: 172px;
+        height: 174px;
+      }
+      div.coworker-meta{
+        padding: 0 10px;
+        font-size: 10px;
+        color: #000;
+        span.coworker-firstname{
+          display: block;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 13px;
+        }
+        span.coworker-lastname{
+          text-transform: uppercase;
+          display: block;
+          font-weight: bold;
+          font-size: 13px;
+          line-height: 18px;
+        }
+        span.coworker-job{
+          display: block;
+          font-size: 12px;
+          line-height: 18px;
+          color: #7e7e7e;
+        }
+      }
+      .coworker-rollover{
+        display: none;
+        width: 172px;
+        height: 234px;
+        background: #88ba2d;
+        text-align: center;
+        color: #fff;
+        padding: 8px;
+        font-style: italic;
+        font-weight: bold;
+      }
+      &:hover{
+        img, div.coworker-meta{
+          display: none;
+        }
+        .coworker-rollover{
+          display: block;
+          .picto{
+            display: inline-block;
+            width: 60px;
+            height: 50px;
+            opacity: 0.2;
+            margin-bottom: -4px
+          }
+          .citation{
+            display: block;
+            line-height: 22px;
+            font-size: 17px;
+            margin: 0 0 20px 0;
+          }
+          .desc{
+            display: block;
+            line-height: 13px;
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
+}
+

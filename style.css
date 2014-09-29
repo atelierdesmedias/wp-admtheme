@@ -481,3 +481,114 @@ header:after {
 .coworker-description h2:first-child {
   margin-top: 0;
 }
+
+/* Colors */
+#home-coworkers {
+  padding-top: 32px;
+}
+
+#home-coworkers-filterlist {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+#home-coworkers-filterlist .home-coworkers-filterlist-item {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 11px;
+  color: #7E7E7E;
+  margin: 0 2px 6px 0;
+}
+#home-coworkers-filterlist .home-coworkers-filterlist-item a {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 11px;
+  color: #7E7E7E;
+  text-decoration: none;
+  padding: 4px 11px 4px;
+  background: #fff;
+}
+
+#home-coworkers-list {
+  margin: 18px 0 0 0;
+  display: block;
+  padding: 0;
+}
+#home-coworkers-list .home-coworkers-list-item {
+  list-style: none;
+  display: inline-block;
+  width: 172px;
+  height: 234px;
+  background: #fff;
+  margin: 0 0 13px 11px;
+  vertical-align: top;
+}
+#home-coworkers-list .home-coworkers-list-item:first-child, #home-coworkers-list .home-coworkers-list-item:nth-child(6n) {
+  margin: 0 0 0 0;
+}
+#home-coworkers-list .home-coworkers-list-item a {
+  text-decoration: none;
+}
+#home-coworkers-list .home-coworkers-list-item a img {
+  width: 172px;
+  height: 174px;
+}
+#home-coworkers-list .home-coworkers-list-item a div.coworker-meta {
+  padding: 0 10px;
+  font-size: 10px;
+  color: #000;
+}
+#home-coworkers-list .home-coworkers-list-item a div.coworker-meta span.coworker-firstname {
+  display: block;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 13px;
+}
+#home-coworkers-list .home-coworkers-list-item a div.coworker-meta span.coworker-lastname {
+  text-transform: uppercase;
+  display: block;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 18px;
+}
+#home-coworkers-list .home-coworkers-list-item a div.coworker-meta span.coworker-job {
+  display: block;
+  font-size: 12px;
+  line-height: 18px;
+  color: #7e7e7e;
+}
+#home-coworkers-list .home-coworkers-list-item a .coworker-rollover {
+  display: none;
+  width: 172px;
+  height: 234px;
+  background: #88ba2d;
+  text-align: center;
+  color: #fff;
+  padding: 8px;
+  font-style: italic;
+  font-weight: bold;
+}
+#home-coworkers-list .home-coworkers-list-item a:hover img, #home-coworkers-list .home-coworkers-list-item a:hover div.coworker-meta {
+  display: none;
+}
+#home-coworkers-list .home-coworkers-list-item a:hover .coworker-rollover {
+  display: block;
+}
+#home-coworkers-list .home-coworkers-list-item a:hover .coworker-rollover .picto {
+  display: inline-block;
+  width: 60px;
+  height: 50px;
+  opacity: 0.2;
+  margin-bottom: -4px;
+}
+#home-coworkers-list .home-coworkers-list-item a:hover .coworker-rollover .citation {
+  display: block;
+  line-height: 22px;
+  font-size: 17px;
+  margin: 0 0 20px 0;
+}
+#home-coworkers-list .home-coworkers-list-item a:hover .coworker-rollover .desc {
+  display: block;
+  line-height: 13px;
+  font-size: 11px;
+}
