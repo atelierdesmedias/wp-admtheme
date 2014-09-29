@@ -542,6 +542,10 @@ header:after {
 }
 
 /* Colors */
+#home_picture {
+  background-color: white;
+}
+
 #home_map_and_text {
   display: table;
   table-layout: fixed;

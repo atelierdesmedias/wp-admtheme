@@ -9,7 +9,7 @@ get_header(); ?>
 
 <?php the_post(); ?>
 
-    <img class="content-bandeauImage" src="<?php echo get_template_directory_uri(); ?>/images/bandeau-atelier-des-medias.png"/>
+    <img id="home_picture" class="content-bandeauImage" src="<?php echo get_template_directory_uri(); ?>/images/cdcicdff.gif"/>
 
     <div id="home_map_and_text">
         <div id="home_map_container">
