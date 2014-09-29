@@ -74,9 +74,9 @@
                 ?>
 			</nav>
 			<ul class="social-links">
-			<li class="icon-twitter"><a href="https://twitter.com/Coworking_lyon" title="Twitter ADM" target="_blank"><img src=<?php echo get_template_directory_uri(); ?>"/images/iconeTwitter.png" </img></a></li>
-			<li class="icon-facebook"><a href="https://www.facebook.com/Coworkinglyon" title="Facebook ADM" target="_blank"><img src=<?php echo get_template_directory_uri(); ?>"/images/iconeFB.png"></img></a></li>						
-			<li class="icon-intranet"><a href="https://intra.atelier-medias.org" title="Intranet coworkers" target="_blank"><img src=<?php echo get_template_directory_uri(); ?>"/images/iconeWiki.png"></img></a></li>
+			<li class="icon-twitter"><a href="https://twitter.com/Coworking_lyon" title="Twitter ADM" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/iconeTwitter.png" </img></a></li>
+			<li class="icon-facebook"><a href="https://www.facebook.com/Coworkinglyon" title="Facebook ADM" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/iconeFB.png"></img></a></li>						
+			<li class="icon-intranet"><a href="https://intra.atelier-medias.org" title="Intranet coworkers" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/iconeWiki.png"></img></a></li>
 			</ul>
 			
 		
