@@ -56,6 +56,7 @@
 	
 	<?php wp_head(); ?>
 	
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
 	</head>
 
 <body <?php body_class(); ?> >

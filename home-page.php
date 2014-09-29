@@ -9,7 +9,25 @@ get_header(); ?>
 
 <?php the_post(); ?>
 
-    <section class="content">
+     <section class="home-map-container">
+        <div id="map_canvas"/>
+        <script type="text/javascript">
+            function initialize() {
+            var latlng = new google.maps.LatLng(-34.397, 150.644);
+            var myOptions = {
+                zoom: 8,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas"),
+              myOptions);
+            }
+            google.maps.event.addDomListener(window, "load", initialize);
+
+        </script>
+    </section>
+
+   <section class="content">
         <header class="content-bandeau">
             <img class="content-bandeauImage" src="<?php echo get_template_directory_uri(); ?>/images/bandeau-atelier-des-medias.png"/>
         </header>
