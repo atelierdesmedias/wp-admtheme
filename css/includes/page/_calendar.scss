@@ -148,24 +148,29 @@
         font-size: 1.3em;
     }
 
-
     .calendar-img {
         width:80px;
         height:80px;
         margin-left:-20px;
         margin-top:-10px;
         float:left;
-        background-color: #7EAC28;
-        background-img: url("images/iconeEvent.png")
+        background: #7EAC28 url("images/iconeEventSmall.png") no-repeat center center;
     }
 
     .calendar-date {
         width:60%;
         float:left;
     }
-    .calendar-time {
-        width:18%;
-        float:left;
+
+
+    .calendar-title {
+        font-size: 3em;
+        margin:10px 10px 10px 50px;
+        padding-top:15px;
+        line-height: 0.2em;
+        .calendar-time {
+            font-size: 0.5em;
+        }
     }
 }
 
