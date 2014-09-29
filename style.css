@@ -261,6 +261,7 @@ h2 {
 header {
   zoom: 1;
   margin-bottom: 1em;
+  position: relative;
 }
 header:before, header:after {
   content: "";
@@ -403,6 +404,7 @@ header:after {
   border-bottom: 0;
 }
 
+<<<<<<< HEAD
 .calendar-events-list {
   zoom: 1;
 }
@@ -591,6 +593,17 @@ header:after {
 
 .calendar-info {
   margin-bottom: 8px;
+=======
+/* social icons*/
+.social-links {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.social-links li {
+  list-style: none;
+>>>>>>> 61de1e09537702f79c1fa2fadc9ca65d0caf6c34
 }
 
 /* Colors */
