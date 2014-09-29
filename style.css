@@ -251,8 +251,9 @@ h2 {
 
 /* ADM layout style */
 .container {
-  width: 920px;
+  max-width: 940px;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 /* ADM Header */
@@ -306,7 +307,7 @@ header:after {
 .content-bandeau {
   margin-bottom: 20px;
 }
-@media (max-width: 919px) {
+@media (max-width: 939px) {
   .content-bandeau {
     display: none;
   }
