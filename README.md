@@ -19,17 +19,14 @@ Voir [Trello](https://trello.com/b/0rU5rbGR/site-adm)
 
     https://projects.invisionapp.com/share/C6IXCXDH#/screens/11034828?maintainScrollPosition=false
 
-### Import Facebook Events into alendar 
+### Import Facebook events into the calendar 
 
-http://www.e-dynamics.be/wordpress/?cat=22
+* Install the "[Events Made Easy](https://wordpress.org/plugins/events-made-easy/)" plugin (read the [doc](http://www.e-dynamics.be/wordpress/?cat=22))  
+* Install the [Facebook adapter](https://wordpress.org/support/plugin/eme-sync-facebook-events). Input your API Key / Secret
+* Copy/paste the template from ```calendar/calendar-event-list.html``` in ```Events/Settings/Events``` in the field ```Default event list format```
+* Copy/paste the template from ```calendar/calendar-event-single.html``` in ```Events/Settings/Events``` in the field ```Default single event format```
 
-        <li>
-            <h3 class="calendar-date">#j #M #Y</h3> 
-            <div class="calendar-info">
-                
-                <p class="calendar-time">#_STARTTIME
-                <span class="calendar-title"> - #_LINKEDNAME</span>
-                </p>  
-            </div>
-            <p class="calendar-excerpt">#_EXCERPT</p>
-        </li>
+
+
+
+
