@@ -58,7 +58,7 @@ if( !function_exists('handcraftedwp_widgets_init'))  {
 
 	function handcraftedwp_widgets_init() {
 		register_sidebar( array (
-			'name' => __( 'Sidebar', 'themename' ),
+			'name' => __( 'Sidebar', 'wp-admtheme' ),
 			'id' => 'sidebar',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s" role="complementary">',
 			'after_widget' => "</aside>",
@@ -68,7 +68,7 @@ if( !function_exists('handcraftedwp_widgets_init'))  {
 		
 			// Area 3, located in the footer. Empty by default.
 		register_sidebar( array(
-			'name' => __( 'Footer', 'themename' ),
+			'name' => __( 'Footer', 'wp-admtheme' ),
 			'id' => 'footer-widget-area',
 			'description' => __( 'The footer area', 'themename' ),
 			'before_widget' => '<aside id="%1$s" class="widget-container %2$s">',
