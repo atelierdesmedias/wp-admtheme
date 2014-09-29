@@ -21,7 +21,7 @@
 
 .blog article .author a {
   text-decoration: none;
-  color: $color-green-light;
+  color: $color-green-base;
 }
 
 .blog ul.post-categories {
@@ -32,7 +32,7 @@
 
 .blog ul.post-categories li {
   display: inline-block;
-  background-color: $color-green-light;
+  background-color: $color-green-base;
   padding: 3px;
 }
 

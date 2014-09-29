@@ -33,7 +33,7 @@
       display: block;
     }
     > a:before {
-      @include arrow(5px, 10px, up, $color-green-light);
+      @include arrow(5px, 10px, up, $color-green-base);
       position: absolute;
       left: 50%;
       bottom: -5px;
@@ -55,7 +55,7 @@
   width: 100%;
   padding: 0.5em;
 
-  background: $color-green-light;
+  background: $color-green-base;
 
   color: white;
   line-height: 1;
