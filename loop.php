@@ -16,13 +16,14 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 		<header class="entry-header">
-			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'themename' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>		           
+			<h1 class="entry-title">
+                <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'themename' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
-            <div class="entry-meta entry-header">                            
+            <div class="entry-meta entry-header">
 	                <span class="published"><?php _e('Published on', 'themename') ?> <strong><?php the_time( get_option('date_format') ); ?></strong></span>
 	                <span class="author"><?php _e('by', 'themename') ?> <?php the_author_posts_link(); ?></span>
-					<span class="entry-categories"><?php _e('in', 'themename') ?> <?php the_category(', ') ?></span> -  <span class="comment-count"> <?php comments_popup_link(__('No Comments', 'themename'), __('1 Comment', 'themename'), __('% Comments', 'themename')); ?></span> - 
-					<span class="permalink"><a title="<?php printf(__('Permanent Link to %s', 'themename'), get_the_title()); ?>" href="<?php the_permalink(); ?>"><?php _e('Permalink', 'themename') ?></a></span>                    		
+					<span class="entry-categories"><?php _e('in', 'themename') ?> <?php the_category(', ') ?></span> -  <span class="comment-count"> <?php comments_popup_link(__('No Comments', 'themename'), __('1 Comment', 'themename'), __('% Comments', 'themename')); ?></span> -
+					<span class="permalink"><a title="<?php printf(__('Permanent Link to %s', 'themename'), get_the_title()); ?>" href="<?php the_permalink(); ?>"><?php _e('Permalink', 'themename') ?></a></span>
            </div>
 
 
@@ -40,7 +41,7 @@
 		</div><!-- .entry-content -->
 		<?php } ?>
 
-		<footer class="entry-meta">			
+		<footer class="entry-meta">
 			<?php the_tags( '<span class="tag-links">' . __( 'Tagged ', 'themename' ) . '</span>', ', ', '<span class="meta-sep"> - </span>' ); ?>
 			<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'themename' ), __( '1 Comment', 'themename' ), __( '% Comments', 'themename' ) ); ?></span>
 			<?php edit_post_link( __( 'Edit', 'themename' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>

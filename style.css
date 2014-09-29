@@ -230,7 +230,7 @@ p {
 
 h1,
 h2 {
-  color: #7eac28;
+  color: #7EAC28;
   font-family: "Arial Narrow", Arial, sans-serif;
   font-size: 2em;
   font-weight: normal;
@@ -315,7 +315,7 @@ header:after {
 
 .entry-title {
   padding: 10px 20px;
-  background: #7eac28;
+  background: #7EAC28;
   color: white;
 }
 
@@ -368,7 +368,7 @@ header:after {
   font-size: 0;
   content: "";
   border: 5px solid transparent;
-  border-bottom: 5px solid #7eac28;
+  border-bottom: 5px solid #7EAC28;
   border-top: 0;
   position: absolute;
   left: 50%;
@@ -387,7 +387,7 @@ header:after {
   position: absolute;
   width: 100%;
   padding: 0.5em;
-  background: #7eac28;
+  background: #7EAC28;
   color: white;
   line-height: 1;
 }
@@ -411,7 +411,7 @@ header:after {
 .coworker-title {
   padding: 10px;
   margin-bottom: 20px;
-  background: #7eac28;
+  background: #7EAC28;
   color: white;
   line-height: 1.3;
 }
@@ -480,4 +480,46 @@ header:after {
 
 .coworker-description h2:first-child {
   margin-top: 0;
+}
+
+/* Colors */
+.blog article {
+  background: white;
+  padding: 5px 20px;
+}
+
+.blog article h2:first-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.blog article + article {
+  margin-top: 10px;
+}
+
+.blog article .published {
+  color: #878180;
+}
+
+.blog article .author a {
+  text-decoration: none;
+  color: #7EAC28;
+}
+
+.blog ul.post-categories {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.blog ul.post-categories li {
+  display: inline-block;
+  background-color: #7EAC28;
+  padding: 3px;
+}
+
+.blog ul.post-categories li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
 }
