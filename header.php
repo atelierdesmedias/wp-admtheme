@@ -38,6 +38,8 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" media="screen, projection">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700,400,600,300' rel='stylesheet' type='text/css'>
 	
 	<?php // Use this url to get your personnal build http://www.modernizr.com/download/ ?>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.custom.js"></script>

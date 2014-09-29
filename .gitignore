@@ -1,5 +1,7 @@
 .idea
 
+.sass*
+
 .htaccess
 wp-content/uploads/
 wp-content/blogs.dir/
