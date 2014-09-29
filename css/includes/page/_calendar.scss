@@ -138,7 +138,7 @@
 
 
 .calendar-single-inner {
-    width : 65%; 
+    width : 50%; 
     float:left;
     padding : 0;
     margin : 0;
@@ -150,9 +150,15 @@
 
 
     .calendar-img {
-        width:18%;
+        width:80px;
+        height:80px;
+        margin-left:-20px;
+        margin-top:-10px;
         float:left;
+        background-color: #7EAC28;
+        background-img: url("images/iconeEvent.png")
     }
+
     .calendar-date {
         width:60%;
         float:left;
@@ -166,11 +172,12 @@
 
 .calendar-map {
 
-    width : 35%; 
+    width : 50%; 
     float:right;
     background-color: #88BA2D;
     margin-top:-10px;
     margin-right:-20px;
+    margin-bottom:-25px;
     padding: 0; 
 
     .eme-location-map {
