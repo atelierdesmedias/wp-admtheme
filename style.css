@@ -215,6 +215,7 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
   color: #0F0F0F;
   line-height: 1.5;
 }
@@ -528,8 +529,11 @@ header:after {
   margin: 0;
 }
 
+/* Colors */
 #home_map_and_text {
   display: table;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #home_map_container, #home_text {
@@ -537,8 +541,23 @@ header:after {
   vertical-align: top;
 }
 
+#home_map_container {
+  padding-right: 20px;
+}
+
 #home_map_canvas {
   width: 500px;
-  height: 430px;
+  height: 360px;
   background-color: #CCC;
+}
+
+#home_text {
+  padding: 10px;
+  background-color: #A8AAA8;
+}
+#home_text h1, #home_text p {
+  color: white;
+}
+#home_text h1 {
+  font-size: 24px;
 }
