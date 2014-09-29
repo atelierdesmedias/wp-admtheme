@@ -32,6 +32,11 @@ add_theme_support( 'automatic-feed-links' );
  */
 add_theme_support( 'post-thumbnails' );
 
+/**
+ * Image sizes for the ADM theme
+ */
+add_image_size( 'blog-list', 220, 200, true );
+
 
 /**
  * This enables post formats. If you use this, make sure to delete any that you aren't going to use.
