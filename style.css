@@ -208,7 +208,6 @@ table {
   border-spacing: 0;
 }
 
-/* Colors */
 /* ADM custom general styles */
 body {
   background: #EDECE4;
@@ -253,8 +252,9 @@ h2 {
 
 /* ADM layout style */
 .container {
-  width: 920px;
+  max-width: 940px;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 /* ADM Header */
@@ -309,6 +309,11 @@ header:after {
 .content-bandeau {
   margin-bottom: 20px;
 }
+@media (max-width: 939px) {
+  .content-bandeau {
+    display: none;
+  }
+}
 
 .content-bandeauImage {
   display: block;
@@ -331,7 +336,6 @@ header:after {
   margin-top: 0;
 }
 
-/* Colors */
 /* */
 .menu-link {
   display: none;
@@ -347,7 +351,7 @@ header:after {
   display: inline-block;
   position: relative;
   border-bottom: 5px transparent solid;
-  color: #545353;
+  color: #464546;
   text-decoration: none;
 }
 
@@ -605,7 +609,6 @@ header:after {
   margin-bottom: 8px;
 }
 
-/* Colors */
 .coworker-avatar > img {
   display: block;
   max-width: 100%;
@@ -685,7 +688,6 @@ header:after {
   margin-top: 0;
 }
 
-/* Colors */
 #footer-links {
   width: 50%;
   padding-right: 7%;
@@ -699,7 +701,6 @@ header:after {
   text-align: left;
 }
 
-/* Colors */
 .default-content {
   display: inline-block;
   vertical-align: top;
@@ -731,7 +732,6 @@ header:after {
   margin: 0;
 }
 
-/* Colors */
 #home_picture {
   background-color: white;
 }
@@ -771,7 +771,6 @@ header:after {
   font-size: 24px;
 }
 
-/* Colors */
 .blog article {
   background: white;
   padding: 5px 20px;
@@ -792,7 +791,7 @@ header:after {
 
 .blog article .author a {
   text-decoration: none;
-  color: #7EAC28;
+  color: #7eac28;
 }
 
 .blog ul.post-categories {
@@ -803,7 +802,7 @@ header:after {
 
 .blog ul.post-categories li {
   display: inline-block;
-  background-color: #7EAC28;
+  background-color: #7eac28;
   padding: 3px;
 }
 
