@@ -219,6 +219,12 @@ add_action('login_head', 'gk_ui_wp32_login');
 add_action('admin_enqueue_scripts', 'gk_ui_wp32_admin');
 
 
+
+// function my_js_include_function() {
+//     wp_enqueue_script( 'my_script.js', '/path/to/myscript.js', array('jquery') );
+// }
+// add_action( 'wp_enqueue_scripts', 'my_js_include_function' );
+
 /*----------------------------------------------------------------------- **/
 
 /*  please don't but if you need to remove width/height on template use this */

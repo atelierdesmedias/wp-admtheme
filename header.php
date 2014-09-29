@@ -41,8 +41,11 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700,400,600,300' rel='stylesheet' type='text/css'>
 	
+	<?php wp_enqueue_script("jquery"); ?>
+
 	<?php // Use this url to get your personnal build http://www.modernizr.com/download/ ?>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.custom.js"></script>
+	
 
 	<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
