@@ -230,7 +230,7 @@ p {
 
 h1,
 h2 {
-  color: #7eac28;
+  color: #7EAC28;
   font-family: "Arial Narrow", Arial, sans-serif;
   font-size: 2em;
   font-weight: normal;
@@ -315,7 +315,7 @@ header:after {
 
 .entry-title {
   padding: 10px 20px;
-  background: #7eac28;
+  background: #7EAC28;
   color: white;
 }
 
@@ -368,7 +368,7 @@ header:after {
   font-size: 0;
   content: "";
   border: 5px solid transparent;
-  border-bottom: 5px solid #7eac28;
+  border-bottom: 5px solid #7EAC28;
   border-top: 0;
   position: absolute;
   left: 50%;
@@ -387,7 +387,7 @@ header:after {
   position: absolute;
   width: 100%;
   padding: 0.5em;
-  background: #7eac28;
+  background: #7EAC28;
   color: white;
   line-height: 1;
 }
@@ -411,7 +411,7 @@ header:after {
 .coworker-title {
   padding: 10px;
   margin-bottom: 20px;
-  background: #7eac28;
+  background: #7EAC28;
   color: white;
   line-height: 1.3;
 }
@@ -480,4 +480,50 @@ header:after {
 
 .coworker-description h2:first-child {
   margin-top: 0;
+}
+
+/* Colors */
+#footer-links {
+  width: 50%;
+  padding-right: 7%;
+  text-align: right;
+}
+
+#footer-text {
+  font-size: 14px;
+  color: #848484;
+  line-height: 5%;
+  text-align: left;
+}
+
+/* Colors */
+.default-content {
+  display: inline-block;
+  vertical-align: top;
+  width: 680px;
+}
+
+.sidebar {
+  display: inline-block;
+  vertical-align: top;
+  background-color: #388fa9;
+  color: #ffffff;
+  margin: 20px 0;
+  margin-left: 10px;
+  text-align: center;
+  width: 225px;
+}
+.sidebar h4 {
+  font-size: 22px;
+  font-family: open sans;
+  line-height: 0.9em;
+  margin: 20px 0 0 0;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.sidebar h5 {
+  font-size: 12px;
+  font-family: open sans;
+  font-style: italic;
+  margin: 0;
 }
