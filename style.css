@@ -569,7 +569,7 @@ header:after {
 }
 
 .calendar-single-inner {
-  width: 65%;
+  width: 50%;
   float: left;
   padding: 0;
   margin: 0;
@@ -579,8 +579,13 @@ header:after {
   font-size: 1.3em;
 }
 .calendar-single-inner .calendar-img {
-  width: 18%;
+  width: 80px;
+  height: 80px;
+  margin-left: -20px;
+  margin-top: -10px;
   float: left;
+  background-color: #7EAC28;
+  background-img: url("images/iconeEvent.png");
 }
 .calendar-single-inner .calendar-date {
   width: 60%;
@@ -592,12 +597,12 @@ header:after {
 }
 
 .calendar-map {
-  width: 35%;
+  width: 50%;
   float: right;
   background-color: #88BA2D;
-  color: #fff;
   margin-top: -10px;
   margin-right: -20px;
+  margin-bottom: -25px;
   padding: 0;
 }
 .calendar-map .eme-location-map {
@@ -703,6 +708,10 @@ header:after {
   margin-top: 0;
 }
 
+footer {
+  margin-top: 35px;
+}
+
 #footer-links {
   width: 50%;
   padding-right: 7%;
@@ -763,6 +772,11 @@ header:after {
   display: table-cell;
   vertical-align: top;
   width: 100%;
+}
+@media (max-width: 599px) {
+  #home_map_container, #home_text {
+    display: block;
+  }
 }
 
 #home_map_container {

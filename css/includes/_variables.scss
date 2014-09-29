@@ -16,3 +16,6 @@ $color-orange-base: #EF8741;
 // MEDIA QUERIES
 $mq-to-large: unquote("(max-width: 939px)");
 $mq-from-large: unquote("(min-width: 940px)");
+
+$mq-to-2cols: unquote("(max-width: 599px)");
+$mq-from-2cols: unquote("(min-width: 600px)");
