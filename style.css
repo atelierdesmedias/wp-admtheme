@@ -482,6 +482,52 @@ header:after {
   margin-top: 0;
 }
 
+/* Colors */
+#footer-links {
+  width: 50%;
+  padding-right: 7%;
+  text-align: right;
+}
+
+#footer-text {
+  font-size: 14px;
+  color: #848484;
+  line-height: 5%;
+  text-align: left;
+}
+
+/* Colors */
+.default-content {
+  display: inline-block;
+  vertical-align: top;
+  width: 680px;
+}
+
+.sidebar {
+  display: inline-block;
+  vertical-align: top;
+  background-color: #388fa9;
+  color: #ffffff;
+  margin: 20px 0;
+  margin-left: 10px;
+  text-align: center;
+  width: 225px;
+}
+.sidebar h4 {
+  font-size: 22px;
+  font-family: open sans;
+  line-height: 0.9em;
+  margin: 20px 0 0 0;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.sidebar h5 {
+  font-size: 12px;
+  font-family: open sans;
+  font-style: italic;
+  margin: 0;
+}
+
 #home_map_and_text {
   display: table;
 }
