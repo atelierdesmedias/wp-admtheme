@@ -404,7 +404,17 @@ header:after {
   border-bottom: 0;
 }
 
-<<<<<<< HEAD
+/* social icons*/
+.social-links {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.social-links li {
+  list-style: none;
+}
+
 .calendar-events-list {
   zoom: 1;
 }
@@ -593,17 +603,6 @@ header:after {
 
 .calendar-info {
   margin-bottom: 8px;
-=======
-/* social icons*/
-.social-links {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.social-links li {
-  list-style: none;
->>>>>>> 61de1e09537702f79c1fa2fadc9ca65d0caf6c34
 }
 
 /* Colors */
