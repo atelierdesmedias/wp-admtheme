@@ -208,7 +208,6 @@ table {
   border-spacing: 0;
 }
 
-/* Colors */
 /* ADM custom general styles */
 body {
   background: #EDECE4;
@@ -307,6 +306,11 @@ header:after {
 .content-bandeau {
   margin-bottom: 20px;
 }
+@media (max-width: 919px) {
+  .content-bandeau {
+    display: none;
+  }
+}
 
 .content-bandeauImage {
   display: block;
@@ -329,7 +333,6 @@ header:after {
   margin-top: 0;
 }
 
-/* Colors */
 /* */
 .menu-link {
   display: none;
@@ -402,7 +405,6 @@ header:after {
   border-bottom: 0;
 }
 
-/* Colors */
 .coworker-avatar > img {
   display: block;
   max-width: 100%;

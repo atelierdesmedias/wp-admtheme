@@ -84,6 +84,9 @@ header {
 }
 .content-bandeau {
   margin-bottom: 20px;
+  @media #{$mq-to-large} {
+    display: none;
+  }
 }
 .content-bandeauImage {
   display: block;
