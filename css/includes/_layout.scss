@@ -51,6 +51,7 @@ h2 {
 header {
   @include clearfix;
   margin-bottom: 1em;
+  position: relative;
 }
 .site-title {
   float: left;

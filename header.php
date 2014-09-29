@@ -73,7 +73,15 @@
 					wp_nav_menu( array( 'container_class' => 'menu', 'theme_location' => 'primary' ) );
                 ?>
 			</nav>
+			<ul class="social-links">
+			<li class="icon-twitter"><a href="https://twitter.com/Coworking_lyon" title="Twitter ADM" target="_blank"><img src="wp-content/themes/wp-admtheme/images/iconeTwitter.png" </img></a></li>
+			<li class="icon-facebook"><a href="https://www.facebook.com/Coworkinglyon" title="Facebook ADM" target="_blank"><img src="wp-content/themes/wp-admtheme/images/iconeFB.png"></img></a></li>						
+			<li class="icon-intranet"><a href="https://intra.atelier-medias.org" title="Intranet coworkers" target="_blank"><img src="wp-content/themes/wp-admtheme/images/iconeWiki.png"></img></a></li>
+			</ul>
+			
+		
 		</header>
+		
 
 		<div class="contentWrapper">
 
