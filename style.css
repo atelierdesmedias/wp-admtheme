@@ -230,7 +230,7 @@ p {
 
 h1,
 h2 {
-  color: #7EAC28;
+  color: #7eac28;
   font-family: "Arial Narrow", Arial, sans-serif;
   font-size: 2em;
   font-weight: normal;
@@ -322,7 +322,7 @@ header:after {
 
 .entry-title {
   padding: 10px 20px;
-  background: #7EAC28;
+  background: #7eac28;
   color: white;
 }
 
@@ -374,7 +374,7 @@ header:after {
   font-size: 0;
   content: "";
   border: 5px solid transparent;
-  border-bottom: 5px solid #7EAC28;
+  border-bottom: 5px solid #7eac28;
   border-top: 0;
   position: absolute;
   left: 50%;
@@ -393,7 +393,7 @@ header:after {
   position: absolute;
   width: 100%;
   padding: 0.5em;
-  background: #7EAC28;
+  background: #7eac28;
   color: white;
   line-height: 1;
 }
@@ -622,7 +622,7 @@ header:after {
 .coworker-title {
   padding: 10px;
   margin-bottom: 20px;
-  background: #7EAC28;
+  background: #7eac28;
   color: white;
   line-height: 1.3;
 }
@@ -693,14 +693,10 @@ header:after {
   margin-top: 0;
 }
 
-<<<<<<< HEAD
-/* Colors */
 footer {
   margin-top: 35px;
 }
 
-=======
->>>>>>> 69c7126c39c639cb5bc9b05ecf03c16368c8ae5d
 #footer-links {
   width: 50%;
   padding-right: 7%;
@@ -780,7 +776,7 @@ footer {
 
 #home_text {
   padding: 10px 30px;
-  background-color: #A8AAA8;
+  background-color: #a8aaa8;
 }
 #home_text h1, #home_text p {
   color: white;
