@@ -1,9 +1,6 @@
-<?php
-  
+<?php get_header(); ?>
 
-get_header(); ?>
-
-<?php get_template_part( 'loop', 'index' ); ?>
+<?php get_template_part( 'blog', 'index' ); ?>
 
 </section>
 <?php get_sidebar(); ?>
