@@ -576,10 +576,10 @@ header:after {
   float: left;
 }
 .calendar-single-inner .calendar-title {
-  font-size: 3em;
+  font-size: 2.8em;
   margin: 10px 10px 10px 50px;
   padding-top: 15px;
-  line-height: 0.2em;
+  line-height: 0.3em;
 }
 .calendar-single-inner .calendar-title .calendar-time {
   font-size: 0.5em;
