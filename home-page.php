@@ -24,14 +24,20 @@ get_header(); ?>
     </div>
             <script type="text/javascript">
                 function initialize() {
-                    var latlng = new google.maps.LatLng(-34.397, 150.644);
+                    var latlng = new google.maps.LatLng(45.7711896, 4.8377912);
                     var myOptions = {
-                        zoom: 8,
+                        zoom: 14,
                         center: latlng,
                         mapTypeId: google.maps.MapTypeId.ROADMAP
                     };
                     var map = new google.maps.Map(document.getElementById("home_map_canvas"),
                       myOptions);
+
+                    var marker = new google.maps.Marker({
+                        position: latlng,
+                        map: map,
+                        title: "L'Atelier des Medias"
+                    });
                 }
                 google.maps.event.addDomListener(window, "load", initialize);
             </script>
