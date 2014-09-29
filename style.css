@@ -577,16 +577,20 @@ header:after {
   margin-left: -20px;
   margin-top: -10px;
   float: left;
-  background-color: #7EAC28;
-  background-img: url("images/iconeEvent.png");
+  background: #7eac28 url("images/iconeEventSmall.png") no-repeat center center;
 }
 .calendar-single-inner .calendar-date {
   width: 60%;
   float: left;
 }
-.calendar-single-inner .calendar-time {
-  width: 18%;
-  float: left;
+.calendar-single-inner .calendar-title {
+  font-size: 2.8em;
+  margin: 10px 10px 10px 50px;
+  padding-top: 15px;
+  line-height: 0.3em;
+}
+.calendar-single-inner .calendar-title .calendar-time {
+  font-size: 0.5em;
 }
 
 .calendar-map {

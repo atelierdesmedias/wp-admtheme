@@ -53,6 +53,13 @@ class CoworkerType extends CustomType {
                 'Pinterest' => 'pinterest',
                 'GooglePlus' => 'googleplus'
             )
+        ),
+
+        'autres' => array(
+            'label' => 'Autre informations',
+            'fields' => array(
+                'banner' => "ID de l'image bandeau"
+            )
         )
     );
     protected $columns = array(
