@@ -28,13 +28,13 @@
         </aside>
     
         <div class="content">
-            
+
             <header class="content-bandeau">
                 <img class="content-bandeauImage" src="<?php echo get_template_directory_uri(); ?>/images/bandeau-atelier-des-medias.png"/>
             </header>
-            
+
             <aside class="content-aside coworker-contact">
-                <?php if ($coworker->has('Phone3')): ?>
+                <?php if ($coworker->has('phone3')): ?>
                     <a class="coworker-phone" href="tel:<?= $coworker->get('phone3'); ?>">
                         <?= $coworker->get('phone3'); ?>
                     </a>
