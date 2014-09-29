@@ -1,8 +1,13 @@
-.home-map-container {
-  float: left;
+#home_map_and_text {
+    display: table;
 }
 
-#map_canvas {
+#home_map_container, #home_text {
+    display: table-cell;
+    vertical-align: top;
+}
+
+#home_map_canvas {
   width: 500px;
   height: 430px;
   background-color: #CCC;
