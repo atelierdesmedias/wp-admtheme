@@ -232,7 +232,6 @@ p {
 h1,
 h2 {
   color: #7eac28;
-  font-family: "Arial Narrow", Arial, sans-serif;
   font-size: 2em;
   font-weight: normal;
   text-transform: uppercase;
@@ -368,12 +367,6 @@ header:after {
   border-bottom: 5px transparent solid;
   color: #464546;
   text-decoration: none;
-}
-
-.menu a:hover,
-.menu a:focus,
-.menu a:active {
-  text-decoration: underline;
 }
 
 .menu > ul > .menu-item:hover > .sub-menu,

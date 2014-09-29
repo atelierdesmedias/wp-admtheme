@@ -20,11 +20,6 @@
   color: $color-gray-dark;
   text-decoration: none;
 }
-.menu a:hover,
-.menu a:focus,
-.menu a:active {
-  text-decoration: underline;
-}
 .menu > ul {
   > .menu-item:hover,
   > .current-menu-item, 
