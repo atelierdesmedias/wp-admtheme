@@ -208,7 +208,6 @@ table {
   border-spacing: 0;
 }
 
-/* Colors */
 /* ADM custom general styles */
 body {
   background: #EDECE4;
@@ -231,7 +230,7 @@ p {
 
 h1,
 h2 {
-  color: #7eac28;
+  color: #7EAC28;
   font-family: "Arial Narrow", Arial, sans-serif;
   font-size: 2em;
   font-weight: normal;
@@ -253,8 +252,9 @@ h2 {
 
 /* ADM layout style */
 .container {
-  width: 920px;
+  max-width: 940px;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 /* ADM Header */
@@ -309,6 +309,11 @@ header:after {
 .content-bandeau {
   margin-bottom: 20px;
 }
+@media (max-width: 939px) {
+  .content-bandeau {
+    display: none;
+  }
+}
 
 .content-bandeauImage {
   display: block;
@@ -317,7 +322,7 @@ header:after {
 
 .entry-title {
   padding: 10px 20px;
-  background: #7eac28;
+  background: #7EAC28;
   color: white;
 }
 
@@ -331,7 +336,6 @@ header:after {
   margin-top: 0;
 }
 
-/* Colors */
 /* */
 .menu-link {
   display: none;
@@ -347,7 +351,7 @@ header:after {
   display: inline-block;
   position: relative;
   border-bottom: 5px transparent solid;
-  color: #545353;
+  color: #464546;
   text-decoration: none;
 }
 
@@ -370,7 +374,7 @@ header:after {
   font-size: 0;
   content: "";
   border: 5px solid transparent;
-  border-bottom: 5px solid #7eac28;
+  border-bottom: 5px solid #7EAC28;
   border-top: 0;
   position: absolute;
   left: 50%;
@@ -389,7 +393,7 @@ header:after {
   position: absolute;
   width: 100%;
   padding: 0.5em;
-  background: #7eac28;
+  background: #7EAC28;
   color: white;
   line-height: 1;
 }
@@ -610,7 +614,6 @@ header:after {
   margin-bottom: 8px;
 }
 
-/* Colors */
 .coworker-avatar > img {
   display: block;
   max-width: 100%;
@@ -619,7 +622,7 @@ header:after {
 .coworker-title {
   padding: 10px;
   margin-bottom: 20px;
-  background: #7eac28;
+  background: #7EAC28;
   color: white;
   line-height: 1.3;
 }
@@ -690,11 +693,14 @@ header:after {
   margin-top: 0;
 }
 
+<<<<<<< HEAD
 /* Colors */
 footer {
   margin-top: 35px;
 }
 
+=======
+>>>>>>> 69c7126c39c639cb5bc9b05ecf03c16368c8ae5d
 #footer-links {
   width: 50%;
   padding-right: 7%;
@@ -708,7 +714,6 @@ footer {
   text-align: left;
 }
 
-/* Colors */
 .default-content {
   display: inline-block;
   vertical-align: top;
@@ -740,7 +745,6 @@ footer {
   margin: 0;
 }
 
-/* Colors */
 #home_picture {
   background-color: white;
 }
@@ -758,6 +762,11 @@ footer {
   vertical-align: top;
   width: 100%;
 }
+@media (max-width: 599px) {
+  #home_map_container, #home_text {
+    display: block;
+  }
+}
 
 #home_map_container {
   padding-right: 20px;
@@ -771,7 +780,7 @@ footer {
 
 #home_text {
   padding: 10px 30px;
-  background-color: #a8aaa8;
+  background-color: #A8AAA8;
 }
 #home_text h1, #home_text p {
   color: white;
@@ -780,7 +789,6 @@ footer {
   font-size: 24px;
 }
 
-/* Colors */
 .blog article {
   background: white;
   padding: 5px 20px;
