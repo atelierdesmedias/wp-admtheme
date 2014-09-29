@@ -9,6 +9,7 @@ body {
   box-sizing: border-box;
 
   font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
   color: #0F0F0F;
   line-height: 1.5;
 }
@@ -51,6 +52,7 @@ h2 {
 header {
   @include clearfix;
   margin-bottom: 1em;
+  position: relative;
 }
 .site-title {
   float: left;

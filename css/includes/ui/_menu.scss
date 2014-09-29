@@ -17,7 +17,7 @@
   position: relative;
   border-bottom: 5px transparent solid;
 
-  color: $color-grey-dark;
+  color: $color-gray-dark;
   text-decoration: none;
 }
 .menu a:hover,
@@ -72,3 +72,16 @@
     border-bottom: 0;
   }
 }
+
+/* social icons*/
+
+
+.social-links{
+	position: absolute;
+	right: 0;
+	top: 0;}
+				
+				
+.social-links li{
+	list-style: none;
+	}
