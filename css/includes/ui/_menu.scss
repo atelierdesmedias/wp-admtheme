@@ -28,7 +28,7 @@
 .menu > ul {
   > .menu-item:hover,
   > .current-menu-item, 
-  > .current-page_ancestor {
+  > .current_page_item {
     > .sub-menu {
       display: block;
     }
@@ -46,7 +46,6 @@
   display: inline;
   padding-right: .5em;
 }
-
 
 
 /* Main menu level 2 */
