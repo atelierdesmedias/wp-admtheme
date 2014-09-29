@@ -27,25 +27,5 @@
 <!-- The mains scripts you'll need for your site  -->
 <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 
-<style>
-
-#footer-links{
-	width:50%;
-	padding-right:7%;
-	text-align:right;
-}
-
-#footer-text{
-	font-size:14px;
-	color:#848484;
-	line-height:5%;
-	text-align:left;
-	
-}
-
-
-</style>
-
-
 </body>
 </html>
