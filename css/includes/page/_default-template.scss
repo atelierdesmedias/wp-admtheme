@@ -1,0 +1,44 @@
+@import "../_mixins";
+@import "../_variables";
+
+
+// DEFAULT-TEMPLATE
+// -----------------------------
+
+.default-content{
+	display: inline-block;
+	vertical-align: top;
+	width: 680px;
+	
+}
+
+
+// SIDEBAR
+// -----------------------------
+	
+.sidebar{
+	display: inline-block;
+	vertical-align: top;
+	background-color: #388fa9;
+	color: #ffffff;
+	margin: 20px 0;
+	margin-left: 10px;
+	text-align: center;
+	width: 225px;
+	h4{
+		font-size: 22px;
+		font-family: open sans;
+		line-height: 0.9em;
+		margin: 20px 0 0 0;
+		text-transform: uppercase;
+		font-weight: 300;
+	}
+	h5{
+		font-size: 12px;
+		font-family: open sans;
+		font-style: italic;
+		margin: 0;
+	}
+
+}
+

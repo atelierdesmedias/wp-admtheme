@@ -34,45 +34,4 @@ get_header(); ?>
 <?= array_shift(get_post_meta( get_the_ID() , 'sidebar' )); ?>
 </div>
 
-
-<style>
-.default-content{
-display: inline-block;
-vertical-align: top;
-width: 680px;
-
-
-	
-	}
-	
-.sidebar{
-	display: inline-block;
-	vertical-align: top;
-	background-color: #388fa9;
-	color: #ffffff;
-	margin: 20px 0;
-	margin-left: 10px;
-	text-align: center;
-	width: 225px;
-}
-.sidebar h4{
-	font-size: 22px;
-	font-family: open sans;
-	line-height: 0.9em;
-	margin: 20px 0 0 0;
-	text-transform: uppercase;
-	font-weight: 300;
-}
-		
-.sidebar h5{
-	font-size: 12px;
-	font-family: open sans;
-	font-style: italic;
-	margin: 0;
-	
-}
-	
-
-
-</style>
 <?php get_footer(); ?>
