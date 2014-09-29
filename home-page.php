@@ -5,8 +5,8 @@
  *
  *
  */
+get_header(); ?>
 
-<?php get_header(); ?>
 <?php the_post(); ?>
 
     <section class="content">
