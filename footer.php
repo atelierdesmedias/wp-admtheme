@@ -11,18 +11,21 @@
 			}?>
 			</div>
 		
-			<div class="copyright">
-				<small> This theme is under <a href="http://wordpress.org/about/gpl/"> GPL V2 Licence </a> - <?php echo  esc_attr( get_bloginfo( 'name', 'display' ) ); ?>  - <a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'themename' ); ?>"   ><?php printf( __( 'Proudly powered by %s.', 'themename' ), 'WordPress' ); ?></a></small>
-			</div>
-	</footer>
+			<div class="copyright" style=" background-color:white;">
+			<table>
+   <tr>
+       <td><img src="wp-content/themes/wp-admtheme/images/logo-footer.png"></img></td>
+      <td id="footer-text"><p>9 quai André Lassagne - 69001 Lyon</p><p style="color:#848484">Tel : 09 72 33 20 92</p></td>
+      <td id="footer-links"><a href="http://atelier-medias.org/credit">Crédit</a> - <a href="http://atelier-medias.org/licence">Licence</a>	</td>
+      </tr>
+      </table>
+  </div>
+			</footer>
 </div>
 
 <?php wp_footer(); ?>
 <!-- The mains scripts you'll need for your site  -->
 <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
-
-
-
 
 </body>
 </html>
