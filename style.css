@@ -230,7 +230,7 @@ p {
 
 h1,
 h2 {
-  color: #7EAC28;
+  color: #7eac28;
   font-family: "Arial Narrow", Arial, sans-serif;
   font-size: 2em;
   font-weight: normal;
@@ -322,7 +322,7 @@ header:after {
 
 .entry-title {
   padding: 10px 20px;
-  background: #7EAC28;
+  background: #7eac28;
   color: white;
 }
 
@@ -374,7 +374,7 @@ header:after {
   font-size: 0;
   content: "";
   border: 5px solid transparent;
-  border-bottom: 5px solid #7EAC28;
+  border-bottom: 5px solid #7eac28;
   border-top: 0;
   position: absolute;
   left: 50%;
@@ -393,7 +393,7 @@ header:after {
   position: absolute;
   width: 100%;
   padding: 0.5em;
-  background: #7EAC28;
+  background: #7eac28;
   color: white;
   line-height: 1;
 }
@@ -554,7 +554,7 @@ header:after {
 }
 
 .calendar-single-inner {
-  width: 65%;
+  width: 50%;
   float: left;
   padding: 0;
   margin: 0;
@@ -564,8 +564,13 @@ header:after {
   font-size: 1.3em;
 }
 .calendar-single-inner .calendar-img {
-  width: 18%;
+  width: 80px;
+  height: 80px;
+  margin-left: -20px;
+  margin-top: -10px;
   float: left;
+  background-color: #7EAC28;
+  background-img: url("images/iconeEvent.png");
 }
 .calendar-single-inner .calendar-date {
   width: 60%;
@@ -577,12 +582,12 @@ header:after {
 }
 
 .calendar-map {
-  width: 35%;
+  width: 50%;
   float: right;
   background-color: #88BA2D;
-  color: #fff;
   margin-top: -10px;
   margin-right: -20px;
+  margin-bottom: -25px;
   padding: 0;
 }
 .calendar-map .eme-location-map {
@@ -617,7 +622,7 @@ header:after {
 .coworker-title {
   padding: 10px;
   margin-bottom: 20px;
-  background: #7EAC28;
+  background: #7eac28;
   color: white;
   line-height: 1.3;
 }
@@ -686,6 +691,10 @@ header:after {
 
 .coworker-description h2:first-child {
   margin-top: 0;
+}
+
+footer {
+  margin-top: 35px;
 }
 
 #footer-links {
@@ -767,7 +776,7 @@ header:after {
 
 #home_text {
   padding: 10px 30px;
-  background-color: #A8AAA8;
+  background-color: #a8aaa8;
 }
 #home_text h1, #home_text p {
   color: white;
@@ -796,7 +805,7 @@ header:after {
 
 .blog article .author a {
   text-decoration: none;
-  color: #7EAC28;
+  color: #7eac28;
 }
 
 .blog ul.post-categories {
@@ -807,7 +816,7 @@ header:after {
 
 .blog ul.post-categories li {
   display: inline-block;
-  background-color: #7EAC28;
+  background-color: #7eac28;
   padding: 3px;
 }
 
