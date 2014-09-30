@@ -1,0 +1,7 @@
+* text=auto
+*.php text ident diff=php
+*.html text ident diff=html
+*.json text ident
+*.js text ident
+*.css text ident
+
