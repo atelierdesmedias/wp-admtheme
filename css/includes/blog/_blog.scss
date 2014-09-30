@@ -1,47 +1,77 @@
 @import "../_mixins";
 @import "../_variables";
 
-.blog article {
-  background: white;
-  padding: 5px 20px;
+.blog {
+  article {
+    display: table;
+    width: 100%;
+    background: white;
+    padding: 0px;
+    margin: 20px 0px;
+    min-height: 200px;
+
+    .post_text, .thumbnail {
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    .post_text {
+      padding: 10px 0px 0px 10px;
+
+      h2:first-child {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      + article {
+        margin-top: 10px;
+      }
+
+      .published {
+        color: $color-gray-light;
+      }
+
+      .author a {
+        text-decoration: none;
+        color: $color-green-light;
+      }
+    }
+  }
+
+  ul.post-categories {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      background-color: $color-green-light;
+      padding: 3px;
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-weight: bolder;
+      }
+
+      a:hover {
+      }
+    }
+  }
+
+  .nav-single {
+    padding-bottom: 30px;
+    .nav-previous, .nav-next {
+      background-color: $color-green-light;
+      padding: 3px 12px;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+    .nav-next {
+      float: right;
+    }
+  }
 }
 
-.blog article h2:first-child {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.blog article + article {
-  margin-top: 10px;
-}
-
-.blog article .published {
-  color: $color-gray-light;
-}
-
-.blog article .author a {
-  text-decoration: none;
-  color: $color-green-base;
-}
-
-.blog ul.post-categories {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.blog ul.post-categories li {
-  display: inline-block;
-  background-color: $color-green-base;
-  padding: 3px;
-}
-
-.blog ul.post-categories li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bolder;
-}
-
-.blog ul.post-categories li a:hover {
-
-}

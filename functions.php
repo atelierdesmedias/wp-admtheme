@@ -96,7 +96,7 @@ register_nav_menu( 'primary', __( 'Primary Menu', 'themename' ) );
 if( !function_exists('twentyeleven_excerpt_length'))  {
 
 	function twentyeleven_excerpt_length( $length ) {
-		return 80;
+		return 30;
 	}
 }
 
