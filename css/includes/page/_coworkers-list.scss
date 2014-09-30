@@ -1,0 +1,133 @@
+@import "../_mixins";
+@import "../_variables";
+
+// #coworkers-list-container
+// -----------------------------
+#coworkers-list-container{
+  padding: 32px 0;
+}
+
+// #coworkers-filterlist
+// -----------------------------
+#coworkers-filterlist{
+  display: block;
+  margin: 0;
+  padding: 0;
+  .coworkers-filterlist-item{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 11px;
+    color: #7E7E7E;
+    margin: 0 2px 6px 0;
+    a{
+      display: inline-block;
+      vertical-align: top;
+      font-size: 11px;
+      color: #7E7E7E;
+      text-decoration: none;
+      padding: 4px 11px 4px;
+      background: #fff;
+      &.active{
+        color: #fff;
+        background: #88BA30;
+      }
+    }
+  }
+}
+
+// #coworkers-list
+// -----------------------------
+#coworkers-list{
+  margin: 18px 0 0 0;
+  display: block;
+  padding: 0;
+  .coworkers-list-item{
+    position: relative;
+    list-style: none;
+    display: inline-block;
+    width: 172px;
+    height: 234px;
+    background: #fff;
+    margin: 0 0 13px 11px;
+    vertical-align: top;
+    &:first-child, &:nth-child(5n+1){
+      margin: 0 0 0 0;
+    }
+    a{
+      text-decoration: none;
+      img{
+        width: 172px;
+        height: 174px;
+      }
+      div.coworker-meta{
+        padding: 0 10px;
+        font-size: 10px;
+        color: #000;
+        span.coworker-firstname{
+          display: block;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 13px;
+        }
+        span.coworker-lastname{
+          text-transform: uppercase;
+          display: block;
+          font-weight: bold;
+          font-size: 13px;
+          line-height: 18px;
+        }
+        span.coworker-job{
+          display: block;
+          font-size: 12px;
+          line-height: 18px;
+          color: #7e7e7e;
+        }
+      }
+      .coworker-rollover{
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 172px;
+        height: 234px;
+        line-height:234px;
+        background: #88ba2d;
+        text-align: center;
+        color: #fff;
+        padding: 8px;
+        font-style: italic;
+        font-weight: bold;
+        .picto{
+          width: 60px;
+          height: 50px;
+          position: absolute;
+          top: 8px;
+          left: 56px;
+        }
+        .citation{
+          line-height: 22px;
+          font-size: 17px;
+          max-height: 110px;
+          overflow: hidden;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .desc{
+          display: block;
+          line-height: 13px;
+          font-size: 11px;
+        }
+      }
+      &:hover{
+        img, div.coworker-meta{
+          display: none;
+        }
+        .picto,
+        .coworker-rollover{
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+

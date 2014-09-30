@@ -2,7 +2,7 @@
 
 The theme for the website [atelier-medias.org](http://www.atelier-medias.org/).
 
-This code is under GPLv2.
+This code is under GPLv3.
 
 
 ## TODO
