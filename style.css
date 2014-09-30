@@ -371,12 +371,12 @@ header:after {
 
 .menu > ul > .menu-item:hover > .sub-menu,
 .menu > ul > .current-menu-item > .sub-menu,
-.menu > ul > .current_page_item > .sub-menu {
+.menu > ul > .current-menu-ancestor > .sub-menu {
   display: block;
 }
 .menu > ul > .menu-item:hover > a:before,
 .menu > ul > .current-menu-item > a:before,
-.menu > ul > .current_page_item > a:before {
+.menu > ul > .current-menu-ancestor > a:before {
   width: 0;
   height: 0;
   font-size: 0;

@@ -22,8 +22,8 @@
 }
 .menu > ul {
   > .menu-item:hover,
-  > .current-menu-item, 
-  > .current_page_item {
+  > .current-menu-item,
+  > .current-menu-ancestor {
     > .sub-menu {
       display: block;
     }
