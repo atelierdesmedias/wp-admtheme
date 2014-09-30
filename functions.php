@@ -39,6 +39,7 @@ add_image_size( 'coworker-list-item', 172, 174, true );
 add_image_size( 'blog-list', 220, 200, true );
 add_image_size( 'coworker-banner', 690, 200, array( 'center', 'center' ) );
 
+
 /**
  * This enables post formats. If you use this, make sure to delete any that you aren't going to use.
  */
