@@ -231,7 +231,7 @@ p {
 
 h1,
 h2 {
-  color: #7eac28;
+  color: #7EAC28;
   font-size: 2em;
   font-weight: normal;
   text-transform: uppercase;
@@ -257,7 +257,7 @@ a {
   color: #498808;
 }
 a:hover, a:active, a:focus {
-  color: #7eac28;
+  color: #7EAC28;
 }
 
 body {
@@ -336,7 +336,7 @@ header:after {
 
 .entry-title {
   padding: 10px 20px;
-  background: #7eac28;
+  background: #7EAC28;
   color: white;
 }
 
@@ -382,7 +382,7 @@ header:after {
   font-size: 0;
   content: "";
   border: 5px solid transparent;
-  border-bottom: 5px solid #7eac28;
+  border-bottom: 5px solid #7EAC28;
   border-top: 0;
   position: absolute;
   left: 50%;
@@ -401,7 +401,7 @@ header:after {
   position: absolute;
   width: 100%;
   padding: 0.5em;
-  background: #7eac28;
+  background: #7EAC28;
   color: white;
   line-height: 1;
 }
@@ -573,7 +573,7 @@ header:after {
   margin-left: -20px;
   margin-top: -10px;
   float: left;
-  background: #7eac28 url("images/iconeEventSmall.png") no-repeat center center;
+  background: #7EAC28 url("images/iconeEventSmall.png") no-repeat center center;
 }
 .calendar-single-inner .calendar-date {
   width: 60%;
@@ -630,7 +630,7 @@ header:after {
 .coworker-title {
   padding: 10px;
   margin-bottom: 20px;
-  background: #7eac28;
+  background: #7EAC28;
   color: white;
   line-height: 1.3;
 }
@@ -699,6 +699,128 @@ header:after {
 
 .coworker-description h2:first-child {
   margin-top: 0;
+}
+
+#coworkers-list-container {
+  padding: 32px 0;
+}
+
+#coworkers-filterlist {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+#coworkers-filterlist .coworkers-filterlist-item {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 11px;
+  color: #7E7E7E;
+  margin: 0 2px 6px 0;
+}
+#coworkers-filterlist .coworkers-filterlist-item a {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 11px;
+  color: #7E7E7E;
+  text-decoration: none;
+  padding: 4px 11px 4px;
+  background: #fff;
+}
+#coworkers-filterlist .coworkers-filterlist-item a.active {
+  color: #fff;
+  background: #88BA30;
+}
+
+#coworkers-list {
+  margin: 18px 0 0 0;
+  display: block;
+  padding: 0;
+}
+#coworkers-list .coworkers-list-item {
+  position: relative;
+  list-style: none;
+  display: inline-block;
+  width: 172px;
+  height: 234px;
+  background: #fff;
+  margin: 0 0 13px 11px;
+  vertical-align: top;
+}
+#coworkers-list .coworkers-list-item:first-child, #coworkers-list .coworkers-list-item:nth-child(5n+1) {
+  margin: 0 0 0 0;
+}
+#coworkers-list .coworkers-list-item a {
+  text-decoration: none;
+}
+#coworkers-list .coworkers-list-item a img {
+  width: 172px;
+  height: 174px;
+}
+#coworkers-list .coworkers-list-item a div.coworker-meta {
+  padding: 0 10px;
+  font-size: 10px;
+  color: #000;
+}
+#coworkers-list .coworkers-list-item a div.coworker-meta span.coworker-firstname {
+  display: block;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 13px;
+}
+#coworkers-list .coworkers-list-item a div.coworker-meta span.coworker-lastname {
+  text-transform: uppercase;
+  display: block;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 18px;
+}
+#coworkers-list .coworkers-list-item a div.coworker-meta span.coworker-job {
+  display: block;
+  font-size: 12px;
+  line-height: 18px;
+  color: #7e7e7e;
+}
+#coworkers-list .coworkers-list-item a .coworker-rollover {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 172px;
+  height: 234px;
+  line-height: 234px;
+  background: #88ba2d;
+  text-align: center;
+  color: #fff;
+  padding: 8px;
+  font-style: italic;
+  font-weight: bold;
+}
+#coworkers-list .coworkers-list-item a .coworker-rollover .picto {
+  width: 60px;
+  height: 50px;
+  position: absolute;
+  top: 8px;
+  left: 56px;
+}
+#coworkers-list .coworkers-list-item a .coworker-rollover .citation {
+  line-height: 22px;
+  font-size: 17px;
+  max-height: 110px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+}
+#coworkers-list .coworkers-list-item a .coworker-rollover .desc {
+  display: block;
+  line-height: 13px;
+  font-size: 11px;
+}
+#coworkers-list .coworkers-list-item a:hover img, #coworkers-list .coworkers-list-item a:hover div.coworker-meta {
+  display: none;
+}
+#coworkers-list .coworkers-list-item a:hover .picto,
+#coworkers-list .coworkers-list-item a:hover .coworker-rollover {
+  display: inline-block;
 }
 
 footer {
@@ -784,7 +906,7 @@ footer {
 
 #home_text {
   padding: 10px 30px;
-  background-color: #a8aaa8;
+  background-color: #A8AAA8;
 }
 #home_text h1, #home_text p {
   color: white;
@@ -813,7 +935,7 @@ footer {
 
 .blog article .author a {
   text-decoration: none;
-  color: #7eac28;
+  color: #7EAC28;
 }
 
 .blog ul.post-categories {
@@ -824,7 +946,7 @@ footer {
 
 .blog ul.post-categories li {
   display: inline-block;
-  background-color: #7eac28;
+  background-color: #7EAC28;
   padding: 3px;
 }
 

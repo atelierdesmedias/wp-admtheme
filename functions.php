@@ -33,8 +33,9 @@ add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' );
 
 /**
- * Image sizes for the ADM theme
+ * Custom images formats def
  */
+add_image_size( 'coworker-list-item', 172, 174, true );
 add_image_size( 'blog-list', 220, 200, true );
 add_image_size( 'coworker-banner', 690, 200, array( 'center', 'center' ) );
 
@@ -260,6 +261,7 @@ if( !function_exists('async_google_analytics'))  {
 			})(document, 'script');
 		</script>
 	<?php }
-}*/ 
+}*/
+
 
 ?>
