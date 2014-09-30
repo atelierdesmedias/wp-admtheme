@@ -820,3 +820,17 @@ header:after {
   text-decoration: none;
   font-weight: bolder;
 }
+.blog .nav-single {
+  padding-bottom: 30px;
+}
+.blog .nav-single .nav-previous, .blog .nav-single .nav-next {
+  background-color: #7EAC28;
+  padding: 3px 12px;
+}
+.blog .nav-single .nav-previous a, .blog .nav-single .nav-next a {
+  color: white;
+  text-decoration: none;
+}
+.blog .nav-single .nav-next {
+  float: right;
+}

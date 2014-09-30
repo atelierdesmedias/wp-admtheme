@@ -58,5 +58,20 @@
       }
     }
   }
+
+  .nav-single {
+    padding-bottom: 30px;
+    .nav-previous, .nav-next {
+      background-color: $color-green-light;
+      padding: 3px 12px;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+    .nav-next {
+      float: right;
+    }
+  }
 }
 
