@@ -437,22 +437,18 @@ header:after {
   margin: 0;
 }
 .calendar-events-list .main-calendar .eme_events_list {
-  -moz-column-count: 3;
-  -moz-column-gap: 0;
-  -webkit-column-count: 3;
-  -webkit-column-gap: 0;
-  column-count: 3;
-  column-gap: 0;
+  list-style-type: none;
   padding: 0;
   margin: 0;
 }
 .calendar-events-list .main-calendar .eme_events_list li {
-  text-align: center;
-  width: 220px;
+  display: inline-block;
+  width: 31%;
   height: 255px;
-  background-color: #fff;
   padding: 0 0 10px 0;
-  margin: 0;
+  margin: 0 2% 0 0;
+  background-color: #fff;
+  text-align: center;
 }
 .calendar-events-list .sidebar-calendar {
   width: 25%;
