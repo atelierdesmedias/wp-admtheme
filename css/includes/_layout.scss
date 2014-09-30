@@ -2,43 +2,9 @@
 @import "_variables";
 
 
-/* ADM custom general styles */
 body {
   background: #EDECE4;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-
-  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #0F0F0F;
-  line-height: 1.5;
 }
-* {
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
-}
-p {
-  margin-top: 1.5em;
-}
-h1,
-h2 {
-  color: $color-green-light;
-  font-family: "Arial Narrow", Arial, sans-serif;
-  font-size: 2em;
-  font-weight: normal;
-  text-transform: uppercase;
-  > a {
-    color: inherit;
-    text-decoration: none;
-  }
-  > a:hover {
-    text-decoration: underline;
-  }
-}
-h2 {
-  font-size: 1.8em;
-}
-
 
 /* ADM layout style */
 .container {
@@ -98,7 +64,7 @@ header {
 .entry-title {
   padding: 10px 20px;
 
-  background: $color-green-light;
+  background: $color-green-base;
   color: white;
 }
 .entry-content {

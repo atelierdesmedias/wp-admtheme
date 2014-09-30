@@ -36,6 +36,7 @@ add_theme_support( 'post-thumbnails' );
  * Image sizes for the ADM theme
  */
 add_image_size( 'blog-list', 220, 200, true );
+add_image_size( 'coworker-banner', 690, 200, array( 'center', 'center' ) );
 
 
 /**
