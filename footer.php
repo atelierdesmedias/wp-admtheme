@@ -7,10 +7,10 @@
 	<footer role="contentinfo">
 			<div class="widget-area">
 			<?php if ( is_active_sidebar( 'footer-widget-area' ) ){
-				dynamic_sidebar( 'footer-widget-area' );					
+				dynamic_sidebar( 'footer-widget-area' );
 			}?>
 			</div>
-		
+
 			<div class="copyright" style=" background-color:white;">
 			<table>
    <tr>
