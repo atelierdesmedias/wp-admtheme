@@ -1,11 +1,21 @@
-/* Colors */
+// COLORS
 $color-gray-lighter: #A8AAA8;
 $color-gray-light: #878180;
 $color-gray-dark: #464546;
-$color-green-light: #7EAC28;
-$color-grey-dark: #545353;
-$color-blue: #58C2E1;
-$color-dark-blue: #388fa9;
-$color-green: #88BA30;
-$color-dark-green: #498808;
-$color-orange : #EF8741;
+
+$color-green-light: #88BA30;
+$color-green-base: #7EAC28;
+$color-green-dark: #498808;
+
+$color-blue-base: #58C2E1;
+$color-blue-dark: #388fa9;
+
+$color-orange-base: #EF8741;
+
+
+// MEDIA QUERIES
+$mq-to-large: unquote("(max-width: 939px)");
+$mq-from-large: unquote("(min-width: 940px)");
+
+$mq-to-2cols: unquote("(max-width: 599px)");
+$mq-from-2cols: unquote("(min-width: 600px)");

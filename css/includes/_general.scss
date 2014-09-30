@@ -1,0 +1,11 @@
+@import "_mixins";
+@import "_variables";
+
+body {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+* {
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}

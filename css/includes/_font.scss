@@ -1,0 +1,40 @@
+@import "_mixins";
+@import "_variables";
+
+body {
+  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #0F0F0F;
+  line-height: 1.5;
+}
+
+p {
+  margin-top: 1.5em;
+}
+
+h1,
+h2 {
+  color: $color-green-base;
+  font-size: 2em;
+  font-weight: normal;
+  text-transform: uppercase;
+  > a {
+    color: inherit;
+    text-decoration: none;
+    @include on-event {
+      text-decoration: underline;
+    }
+  }
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+a {
+  text-decoration: underline;
+  color: $color-green-dark;
+  @include on-event {
+    color: $color-green-base;
+  }
+}

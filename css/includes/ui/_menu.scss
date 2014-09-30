@@ -17,23 +17,18 @@
   position: relative;
   border-bottom: 5px transparent solid;
 
-  color: $color-grey-dark;
+  color: $color-gray-dark;
   text-decoration: none;
-}
-.menu a:hover,
-.menu a:focus,
-.menu a:active {
-  text-decoration: underline;
 }
 .menu > ul {
   > .menu-item:hover,
-  > .current-menu-item, 
-  > .current-page_ancestor {
+  > .current-menu-item,
+  > .current-menu-ancestor {
     > .sub-menu {
       display: block;
     }
     > a:before {
-      @include arrow(5px, 10px, up, $color-green-light);
+      @include arrow(5px, 10px, up, $color-green-base);
       position: absolute;
       left: 50%;
       bottom: -5px;
@@ -48,7 +43,6 @@
 }
 
 
-
 /* Main menu level 2 */
 .menu .sub-menu {
   display: none;
@@ -56,7 +50,7 @@
   width: 100%;
   padding: 0.5em;
 
-  background: $color-green-light;
+  background: $color-green-base;
 
   color: white;
   line-height: 1;

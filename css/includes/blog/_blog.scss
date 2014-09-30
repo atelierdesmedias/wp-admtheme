@@ -1,0 +1,47 @@
+@import "../_mixins";
+@import "../_variables";
+
+.blog article {
+  background: white;
+  padding: 5px 20px;
+}
+
+.blog article h2:first-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.blog article + article {
+  margin-top: 10px;
+}
+
+.blog article .published {
+  color: $color-gray-light;
+}
+
+.blog article .author a {
+  text-decoration: none;
+  color: $color-green-base;
+}
+
+.blog ul.post-categories {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.blog ul.post-categories li {
+  display: inline-block;
+  background-color: $color-green-base;
+  padding: 3px;
+}
+
+.blog ul.post-categories li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.blog ul.post-categories li a:hover {
+
+}

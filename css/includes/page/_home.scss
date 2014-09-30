@@ -16,6 +16,9 @@
     display: table-cell;
     vertical-align: top;
     width: 100%;
+    @media #{$mq-to-2cols} {
+      display: block;
+    }
 }
 
 #home_map_container {
