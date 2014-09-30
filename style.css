@@ -496,23 +496,23 @@ header:after {
 }
 
 /* Colors */
-#home-coworkers {
-  padding-top: 32px;
+#coworkers-list-container {
+  padding: 32px 0;
 }
 
-#home-coworkers-filterlist {
+#coworkers-filterlist {
   display: block;
   margin: 0;
   padding: 0;
 }
-#home-coworkers-filterlist .home-coworkers-filterlist-item {
+#coworkers-filterlist .coworkers-filterlist-item {
   display: inline-block;
   vertical-align: top;
   font-size: 11px;
   color: #7E7E7E;
   margin: 0 2px 6px 0;
 }
-#home-coworkers-filterlist .home-coworkers-filterlist-item a {
+#coworkers-filterlist .coworkers-filterlist-item a {
   display: inline-block;
   vertical-align: top;
   font-size: 11px;
@@ -521,13 +521,18 @@ header:after {
   padding: 4px 11px 4px;
   background: #fff;
 }
+#coworkers-filterlist .coworkers-filterlist-item a.active {
+  color: #fff;
+  background: #88BA30;
+}
 
-#home-coworkers-list {
+#coworkers-list {
   margin: 18px 0 0 0;
   display: block;
   padding: 0;
 }
-#home-coworkers-list .home-coworkers-list-item {
+#coworkers-list .coworkers-list-item {
+  position: relative;
   list-style: none;
   display: inline-block;
   width: 172px;
@@ -536,44 +541,48 @@ header:after {
   margin: 0 0 13px 11px;
   vertical-align: top;
 }
-#home-coworkers-list .home-coworkers-list-item:first-child, #home-coworkers-list .home-coworkers-list-item:nth-child(6n) {
+#coworkers-list .coworkers-list-item:first-child, #coworkers-list .coworkers-list-item:nth-child(5n+1) {
   margin: 0 0 0 0;
 }
-#home-coworkers-list .home-coworkers-list-item a {
+#coworkers-list .coworkers-list-item a {
   text-decoration: none;
 }
-#home-coworkers-list .home-coworkers-list-item a img {
+#coworkers-list .coworkers-list-item a img {
   width: 172px;
   height: 174px;
 }
-#home-coworkers-list .home-coworkers-list-item a div.coworker-meta {
+#coworkers-list .coworkers-list-item a div.coworker-meta {
   padding: 0 10px;
   font-size: 10px;
   color: #000;
 }
-#home-coworkers-list .home-coworkers-list-item a div.coworker-meta span.coworker-firstname {
+#coworkers-list .coworkers-list-item a div.coworker-meta span.coworker-firstname {
   display: block;
   font-weight: bold;
   font-size: 12px;
   line-height: 13px;
 }
-#home-coworkers-list .home-coworkers-list-item a div.coworker-meta span.coworker-lastname {
+#coworkers-list .coworkers-list-item a div.coworker-meta span.coworker-lastname {
   text-transform: uppercase;
   display: block;
   font-weight: bold;
   font-size: 13px;
   line-height: 18px;
 }
-#home-coworkers-list .home-coworkers-list-item a div.coworker-meta span.coworker-job {
+#coworkers-list .coworkers-list-item a div.coworker-meta span.coworker-job {
   display: block;
   font-size: 12px;
   line-height: 18px;
   color: #7e7e7e;
 }
-#home-coworkers-list .home-coworkers-list-item a .coworker-rollover {
+#coworkers-list .coworkers-list-item a .coworker-rollover {
   display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 172px;
   height: 234px;
+  line-height: 234px;
   background: #88ba2d;
   text-align: center;
   color: #fff;
@@ -581,29 +590,32 @@ header:after {
   font-style: italic;
   font-weight: bold;
 }
-#home-coworkers-list .home-coworkers-list-item a:hover img, #home-coworkers-list .home-coworkers-list-item a:hover div.coworker-meta {
-  display: none;
-}
-#home-coworkers-list .home-coworkers-list-item a:hover .coworker-rollover {
-  display: block;
-}
-#home-coworkers-list .home-coworkers-list-item a:hover .coworker-rollover .picto {
-  display: inline-block;
+#coworkers-list .coworkers-list-item a .coworker-rollover .picto {
   width: 60px;
   height: 50px;
-  opacity: 0.2;
-  margin-bottom: -4px;
+  position: absolute;
+  top: 8px;
+  left: 56px;
 }
-#home-coworkers-list .home-coworkers-list-item a:hover .coworker-rollover .citation {
-  display: block;
+#coworkers-list .coworkers-list-item a .coworker-rollover .citation {
   line-height: 22px;
   font-size: 17px;
-  margin: 0 0 20px 0;
+  max-height: 110px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
 }
-#home-coworkers-list .home-coworkers-list-item a:hover .coworker-rollover .desc {
+#coworkers-list .coworkers-list-item a .coworker-rollover .desc {
   display: block;
   line-height: 13px;
   font-size: 11px;
+}
+#coworkers-list .coworkers-list-item a:hover img, #coworkers-list .coworkers-list-item a:hover div.coworker-meta {
+  display: none;
+}
+#coworkers-list .coworkers-list-item a:hover .picto,
+#coworkers-list .coworkers-list-item a:hover .coworker-rollover {
+  display: inline-block;
 }
 
 /* Colors */

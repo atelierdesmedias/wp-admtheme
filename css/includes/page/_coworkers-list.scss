@@ -1,19 +1,19 @@
 @import "../_mixins";
 @import "../_variables";
 
-// #home-coworkers
+// #coworkers-list-container
 // -----------------------------
-#home-coworkers{
-  padding-top: 32px;
+#coworkers-list-container{
+  padding: 32px 0;
 }
 
-// #home-coworkers-filterlist
+// #coworkers-filterlist
 // -----------------------------
-#home-coworkers-filterlist{
+#coworkers-filterlist{
   display: block;
   margin: 0;
   padding: 0;
-  .home-coworkers-filterlist-item{
+  .coworkers-filterlist-item{
     display: inline-block;
     vertical-align: top;
     font-size: 11px;
@@ -27,17 +27,22 @@
       text-decoration: none;
       padding: 4px 11px 4px;
       background: #fff;
+      &.active{
+        color: #fff;
+        background: #88BA30;
+      }
     }
   }
 }
 
-// #home-coworkers-list
+// #coworkers-list
 // -----------------------------
-#home-coworkers-list{
+#coworkers-list{
   margin: 18px 0 0 0;
   display: block;
   padding: 0;
-  .home-coworkers-list-item{
+  .coworkers-list-item{
+    position: relative;
     list-style: none;
     display: inline-block;
     width: 172px;
@@ -45,7 +50,7 @@
     background: #fff;
     margin: 0 0 13px 11px;
     vertical-align: top;
-    &:first-child, &:nth-child(6n){
+    &:first-child, &:nth-child(5n+1){
       margin: 0 0 0 0;
     }
     a{
@@ -80,39 +85,46 @@
       }
       .coworker-rollover{
         display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 172px;
         height: 234px;
+        line-height:234px;
         background: #88ba2d;
         text-align: center;
         color: #fff;
         padding: 8px;
         font-style: italic;
         font-weight: bold;
+        .picto{
+          width: 60px;
+          height: 50px;
+          position: absolute;
+          top: 8px;
+          left: 56px;
+        }
+        .citation{
+          line-height: 22px;
+          font-size: 17px;
+          max-height: 110px;
+          overflow: hidden;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .desc{
+          display: block;
+          line-height: 13px;
+          font-size: 11px;
+        }
       }
       &:hover{
         img, div.coworker-meta{
           display: none;
         }
+        .picto,
         .coworker-rollover{
-          display: block;
-          .picto{
-            display: inline-block;
-            width: 60px;
-            height: 50px;
-            opacity: 0.2;
-            margin-bottom: -4px
-          }
-          .citation{
-            display: block;
-            line-height: 22px;
-            font-size: 17px;
-            margin: 0 0 20px 0;
-          }
-          .desc{
-            display: block;
-            line-height: 13px;
-            font-size: 11px;
-          }
+          display: inline-block;
         }
       }
     }

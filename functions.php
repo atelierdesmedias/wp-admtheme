@@ -32,6 +32,10 @@ add_theme_support( 'automatic-feed-links' );
  */
 add_theme_support( 'post-thumbnails' );
 
+/**
+ * Custom images formats def
+ */
+add_image_size( 'coworker-list-item', 172, 174, true );
 
 /**
  * This enables post formats. If you use this, make sure to delete any that you aren't going to use.
@@ -254,6 +258,7 @@ if( !function_exists('async_google_analytics'))  {
 			})(document, 'script');
 		</script>
 	<?php }
-}*/ 
+}*/
+
 
 ?>
