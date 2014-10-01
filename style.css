@@ -218,6 +218,14 @@ body {
   box-sizing: inherit;
 }
 
+h3 {
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.4em;
+  color: #464546;
+}
+
 body {
   font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;

@@ -9,3 +9,11 @@ body {
   -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
+
+h3 {
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.4em;
+  color: $color-gray-dark;
+}
