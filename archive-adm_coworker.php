@@ -82,6 +82,7 @@ get_header(); ?>
                 <?php
                 endwhile;
             }
+            wp_reset_postdata();
             ?>
         </ul>
     </section>
