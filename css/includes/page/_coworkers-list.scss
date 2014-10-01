@@ -50,9 +50,6 @@
     background: #fff;
     margin: 0 0 13px 11px;
     vertical-align: top;
-    &:first-child, &:nth-child(5n+1){
-      margin: 0 0 0 0;
-    }
     a{
       text-decoration: none;
       img{
@@ -126,6 +123,55 @@
         .coworker-rollover{
           display: inline-block;
         }
+      }
+    }
+  }
+}
+
+
+
+
+@media screen and (max-width: 348px) {
+  #coworkers-list{
+    .coworkers-list-item{
+        margin: 0 0 0 0;
+    }
+  }
+}
+
+@media screen and (min-width: 349px) and (max-width: 515px) {
+  #coworkers-list{
+    .coworkers-list-item{
+      &:first-child, &:nth-child(2n+1){
+        margin: 0 0 0 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 516px) and (max-width: 672px) {
+  #coworkers-list{
+    .coworkers-list-item{
+      &:first-child, &:nth-child(3n+1){
+        margin: 0 0 0 0;
+      }
+    }
+  }
+}
+@media screen and (min-width: 673px) and (max-width: 839px) {
+  #coworkers-list{
+    .coworkers-list-item{
+      &:first-child, &:nth-child(4n+1){
+        margin: 0 0 0 0;
+      }
+    }
+  }
+}
+@media screen and (min-width: 840px) {
+  #coworkers-list{
+    .coworkers-list-item{
+      &:first-child, &:nth-child(5n+1){
+        margin: 0 0 0 0;
       }
     }
   }
