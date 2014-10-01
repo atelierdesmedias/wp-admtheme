@@ -50,8 +50,12 @@ get_header(); ?>
     </article><!-- #post-<?php the_ID(); ?> -->
 
     <nav class="nav-single">
-        <span class="nav-previous"><?php previous_post_link('%link', __('Article précédent', 'themename')); ?></span>
-        <span class="nav-next"><?php next_post_link('%link', __('Article suivant', 'themename')); ?></span>
+        <?php if (get_adjacent_post(false, '', true)): // if there are older posts ?>
+            <span class="nav-previous"><?php previous_post_link('%link', __('Article précédent', 'themename')); ?></span>
+        <?php endif; ?>
+        <?php if (get_adjacent_post(false, '', false)): // if there are newer posts ?>
+            <span class="nav-next"><?php next_post_link('%link', __('Article suivant', 'themename')); ?></span>
+        <?php endif; ?>
     </nav><!-- #nav-single -->
 
   </div> <!-- blog -->
