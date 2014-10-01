@@ -9,8 +9,6 @@ get_header(); ?>
 
 <?php the_post(); ?>
 
-    <img id="home_picture" class="content-bandeauImage" src="<?php echo get_template_directory_uri(); ?>/images/cdcicdff.gif"/>
-
     <section id="coworkers-list-container">
         <ul id="coworkers-filterlist">
             <?php

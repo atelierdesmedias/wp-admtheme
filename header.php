@@ -27,35 +27,35 @@
 		echo ' | ' . sprintf( __( 'Page %s', 'themename' ), max( $paged, $page ) );
 
 	?></title>
-	
+
 	<!--  Mobile Viewport Fix -->
 	<meta name="viewport" content="initial-scale=1.0">
-    
+
 	<!-- Place favicon.ico and apple-touch-icon.png in the images folder -->
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
 	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png"><!--60X60-->
-	
+
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	
+
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" media="screen, projection">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700,400,600,300' rel='stylesheet' type='text/css'>
-	
+
 	<?php wp_enqueue_script("jquery"); ?>
 
 	<?php // Use this url to get your personnal build http://www.modernizr.com/download/ ?>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.custom.js"></script>
-	
+
 
 	<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	
+
 	<!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-	
+
 	<?php wp_head(); ?>
-	
+
     <script src="https://maps.googleapis.com/maps/api/js"></script>
 	</head>
 
@@ -68,8 +68,8 @@
                 </a>
             </div>
 
-			<nav class="site-menu" id="menu" role="navigation">				
-				<?php   
+			<nav class="site-menu" id="menu" role="navigation">
+				<?php
 					wp_nav_menu( array( 'container_class' => 'menu', 'theme_location' => 'primary' ) );
                 ?>
 			</nav>
@@ -78,17 +78,20 @@
 			<li class="icon-facebook"><a href="https://www.facebook.com/Coworkinglyon" title="Facebook ADM" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/iconeFB.png"></img></a></li>						
 			<li class="icon-intranet"><a href="https://intra.atelier-medias.org" title="Intranet coworkers" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/iconeWiki.png"></img></a></li>
 			</ul>
-			
-		
+
 		</header>
-		
 
 		<div class="contentWrapper">
 
-			<?php 
-			//  If it's not a page (= a blog post, archive, etc) we display the sidebar on the right side 
-			if (!(is_page())){?>
-			<section id="content" role="region" class="content mod left w70">
-			<?php } 
-			
+			<?php if (is_page()) {?>
+        <?php if (has_post_thumbnail( $post->ID ) ): ?>
+          <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+          <img id="home_picture" class="content-bandeauImage" src='<?php echo $image[0]; ?>'/>
+        <?php endif; ?>
+      <?php } ?>
+
+			<?php if (!is_page()){?>
+          <section id="content" role="region" class="content mod left w70">
+      <?php } ?>
+
 
