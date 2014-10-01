@@ -9,13 +9,12 @@
 	display: inline-block;
 	vertical-align: top;
 	width: 680px;
-	
 }
 
 
 // SIDEBAR
 // -----------------------------
-	
+
 .sidebar{
 	display: inline-block;
 	vertical-align: top;
@@ -28,17 +27,25 @@
 	h4{
 		font-size: 22px;
 		font-family: open sans;
-		line-height: 1em;
+		line-height: 1.1em;
 		margin: 20px 0 0 0;
 		text-transform: uppercase;
 		font-weight: 300;
 	}
 	h5{
-		font-size: 12px;
+		font-size: 13px;
 		font-family: open sans;
+		line-height: 1.8em;
 		font-style: italic;
 		margin: 0;
 	}
 
 }
 
+// FORMULE
+// --------------------------
+
+.formule-content .su-row .su-column {
+  background-color: white;
+  padding: 30px 10px;
+}
