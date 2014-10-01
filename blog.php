@@ -8,10 +8,6 @@
 
     <section class="blog">
 
-        <header class="content-bandeau">
-            <img class="content-bandeauImage" src="<?php echo get_template_directory_uri(); ?>/images/bandeau-blog.png"/>
-        </header>
-
         <h1 class="entry-title">
             <?php
                 $blogPage = get_page_by_path('blog');
