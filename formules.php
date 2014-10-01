@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Default Page
- * Description: A template with the sidebar on the left
+ * Template Name: Formule Page
+ * Description: A template with the special formule page
  *
  *
  */
@@ -16,7 +16,7 @@ get_header(); ?>
 						<h1 class="entry-title"><?php the_title(); ?></h1>
 					</header><!-- .entry-header -->
 
-					<div class="entry-content">
+					<div class="formule-content">
 
 						<?php the_content(); ?>
 						<?php wp_link_pages( 'before=<div class="page-link">' . __( 'Pages:', 'themename' ) . '&after=</div>' ); ?>
