@@ -45,6 +45,22 @@
 // FORMULE
 // --------------------------
 
+.su-center {
+  .su-column {
+    .su-column-inner {
+      img {
+        display: block;
+        width: 150px;
+        margin: auto;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+
 .formule-content .su-row .su-column {
   background-color: white;
   padding: 30px 10px;
