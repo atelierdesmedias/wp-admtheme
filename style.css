@@ -849,7 +849,7 @@ footer {
 .sidebar {
   display: inline-block;
   vertical-align: top;
-  background-color: #388fa9;
+  background-color: #388FA9;
   color: #ffffff;
   margin: 20px 0;
   margin-left: 10px;
@@ -942,7 +942,7 @@ footer {
 }
 .blog article .post_text .author a {
   text-decoration: none;
-  color: #7EAC28;
+  color: #88BA30;
 }
 .blog ul.post-categories {
   list-style-type: none;
@@ -951,7 +951,7 @@ footer {
 }
 .blog ul.post-categories li {
   display: inline-block;
-  background-color: #7EAC28;
+  background-color: #88BA30;
   padding: 3px;
 }
 .blog ul.post-categories li a {

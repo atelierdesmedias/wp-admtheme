@@ -74,7 +74,7 @@
 }
 
 .calendar-date {
-    color: #464546;
+    color: $color-gray-dark;
 
     .eme_events_list & {
         font-size: 1.8em;
@@ -86,7 +86,7 @@
         line-height: 50px;
         display:inline;
         text-align: left;
-        color: #464546;
+        color: $color-gray-dark;
     }
 }
 
@@ -134,7 +134,7 @@
 
 
 .calendar-single-inner {
-    width : 50%; 
+    width : 50%;
     float:left;
     padding : 0;
     margin : 0;
@@ -150,7 +150,7 @@
         margin-left:-20px;
         margin-top:-10px;
         float:left;
-        background: #7EAC28 url("images/iconeEventSmall.png") no-repeat center center;
+        background: $color-green-base url("images/iconeEventSmall.png") no-repeat center center;
     }
 
     .calendar-date {
@@ -173,19 +173,19 @@
 
 .calendar-map {
 
-    width : 50%; 
+    width : 50%;
     float:right;
     background-color: #88BA2D;
     margin-top:-10px;
     margin-right:-20px;
     margin-bottom:-25px;
-    padding: 0; 
+    padding: 0;
 
     .eme-location-map {
         width: 100%;
         height: 300px;
         margin:0;
-        padding: 0; 
+        padding: 0;
     }
 }
 
@@ -203,7 +203,7 @@
 
         font-size: .8em;
         font-weight: 100;
-        color: #464546;
+        color: $color-gray-dark;
         text-align: justify;
     }
 }

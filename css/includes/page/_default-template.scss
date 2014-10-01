@@ -9,17 +9,16 @@
 	display: inline-block;
 	vertical-align: top;
 	width: 680px;
-	
 }
 
 
 // SIDEBAR
 // -----------------------------
-	
+
 .sidebar{
 	display: inline-block;
 	vertical-align: top;
-	background-color: #388fa9;
+	background-color: $color-blue-dark;
 	color: #ffffff;
 	margin: 20px 0;
 	margin-left: 10px;
