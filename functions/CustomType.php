@@ -27,9 +27,9 @@ abstract class CustomType {
         
         $this->consolidate_fields_attribute();
         $this->consolidate_columns_attribute();
-        
-        add_action( 'init', array($this, 'add_post_type') );
+
         add_action( 'init', array($this, 'add_taxonomy') );
+        add_action( 'init', array($this, 'add_post_type') );
         add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
         add_action( 'save_post', array( $this, 'save' ) );
         add_filter( 'manage_edit-'.$this->id.'_columns', array($this, 'manage_columns') );
@@ -67,7 +67,8 @@ abstract class CustomType {
             'singular_name'     => $this->singular_name . ' Tag'
         );
         register_taxonomy( $this->taxonomy_id, $this->id, array(
-            'labels' => $labels
+            'labels' => $labels,
+            'rewrite' => array('slug' => preg_replace("/\s+/", "-", strtolower($this->name)), 'with_front' => false),
         ));
     }
 
