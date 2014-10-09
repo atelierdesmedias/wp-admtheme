@@ -882,7 +882,7 @@ header:after {
 }
 @media screen and (min-width: 778px) and (max-width: 999px) {
   #coworkers-list {
-    width: 732px;
+    width: 733px;
   }
   #coworkers-list .coworkers-list-item:first-child, #coworkers-list .coworkers-list-item:nth-child(4n+1) {
     margin: 0 0 13px 0;
@@ -898,7 +898,7 @@ header:after {
     width: 1000px;
   }
   #coworkers-list .coworkers-list-item:first-child, #coworkers-list .coworkers-list-item:nth-child(5n+1) {
-    margin: 0 0 0px 0;
+    margin: 0 0 13px 0;
   }
 }
 footer {
