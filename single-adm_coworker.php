@@ -45,7 +45,7 @@
                 <?php endif; ?>
                 <?php if ($coworker->has('emailpro')): ?>
                     <a class="coworker-email" href="mailto:<?= $coworker->get('emailpro'); ?>">
-                        <?= $coworker->get('emailpro'); ?>
+                        Envoyez-moi un mail!
                     </a>
                 <?php endif; ?>
                 <?php for ($i=1; $i<=3; $i++): ?>
