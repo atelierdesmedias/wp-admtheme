@@ -18,22 +18,9 @@
     display: inline-block;
     color: $color-gray-light;
     font-size: 11px;
-    margin: 0 2px 6px 0;
+    margin: 0 2px 1px 0;
     vertical-align: top;
-    a{
-      background: #fff;
-      color: $color-gray-light;
-      display: inline-block;
-      font-size: 11px;
-      padding: 4px 11px 4px;
-      text-decoration: none;
-      vertical-align: top;
-      &.active{
-        background: $color-green-light;
-        color: #fff;
-      }
-    }
-  }
+ }
 }
 
 // #coworkers-list
@@ -129,6 +116,20 @@
   }
 }
 
+a.coworker-tag {
+  background: #fff;
+  color: $color-gray-light;
+  display: inline-block;
+  font-size: 11px;
+  padding: 4px 11px 4px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  vertical-align: top;
+  &.active{
+    background: $color-green-light;
+    color: #fff;
+  }
+}
 
 // Reponsive coworkers grid rules
 // -----------------------------
