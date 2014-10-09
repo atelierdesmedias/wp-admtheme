@@ -7,7 +7,7 @@ class CoworkerType extends CustomType {
     protected $plugin = 'adm';
     protected $id = 'coworker';
     protected $description = 'Fiche des coworkers';
-    protected $name = 'Coworkers';
+    protected $name = 'Les coworkers';
     protected $singular_name = 'Coworker';
     protected $supports = array( 'title', 'thumbnail' );
 

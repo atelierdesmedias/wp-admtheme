@@ -51,7 +51,7 @@ abstract class CustomType {
                 'description' => $this->description,
                 'public' => true,
                 'supports' => $this->supports,
-                'rewrite' => array('slug' => strtolower($this->name), 'with_front' => false),
+                'rewrite' => array('slug' => preg_replace("/\s+/", "-", strtolower($this->name)), 'with_front' => false),
                 'capability_type' => 'page',
                 'has_archive' => true,
             )
