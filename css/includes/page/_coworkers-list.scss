@@ -13,23 +13,24 @@
   display: block;
   margin: 0;
   padding: 0;
+  text-align: center;
   .coworkers-filterlist-item{
     display: inline-block;
-    vertical-align: top;
+    color: $color-gray-light;
     font-size: 11px;
-    color: #7E7E7E;
     margin: 0 2px 6px 0;
+    vertical-align: top;
     a{
-      display: inline-block;
-      vertical-align: top;
-      font-size: 11px;
-      color: #7E7E7E;
-      text-decoration: none;
-      padding: 4px 11px 4px;
       background: #fff;
+      color: $color-gray-light;
+      display: inline-block;
+      font-size: 11px;
+      padding: 4px 11px 4px;
+      text-decoration: none;
+      vertical-align: top;
       &.active{
+        background: $color-green-light;
         color: #fff;
-        background: #88BA30;
       }
     }
   }
@@ -38,31 +39,28 @@
 // #coworkers-list
 // -----------------------------
 #coworkers-list{
-  margin: 18px 0 0 0;
   display: block;
+  margin: 18px auto 0;
   padding: 0;
   .coworkers-list-item{
-    position: relative;
-    list-style: none;
-    display: inline-block;
-    width: 172px;
-    height: 234px;
     background: #fff;
+    display: inline-block;
+    height: 234px;
+    list-style: none;
     margin: 0 0 13px 11px;
+    position: relative;
     vertical-align: top;
-    &:first-child, &:nth-child(5n+1){
-      margin: 0 0 0 0;
-    }
+    width: 172px;
     a{
       text-decoration: none;
       img{
-        width: 172px;
         height: 174px;
+        width: 172px;
       }
       div.coworker-meta{
-        padding: 0 10px;
-        font-size: 10px;
         color: #000;
+        font-size: 10px;
+        padding: 0 10px;
         span.coworker-firstname{
           display: block;
           font-weight: bold;
@@ -70,46 +68,46 @@
           line-height: 13px;
         }
         span.coworker-lastname{
-          text-transform: uppercase;
           display: block;
-          font-weight: bold;
-          font-size: 13px;
           line-height: 18px;
+          font-size: 13px;
+          font-weight: bold;
+          text-transform: uppercase;
         }
         span.coworker-job{
           display: block;
+          color: $color-gray-light;
           font-size: 12px;
           line-height: 18px;
-          color: #7e7e7e;
         }
       }
       .coworker-rollover{
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 172px;
-        height: 234px;
-        line-height:234px;
-        background: #88ba2d;
-        text-align: center;
+        background: $color-green-light;
         color: #fff;
-        padding: 8px;
+        display: none;
         font-style: italic;
         font-weight: bold;
+        height: 234px;
+        left: 0;
+        line-height:234px;
+        padding: 8px;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 172px;
         .picto{
-          width: 60px;
           height: 50px;
+          left: 56px;
           position: absolute;
           top: 8px;
-          left: 56px;
+          width: 60px;
         }
         .citation{
-          line-height: 22px;
+          display: inline-block;
           font-size: 17px;
+          line-height: 22px;
           max-height: 110px;
           overflow: hidden;
-          display: inline-block;
           vertical-align: middle;
         }
         .desc{
@@ -126,6 +124,104 @@
         .coworker-rollover{
           display: inline-block;
         }
+      }
+    }
+  }
+}
+
+
+// Reponsive coworkers grid rules
+// -----------------------------
+
+// - 1 col
+@media screen and (max-width: 393px) {
+  #coworkers-list{
+    width: 172px;
+    .coworkers-list-item{
+        margin: 0 0 13px 0;
+    }
+  }
+  #coworkers-list.home-coworkers-list{
+    .coworkers-list-item:nth-child(3),
+    .coworkers-list-item:nth-child(4),
+    .coworkers-list-item:nth-child(5),
+    .coworkers-list-item:nth-child(6),
+    .coworkers-list-item:nth-child(7),
+    .coworkers-list-item:nth-child(8),
+    .coworkers-list-item:nth-child(9),
+    .coworkers-list-item:nth-child(10){
+      display: none;
+    }
+  }
+}
+
+// - 2 cols
+@media screen and (min-width: 394px) and (max-width: 591px) {
+  #coworkers-list{
+    width: 359px;
+    .coworkers-list-item{
+      &:first-child, &:nth-child(2n+1){
+        margin: 0 0 13px 0;
+      }
+    }
+  }
+  #coworkers-list.home-coworkers-list{
+    .coworkers-list-item:nth-child(5),
+    .coworkers-list-item:nth-child(6),
+    .coworkers-list-item:nth-child(7),
+    .coworkers-list-item:nth-child(8),
+    .coworkers-list-item:nth-child(9),
+    .coworkers-list-item:nth-child(10){
+      display: none;
+    }
+  }
+}
+
+// - 3 cols
+@media screen and (min-width: 592px) and (max-width: 777px) {
+  #coworkers-list{
+    width: 546px;
+    .coworkers-list-item{
+      &:first-child, &:nth-child(3n+1){
+        margin: 0 0 13px 0;
+      }
+    }
+  }
+  #coworkers-list.home-coworkers-list{
+    .coworkers-list-item:nth-child(7),
+    .coworkers-list-item:nth-child(8),
+    .coworkers-list-item:nth-child(9),
+    .coworkers-list-item:nth-child(10){
+      display: none;
+    }
+  }
+}
+
+// - 4 cols
+@media screen and (min-width: 778px) and (max-width: 999px) {
+  #coworkers-list{
+    width: 732px;
+    .coworkers-list-item{
+      &:first-child, &:nth-child(4n+1){
+        margin: 0 0 13px 0;
+      }
+    }
+  }
+  #coworkers-list.home-coworkers-list{
+    .coworkers-list-item:nth-child(9),
+    .coworkers-list-item:nth-child(10){
+      display: none;
+    }
+  }
+}
+
+// - 5 cols
+@media screen and (min-width: 1000px) {
+  #coworkers-list{
+    width: 1000px;
+    .coworkers-list-item{
+      &:first-child, &:nth-child(5n+1){
+        margin: 0 0 13px 0;
       }
     }
   }
