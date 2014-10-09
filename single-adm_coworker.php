@@ -19,9 +19,9 @@
             </div>
             <div class="coworker-tags">
                 <?php foreach ($coworker->getTags() as $tag): ?>
-                    <span class="coworker-tag">
+                  <a class="coworker-tag" href="/adm_coworker_tag/<? $tag ?>">
                         <?= $tag->name ?>
-                    </span>
+                  </a>
                 <?php endforeach; ?>
             </div>
             

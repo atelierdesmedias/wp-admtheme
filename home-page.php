@@ -37,7 +37,7 @@ get_header(); ?>
             );
             $terms = get_terms($taxonomies, $args);
             foreach ($terms as $term): ?>
-            <li class="coworkers-filterlist-item"><a href="<?= get_bloginfo('url') . '/' . $term->taxonomy . '/' . $term->slug; ?>"><?= $term->name; ?></a></li>
+            <li class="coworkers-filterlist-item"><a class="coworker-tag" href="<?= get_bloginfo('url') . '/' . $term->taxonomy . '/' . $term->slug; ?>"><?= $term->name; ?></a></li>
             <?php endforeach; ?>
         </ul>
 
