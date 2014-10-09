@@ -50,7 +50,17 @@ get_header(); ?>
                             <?php $name = explode(" ",get_the_title()); ?>
                             <span class="coworker-firstname"><?= $coworker->get('first_name'); ?></span>
                             <span class="coworker-lastname"><?= $coworker->get('last_name'); ?></span>
-                            <span class="coworker-job"><?= $coworker->get('metier'); ?></span>
+                            <?php
+                            if( strlen($coworker->get('metier')) > 20 )
+                            {
+                                $coworker_metier = substr($coworker->get('metier'), 0, 20) . ' ...';
+                            }
+                            else
+                            {
+                                $coworker_metier = $coworker->get('metier');
+                            }
+                            ?>
+                            <span class="coworker-job"><?= $coworker_metier; ?></span>
                         </div>
                         <div class="coworker-rollover">
                             <img class="picto" src="<?= get_bloginfo('template_url'); ?>/images/picto-rollover.png" alt=""/>
