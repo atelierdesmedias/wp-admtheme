@@ -56,7 +56,7 @@ get_header(); ?>
                             <?php if (has_post_thumbnail( $post->ID )): ?>
                                 <?php the_post_thumbnail('coworker-list-item'); ?>
                             <?php else: ?>
-                                <img src="<?= get_bloginfo('template_url'); ?>/images/default-coworker-<?= rand(1, 5); ?>">
+                                <img src="<?= get_bloginfo('template_url'); ?>/images/default-coworker-<?= rand(1, 5); ?>.png">
                             <?php endif; ?>
                             <div class="coworker-meta">
                                 <?php $name = explode(" ",get_the_title()); ?>
