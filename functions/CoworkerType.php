@@ -1,18 +1,16 @@
 <?php
-
 require_once(__DIR__.'/CustomType.php');
-
 class CoworkerType extends CustomType {
-
     protected $plugin = 'adm';
     protected $id = 'coworker';
     protected $description = 'Fiche des coworkers';
-    protected $name = 'Les coworkers';
+    protected $name = 'Coworkers';
     protected $singular_name = 'Coworker';
+    protected $slug = "coworkers";
+    protected $taxonomySlug = "metiers";
     protected $supports = array( 'title', 'thumbnail' );
-
     protected $fields = array(
-        'contact' => array( 
+        'contact' => array(
             'label' => 'Contact',
             'fields' => array(
                 'first_name' => 'Prénom',
@@ -30,7 +28,6 @@ class CoworkerType extends CustomType {
                 'website3' => 'Site web 3'
             )
         ),
-
         'description' => array(
             'label' => 'Description',
             'fields' => array(
@@ -41,7 +38,6 @@ class CoworkerType extends CustomType {
                 'public_enable' => 'Profil public ?'
             )
         ),
-
         'social' => array(
             'label' => 'Sur le web',
             'fields' => array(
@@ -54,7 +50,6 @@ class CoworkerType extends CustomType {
                 'GooglePlus' => 'googleplus'
             )
         ),
-
         'autres' => array(
             'label' => 'Autre informations',
             'fields' => array(
@@ -68,3 +63,4 @@ class CoworkerType extends CustomType {
         'last_name'
     );
 }
+
