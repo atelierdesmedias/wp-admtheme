@@ -26,7 +26,8 @@
     $terms = get_terms($taxonomies, $args);
     foreach ($terms as $term):
         if($term->count > 0): ?>
-            <li class="coworkers-filterlist-item "><a class="<?php if($wp_query->query_vars['adm_coworker_tag'] == $term->slug): ?>active<?php endif; ?>" href="<?= get_bloginfo('url') . '/' . 'les-coworkers' . '/' . $term->slug; ?>"><?= $term->name; ?></a></li>
+            <li class="coworkers-filterlist-item "><a class="<?php if($wp_query->query_vars['adm_coworker_tag'] == $term->slug): ?>active<?php endif; ?>" href="<?= get_bloginfo('url') . '/' . 'metiers' . '/' . $term->slug; ?>"><?= $term->name; ?></a></li>
         <?php endif;
     endforeach; ?>
 </ul>
+

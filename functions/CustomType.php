@@ -7,6 +7,8 @@ abstract class CustomType {
     protected $description;
     protected $name;
     protected $singular_name;
+    protected $slug;
+    protected $taxonomySlug;
     protected $supports = array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' );
     
     protected $fields = array();
@@ -45,13 +47,14 @@ abstract class CustomType {
             'singular_name' => $this->singular_name
         );
 
+
         register_post_type( $this->id,
             array(
                 'labels' => $labels,
                 'description' => $this->description,
                 'public' => true,
                 'supports' => $this->supports,
-                'rewrite' => array('slug' => preg_replace("/\s+/", "-", strtolower($this->name)), 'with_front' => false),
+                'rewrite' => array('slug' => $this->slug  , 'with_front' => false),
                 'capability_type' => 'page',
                 'has_archive' => true,
             )
@@ -68,7 +71,8 @@ abstract class CustomType {
         );
         register_taxonomy( $this->taxonomy_id, $this->id, array(
             'labels' => $labels,
-            'rewrite' => array('slug' => preg_replace("/\s+/", "-", strtolower($this->name)), 'with_front' => false),
+            'rewrite' => array(
+                'slug' => $this->taxonomySlug, 'with_front' => false),
         ));
     }
 
