@@ -19,6 +19,16 @@ See [website documentation](https://docs.google.com/spreadsheet/ccc?key=0AnxUXXN
 
 See [design online](https://projects.invisionapp.com/share/C6IXCXDH#/screens/11034828?maintainScrollPosition=false)
     
+## Plugins
+
+You need to install the following plugins:
+
+* EME Sync Facebook Events
+* Events Made Easy
+* Regenerate Thumbnails
+* Shortcodes Ultimate
+* WP-PageNavi
+* [XWiki ADM](https://github.com/atelierdesmedias/wp-xwiki-adm)
 
 ### Import Facebook events into the calendar 
 
