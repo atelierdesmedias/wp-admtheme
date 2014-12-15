@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 
-    <section class="blog">
+    <section id="content" role="region" class="default-content mod left w70">
 
         <h1 class="entry-title">
             <?php
@@ -21,6 +21,16 @@
 
         <?php get_template_part( 'loop', 'category' ); ?>
 
-   </section>
+    <div class="nav-single">
+            <span class="nav-previous"><?php previous_posts_link( '&laquo; Articles précédents' ); ?></span>
+            <span class="nav-next"><?php next_posts_link( 'Articles suivants &raquo;', '' ); ?></span>
+    </div>
+ </section>
+<div class="sidebar-blog">
+<?php get_sidebar( $name ); ?>
+</div>
+
+
 
 <?php get_footer(); ?>
+
