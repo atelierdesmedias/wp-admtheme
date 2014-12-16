@@ -3,7 +3,7 @@
 
 .blog {
   article {
-    display: table;
+    display: block;
     width: 100%;
     background: white;
     padding: 0px;
@@ -11,8 +11,12 @@
     min-height: 200px;
 
     .post_text, .thumbnail {
-      display: table-cell;
+      display: inline-block;
       vertical-align: top;
+      max-width: 100%;
+    }
+    img{
+      max-width:100%;
     }
 
     .post_text {
@@ -75,3 +79,10 @@
   }
 }
 
+.blog.single-article{
+  article{
+    padding: 40px;
+    max-width:100%;
+    display: block;
+  }
+}

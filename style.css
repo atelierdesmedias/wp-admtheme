@@ -1132,7 +1132,7 @@ footer {
 }
 
 .blog article {
-  display: table;
+  display: block;
   width: 100%;
   background: white;
   padding: 0px;
@@ -1140,8 +1140,12 @@ footer {
   min-height: 200px;
 }
 .blog article .post_text, .blog article .thumbnail {
-  display: table-cell;
+  display: inline-block;
   vertical-align: top;
+  max-width: 100%;
+}
+.blog article img {
+  max-width: 100%;
 }
 .blog article .post_text {
   padding: 10px 0px 0px 10px;
@@ -1188,4 +1192,10 @@ footer {
 }
 .blog .nav-single .nav-next {
   float: right;
+}
+
+.blog.single-article article {
+  padding: 40px;
+  max-width: 100%;
+  display: block;
 }
