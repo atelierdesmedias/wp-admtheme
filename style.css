@@ -669,14 +669,27 @@ header:after {
 .coworker-tags {
   margin-bottom: 20px;
 }
-
-.coworker-tag {
+.coworker-tags ul {
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.coworker-tags ul li {
+  display: inline-block;
+}
+.coworker-tags ul li .coworker-tag {
   display: inline-block;
   padding: 5px 10px;
   margin-bottom: 5px;
   background: white;
   color: #878180;
   font-size: 0.8em;
+  text-decoration: none;
+}
+.coworker-tags ul li .coworker-tag.active, .coworker-tags ul li .coworker-tag:hover {
+  background: #88BA30;
+  color: #fff;
 }
 
 .coworker-phone,
@@ -745,7 +758,7 @@ header:after {
   text-decoration: none;
   vertical-align: top;
 }
-#coworkers-filterlist .coworkers-filterlist-item a.active {
+#coworkers-filterlist .coworkers-filterlist-item a.active, #coworkers-filterlist .coworkers-filterlist-item a:hover {
   background: #88BA30;
   color: #fff;
 }
