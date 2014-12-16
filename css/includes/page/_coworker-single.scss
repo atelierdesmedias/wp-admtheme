@@ -115,6 +115,7 @@
 }
 .coworker-website {
   &:before {
+    font-size: 0.7em;
     background: $color-gray-dark url("images/contact-website.png") no-repeat center center / 23px 20px;
   }
 }
