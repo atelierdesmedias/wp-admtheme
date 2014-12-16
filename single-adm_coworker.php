@@ -73,9 +73,9 @@
                     </a>
                 <?php endif; ?>
                 <?php for ($i=1; $i<=3; $i++): ?>
-                    <?php if ($coworker->has('website1'.$i)): ?>
-                        <a class="coworker-website" href="<?= $coworker->get('website1'.$i); ?>">
-                            <?= $coworker->get('website1'.$i); ?>
+                    <?php if ($coworker->has('website' . $i)): ?>
+                        <a class="coworker-website" href="<?= $coworker->get('website' . $i); ?>">
+                            <?= $coworker->get('website' . $i); ?>
                         </a>
                     <?php endif; ?>
                 <?php endfor; ?>
