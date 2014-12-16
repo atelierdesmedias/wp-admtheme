@@ -33,4 +33,17 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 
 </body>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['var_setAccount', 'UA-22457099-1']);
+  _gaq.push(['_trackPageview']);
+  (function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/typejavascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  }parentNode)();
+</script>script
 </html>
