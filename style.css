@@ -732,10 +732,6 @@ header:after {
   background: #464546 url("images/contact-mail.png") no-repeat center center/23px 20px;
 }
 
-.coworker-website:before {
-  background: #464546 url("images/contact-website.png") no-repeat center center/16px 23px;
-}
-
 #coworker-quote-container {
   padding: 75px 12px 20px;
   margin: 15px 0;
