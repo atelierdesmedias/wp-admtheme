@@ -15,9 +15,6 @@
       vertical-align: top;
       max-width: 100%;
     }
-    img{
-      max-width:100%;
-    }
 
     .post_text {
       padding: 10px 0px 0px 10px;
@@ -50,7 +47,8 @@
     li {
       display: inline-block;
       background-color: $color-green-light;
-      padding: 3px;
+      padding: 0px 6px;
+      font-size: 0.9em;
 
       a {
         color: white;
@@ -84,5 +82,40 @@
     padding: 40px;
     max-width:100%;
     display: block;
+    img{
+      max-width:100%;
+    }
+  }
+}
+
+// .list-article
+.blog{
+  article.list-article{
+    max-width:100%;
+    display: block;
+    position: relative;
+    .thumbnail {
+      text-align: right;
+      width: 220px;
+      height: 200px;
+    }
+    .post_text{
+      width: 435px;
+      margin-right: 20px;
+      h2{
+        line-height: 20px;
+        font-size: 18px;
+        margin: 0 0 8px 0;
+      }
+      p{
+        font-size: 13px;
+        margin: 5px 0;
+      }
+    }
+    .entry-meta{
+      position: absolute;
+      bottom: 5px;
+      left: 10px;
+    }
   }
 }
