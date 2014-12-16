@@ -109,7 +109,7 @@ add_filter( 'excerpt_length', 'twentyeleven_excerpt_length' );
 if( !function_exists('twentyeleven_continue_reading_link'))  {
 
 	function twentyeleven_continue_reading_link() {
-		return ' <span class="readmore"><a title="'.get_the_title().'" href="'. esc_url( get_permalink() ) . '"><span class="icon-arrow-right-3" > </span>' . __( 'Continue reading', 'themename' ) . '</a></span>';
+		return ' <span class="readmore"><a title="'.get_the_title().'" href="'. esc_url( get_permalink() ) . '"><span class="icon-arrow-right-3" > </span>Lire la suite</a></span>';
 	}
 }
 /**

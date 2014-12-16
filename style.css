@@ -982,13 +982,14 @@ footer {
 }
 
 #footer-links {
+  font-size: 10px;
   width: 50%;
   padding-right: 7%;
   text-align: right;
 }
 
 #footer-text {
-  font-size: 14px;
+  font-size: 10px;
   color: #848484;
   line-height: 5%;
   text-align: left;
@@ -1187,3 +1188,4 @@ footer {
 .blog .nav-single .nav-next {
   float: right;
 }
+
