@@ -106,8 +106,6 @@
                         <?= $coworker->get('public_pourquoicoworking'); ?>
                     </p>
                 <?php endif; ?>
-
-                <?php var_dump($coworker); ?>
             </div>
         </div>
     </article>
