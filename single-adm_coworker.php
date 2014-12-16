@@ -14,17 +14,41 @@
                 <div class="coworker-last-name"><?= $coworker->get('last_name'); ?></div>
                 <div class="coworker-company"><?= $coworker->get('metier'); ?></div>
             </div>
-            <div class="coworker-social">
-                Facebook, Twitter, etc.
-            </div>
-            <div class="coworker-tags">
-                <?php foreach ($coworker->getTags() as $tag): ?>
-                    <span class="coworker-tag">
-                        <?= $tag->name ?>
-                    </span>
-                <?php endforeach; ?>
-            </div>
-            
+            <?php
+            $social_links = array(
+                'facebook' => $coworker->get('facebook'),
+                'twitter' => $coworker->get('twitter'),
+                'linked_in' => $coworker->get('linked_in'),
+                'viadeo' => $coworker->get('viadeo'),
+                'pinterest' => $coworker->get('pinterest'),
+                'googleplus' => $coworker->get('googleplus'),
+                'skype' => $coworker->get('skype'),
+            );
+            if (array_filter($social_links)): ?>
+                <div class="coworker-social">
+                    <ul>
+                        <?php foreach($social_links as $social_network => $social_link): ?>
+                            <?php if (!empty($social_link)): ?>
+                                <li>
+                                    <a href="<?= $social_link; ?>" title="<?= $social_network; ?>">
+                                        <img src="<?php bloginfo('template_directory'); ?>/images/social-<?= $social_network; ?>.png" alt="<?= $social_network; ?>" />
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            <?php endif; ?>
+            <?php $coworker_tags = $coworker->getTags();
+            if (array_filter($coworker_tags)): ?>
+                <div class="coworker-tags">
+                    <ul>
+                        <?php foreach ($coworker->getTags() as $tag): ?>
+                            <li><a class="coworker-tag" href="<?= get_bloginfo('url') . '/' . 'metiers' . '/' . $tag->slug; ?>"><?= $tag->name ?></a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            <?php endif; ?>
         </aside>
     
         <div class="content">
@@ -49,12 +73,18 @@
                     </a>
                 <?php endif; ?>
                 <?php for ($i=1; $i<=3; $i++): ?>
-                    <?php if ($coworker->has('website1'.$i)): ?>
-                        <a class="coworker-website" href="<?= $coworker->get('website1'.$i); ?>">
-                            <?= $coworker->get('website1'.$i); ?>
+                    <?php if ($coworker->has('website' . $i)): ?>
+                        <a class="coworker-website" href="<?= $coworker->get('website' . $i); ?>">
+                            <?= $coworker->get('website' . $i); ?>
                         </a>
                     <?php endif; ?>
                 <?php endfor; ?>
+                <?php if ($coworker->has('citation')): ?>
+                    <div id="coworker-quote-container">
+                        <img class="picto" src="<?= get_bloginfo('template_url'); ?>/images/picto-rollover.png" alt=""/>
+                        <span id="coworker-quote">"<?= $coworker->get('citation'); ?>"</span>
+                    </div>
+                <?php endif; ?>
             </aside>
     
             <div class="entry-content coworker-description">

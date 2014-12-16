@@ -76,6 +76,9 @@ get_header(); ?>
             wp_reset_postdata();
             ?>
         </ul>
+        <div id="goto-coworkers">
+            <a id="goto-coworkers-link" href="/coworkers">Voir tous les coworkers</a>
+        </div>
     </section>
 
     <div id="home_map_and_text">

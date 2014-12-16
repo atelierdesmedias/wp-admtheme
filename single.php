@@ -1,6 +1,8 @@
 <?php
 
 get_header(); ?>
+    <section id="content" role="region" class="default-content mod left w70">
+
 
 <?php if (have_posts()) while (have_posts()) : the_post(); ?>
 
@@ -15,7 +17,7 @@ get_header(); ?>
             </a>
         </h1>
 
-    <div class="blog">
+    <div class="blog single-article">
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
         <div class="post_text">
@@ -58,7 +60,11 @@ get_header(); ?>
 
 <?php endwhile; // end of the loop. ?>
 
-    </section>
+ </section>
+   
 
-<?php //get_sidebar(); ?>
+<div class="sidebar-blog">
+<?php get_sidebar( $name ); ?>
+</div>
 <?php get_footer(); ?>
+

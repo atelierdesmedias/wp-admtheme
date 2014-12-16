@@ -4,7 +4,7 @@
 
 <?php while (have_posts()) : the_post(); ?>
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
+    <article class="list-article" id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
         <div class="post_text">
           <h2><a href="<?php the_permalink(); ?>"
                  title="<?php get_the_title() ?>"
