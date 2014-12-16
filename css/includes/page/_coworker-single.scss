@@ -101,11 +101,37 @@
     background: $color-gray-dark;
   }
 }
-
 .coworker-phone {
   font-size: 1.2em;
 }
 
+
+// #coworker-quote-container
+// -----------------------------
+#coworker-quote-container{
+  padding: 75px 12px 20px;
+  margin: 15px 0;
+  text-align: center;
+  background: $color-green-light;
+  position: relative;
+  .picto{
+    height: 50px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: absolute;
+    top: 20px;
+    width: 60px;
+  }
+  #coworker-quote{
+    color: white;
+    font-style: italic;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 22px;
+    font-weight: bold;
+  }
+}
 
 // DESCRIPTION
 // -----------------------------

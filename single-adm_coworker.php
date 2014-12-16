@@ -79,6 +79,12 @@
                         </a>
                     <?php endif; ?>
                 <?php endfor; ?>
+                <?php if ($coworker->has('citation')): ?>
+                    <div id="coworker-quote-container">
+                        <img class="picto" src="<?= get_bloginfo('template_url'); ?>/images/picto-rollover.png" alt=""/>
+                        <span id="coworker-quote">"<?= $coworker->get('citation'); ?>"</span>
+                    </div>
+                <?php endif; ?>
             </aside>
     
             <div class="entry-content coworker-description">
@@ -100,6 +106,8 @@
                         <?= $coworker->get('public_pourquoicoworking'); ?>
                     </p>
                 <?php endif; ?>
+
+                <?php var_dump($coworker); ?>
             </div>
         </div>
     </article>
