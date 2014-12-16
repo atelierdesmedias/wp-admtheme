@@ -239,7 +239,7 @@ p {
 
 h1,
 h2 {
-  color: #7eac28;
+  color: #7EAC28;
   font-size: 2em;
   font-weight: normal;
   text-transform: uppercase;
@@ -265,7 +265,7 @@ a {
   color: #498808;
 }
 a:hover, a:active, a:focus {
-  color: #7eac28;
+  color: #7EAC28;
 }
 
 body {
@@ -344,7 +344,7 @@ header:after {
 
 .entry-title {
   padding: 10px 20px;
-  background: #7eac28;
+  background: #7EAC28;
   color: white;
 }
 
@@ -390,7 +390,7 @@ header:after {
   font-size: 0;
   content: "";
   border: 5px solid transparent;
-  border-bottom: 5px solid #7eac28;
+  border-bottom: 5px solid #7EAC28;
   border-top: 0;
   position: absolute;
   left: 50%;
@@ -409,7 +409,7 @@ header:after {
   position: absolute;
   width: 100%;
   padding: 0.5em;
-  background: #7eac28;
+  background: #7EAC28;
   color: white;
   line-height: 1;
 }
@@ -581,7 +581,7 @@ header:after {
   margin-left: -20px;
   margin-top: -10px;
   float: left;
-  background: #7eac28 url("images/iconeEventSmall.png") no-repeat center center;
+  background: #7EAC28 url("images/iconeEventSmall.png") no-repeat center center;
 }
 .calendar-single-inner .calendar-date {
   width: 60%;
@@ -638,7 +638,7 @@ header:after {
 .coworker-title {
   padding: 10px;
   margin-bottom: 20px;
-  background: #7eac28;
+  background: #7EAC28;
   color: white;
   line-height: 1.3;
 }
@@ -655,18 +655,41 @@ header:after {
 .coworker-social {
   margin-bottom: 20px;
 }
+.coworker-social ul {
+  padding: 0;
+  list-style: none;
+}
+.coworker-social ul li {
+  display: inline-block;
+}
+.coworker-social ul li a {
+  display: block;
+}
 
 .coworker-tags {
   margin-bottom: 20px;
 }
-
-.coworker-tag {
+.coworker-tags ul {
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.coworker-tags ul li {
+  display: inline-block;
+}
+.coworker-tags ul li .coworker-tag {
   display: inline-block;
   padding: 5px 10px;
   margin-bottom: 5px;
   background: white;
   color: #878180;
   font-size: 0.8em;
+  text-decoration: none;
+}
+.coworker-tags ul li .coworker-tag.active, .coworker-tags ul li .coworker-tag:hover {
+  background: #88BA30;
+  color: #fff;
 }
 
 .coworker-phone,
@@ -681,6 +704,12 @@ header:after {
   text-decoration: none;
   position: relative;
 }
+.coworker-phone:hover,
+.coworker-email:hover,
+.coworker-website:hover {
+  color: white;
+  background: #939393;
+}
 .coworker-phone:before,
 .coworker-email:before,
 .coworker-website:before {
@@ -690,11 +719,49 @@ header:after {
   bottom: 0;
   left: 0;
   width: 50px;
-  background: #464546;
 }
 
 .coworker-phone {
   font-size: 1.2em;
+}
+.coworker-phone:before {
+  background: #464546 url("images/contact-tel.png") no-repeat center center/16px 23px;
+}
+
+.coworker-email:before {
+  background: #464546 url("images/contact-mail.png") no-repeat center center/23px 20px;
+}
+
+.coworker-website {
+  font-size: 0.7em;
+}
+.coworker-website:before {
+  background: #464546 url("images/contact-website.png") no-repeat center center/23px 20px;
+}
+
+#coworker-quote-container {
+  padding: 75px 12px 20px;
+  margin: 15px 0;
+  text-align: center;
+  background: #88BA30;
+  position: relative;
+}
+#coworker-quote-container .picto {
+  height: 50px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  position: absolute;
+  top: 20px;
+  width: 60px;
+}
+#coworker-quote-container #coworker-quote {
+  color: white;
+  font-style: italic;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: bold;
 }
 
 .coworker-description p {
@@ -735,9 +802,20 @@ header:after {
   text-decoration: none;
   vertical-align: top;
 }
-#coworkers-filterlist .coworkers-filterlist-item a.active {
-  background: #88ba30;
+#coworkers-filterlist .coworkers-filterlist-item a.active, #coworkers-filterlist .coworkers-filterlist-item a:hover {
+  background: #88BA30;
   color: #fff;
+}
+
+#goto-coworkers {
+  text-align: center;
+  margin: 20px 0 0;
+}
+#goto-coworkers #goto-coworkers-link {
+  color: #FFF;
+  text-decoration: none;
+  background-color: #88BA30;
+  padding: 3px 12px;
 }
 
 #coworkers-list {
@@ -787,7 +865,7 @@ header:after {
   line-height: 18px;
 }
 #coworkers-list .coworkers-list-item a .coworker-rollover {
-  background: #88ba30;
+  background: #88BA30;
   color: #fff;
   display: none;
   font-style: italic;
@@ -906,14 +984,13 @@ footer {
 }
 
 #footer-links {
-  font-size: 10px;
   width: 50%;
   padding-right: 7%;
   text-align: right;
 }
 
 #footer-text {
-  font-size: 10px;
+  font-size: 14px;
   color: #848484;
   line-height: 5%;
   text-align: left;
@@ -925,7 +1002,7 @@ footer {
   width: 680px;
 }
 
-.sidebar  {
+.sidebar {
   display: inline-block;
   vertical-align: top;
   background-color: #388fa9;
@@ -951,7 +1028,7 @@ footer {
   margin: 0;
 }
 
-.sidebar-blog  {
+.sidebar-blog {
   display: inline-block;
   vertical-align: top;
   background-color: #388fa9;
@@ -988,11 +1065,11 @@ footer {
   margin-bottom: 10px;
 }
 .sidebar-blog ul {
-padding-left: 0px;
-text-align: left;
+  padding-left: 0px;
+  text-align: left;
 }
 .sidebar-blog .textwidget {
-padding-right: 20px;
+  padding-right: 20px;
 }
 
 .su-center .su-column .su-column-inner img {
@@ -1045,7 +1122,7 @@ padding-right: 20px;
 
 #home_text {
   padding: 10px 30px;
-  background-color: #a8aaa8;
+  background-color: #A8AAA8;
 }
 #home_text h1, #home_text p {
   color: white;
@@ -1055,7 +1132,7 @@ padding-right: 20px;
 }
 
 .blog article {
-  display: table;
+  display: block;
   width: 100%;
   background: white;
   padding: 0px;
@@ -1063,8 +1140,9 @@ padding-right: 20px;
   min-height: 200px;
 }
 .blog article .post_text, .blog article .thumbnail {
-  display: table-cell;
+  display: inline-block;
   vertical-align: top;
+  max-width: 100%;
 }
 .blog article .post_text {
   padding: 10px 0px 0px 10px;
@@ -1081,7 +1159,7 @@ padding-right: 20px;
 }
 .blog article .post_text .author a {
   text-decoration: none;
-  color: #88ba30;
+  color: #88BA30;
 }
 .blog ul.post-categories {
   list-style-type: none;
@@ -1090,8 +1168,9 @@ padding-right: 20px;
 }
 .blog ul.post-categories li {
   display: inline-block;
-  background-color: #88ba30;
-  padding: 3px;
+  background-color: #88BA30;
+  padding: 0px 6px;
+  font-size: 0.9em;
 }
 .blog ul.post-categories li a {
   color: white;
@@ -1102,7 +1181,7 @@ padding-right: 20px;
   padding-bottom: 30px;
 }
 .blog .nav-single .nav-previous, .blog .nav-single .nav-next {
-  background-color: #88ba30;
+  background-color: #88BA30;
   padding: 3px 12px;
 }
 .blog .nav-single .nav-previous a, .blog .nav-single .nav-next a {
@@ -1113,3 +1192,41 @@ padding-right: 20px;
   float: right;
 }
 
+.blog.single-article article {
+  padding: 40px;
+  max-width: 100%;
+  display: block;
+}
+.blog.single-article article img {
+  max-width: 100%;
+}
+
+.blog article.list-article {
+  max-width: 100%;
+  display: block;
+  position: relative;
+}
+.blog article.list-article .thumbnail {
+  text-align: right;
+  width: 220px;
+  height: 200px;
+}
+.blog article.list-article .post_text {
+  width: 435px;
+  margin-right: 20px;
+}
+.blog article.list-article .post_text h2 {
+  line-height: 20px;
+  font-size: 18px;
+  margin: 0 0 8px 0;
+}
+.blog article.list-article .post_text p {
+  font-size: 13px;
+  margin: 5px 0;
+}
+.blog article.list-article .entry-meta {
+  position: absolute;
+  bottom: 5px;
+  font-size: 13px;
+  left: 10px;
+}

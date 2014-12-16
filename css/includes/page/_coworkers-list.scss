@@ -28,11 +28,23 @@
       padding: 4px 11px 4px;
       text-decoration: none;
       vertical-align: top;
-      &.active{
+      &.active, &:hover{
         background: $color-green-light;
         color: #fff;
       }
     }
+  }
+}
+
+// #goto-coworkers
+#goto-coworkers{
+  text-align: center;
+  margin: 20px 0 0;
+  #goto-coworkers-link{
+    color: #FFF;
+    text-decoration: none;
+    background-color: #88BA30;
+    padding: 3px 12px;
   }
 }
 

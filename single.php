@@ -17,7 +17,7 @@ get_header(); ?>
             </a>
         </h1>
 
-    <div class="blog">
+    <div class="blog single-article">
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
         <div class="post_text">
