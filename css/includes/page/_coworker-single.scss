@@ -35,6 +35,16 @@
 // -----------------------------
 .coworker-social {
   margin-bottom: 20px;
+  ul{
+    padding: 0;
+    list-style: none;
+    li{
+      display: inline-block;
+      a{
+        display: block;
+      }
+    }
+  }
 }
 
 
