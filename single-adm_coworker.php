@@ -30,8 +30,8 @@
                         <?php foreach($social_links as $social_network => $social_link): ?>
                             <?php if (!empty($social_link)): ?>
                                 <li>
-                                    <a href="<?= $social_link; ?>">
-                                        <img src="<?php bloginfo('template_directory'); ?>/images/social-<?= $social_network; ?>.jpg" alt="<?= $social_network; ?>" />
+                                    <a href="<?= $social_link; ?>" title="<?= $social_network; ?>">
+                                        <img src="<?php bloginfo('template_directory'); ?>/images/social-<?= $social_network; ?>.png" alt="<?= $social_network; ?>" />
                                     </a>
                                 </li>
                             <?php endif; ?>
