@@ -17,16 +17,14 @@
             <div class="coworker-social">
                 Facebook, Twitter, etc.
             </div>
-            <div class="coworker-tags">
-                <?php foreach ($coworker->getTags() as $tag): ?>
-                    <span class="coworker-tag">
-                        <?= $tag->name ?>
-                    </span>
-                <?php endforeach; ?>
-            </div>
-            
+           <div id="coworkers-filterlist">
+               <?php foreach ($coworker->getTags() as $tag): ?>
+                   <span class="coworkers-filterlist-item">
+                      <a class="<?php if($wp_query->query_vars['adm_coworker_tag'] == $tag->slug): ?>active<?php endif; ?>" href="<?= get_bloginfo('url') . '/' . 'metiers' . '/' . $tag->slug; ?>"><?= $tag->name; ?></a>
+                   </span>
+               <?php endforeach; ?>
+           </div>
         </aside>
-    
         <div class="content">
 
             <header class="content-bandeau">
