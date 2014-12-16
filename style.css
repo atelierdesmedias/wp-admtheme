@@ -732,8 +732,10 @@ header:after {
   background: #464546 url("images/contact-mail.png") no-repeat center center/23px 20px;
 }
 
-.coworker-website:before {
+.coworker-website {
   font-size: 0.7em;
+}
+.coworker-website:before {
   background: #464546 url("images/contact-website.png") no-repeat center center/23px 20px;
 }
 
@@ -982,14 +984,13 @@ footer {
 }
 
 #footer-links {
-  font-size: 10px;
   width: 50%;
   padding-right: 7%;
   text-align: right;
 }
 
 #footer-text {
-  font-size: 10px;
+  font-size: 14px;
   color: #848484;
   line-height: 5%;
   text-align: left;
@@ -1188,4 +1189,3 @@ footer {
 .blog .nav-single .nav-next {
   float: right;
 }
-
