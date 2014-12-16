@@ -40,7 +40,7 @@
                 </div>
             <?php endif; ?>
             <?php $coworker_tags = $coworker->getTags();
-                if (array_filter($coworker_tags)): ?>
+            if (array_filter($coworker_tags)): ?>
                 <div class="coworker-tags">
                     <ul>
                         <?php foreach ($coworker->getTags() as $tag): ?>
