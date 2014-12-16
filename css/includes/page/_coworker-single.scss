@@ -92,17 +92,28 @@
   text-decoration: none;
   position: relative;
 
+  &:hover{
+    color: white;
+    background: #939393;
+  }
+
   &:before {
     content: '';
     position: absolute;
     top: 0; bottom: 0; left: 0;
     width: 50px;
-
-    background: $color-gray-dark;
   }
 }
 .coworker-phone {
   font-size: 1.2em;
+  &:before {
+    background: $color-gray-dark url("images/contact-tel.png") no-repeat center center / 16px 23px;
+  }
+}
+.coworker-email {
+  &:before {
+    background: $color-gray-dark url("images/contact-mail.png") no-repeat center center / 23px 20px;
+  }
 }
 
 

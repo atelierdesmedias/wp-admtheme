@@ -704,6 +704,12 @@ header:after {
   text-decoration: none;
   position: relative;
 }
+.coworker-phone:hover,
+.coworker-email:hover,
+.coworker-website:hover {
+  color: white;
+  background: #939393;
+}
 .coworker-phone:before,
 .coworker-email:before,
 .coworker-website:before {
@@ -713,11 +719,21 @@ header:after {
   bottom: 0;
   left: 0;
   width: 50px;
-  background: #464546;
 }
 
 .coworker-phone {
   font-size: 1.2em;
+}
+.coworker-phone:before {
+  background: #464546 url("images/contact-tel.png") no-repeat center center/16px 23px;
+}
+
+.coworker-email:before {
+  background: #464546 url("images/contact-mail.png") no-repeat center center/23px 20px;
+}
+
+.coworker-website:before {
+  background: #464546 url("images/contact-website.png") no-repeat center center/16px 23px;
 }
 
 #coworker-quote-container {
