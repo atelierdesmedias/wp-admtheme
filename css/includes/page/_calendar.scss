@@ -219,9 +219,12 @@
   }
   .calendar-date,
   .calendar-time,
-  .calendar-title a,
   .calendar-excerpt{
     color: $color-gray-light;
+  }
+  .calendar-title a{
+    // override hardcoded color
+    color: $color-gray-light !important;
   }
 }
 

@@ -635,9 +635,11 @@ header:after {
 }
 .calendar-event.eme-past-event .calendar-date,
 .calendar-event.eme-past-event .calendar-time,
-.calendar-event.eme-past-event .calendar-title a,
 .calendar-event.eme-past-event .calendar-excerpt {
   color: #878180;
+}
+.calendar-event.eme-past-event .calendar-title a {
+  color: #878180 !important;
 }
 
 .coworker-avatar > img {
