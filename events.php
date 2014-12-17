@@ -31,7 +31,6 @@ Template Name: Events page
                 <li>Votre évènement doit être gratuit et ouvert à tous</li>
                 <li>A visée non commerciale</li>
                 <li>Se dérouler en semaine à partir de 18h30 (ouverture exceptionnelle le WE)</li>
-                <li>Envoyer un mail avec un descriptif écrit de votre évènement ainsi d’un visuel</li>
                 <li>Capacité maximale de 40 personnes</li>
             </ol>
             <p class="contact">
