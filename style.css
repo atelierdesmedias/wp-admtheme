@@ -1131,6 +1131,30 @@ footer {
   font-size: 24px;
 }
 
+.content-404 {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#links-404 {
+  padding-top: 70px;
+}
+#links-404 nav ul {
+  list-style-type: none;
+}
+#links-404 nav ul li {
+  margin: 20px;
+  text-decoration: none;
+  background-color: #88ba30;
+  padding: 3px 12px;
+}
+#links-404 nav ul li a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
 .blog article {
   display: block;
   width: 100%;
