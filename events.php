@@ -28,14 +28,16 @@ Template Name: Events page
             </h4>
 
             <ol>
-                <li>Votre évènement doit être ouvert à tous et gratuit.</li>
-                <li>La règle 2</li>
-                <li>La règle 3</li>
+                <li>Votre évènement doit être gratuit et ouvert à tous</li>
+                <li>A visée non commerciale</li>
+                <li>Se dérouler en semaine à partir de 18h30 (ouverture exceptionnelle le WE)</li>
                 <li>Envoyer un mail avec un descriptif écrit de votre évènement ainsi d’un visuel</li>
+                <li>Capacité maximale de 40 personnes</li>
             </ol>
             <p class="contact">
-                Ecrivez-nous à :
-            <a href="mailto:event@coworkinglyon.org">event@coworkinglyon.org</a></p>
+                Ecrivez à :
+            <a href="mailto:evenements@coworkinglyon.org">evenements@coworkinglyon.org</a>
+            ou passez manger avec nous un mardi à 12H45 lors de notre colunching hebdomadaire.</p>
         </div>
     </div>
 </div>
