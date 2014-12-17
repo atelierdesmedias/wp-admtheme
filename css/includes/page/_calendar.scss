@@ -211,6 +211,22 @@
     margin-bottom : 8px;
 }
 
+// eme-past-event
+// ------------------------------
+.calendar-event.eme-past-event {
+  .calendar-circle {
+    background-color: $color-gray-light;
+  }
+  .calendar-date,
+  .calendar-time,
+  .calendar-title a,
+  .calendar-excerpt{
+    color: $color-gray-light;
+  }
+}
+
+
+
 // .eme-location-balloon {
 //     color: #FF7146;
 // }
