@@ -7,7 +7,7 @@ Template Name: Events page
 <?php get_header(); ?>
 <div class="calendar-events-list">
     <div class="main-calendar">
-        <?php eme_get_events_list("limit=5&scope=all&order=DESC"); ?>
+        <?php eme_get_events_list("limit=30&scope=all&order=DESC"); ?>
     </div>
     <script>
         var colors = ["#58C2E1","#388fa9","#88BA30","#498808","#EF8741"];
