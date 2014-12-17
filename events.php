@@ -37,7 +37,7 @@ Template Name: Events page
             <p class="contact">
                 Ecrivez à :
             <a href="mailto:evenements@coworkinglyon.org">evenements@coworkinglyon.org</a>
-            ou passez manger avec nous un mardi à 12H45 lors de notre colunching hebdomadaire.</p>
+            <br/>ou passez manger avec nous un mardi à 12H45 lors de notre colunching hebdomadaire.</p>
         </div>
     </div>
 </div>
