@@ -226,6 +226,11 @@ h3 {
   color: #464546;
 }
 
+#donate {
+  margin: 0 auto;
+  width: 396px;
+}
+
 body {
   font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
