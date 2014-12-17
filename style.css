@@ -631,7 +631,7 @@ header:after {
 }
 
 .calendar-event.eme-past-event .calendar-circle {
-  background-color: #878180;
+  background-color: #878180 !important;
 }
 .calendar-event.eme-past-event .calendar-date,
 .calendar-event.eme-past-event .calendar-time,

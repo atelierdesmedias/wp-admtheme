@@ -215,7 +215,8 @@
 // ------------------------------
 .calendar-event.eme-past-event {
   .calendar-circle {
-    background-color: $color-gray-light;
+    // override hardcoded color
+    background-color: $color-gray-light !important;
   }
   .calendar-date,
   .calendar-time,
