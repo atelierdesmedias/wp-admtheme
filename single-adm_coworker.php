@@ -54,11 +54,7 @@
         <div class="content">
 
             <header class="content-bandeau">
-                <?php if ($coworker->has('banner')): ?>
-                    <img class="content-bandeauImage" src="<?php echo wp_get_attachment_image_src($coworker->get('banner'), 'coworker-banner', false)[0]; ?>"/>
-                <?php else: ?>
-                    <img class="content-bandeauImage" src="<?php echo get_template_directory_uri(); ?>/images/bandeau-atelier-des-medias.png"/>
-                <?php endif; ?>
+		<img class="content-bandeauImage" src="<?php echo get_template_directory_uri(); ?>/images/bandeau-atelier-des-medias.png"/>
             </header>
 
             <aside class="content-aside coworker-contact">
