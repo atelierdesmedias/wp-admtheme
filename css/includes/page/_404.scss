@@ -1,0 +1,29 @@
+@import "../_variables.scss";
+
+
+.content-404 {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#links-404 {
+  padding-top: 70px;
+
+  nav {
+    ul {
+      list-style-type: none;
+      li {
+        margin: 20px;
+        text-decoration: none;
+        background-color:  #88ba30;
+        padding: 3px 12px;
+        a {
+          color: #fff;
+          font-size: 14px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
