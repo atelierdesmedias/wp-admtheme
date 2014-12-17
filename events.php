@@ -35,7 +35,7 @@ Template Name: Events page
             </ol>
             <p class="contact">
                 Ecrivez à :
-            <a href="mailto:evenements@coworkinglyon.org">evenements@atelier-medias.org</a>
+            <a href="mailto:evenements@atelier-medias.org">evenements@atelier-medias.org</a>
             <br/>ou passez manger avec nous un mardi à 12H45 lors de notre colunching hebdomadaire.</p>
         </div>
     </div>
