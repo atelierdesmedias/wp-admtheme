@@ -630,6 +630,16 @@ header:after {
   margin-bottom: 8px;
 }
 
+.calendar-event.eme-past-event .calendar-circle {
+  background-color: #878180;
+}
+.calendar-event.eme-past-event .calendar-date,
+.calendar-event.eme-past-event .calendar-time,
+.calendar-event.eme-past-event .calendar-title a,
+.calendar-event.eme-past-event .calendar-excerpt {
+  color: #878180;
+}
+
 .coworker-avatar > img {
   display: block;
   max-width: 100%;
