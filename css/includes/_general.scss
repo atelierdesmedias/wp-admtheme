@@ -25,3 +25,18 @@ h3 {
 .contentWrapper iframe {
   max-width:100%;
 }
+
+
+/* WYSIWYG content align classes
+/* --------------------------------------------------------------- */
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.alignleft {
+  float: left;
+}
+.alignright {
+  float: right;
+}
