@@ -69,8 +69,14 @@
                     </a>
                 <?php endif; ?>
                 <?php for ($i=1; $i<=3; $i++): ?>
-                    <?php if ($coworker->has('website' . $i)): ?>
-                        <a class="coworker-website" href="<?= $coworker->get('website' . $i); ?>">
+                    <?php if ($coworker->has('website' . $i)):
+                        $coworkerWebsiteURL = $coworker->get('website' . $i);
+                        $parsed = parse_url( $coworkerWebsiteURL );
+                        if (empty($parsed['scheme'])) {
+                            $coworkerWebsiteURL = 'http://' . ltrim( $coworkerWebsiteURL , '/');
+                        }
+                        ?>
+                        <a class="coworker-website" href="<?= $coworkerWebsiteURL; ?>">
                             <?= $coworker->get('website' . $i); ?>
                         </a>
                     <?php endif; ?>
