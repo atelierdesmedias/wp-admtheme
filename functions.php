@@ -225,6 +225,10 @@ if( !function_exists('gk_ui_wp32_admin'))  {
 add_action('login_head', 'gk_ui_wp32_login');
 add_action('admin_enqueue_scripts', 'gk_ui_wp32_admin');
 
+// filter triggered function for apply email sends (postuler)
+function set_html_content_type() {
+    return 'text/html';
+}
 
 
 // function my_js_include_function() {
