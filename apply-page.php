@@ -11,6 +11,12 @@ get_header(); ?>
     require_once(__DIR__.'/functions/ApplyMail.php');
 ?>
 
+    <script type="text/javascript" src="<?php echo( get_template_directory_uri() . '/js/bootstrap-datepicker/js/bootstrap-datepicker.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo( get_template_directory_uri() . '/js/bootstrap-datepicker/locales/bootstrap-datepicker.fr.min.js'); ?>"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo ( get_template_directory_uri() . '/js/bootstrap-datepicker/css/bootstrap-datepicker.css'); ?>" />
+
+
+
 <?php add_filter( 'wp_mail_content_type', 'set_html_content_type' ); ?>
 
 <section id="content" role="region">
@@ -27,8 +33,11 @@ get_header(); ?>
                     !empty($_POST['lastname'])
                     && !empty($_POST['firstname'])
                     && !empty($_POST['email'])
+                    && !empty($_POST['photo'])
                     && !empty($_POST['job'])
                     && !empty($_POST['date'])
+                    && !empty($_POST['coworkerType'])
+                    && !empty($_POST['group'])
                     && !empty($_POST['message'])
                     && $_POST['submit'] === "Envoyer"
                 ):
@@ -71,36 +80,77 @@ get_header(); ?>
                         <input type="text" id="firstname" name="firstname" placeholder="Prénom" required="required" />
                     </div>
 
-                    <!--Email -->
+                    <!-- Email -->
                     <div>
                         <label for="email">Email : (adresse valide exigée, un mail de confirmation vous sera envoyé)</label>
                         <input type="email" id="email" name="email" placeholder="Email" required="required" />
                     </div>
 
+                    <!-- Photo -->
+                    <div>
+                        <label for="photo">Photo :</label>
+                        <input type="file" id="photo" name="photo" required="required" />
+                    </div>
+
                     <!-- Job -->
                     <div>
-                        <label for="job">Job :</label>
+                        <label for="job">Profession :</label>
                         <input type="text" id="job" name="job" placeholder="Profession" required="required" />
                     </div>
 
                     <!-- Date -->
                     <div>
-                        <?php
-                        setlocale (LC_TIME, 'fr_FR.utf8','fra');
-                        $startDate = date('Y-m-d');
-                        $endDate = date('Y-m-d', strtotime('+1 month'));
-                        $endDate = strtotime($endDate);
-                        ?>
-                        <label for="date">Date de colunching :</label>
-                        <select id="date" name="date" required="required">
-                            <option selected="true" disabled="disabled">Date de colunching</option>
-                        <?php
-                        for($i = strtotime('Tuesday', strtotime($startDate)); $i <= $endDate; $i = strtotime('+1 week', $i)):
-                            ?>
-                            <option value="<?= date('Y-m-d', $i); ?>"><?=  strftime("%A %d %B %Y", $i); ?></option>
-                        <?php
-                        endfor;
-                        ?>
+                        <label for="date">Date de la dernière rencontre avec le groupe Recrutement</label>
+                        <input type="text" id="date" name="date" class="form-control" />
+                        <script type="text/javascript">
+                            (function($) {
+                                $(document).ready(function(){
+                                    $('#date').datepicker({
+                                        endDate: "today",
+                                        startView: 1,
+                                        language: "fr",
+                                        daysOfWeekDisabled: "0,6",
+                                        autoclose: true,
+                                    });
+                                });
+                            })(jQuery);
+                        </script>
+                        <style>
+                        .datepicker{
+                            position: absolute;
+                            padding: 10px;
+                            background: #fff;
+                            border: 1px solid #EDECE4;
+                        }
+                        .datepicker-dropdown.datepicker-orient-bottom::before{
+                            border-top: 6px solid #EDECE4;
+                        }
+                        </style>
+                    </div>
+
+                    <!-- Coworker type -->
+                    <div>
+                        <label for="cowoker-type">Poste de travail souhaité :</label>
+                        <select id="coworker-type" name="coworkerType" required="required">
+                            <option value="" disabled="disabled">Type de poste</option>
+                            <option value="Nomade">Nomade</option>
+                            <option value="Fixe">Fixe</option>
+                        </select>
+                    </div>
+
+                    <!-- Group -->
+                    <div>
+                        <label for="groupe">Choix du groupe ADM</label>
+                        <select id="group" name="group" required="required">
+                            <option value="" disabled="disabled">Groupe</option>
+                            <option value="Communication extérieure">Communication extérieure</option>
+                            <option value="Événements publiques">Événements publiques</option>
+                            <option value="Recrutement">Recrutement</option>
+                            <option value="Relations publiques">Relations publiques</option>
+                            <option value="Trésorerie">Trésorerie</option>
+                            <option value="Systèmes informatiques">Systèmes informatiques</option>
+                            <option value="Vie associative">Vie associative</option>
+                            <option value="Vie quotidienne">Vie quotidienne</option>
                         </select>
                     </div>
 

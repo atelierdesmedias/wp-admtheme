@@ -8,8 +8,11 @@ class ApplyMail{
     protected $lastname;
     protected $firstname;
     protected $email;
+    protected $photo;
     protected $job;
     protected $date;
+    protected $coworkerType;
+    protected $group;
     protected $message;
     protected $teamMailErrors;
     protected $applicantMailErrors;
@@ -21,8 +24,11 @@ class ApplyMail{
         $this->lastname = $this->validateFormInput($lastname);
         $this->firstname = $this->validateFormInput($firstname);
         $this->email = $this->validateFormInput($email);
+        //$this->photo = $this->validateFormInput($photo);
         $this->job = $this->validateFormInput($job);
         $this->date = $this->validateFormInput($date);
+        $this->coworkerType = $this->validateFormInput($coworkerType);
+        $this->group = $this->validateFormInput($group);
         $this->message = $this->validateFormInput($message);
     }
 
@@ -44,12 +50,15 @@ class ApplyMail{
         $mailContent .= "<p><strong>Nom :</strong> $this->lastname</p>";
         $mailContent .= "<p><strong>Prénom :</strong> $this->firstname</p>";
         $mailContent .= "<p><strong>Email : </strong> $this->email</p>";
+        // todo : add photo
         $mailContent .= "<p><strong>Profession : </strong> $this->job</p>";
 
         setlocale (LC_TIME, 'fr_FR.utf8','fra');
-        $mailContent .= "<p><strong>Date de colunching sélectionnée :</strong> " . strftime("%A %d %B %Y", strtotime($this->date)) . "</p>";
+        $mailContent .= "<p><strong>Date de dernière rencontre avec le groupe Recrutement :</strong> " . strftime("%A %d %B %Y", strtotime($this->date)) . "</p>";
 
-        $mailContent .= "<p><strong>Profession :</strong> $this->job</p>";
+        $mailContent .= "<p><strong>Poste de travail souhaité :</strong> $this->coworkerType</p>";
+        $mailContent .= "<p><strong>Choix du groupe ADM :</strong> $this->group</p>";
+
         $mailContent .= "<p><strong>Message :</strong></p><p>$this->message</p>";
 
         $mailSubject = "[Nouveau candidat] $this->firstname $this->lastname";
@@ -83,7 +92,8 @@ class ApplyMail{
 
         $mailContent = "<h1>Candidature à l'atelier des médias.</h1>";
         $mailContent .= "<p>Bonjour $this->firstname $this->lastname, nous avons bien reçu ta candidature.</p>";
-        $mailContent .= "<p>Nous t'attendons le " . strftime("%A %d %B %Y", strtotime($this->date)) . " a 12h30 pour notre colunching !</p>";
+
+        $mailContent .= "<p>Nous te remercions d'avoir pris le temps d'avoir rempli de formulaire.</p>";
 
         $mailSubject = "[Candidature à l'atelier des médias] $this->firstname $this->lastname";
         $mailSubject = "=?utf-8?B?" . base64_encode($mailSubject) . "?=";
