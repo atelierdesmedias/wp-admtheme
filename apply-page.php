@@ -27,7 +27,8 @@ get_header(); ?>
             <?php $displayForm = true; ?>
 
             <?php if( !empty($_POST)): ?>
-                <?php if(
+            <?php
+                if(
                     !empty($_POST['lastname'])
                     && !empty($_POST['firstname'])
                     && !empty($_POST['email'])
@@ -40,23 +41,21 @@ get_header(); ?>
                     && $_POST['submit'] === "Envoyer"
                 ):
                 ?>
-
-                <?php
-
+                    <?php
                     $applyMail = new ApplyMail($_POST, $_FILES);
 
                     if( !empty($applyMail->photo['error']) ): ?>
                         <p class="error"><?= $applyMail->photo['error']; ?></p>
                     <?php else: ?>
-                        <p class="success"><?= $applyMail->photo['success']; ?></p>
-                    <?php 
-                        // $teamMailErrors = $applyMail->sendMessageToTeam();
+                        <?php
+                        $teamMailErrors = $applyMail->sendMessageToTeam();
                         if ($teamMailErrors === true):
                         ?>
                             <p class="error">L'envoi de votre message a échoué ; veuillez réessayer.</p>
                         <?php else :?>
-                            <?php //$applicantMailErrors = $applyMail->sendMessageToApplicant(); ?>
+                            <?php $applicantMailErrors = $applyMail->sendMessageToApplicant(); ?>
                             <p class="success">Votre candidature a bien été envoyée. Merci !</p>
+                            <p class="success">Un mail t'a été envoyé pour confirmer la réception.</p>
                             <?php $displayForm = false; ?>
                         <?php endif; ?>
                     <?php endif; ?>
