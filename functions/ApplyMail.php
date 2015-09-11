@@ -8,7 +8,7 @@ class ApplyMail{
     protected $lastname;
     protected $firstname;
     protected $email;
-    protected $photo;
+    public $photo;
     protected $job;
     protected $date;
     protected $coworkerType;
@@ -18,18 +18,18 @@ class ApplyMail{
     protected $applicantMailErrors;
 
 
-    public function __construct($data){
+    public function __construct($postData, $filesData){
         // get posted data
-        extract($data);
+        extract($postData);
         $this->lastname = $this->validateFormInput($lastname);
         $this->firstname = $this->validateFormInput($firstname);
         $this->email = $this->validateFormInput($email);
-        //$this->photo = $this->validateFormInput($photo);
         $this->job = $this->validateFormInput($job);
         $this->date = $this->validateFormInput($date);
         $this->coworkerType = $this->validateFormInput($coworkerType);
         $this->group = $this->validateFormInput($group);
         $this->message = $this->validateFormInput($message);
+        $this->photo = $this->validateFormPhoto($filesData['photo']);
     }
 
     /**
@@ -126,7 +126,42 @@ class ApplyMail{
         return $data;
     }
 
-}
+    /**
+     * ValidateFormPhoto
+     * @param $data mixed The input to be validated
+     * @return $data mixed The validated input
+     */
+    protected function validateFormPhoto($data){
 
+        $target_dir = get_home_path() . "wp-content/uploads/apply-form-images/";
+
+        $target_file = $target_dir . basename($_FILES['photo']['name']);
+        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+        $data['target'] = $target_dir . basename('coworker-apply-' . time() . '.' . $imageFileType);
+
+        $check = getimagesize($data["tmp_name"]);
+        if ($check !== false) {
+            if ($imageFileType == 'jpg' || $imageFileType == 'png'){
+                var_dump($data['size']);
+                if ($data['size'] <= 1000000){
+                    if (move_uploaded_file($data['tmp_name'], $data['target'])) {
+                        $data['success'] =  "Votre fichier ". basename( $data['name']). " a bien été téléchargé.";
+                    }
+                    else{
+                        $data['error'] = "L'image est d'un poids supérieur à la limite autorisée.";
+                    }
+                }
+            }
+            else{
+                $data['error'] = "Le format de l'image est incorrect.";
+            }
+        }
+        else {
+            $data['error'] = "Le fichier téléchargé n'est pas une image.";
+        }
+
+        return $data;
+    }
+}
 ?>
 

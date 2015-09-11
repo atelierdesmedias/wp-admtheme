@@ -11,11 +11,9 @@ get_header(); ?>
     require_once(__DIR__.'/functions/ApplyMail.php');
 ?>
 
-    <script type="text/javascript" src="<?php echo( get_template_directory_uri() . '/js/bootstrap-datepicker/js/bootstrap-datepicker.js'); ?>"></script>
-    <script type="text/javascript" src="<?php echo( get_template_directory_uri() . '/js/bootstrap-datepicker/locales/bootstrap-datepicker.fr.min.js'); ?>"></script>
-    <link rel="stylesheet" type="text/css" href="<?php echo ( get_template_directory_uri() . '/js/bootstrap-datepicker/css/bootstrap-datepicker.css'); ?>" />
-
-
+<script type="text/javascript" src="<?php echo( get_template_directory_uri() . '/js/bootstrap-datepicker/js/bootstrap-datepicker.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo( get_template_directory_uri() . '/js/bootstrap-datepicker/locales/bootstrap-datepicker.fr.min.js'); ?>"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo ( get_template_directory_uri() . '/js/bootstrap-datepicker/css/bootstrap-datepicker.css'); ?>" />
 
 <?php add_filter( 'wp_mail_content_type', 'set_html_content_type' ); ?>
 
@@ -33,7 +31,7 @@ get_header(); ?>
                     !empty($_POST['lastname'])
                     && !empty($_POST['firstname'])
                     && !empty($_POST['email'])
-                    && !empty($_POST['photo'])
+                    && !empty($_FILES['photo']['name'])
                     && !empty($_POST['job'])
                     && !empty($_POST['date'])
                     && !empty($_POST['coworkerType'])
@@ -43,16 +41,24 @@ get_header(); ?>
                 ):
                 ?>
 
-                    <?php
-                    $applyMail = new ApplyMail($_POST);
-                    $teamMailErrors = $applyMail->sendMessageToTeam();
-                    if ($teamMailErrors === true):
-                    ?>
-                        <p class="error">L'envoi de votre message a échoué ; veuillez réessayer.</p>
-                    <?php else :?>
-                        <?php $applicantMailErrors = $applyMail->sendMessageToApplicant(); ?>
-                        <p class="success">Votre candidature a bien été envoyée. Merci !</p>
-                        <?php $displayForm = false; ?>
+                <?php
+
+                    $applyMail = new ApplyMail($_POST, $_FILES);
+
+                    if( !empty($applyMail->photo['error']) ): ?>
+                        <p class="error"><?= $applyMail->photo['error']; ?></p>
+                    <?php else: ?>
+                        <p class="success"><?= $applyMail->photo['success']; ?></p>
+                    <?php 
+                        // $teamMailErrors = $applyMail->sendMessageToTeam();
+                        if ($teamMailErrors === true):
+                        ?>
+                            <p class="error">L'envoi de votre message a échoué ; veuillez réessayer.</p>
+                        <?php else :?>
+                            <?php //$applicantMailErrors = $applyMail->sendMessageToApplicant(); ?>
+                            <p class="success">Votre candidature a bien été envoyée. Merci !</p>
+                            <?php $displayForm = false; ?>
+                        <?php endif; ?>
                     <?php endif; ?>
 
                 <?php else: ?>
@@ -66,7 +72,7 @@ get_header(); ?>
                 <?php wp_link_pages( 'before=<div class="page-link">' . __( 'Pages:', 'themename' ) . '&after=</div>' ); ?>
                 <?php edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
 
-                <form name="apply-form" id="apply-form" action="<?php echo htmlspecialchars($_SERVER["REQUEST_URI"]);?>" method="post">
+                <form name="apply-form" id="apply-form" action="<?php echo htmlspecialchars($_SERVER["REQUEST_URI"]);?>" method="post" enctype= "multipart/form-data">
 
                     <!-- Lastname -->
                     <div>
@@ -90,6 +96,7 @@ get_header(); ?>
                     <div>
                         <label for="photo">Photo :</label>
                         <input type="file" id="photo" name="photo" required="required" />
+                        <span>Le fichier doit être de format .jpg ou .png et ne pas excéder 1Mo.</span>
                     </div>
 
                     <!-- Job -->
@@ -130,7 +137,7 @@ get_header(); ?>
 
                     <!-- Coworker type -->
                     <div>
-                        <label for="cowoker-type">Poste de travail souhaité :</label>
+                        <label for="coworker-type">Poste de travail souhaité :</label>
                         <select id="coworker-type" name="coworkerType" required="required">
                             <option value="" disabled="disabled">Type de poste</option>
                             <option value="Nomade">Nomade</option>
