@@ -1,0 +1,82 @@
+@import "../_mixins";
+@import "../_variables";
+
+
+// #apply-form
+// -----------------------------
+#apply-form{
+    width: 100%;
+    max-width: 600px;
+    > div{
+        margin: 10px 0;
+        label{
+            color: $color-gray-dark;
+            display: block;
+        }
+        input, textarea, select{
+            background: #fff;
+            border: 1px solid #999;
+            border-radius: 3px;
+            display: block;
+            padding: 5px 10px;
+            width: 100%;
+        }
+        textarea{
+            resize: vertical;
+        }
+        input + span{
+            color: $color-blue-base;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        input[type=submit]{
+            background-color: $color-green-base;
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin: 20px 0;
+            padding: 10px;
+            text-transform: uppercase;
+        }
+    }
+}
+@media #{$mq-from-2cols}{
+    #apply-form{
+        background-color: $color-background;
+        border: 1px solid #DAD7C6;
+        border-radius: 2px;
+        margin: 40px auto;
+        padding: 20px 40px;
+    }
+}
+
+
+// .datepicker
+// -----------------------------
+.datepicker{
+    position: absolute;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #EDECE4;
+}
+.datepicker-dropdown.datepicker-orient-bottom::before{
+    border-top: 6px solid #EDECE4;
+}
+
+
+// .status
+// -----------------------------
+.status{
+    text-align: center;
+    p{
+        display: inline-block;
+        color: #fff;
+        padding: 10px 20px;
+    }
+    .error{
+        background-color: $color-orange-base;
+    }
+    .success{
+        background-color: $color-green-base;
+    }
+}

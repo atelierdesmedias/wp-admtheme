@@ -38,30 +38,37 @@ get_header(); ?>
                     && !empty($_POST['coworkerType'])
                     && !empty($_POST['group'])
                     && !empty($_POST['message'])
-                    && $_POST['submit'] === "Envoyer"
+                    && !empty($_POST['submit'])
                 ):
                 ?>
                     <?php
                     $applyMail = new ApplyMail($_POST, $_FILES);
 
                     if( !empty($applyMail->photo['error']) ): ?>
-                        <p class="error"><?= $applyMail->photo['error']; ?></p>
+                        <div class="status">
+                            <p class="error"><?= $applyMail->photo['error']; ?></p>
+                        </div>
                     <?php else: ?>
                         <?php
                         $teamMailErrors = $applyMail->sendMessageToTeam();
                         if ($teamMailErrors === true):
                         ?>
-                            <p class="error">L'envoi de votre message a échoué ; veuillez réessayer.</p>
+                            <div class="status">
+                                <p class="error">Erreur : L'envoi de votre message a échoué ; veuillez réessayer.</p>
+                            </div>
                         <?php else :?>
                             <?php $applicantMailErrors = $applyMail->sendMessageToApplicant(); ?>
-                            <p class="success">Votre candidature a bien été envoyée. Merci !</p>
-                            <p class="success">Un mail t'a été envoyé pour confirmer la réception.</p>
+                            <div class="status">
+                                <p class="success">Votre candidature a bien été envoyée. Merci !<br />Un mail a été envoyé sur l'adresse saisie pour confirmer la réception.</p>
+                            </div>
                             <?php $displayForm = false; ?>
                         <?php endif; ?>
                     <?php endif; ?>
 
                 <?php else: ?>
-                    <p class="error">Des champs sont manquants ; veuillez vérifier votre saisie et soumettre le formulaire à nouveau.</p>
+                    <div class="status">
+                        <p class="error">Erreur : Des champs sont manquants ; veuillez vérifier votre saisie et soumettre le formulaire à nouveau.</p>
+                    </div>
                 <?php endif; ?>
             <?php endif; ?>
 
@@ -87,8 +94,9 @@ get_header(); ?>
 
                     <!-- Email -->
                     <div>
-                        <label for="email">Email : (adresse valide exigée, un mail de confirmation vous sera envoyé)</label>
+                        <label for="email">Email :</label>
                         <input type="email" id="email" name="email" placeholder="Email" required="required" />
+                        <span>Utilisez une adresse valide, pour recevoir le mail de confirmation et pouvoir échanger avec nous par la suite !</span>
                     </div>
 
                     <!-- Photo -->
@@ -121,17 +129,6 @@ get_header(); ?>
                                 });
                             })(jQuery);
                         </script>
-                        <style>
-                        .datepicker{
-                            position: absolute;
-                            padding: 10px;
-                            background: #fff;
-                            border: 1px solid #EDECE4;
-                        }
-                        .datepicker-dropdown.datepicker-orient-bottom::before{
-                            border-top: 6px solid #EDECE4;
-                        }
-                        </style>
                     </div>
 
                     <!-- Coworker type -->
@@ -168,7 +165,7 @@ get_header(); ?>
 
                     <!-- Submit -->
                     <div>
-                        <input type="submit" id="submit" name="submit" value="Envoyer" />
+                        <input type="submit" id="submit" name="submit" value="Postuler" />
                     </div>
 
                 </form>

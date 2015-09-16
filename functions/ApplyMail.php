@@ -179,16 +179,16 @@ class ApplyMail{
                         $data['success'] =  "Votre fichier ". basename( $data['name']). " a bien été téléchargé.";
                     }
                     else{
-                        $data['error'] = "L'image est d'un poids supérieur à la limite autorisée.";
+                        $data['error'] = "Erreur : L'image est d'un poids supérieur à la limite autorisée.";
                     }
                 }
             }
             else{
-                $data['error'] = "Le format de l'image est incorrect.";
+                $data['error'] = "Erreur : Le format de l'image est incorrect.";
             }
         }
         else {
-            $data['error'] = "Le fichier téléchargé n'est pas une image.";
+            $data['error'] = "Erreur : Le fichier téléchargé n'est pas une image.";
         }
 
         return $data;
