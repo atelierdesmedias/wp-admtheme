@@ -9,14 +9,7 @@ get_header(); ?>
 
 <?php the_post(); ?>
 
-<iframe src="//player.vimeo.com/video/107065403?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1" width="920" height="192" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      <!--
-     <video width="920" heigth="192" autoplay="true" loop="true" autobuffer="true" controls="false">
-      <source src="adm.ogv" type="video/ogg"/>
-      <source src="adm.mp4" type="video/mp4"/>
-			<object data="adm.mp4" width="920" height="192" />
-    </video>
--->
+<iframe src="//player.vimeo.com/video/107065403?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1" width="920" height="192" frameborder="0"></iframe>
 
     <section id="coworkers-list-container">
 
