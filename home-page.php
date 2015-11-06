@@ -9,7 +9,7 @@ get_header(); ?>
 
 <?php the_post(); ?>
 
-<iframe src="//player.vimeo.com/video/107065403?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1" width="920" height="192" frameborder="0"></iframe>
+<iframe src="//player.vimeo.com/video/107065403?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;loop=1" width="920" height="194" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
     <section id="coworkers-list-container">
 
