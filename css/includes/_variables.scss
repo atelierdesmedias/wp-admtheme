@@ -1,4 +1,7 @@
 // COLORS
+
+$color-white: #fff;
+
 $color-gray-lighter: #A8AAA8;
 $color-gray-light: #878180;
 $color-gray-dark: #464546;
@@ -19,3 +22,25 @@ $mq-from-large: unquote("(min-width: 940px)");
 
 $mq-to-2cols: unquote("(max-width: 599px)");
 $mq-from-2cols: unquote("(min-width: 600px)");
+
+// COLS MEDIA QUERIES
+
+// - 1 col
+$mq-1col : unquote("screen and (max-width: 393px)");
+$mq-1col-max : unquote("screen and (max-width: 393px)");
+// - 2 cols
+$mq-2cols : unquote("screen and (min-width: 394px) and (max-width: 591px)");
+$mq-2cols-min : unquote("screen and (min-width: 394px)");
+$mq-2cols-max : unquote("screen and (max-width: 591px)");
+// - 3 cols
+$mq-3cols : unquote("screen and (min-width: 592px) and (max-width: 777px)");
+$mq-3cols-min : unquote("screen and (min-width: 592px)");
+$mq-3cols-max : unquote("screen and (max-width: 777px)");
+// - 4 cols
+$mq-4cols : unquote("screen and (min-width: 778px) and (max-width: 999px)");
+$mq-4cols-min : unquote("screen and (min-width: 778px)");
+$mq-4cols-max : unquote("screen and (max-width: 999px)");
+// - 5 cols
+$mq-5cols : unquote("screen and (min-width: 1000px)");
+$mq-5cols-min : unquote("screen and (min-width: 1000px)");
+
