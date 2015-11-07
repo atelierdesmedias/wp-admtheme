@@ -1,23 +1,54 @@
-@import "../_mixins";
-@import "../_variables";
+// --------------------------------------------------------------- */
+/* #page-footer-container
+/*
+/* #page-footer
+/*
+/* #page-footer-information
+/*
+/* #page-footer-links
+/*
+// --------------------------------------------------------------- */
 
 
-// FOOTER
-// -----------------------------
-footer {
-    margin-top:35px;
+/* #page-footer-container
+/* --------------------------------------------------------------- */
+#page-footer-container{
+    background: $color-white;
+    padding: 20px 0;
 }
-#footer-links{
-	width:50%;
-	padding-right:7%;
-	text-align:right;
+
+
+/* #page-footer
+/* --------------------------------------------------------------- */
+#page-footer{
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
 }
 
-#footer-text{
-	font-size:14px;
-	color:#848484;
-	line-height:5%;
-	text-align:left;
-	
+
+/* #page-footer-information
+/* --------------------------------------------------------------- */
+#page-footer-information{
+    color: $color-grey;
+    margin: 10px auto;
+    span{
+        display: block;
+    }
+    #page-footer-logo{
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+
+/* #page-footer-links
+/* --------------------------------------------------------------- */
+#page-footer-links{
+    font-size: 0.750rem;
+    margin: 10px auto;
+    a{
+        text-decoration: none;
+    }
 }
 
