@@ -37,7 +37,7 @@
 
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" media="screen, projection">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.min.css" media="screen, projection">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700,400,600,300' rel='stylesheet' type='text/css'>
 
