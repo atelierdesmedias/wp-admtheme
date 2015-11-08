@@ -88,7 +88,6 @@ get_header(); ?>
         <div id="home_text">
             <?php the_content(); ?>
             <?php wp_link_pages(array('before' => '<div class="page-link">Pages : ', 'after' => '</div>')); ?>
-            <?php edit_post_link('Editer', '<span class="edit-link">', '</span>'); ?>
         </div>
     </div>
 
