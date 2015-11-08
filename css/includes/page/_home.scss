@@ -32,13 +32,18 @@
 }
 
 #home_text {
-  padding: 10px 30px;
+  padding: 0 30px;
   background-color: $color-gray-lighter;
   h1, p {
     color: white;
+    margin: 1.250rem 0 0.67rem;
   }
   h1 {
-    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  p{
+    margin: 0.67rem 0;
   }
 }
 
