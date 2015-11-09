@@ -41,10 +41,14 @@
   text-align: center;
   margin: 20px 0 0;
   #goto-coworkers-link{
-    color: #FFF;
+    color: $color-white;
+    background: $color-green;
+    padding: 7px 20px;
     text-decoration: none;
-    background-color: #88BA30;
-    padding: 3px 12px;
+    text-transform: uppercase;
+    &:hover{
+        background: $color-green-light;
+    }
   }
 }
 
