@@ -21,16 +21,16 @@
 
         <?php get_template_part( 'loop', 'category' ); ?>
 
-    <div class="nav-single">
+        <div class="nav-single">
             <span class="nav-previous"><?php previous_posts_link( '&laquo; Articles précédents' ); ?></span>
             <span class="nav-next"><?php next_posts_link( 'Articles suivants &raquo;', '' ); ?></span>
+        </div>
+
+    </section>
+
+    <div class="sidebar-container" id="blog-sidebar-container">
+        <?php get_sidebar( $name ); ?>
     </div>
- </section>
-<div class="sidebar-blog">
-<?php get_sidebar( $name ); ?>
-</div>
-
-
 
 <?php get_footer(); ?>
 
