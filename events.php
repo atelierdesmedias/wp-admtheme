@@ -7,7 +7,19 @@ Template Name: Events page
 <?php get_header(); ?>
 <div class="calendar-events-list">
     <div class="main-calendar">
-        <?php eme_get_events_list("limit=30&scope=all&order=DESC"); ?>
+
+    <?php require_once ($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/adm/vendor/autoload.php'); ?>
+
+    <?php
+    $fb = new Facebook\Facebook([
+    'app_id' => '738408696208541',
+    'app_secret' => 'a1ae719c2b79fad77591c5ad76bc97f8',
+    'default_graph_version' => 'v2.2',
+    ]);
+    $request = $fb->request('GET', '/Coworkinglyon/events');
+    ?>
+    <?php eme_get_events_list("limit=30&scope=all&order=DESC"); ?>
+
     </div>
     <script>
         var colors = ["#58C2E1","#388fa9","#88BA30","#498808","#EF8741"];
