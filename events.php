@@ -5,20 +5,37 @@ Template Name: Events page
 ?>
 
 <?php get_header(); ?>
+<?php require_once ($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/adm/functions/FacebookEvents.php'); ?>
 <div class="calendar-events-list">
     <div class="main-calendar">
 
     <?php require_once ($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/adm/vendor/autoload.php'); ?>
 
     <?php
+    $appId = '1040421439303293';
+    $appSecret = 'a1ae719c2b79fad77591c5ad76bc97f8';
+    $accessToken = '1040421439303293|9yw1YLLVS7D8JwI8LqE4pORvULU';
+    $maxEvents = 10;
+    $futureEvents = false;
+    $timeOffset = 7;
+    $newWindow = false;
+    $calSeparate = false;
+    $fix_events_query = false;
+    $session = "";
+
     $fb = new Facebook\Facebook([
-    'app_id' => '738408696208541',
-    'app_secret' => 'a1ae719c2b79fad77591c5ad76bc97f8',
-    'default_graph_version' => 'v2.2',
+        'app_id'     => $appId,
+        'app_secret' => $appSecret,
+        'default_graph_version' => 'v2.5',
     ]);
-    $request = $fb->request('GET', '/Coworkinglyon/events');
+
+    $fb->setDefaultAccessToken($accessToken);
+
+    $response = $fb->get('/Coworkinglyon/events');
+    $graphObject = $response->getGraphEdge();
+    $json = json_decode($graphObject, true);
+    $events = array_chunk($json, 2);
     ?>
-    <?php eme_get_events_list("limit=30&scope=all&order=DESC"); ?>
 
     </div>
     <script>
