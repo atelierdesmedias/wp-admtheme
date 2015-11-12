@@ -19,7 +19,7 @@
 	text-align: center;
     padding: 20px;
 	vertical-align: top;
-	width: 225px;
+	width: 225px; 
 	h4{
 		font-size: 22px;
 		font-family: open sans;
@@ -34,6 +34,10 @@
 		line-height: 1.8em;
 		font-style: italic;
 		margin: 0;
+	}
+	a{
+	    // same color as background to hide twitter loading anchor
+	    color: $color-blue-dark;
 	}
     ul {
         padding-left: 0px;
@@ -51,7 +55,7 @@
                 text-align: center;
                 &:hover{
                     background-color: $color-blue;
-                    color: #fff;
+                    color: $color-white;
                 }
             }
         }
