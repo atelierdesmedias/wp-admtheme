@@ -12,6 +12,7 @@ Template Name: Events page
     <?php require_once ($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/adm/vendor/autoload.php'); ?>
 
     <?php
+    // get events
     $appId = '1040421439303293';
     $appSecret = 'a1ae719c2b79fad77591c5ad76bc97f8';
     $accessToken = '1040421439303293|9yw1YLLVS7D8JwI8LqE4pORvULU';
@@ -33,9 +34,33 @@ Template Name: Events page
 
     $response = $fb->get('/Coworkinglyon/events');
     $graphObject = $response->getGraphEdge();
-    $json = json_decode($graphObject, true);
-    $events = array_chunk($json, 2);
+    $events = json_decode($graphObject, true);
     ?>
+
+    <?php // view ?>
+        <ul class="eme_events_list">
+            <?php foreach($events as $k => $event): ?>
+            <?php $event_date = date_create($event['start_time']['date']); ?>
+            <?php $now_date = new DateTime(); ?>
+            <li>
+                <div class="calendar-event <?php if ($event_date < $now_date) :?>eme-past-event<?php endif; ?>">
+                    <a>
+                        <div class="calendar-circle"></div>
+                    </a>
+                    <?php $date_format = "j M Y"; ?>
+                    <?php $time_format = "H:i"; ?>
+                    <h3 class="calendar-date"><?= date_format(date_create($event['start_time']['date']), $date_format); ?></h3>
+                    <div class="calendar-info">
+                    <span class="calendar-time"><?= date_format(date_create($event['start_time']['date']), $time_format); ?></span> - <span class="calendar-title"><?= $event['name']; ?></span>
+                    </div>
+                    <div class="calendar-excerpt"><?= $event['description']; ?></div>
+                </div>
+            </li>
+            <?php if($k >= 9):
+                break;
+            endif; ?>
+            <?php endforeach; ?>
+        </ul>
 
     </div>
     <script>
