@@ -231,6 +231,28 @@ function set_html_content_type() {
 }
 
 
+/**
+ * Get excerpt from string
+ *
+ * @param String $str String to get an excerpt from
+ * @param Integer $startPos Position int string to start excerpt from
+ * @param Integer $maxLength Maximum length the excerpt may be
+ * @return String excerpt
+ */
+function getExcerpt($str, $startPos=0, $maxLength=50) {
+    if(strlen($str) > $maxLength) {
+        $excerpt   = substr($str, $startPos, $maxLength-3);
+        $lastSpace = strrpos($excerpt, ' ');
+        $excerpt   = substr($excerpt, 0, $lastSpace);
+        $excerpt  .= ' ...';
+    } else {
+        $excerpt = $str;
+    }
+    return $excerpt;
+}
+
+
+
 // function my_js_include_function() {
 //     wp_enqueue_script( 'my_script.js', '/path/to/myscript.js', array('jquery') );
 // }

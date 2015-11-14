@@ -23,7 +23,7 @@
     }
 
     .sidebar-calendar {
-        width : 25%; 
+        width : 25%;
         float:left;
         background-color: #88BA2D;
         color : #fff;
@@ -66,7 +66,7 @@
 .calendar-event {
     .eme_events_list & {
         width : 100%;
-        height: 100%;    
+        height: 100%;
         overflow: hidden;
         padding :15px;
     }
@@ -76,14 +76,16 @@
     color: #464546;
 
     .eme_events_list & {
-        font-size: 1.8em;
+        display: inline-block;
+        font-size: 1.5rem;
         font-weight: 600;
-        margin : 8px 0;
+        letter-spacing: -1px;
+        margin : 5px 0;
     }
 
     .calendar-event-single & {
         line-height: 50px;
-        display:inline;
+        display: inline;
         text-align: left;
         color: #464546;
     }
@@ -96,7 +98,7 @@
     height: 50px;
     
     .eme_events_list & {
-        margin : 10px auto 0 auto;
+        margin : 5px auto;
     }
     .calendar-single-inner & {
         display: inline-block;
@@ -111,13 +113,13 @@
 }
 
 .calendar-title {
-    color:#454645;
-    font-weight: 500;
+    color: #454645;
+    font-weight: 600;
     text-transform: capitalize;
-    
     .eme_events_list & {
-        font-size: 1.3em;
-        line-height:1em;
+        display: inline-block;
+        font-size: 1.125rem;
+        line-height: 1.375rem;
     }
     a {
         text-decoration: none;
@@ -133,7 +135,7 @@
 
 
 .calendar-single-inner {
-    width : 50%; 
+    width : 50%;
     float:left;
     padding : 0;
     margin : 0;

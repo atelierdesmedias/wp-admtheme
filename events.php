@@ -39,27 +39,28 @@ Template Name: Events page
 
     <?php // view ?>
         <ul class="eme_events_list">
-            <?php foreach($events as $k => $event): ?>
-            <?php $event_date = date_create($event['start_time']['date']); ?>
-            <?php $now_date = new DateTime(); ?>
-            <li>
+            <?php foreach($events as $k => $event):
+            $event_date = date_create($event['start_time']['date']);
+            $now_date = new DateTime(); ?><!--
+            --><li>
                 <div class="calendar-event <?php if ($event_date < $now_date) :?>eme-past-event<?php endif; ?>">
-                    <a>
+                    <a href="javascript: void(0);">
                         <div class="calendar-circle"></div>
                     </a>
-                    <?php $date_format = "j M Y"; ?>
+                    <?php $date_format = "j/m/y"; ?>
                     <?php $time_format = "H:i"; ?>
-                    <h3 class="calendar-date"><?= date_format(date_create($event['start_time']['date']), $date_format); ?></h3>
+                    <span class="calendar-date"><?= date_format(date_create($event['start_time']['date']), $date_format); ?> - <?= date_format(date_create($event['start_time']['date']), $time_format); ?></span>
                     <div class="calendar-info">
-                    <span class="calendar-time"><?= date_format(date_create($event['start_time']['date']), $time_format); ?></span> - <span class="calendar-title"><?= $event['name']; ?></span>
+                    <span class="calendar-title"><?= getExcerpt($event['name'], 0, 60); ?></span>
                     </div>
-                    <div class="calendar-excerpt"><?= $event['description']; ?></div>
+                    <div class="calendar-excerpt"><?= getExcerpt($event['description']); ?></div>
                 </div>
-            </li>
-            <?php if($k >= 9):
+            </li><!--
+            --><?php if($k >= 11):
                 break;
-            endif; ?>
-            <?php endforeach; ?>
+            endif;
+            endforeach; ?>
+
         </ul>
 
     </div>
