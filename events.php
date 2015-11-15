@@ -6,8 +6,8 @@ Template Name: Events page
 
 <?php get_header(); ?>
 <?php require_once ($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/adm/functions/FacebookEvents.php'); ?>
-<div class="calendar-events-list">
-    <div class="main-calendar">
+
+<div id="events-list-container">
 
     <?php require_once ($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/adm/vendor/autoload.php'); ?>
 
@@ -38,61 +38,61 @@ Template Name: Events page
     ?>
 
     <?php // view ?>
-        <ul class="eme_events_list">
-            <?php foreach($events as $k => $event):
-            $event_date = date_create($event['start_time']['date']);
-            $now_date = new DateTime(); ?><!--
-            --><li>
-                <div class="calendar-event <?php if ($event_date < $now_date) :?>eme-past-event<?php endif; ?>">
-                    <a href="javascript: void(0);">
-                        <div class="calendar-circle"></div>
-                    </a>
-                    <?php $date_format = "j/m/y"; ?>
-                    <?php $time_format = "H:i"; ?>
-                    <span class="calendar-date"><?= date_format(date_create($event['start_time']['date']), $date_format); ?> - <?= date_format(date_create($event['start_time']['date']), $time_format); ?></span>
-                    <div class="calendar-info">
-                    <span class="calendar-title"><?= getExcerpt($event['name'], 0, 60); ?></span>
-                    </div>
-                    <div class="calendar-excerpt"><?= getExcerpt($event['description']); ?></div>
+    <ul id="events-list">
+        <?php foreach($events as $k => $event):
+        $event_date = date_create($event['start_time']['date']);
+        $now_date = new DateTime(); ?><!--
+        --><li>
+            <div class="calendar-event <?php if ($event_date < $now_date) :?>eme-past-event<?php endif; ?>">
+                <a href="javascript: void(0);">
+                    <div class="calendar-circle"></div>
+                </a>
+                <?php $date_format = "j/m/y"; ?>
+                <?php $time_format = "H:i"; ?>
+                <span class="calendar-date"><?= date_format(date_create($event['start_time']['date']), $date_format); ?> - <?= date_format(date_create($event['start_time']['date']), $time_format); ?></span>
+                <div class="calendar-info">
+                <span class="calendar-title"><?= getExcerpt($event['name'], 0, 60); ?></span>
                 </div>
-            </li><!--
-            --><?php if($k >= 11):
-                break;
-            endif;
-            endforeach; ?>
-
-        </ul>
-
-    </div>
-    <script>
-        var colors = ["#58C2E1","#388fa9","#88BA30","#498808","#EF8741"];
-
-        jQuery('.calendar-event').each(function(i) {
-            var random_color = colors[Math.floor(Math.random() * colors.length)];
-            jQuery(this).find('.calendar-circle').css("background-color", random_color)
-            jQuery(this).find('.calendar-title a').css("color", random_color)
-        });
-    </script>
-    <div class="sidebar-calendar">
-        <div class="sidebar-calendar-inner">
-            <div class="sidebar-calendar-icon">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/iconeEvent.png" alt="">
+                <div class="calendar-excerpt"><?= getExcerpt($event['description']); ?></div>
             </div>
-            <h4>
-                Vous souhaitez organiser un évènement à l’Atelier des Médias ?
-            </h4>
-
-            <ol>
-                <li>Votre évènement doit être gratuit et ouvert à tous</li>
-                <li>A visée non commerciale</li>
-                <li>Se dérouler en semaine à partir de 18h30 (ouverture exceptionnelle le WE)</li>
-                <li>Capacité maximale de 40 personnes</li>
-            </ol>
-            <p class="contact">
-                Ecrivez à :
-            <a href="mailto:evenements@atelier-medias.org">evenements@atelier-medias.org</a>
-            <br/>ou passez manger avec nous un mardi à 12H45 lors de notre colunching hebdomadaire.</p>
+        </li><!--
+        --><?php if($k >= 11):
+        break;
+        endif;
+        endforeach; ?>
+    </ul>
+</div><!--
+--><div class="sidebar-calendar">
+    <div class="sidebar-calendar-inner">
+        <div class="sidebar-calendar-icon">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/iconeEvent.png" alt="">
         </div>
+        <h4>
+            Vous souhaitez organiser un évènement à l’Atelier des Médias ?
+        </h4>
+
+        <ol>
+            <li>Votre évènement doit être gratuit et ouvert à tous</li>
+            <li>A visée non commerciale</li>
+            <li>Se dérouler en semaine à partir de 18h30 (ouverture exceptionnelle le WE)</li>
+            <li>Capacité maximale de 40 personnes</li>
+        </ol>
+        <p class="contact">
+            Ecrivez à :
+        <a href="mailto:evenements@atelier-medias.org">evenements@atelier-medias.org</a>
+        <br/>ou passez manger avec nous un mardi à 12H45 lors de notre colunching hebdomadaire.</p>
     </div>
 </div>
+
+<script>
+    var colors = ["#58C2E1","#388fa9","#88BA30","#498808","#EF8741"];
+
+    jQuery('.calendar-event').each(function(i) {
+        var random_color = colors[Math.floor(Math.random() * colors.length)];
+        jQuery(this).find('.calendar-circle').css("background-color", random_color)
+        jQuery(this).find('.calendar-title a').css("color", random_color)
+    });
+</script>
+
+
 <?php get_footer(); ?>
