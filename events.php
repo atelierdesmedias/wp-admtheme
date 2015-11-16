@@ -7,6 +7,18 @@ Template Name: Events page
 <?php get_header(); ?>
 <?php require_once ($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/adm/functions/FacebookEvents.php'); ?>
 
+<?php
+$event_id = (int) get_query_var( 'event_id' );
+
+// Single event view
+if($event_id > 0): ?>
+
+
+<?php
+// Events list view
+else:
+?>
+
 <div id="events-list-container">
 
     <?php require_once ($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/adm/vendor/autoload.php'); ?>
@@ -68,7 +80,7 @@ Template Name: Events page
             <img src="<?php echo get_template_directory_uri(); ?>/images/iconeEvent.png" alt="">
         </div>
         <h4>
-            Vous souhaitez organiser un évènement à l’Atelier des Médias ?
+            Vous souhaitez organiser un événement à l’Atelier des Médias ?
         </h4>
 
         <ol>
@@ -93,6 +105,10 @@ Template Name: Events page
         jQuery(this).find('.calendar-title a').css("color", random_color)
     });
 </script>
+
+<?php
+endif;
+?>
 
 
 <?php get_footer(); ?>

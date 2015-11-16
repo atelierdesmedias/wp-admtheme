@@ -252,6 +252,15 @@ function getExcerpt($str, $startPos=0, $maxLength=50) {
 }
 
 
+/**
+ * Events custom rewrite
+ *
+ */
+function events_custom_rewrite() {
+    add_rewrite_tag('%event_id%','([^&]+)');
+    add_rewrite_rule('^les-evenements/([0-9]+)/?', 'index.php?pagename=les-evenements&event_id=$matches[1]', 'top');
+}
+add_action('init', 'events_custom_rewrite');
 
 // function my_js_include_function() {
 //     wp_enqueue_script( 'my_script.js', '/path/to/myscript.js', array('jquery') );
