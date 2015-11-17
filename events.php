@@ -5,51 +5,85 @@ Template Name: Events page
 ?>
 
 <?php get_header(); ?>
+
 <?php require_once ($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/adm/functions/FacebookEvents.php'); ?>
 
+<?php require_once ($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/adm/vendor/autoload.php'); ?>
+
 <?php
+// get events
+$appId = '1040421439303293';
+$appSecret = 'a1ae719c2b79fad77591c5ad76bc97f8';
+$accessToken = '1040421439303293|9yw1YLLVS7D8JwI8LqE4pORvULU';
+$maxEvents = 10;
+$futureEvents = false;
+$timeOffset = 7;
+$newWindow = false;
+$calSeparate = false;
+$fix_events_query = false;
+$session = "";
+
+$fb = new Facebook\Facebook([
+    'app_id'     => $appId,
+    'app_secret' => $appSecret,
+    'default_graph_version' => 'v2.5',
+]);
+
+$fb->setDefaultAccessToken($accessToken);
+
 $event_id = (int) get_query_var( 'event_id' );
 
 // Single event view
 if($event_id > 0): ?>
 
+    <?php
+    $response = $fb->get($event_id);
+    $graphObject = $response->getGraphObject();
+    $event = json_decode($graphObject, true);
+    ?>
+
+    <?php // view ?>
+    <div class="contentWrapper">
+        <section class="content">
+            <article id="" class="" role="article">
+                <header class="entry-header">
+                    <h1 class="entry-title"><?= $event['name']; ?></h1>
+                </header>
+                <div class="entry-content">
+                    <div class="calendar-event-single">
+                        <div class="calendar-single-inner">
+                            <div class="calendar-info">
+                                <div class="calendar-img"></div>
+                                <?php $date_format = "j F Y"; ?>
+                                <?php $time_format = "H:i"; ?>
+                                <div class="calendar-date">
+                                    <h2 class="calendar-title"><?= date_format(date_create($event['start_time']), $date_format); ?><br><small class="calendar-time"><?= date_format(date_create($event['start_time']), $time_format); ?></small></h2>
+                                </div>
+                            </div>
+                            <div class="calendar-excerpt">
+                                <p><?= nl2br($event['description']); ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calendar-map"></div>
+                </div>
+            </article>
+        </section>
+    </div>
+</div>
 
 <?php
 // Events list view
 else:
 ?>
-
 <div id="events-list-container">
 
-    <?php require_once ($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/adm/vendor/autoload.php'); ?>
-
     <?php
-    // get events
-    $appId = '1040421439303293';
-    $appSecret = 'a1ae719c2b79fad77591c5ad76bc97f8';
-    $accessToken = '1040421439303293|9yw1YLLVS7D8JwI8LqE4pORvULU';
-    $maxEvents = 10;
-    $futureEvents = false;
-    $timeOffset = 7;
-    $newWindow = false;
-    $calSeparate = false;
-    $fix_events_query = false;
-    $session = "";
-
-    $fb = new Facebook\Facebook([
-        'app_id'     => $appId,
-        'app_secret' => $appSecret,
-        'default_graph_version' => 'v2.5',
-    ]);
-
-    $fb->setDefaultAccessToken($accessToken);
-
     $response = $fb->get('/Coworkinglyon/events');
     $graphObject = $response->getGraphEdge();
     $events = json_decode($graphObject, true);
     ?>
 
-    <?php // view ?>
     <ul id="events-list">
         <?php foreach($events as $k => $event):
         $event_date = date_create($event['start_time']['date']);
