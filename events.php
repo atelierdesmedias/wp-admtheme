@@ -90,7 +90,7 @@ else:
         $now_date = new DateTime(); ?><!--
         --><li>
             <div class="calendar-event <?php if ($event_date < $now_date) :?>eme-past-event<?php endif; ?>">
-                <a href="javascript: void(0);">
+            <a href="/les-evenements/<?= $event['id']; ?>/">
                     <div class="calendar-circle"></div>
                 </a>
                 <?php $date_format = "j/m/y"; ?>
