@@ -42,7 +42,6 @@ if($event_id > 0): ?>
     $event = json_decode($graphObject, true);
     ?>
 
-    <?php // view ?>
     <div class="contentWrapper">
         <section class="content">
             <article id="" class="" role="article">
@@ -54,10 +53,10 @@ if($event_id > 0): ?>
                         <div class="calendar-single-inner">
                             <div class="calendar-info">
                                 <div class="calendar-img"></div>
-                                <?php $date_format = "j F Y"; ?>
+                                <?php $date_format = "%a %d %B"; ?>
                                 <?php $time_format = "H:i"; ?>
                                 <div class="calendar-date">
-                                    <h2 class="calendar-title"><?= date_format(date_create($event['start_time']), $date_format); ?><br><small class="calendar-time"><?= date_format(date_create($event['start_time']), $time_format); ?></small></h2>
+                                    <h2 class="calendar-title"><?= strftime('%a %d %B', date("U", strtotime($event['start_time']))); ?><br><small class="calendar-time"><?= date_format(date_create($event['start_time']), $time_format); ?></small></h2>
                                 </div>
                             </div>
                             <div class="calendar-excerpt">
@@ -113,10 +112,7 @@ else:
         <div class="sidebar-calendar-icon">
             <img src="<?php echo get_template_directory_uri(); ?>/images/iconeEvent.png" alt="">
         </div>
-        <h4>
-            Vous souhaitez organiser un événement à l’Atelier des Médias ?
-        </h4>
-
+        <h4>Vous souhaitez organiser un événement à l’Atelier des Médias ?</h4>
         <ol>
             <li>Votre évènement doit être gratuit et ouvert à tous</li>
             <li>A visée non commerciale</li>

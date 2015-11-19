@@ -1,5 +1,9 @@
 <?php
-  
+
+/**
+ * Set FR locale
+ */
+setlocale (LC_TIME, 'fr_FR.utf8','fra');
 
 /*** clean ups and enhancements, uncomment to use */
 require_once('functions/custom_post_types.php');
