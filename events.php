@@ -64,8 +64,23 @@ if($event_id > 0): ?>
                             </div>
                         </div>
                     </div>
-                    <div class="calendar-map"></div>
-                </div>
+                    <div class="calendar-map">
+                        <?php
+                        $formatted_event_search_string = str_replace(' ', '%20', $event['place']['location']['street'] . ",%20" . $event['place']['location']['city'] . ",%20" . $event['place']['location']['zip'] . ",%20" . $event['place']['location']['country'] );
+                        $geocoding_url = "http://nominatim.openstreetmap.org/search/" . $formatted_event_search_string . "?format=json&addressdetails=1&limit=1&polygon_svg=1";
+                        $json = file_get_contents($geocoding_url);
+                        $event_location_object = array_shift(json_decode($json));
+                        ?>
+                        <iframe
+                        width="440"
+                        height="440"
+                        frameborder="0"
+                        scrolling="no"
+                        marginheight="0"
+                        marginwidth="0"
+                        src="http://cartosm.eu/map?lon=<?= $event_location_object->lon; ?>&lat=<?= $event_location_object->lat; ?>&zoom=18&width=440&height=440&mark=true&nav=true&pan=false&zb=inout&style=default&icon=down"
+                        ></iframe>
+                    </div>
             </article>
         </section>
     </div>
