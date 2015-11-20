@@ -91,6 +91,7 @@ get_header(); ?>
         </div>
     </div>
 
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script type="text/javascript">
         function initialize() {
             var latlng = new google.maps.LatLng(45.7711896, 4.8377912);
