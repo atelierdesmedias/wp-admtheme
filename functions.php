@@ -1,5 +1,9 @@
 <?php
-  
+
+/**
+ * Set FR locale
+ */
+setlocale (LC_TIME, 'fr_FR.utf8','fra');
 
 /*** clean ups and enhancements, uncomment to use */
 require_once('functions/custom_post_types.php');
@@ -230,6 +234,37 @@ function set_html_content_type() {
     return 'text/html';
 }
 
+
+/**
+ * Get excerpt from string
+ *
+ * @param String $str String to get an excerpt from
+ * @param Integer $startPos Position int string to start excerpt from
+ * @param Integer $maxLength Maximum length the excerpt may be
+ * @return String excerpt
+ */
+function getExcerpt($str, $startPos=0, $maxLength=50) {
+    if(strlen($str) > $maxLength) {
+        $excerpt   = substr($str, $startPos, $maxLength-3);
+        $lastSpace = strrpos($excerpt, ' ');
+        $excerpt   = substr($excerpt, 0, $lastSpace);
+        $excerpt  .= ' ...';
+    } else {
+        $excerpt = $str;
+    }
+    return $excerpt;
+}
+
+
+/**
+ * Events custom rewrite
+ *
+ */
+function events_custom_rewrite() {
+    add_rewrite_tag('%event_id%','([^&]+)');
+    add_rewrite_rule('^les-evenements/([0-9]+)/?', 'index.php?pagename=les-evenements&event_id=$matches[1]', 'top');
+}
+add_action('init', 'events_custom_rewrite');
 
 // function my_js_include_function() {
 //     wp_enqueue_script( 'my_script.js', '/path/to/myscript.js', array('jquery') );

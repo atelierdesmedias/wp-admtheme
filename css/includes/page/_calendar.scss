@@ -1,89 +1,86 @@
-.calendar-events-list {
-
-    .main-calendar {
-        width : 75%; 
-        float:left;
+#events-list-container {
+    display: inline-block;
+    width : 75%;
+    vertical-align: top;
+    #events-list {
+        list-style-type: none;
         padding : 0;
         margin : 0;
-
-        .eme_events_list {
-            list-style-type: none;
-            padding : 0;
-            margin : 0;
-            li {
-                display: inline-block;
-                width: 31%;
-                height: 255px;
-                padding : 0 0 10px 0;
-                margin : 0 2% 13px 0;
-                background-color : #fff;
-                text-align: center;
-            }
+        li {
+            display: inline-block;
+            width: 31%;
+            height: 255px;
+            padding : 0 0 10px 0;
+            margin : 0 2% 13px 0;
+            background-color : #fff;
+            text-align: center;
         }
     }
-
-    .sidebar-calendar {
-        width : 25%; 
-        float:left;
-        background-color: #88BA2D;
-        color : #fff;
-
-        .sidebar-calendar-inner {
-            padding:10px;
-        }
-
-        h4 {
-            font-style: italic;
-            text-align: center;
-            font-size: 1.2em;
-            font-weight: 400;
-        }
-        .sidebar-calendar-icon {
-            padding-top:30px;
-            text-align: center;
-        }
-
-        .contact {
-            text-align: center;
-            font-size: .9em;
-        }
-
-        .contact a {
-            color: #fff;
-            font-size: .9em;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        ol {
-            font-size: .8em;
-        }
-    }
-
-    @include clearfix;
 }
 
+.sidebar-calendar {
+    background-color: #88BA2D;
+    color : #fff;
+    display: inline-block;
+    vertical-align: top;
+    width : 25%;
+
+    .sidebar-calendar-inner {
+        padding:10px;
+    }
+
+    h4 {
+        font-style: italic;
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: 400;
+    }
+    .sidebar-calendar-icon {
+        padding-top:30px;
+        text-align: center;
+    }
+
+    .contact {
+        text-align: center;
+        font-size: .9em;
+    }
+
+    .contact a {
+        color: #fff;
+        font-size: .9em;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    ol {
+        font-size: .8em;
+    }
+}
+
+
 .calendar-event {
-    .eme_events_list & {
+   // #events-list & {
         width : 100%;
-        height: 100%;    
+        height: 100%;
         overflow: hidden;
         padding :15px;
-    }
+    //}
 }
 
 .calendar-date {
     color: #464546;
 
-    .eme_events_list & {
-        font-size: 1.8em;
+    #events-list & {
+        display: inline-block;
+        font-size: 1.5rem;
         font-weight: 600;
-        margin : 8px 0;
+        letter-spacing: -1px;
+        margin : 5px 0;
     }
 
     .calendar-event-single & {
         line-height: 50px;
-        display:inline;
+        display: inline;
         text-align: left;
         color: #464546;
     }
@@ -94,9 +91,9 @@
     background-color: #EF8841;
     width: 50px;
     height: 50px;
-    
-    .eme_events_list & {
-        margin : 10px auto 0 auto;
+
+    #events-list & {
+        margin : 5px auto;
     }
     .calendar-single-inner & {
         display: inline-block;
@@ -111,14 +108,16 @@
 }
 
 .calendar-title {
-    color:#454645;
-    font-weight: 500;
+    color: #454645;
+    font-weight: 600;
     text-transform: capitalize;
-    
-    .eme_events_list & {
-        font-size: 1.3em;
-        line-height:1em;
-    }
+
+    //#events-list & {
+        display: inline-block;
+        font-size: 1.125rem;
+        line-height: 1.375rem;
+    //}
+
     a {
         text-decoration: none;
         font-weight: 600;
@@ -133,7 +132,7 @@
 
 
 .calendar-single-inner {
-    width : 50%; 
+    width : 50%;
     float:left;
     padding : 0;
     margin : 0;
@@ -153,14 +152,13 @@
     }
 
     .calendar-date {
-        width:60%;
         float:left;
     }
 
 
     .calendar-title {
         font-size: 2.8em;
-        margin:10px 10px 10px 50px;
+        margin:10px 10px 10px 30px;
         padding-top:15px;
         line-height: 0.3em;
         .calendar-time {
@@ -171,26 +169,20 @@
 
 
 .calendar-map {
-
-    width : 50%; 
+    width : 50%;
     float:right;
     background-color: #88BA2D;
     margin-top:-10px;
     margin-right:-20px;
     margin-bottom:-25px;
-    padding: 0; 
-
-    .eme-location-map {
-        width: 100%;
-        height: 300px;
-        margin:0;
-        padding: 0; 
-    }
+    padding: 0;
+    display: block;
+    height: 440px;
 }
 
 
 .calendar-excerpt {
-    .eme_events_list & {
+    #events-list & {
 
         p {
             display: inline;
