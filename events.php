@@ -6,8 +6,6 @@ Template Name: Events page
 
 <?php get_header(); ?>
 
-<?php require_once ($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/adm/functions/FacebookEvents.php'); ?>
-
 <?php require_once ($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/adm/vendor/autoload.php'); ?>
 
 <?php
