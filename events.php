@@ -101,18 +101,18 @@ else:
         $event_date = date_create($event['start_time']['date']);
         $now_date = new DateTime(); ?><!--
         --><li>
-            <div class="calendar-event <?php if ($event_date < $now_date) :?>eme-past-event<?php endif; ?>">
             <a href="/les-evenements/<?= $event['id']; ?>/">
+                <div class="calendar-event <?php if ($event_date < $now_date) :?>eme-past-event<?php endif; ?>">
                     <div class="calendar-circle"></div>
-                </a>
-                <?php $date_format = "j/m/y"; ?>
-                <?php $time_format = "H:i"; ?>
-                <span class="calendar-date"><?= date_format(date_create($event['start_time']['date']), $date_format); ?> - <?= date_format(date_create($event['start_time']['date']), $time_format); ?></span>
-                <div class="calendar-info">
-                <span class="calendar-title"><?= getExcerpt($event['name'], 0, 60); ?></span>
+                    <?php $date_format = "j/m/y"; ?>
+                    <?php $time_format = "H:i"; ?>
+                    <span class="calendar-date"><?= date_format(date_create($event['start_time']['date']), $date_format); ?> - <?= date_format(date_create($event['start_time']['date']), $time_format); ?></span>
+                    <div class="calendar-info">
+                    <span class="calendar-title"><?= getExcerpt($event['name'], 0, 60); ?></span>
+                    </div>
+                    <div class="calendar-excerpt"><?= getExcerpt($event['description']); ?></div>
                 </div>
-                <div class="calendar-excerpt"><?= getExcerpt($event['description']); ?></div>
-            </div>
+            </a>
         </li><!--
         --><?php if($k >= 11):
         break;
