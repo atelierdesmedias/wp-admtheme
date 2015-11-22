@@ -21,7 +21,7 @@ get_header(); ?>
 
 </section>
 
-<div class="sidebar-blog">
+<div class="sidebar-container" id="blog-sidebar-container">
 <?php get_sidebar( $name ); ?>
 </div>
 <?php get_footer(); ?>
