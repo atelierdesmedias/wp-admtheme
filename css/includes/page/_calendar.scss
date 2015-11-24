@@ -2,7 +2,7 @@
     display: inline-block;
     width : 75%;
     vertical-align: top;
-    #events-list {
+    ul.events-list {
         list-style-type: none;
         padding : 0;
         margin : 0;
@@ -19,6 +19,18 @@
             }
         }
     }
+}
+
+.past-events-separator{
+    display: block;
+    background: $color-green;
+    padding: 10px 30px;
+    color: $color-white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    width: 97%;
+    margin: 20px 0;
 }
 
 .sidebar-calendar {
@@ -94,6 +106,7 @@
     background-color: #EF8841;
     width: 50px;
     height: 50px;
+    margin: 0 auto;
 
     #events-list & {
         margin : 5px auto;

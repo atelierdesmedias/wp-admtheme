@@ -98,10 +98,17 @@ else:
     $events = json_decode($graphObject, true);
     ?>
 
-    <ul id="events-list">
-        <?php foreach($events as $k => $event):
+    <ul class="events-list">
+    <?php
+        $past = false;
+        foreach($events as $k => $event):
         $event_date = date_create($event['start_time']['date']);
         $now_date = new DateTime(); ?><!--
+        <?php if ( ($event_date < $now_date) && ($past == false) ): ?>
+        --></ul><span class="past-events-separator">Évènements passés</span><ul class="events-list"><!--
+        <?php
+        $past = true;
+        endif; ?>
         --><li>
             <a href="/les-evenements/<?= $event['id']; ?>/">
                 <div class="calendar-event <?php if ($event_date < $now_date) :?>eme-past-event<?php endif; ?>">
