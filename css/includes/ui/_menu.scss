@@ -21,7 +21,7 @@
   text-decoration: none;
 }
 .menu > ul {
-  > .menu-item:hover,
+  > .menu-item-has-children:hover,
   > .current-menu-item,
   > .current-menu-ancestor {
     > .sub-menu {
