@@ -6,7 +6,7 @@ Template Name: Events page
 
 <?php get_header(); ?>
 
-<?php require_once ($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/adm/vendor/autoload.php'); ?>
+<?php require_once ($_SERVER['DOCUMENT_ROOT'] . '/wp-content/themes/wp-admtheme/vendor/autoload.php'); ?>
 
 <?php
 // get events
