@@ -1,3 +1,5 @@
+<img src="<?= get_bloginfo('template_url'); ?>/images/bg-home.jpg">
+
 <?php
 /**
  * Template Name: home page
