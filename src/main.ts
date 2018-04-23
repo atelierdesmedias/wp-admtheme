@@ -9,7 +9,7 @@
 import 'normalize.css'
 
 // reset from helpers
-// import 'whelpers/style/less/reset.less'
+import './common/helpers/reset.scss'
 
 // declare inline @fontFace
 import './common/fonts/fonts.scss'
@@ -19,8 +19,59 @@ import './common/layouts/body.scss'
 
 // ----------------------------------------------------------------------------- JS IMPORTS
 
-// importer Vue et ses dépendances
-// import app from './project/components/app/app'
+import {jView} from './common/core/jView';
+import {homePage} from "./project/pages/homePage/homePage";
 
+// ----------------------------------------------------------------------------- START EXPORT CLASS
+
+export class main extends jView
+{
+
+    // ------------------------------------------------------------------------- TYPE
+
+    private _homePage: homePage;
+
+    // ------------------------------------------------------------------------- INIT
+
+    /**
+     * after Init
+     * (method overwriting jView and move to constructor via init)
+     */
+    protected afterInit() {
+        // load scripts depend of the page page
+        this.showPage();
+
+        // load root components
+        this.InitRootComponents();
+    }
+
+    // ------------------------------------------------------------------------- FINAL
+
+    /**
+     * Components that are not concatenated in specific page
+     */
+    protected InitRootComponents() {
+
+    }
+
+    /**
+     * Load script depend of pages
+     */
+    protected showPage() {
+
+        // instancier les pages
+         this._homePage = new homePage();
+
+    }
+
+    // ------------------------------------------------------------------------- END EXPORT CLASS
+
+}
+
+/**
+ * FINAL
+ * instancier la class "main"
+ */
+new main();
 
 

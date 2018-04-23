@@ -9,8 +9,10 @@ import {jView} from '../../../common/core/jView';
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class app extends jView {
-    // ------------------------------------------------------------------------- TYPE ELEMENTS
+export class app extends jView
+{
+
+    // ------------------------------------------------------------------------- TYPE
 
     // ------------------------------------------------------------------------- INIT
 
@@ -18,7 +20,8 @@ export class app extends jView {
      * prepare nodes
      * (method overwriting jView and move to constructor via init)
      */
-    protected prepareNodes() {
+    protected prepareNodes()
+    {
 
     }
 
@@ -26,7 +29,8 @@ export class app extends jView {
      * prepare dependencies
      * (method overwriting jView and move to constructor via init)
      */
-    protected prepareDependencies() {
+    protected prepareDependencies()
+    {
 
     }
 
@@ -34,7 +38,8 @@ export class app extends jView {
      * prepare events
      * (method overwriting jView and move to constructor via init)
      */
-    protected prepareEvents() {
+    protected prepareEvents()
+    {
 
     }
 
@@ -42,7 +47,8 @@ export class app extends jView {
      * after Init
      * (method overwriting jView and move to constructor via init)
      */
-    protected afterInit() {
+    protected afterInit()
+    {
 
     }
 

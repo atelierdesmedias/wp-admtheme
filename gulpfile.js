@@ -6,8 +6,6 @@
 // ----------------------------------------------------------------------------- DEPENDENCIES
 
 let gulp            = require('gulp');
-// let requireDir      = require('require-dir'); // split tasks in diferents scripts
-// let runSequence     = require('run-sequence');  // launch an order of sequences
 
 // ----------------------------------------------------------------------------- PATHS
 
@@ -20,7 +18,7 @@ let root = '';
 path = {
 
     // template folder
-    template : root + 'src/config/templates/',
+    template : root + 'config/templates/',
 
     // Path to components
     components  : root + 'src/project/components/',
@@ -37,41 +35,32 @@ path = {
 
 // ----------------------------------------------------------------------------- SCAFF TASK
 
-// let gulp                 = require('gulp');
 let prompt                  = require('gulp-prompt');
 let template                = require('gulp-template');
 let rename                  = require('gulp-rename');
 let changeCase              = require('change-case');
 let gutil                   = require("gulp-util");
 
+let DOMTsTemplate           = path.template + 'dom/tsTemplate';
+let DOMLessTemplate         = path.template + 'dom/scssTemplate';
 
-let vueJsTemplate           = path.template + 'templates/vue/jsTemplate';
-let vueLessTemplate         = path.template + 'templates/vue/lessTemplate';
-let vueHtmlTemplate         = path.template + 'templates/vue/vueTemplate';
-
-let vueSingleFileTemplate   = path.template + 'templates/vue-singleFileComponent/vueTemplate';
-
-let DOMJsTemplate           = path.template + 'templates/jquery/jsTemplate';
-let DOMLessTemplate         = path.template + 'templates/jquery/lessTemplate';
 
 
 gulp.task('scaff', () =>  {
 
-    gulp.src( vueJsTemplate )
+    gulp.src( DOMTsTemplate )
 
         .pipe(prompt.prompt([
 
         // question 1 : techno
-        {
-            type: 'list',
-            name: 'techno',
-            message: 'Techno ?',
-            choices: [
-                'Vue',
-                'Vue single file',
-                'DOM'
-            ]
-        },
+        // {
+        //     type: 'list',
+        //     name: 'techno',
+        //     message: 'Techno ?',
+        //     choices: [
+        //         'dom'
+        //     ]
+        // },
 
         // question 2 : type page / component
         {
@@ -93,78 +82,16 @@ gulp.task('scaff', () =>  {
             let formatName = changeCase.camelCase(res.name); // debut lowerCase
 
 
-            // ----------------------------------------------------------------- VUE (3 files)
+            // ----------------------------------------------------------------- dom (2 files)
 
-            // test techno
-            // if vue
-            if (res.techno === 'Vue')
-            {
-
-                // ----- JS template
-                gulp.src( vueJsTemplate )
-
-                // config
-                    .pipe(template({ name: formatName }))
-                    // rename file with response name
-                    .pipe(rename(formatName +'.js'))
-                    // define Dest
-                    .pipe(gulp.dest( (res.type === 'Component' ? path.components : path.pages) + formatName ));
-
-                // ----- LESS template
-                gulp.src( vueLessTemplate )
-
-                // config
-                    .pipe(template({ name: formatName }))
-                    // rename file with response name
-                    .pipe(rename(formatName +'.less'))
-                    // define Dest
-                    .pipe(gulp.dest( (res.type === 'Component' ? path.components : path.pages) + formatName ));
-
-
-                // ----- HTML
-                gulp.src(vueHtmlTemplate)
-
-                // config
-                    .pipe(template({name: formatName}))
-                    // rename file with response name
-                    .pipe(rename(formatName + '.vue'))
-                    // define Dest
-                    .pipe(gulp.dest( (res.type === 'Component' ? path.components : path.pages) + formatName ));
-            }
-
-
-            // ----------------------------------------------------------------- VUE single file template (1 file)
-
-
-            // if vue single File
-            if (res.techno === 'Vue single file')
-            {
-
-                // VUE template
-                gulp.src( vueSingleFileTemplate )
-
-                // config
-                    .pipe(template({name: formatName}))
-                    // rename file with response name
-                    .pipe(rename(formatName + '.vue'))
-                    // define Dest
-                    .pipe(gulp.dest( (res.type === 'Component' ? path.components : path.pages) + formatName ));
-
-            }
-
-            // ----------------------------------------------------------------- DOM (2 files)
-
-            // if DOM
-            if (res.techno === 'DOM')
-            {
 
                 // ---- JS template
-                gulp.src( DOMJsTemplate )
+                gulp.src( DOMTsTemplate )
 
                 // config
                     .pipe(template({ name: formatName }))
                     // rename file with response name
-                    .pipe(rename(formatName +'.js'))
+                    .pipe(rename(formatName +'.ts'))
                     // define Dest
                     .pipe(gulp.dest( (res.type === 'Component' ? path.components : path.pages) + formatName ));
 
@@ -175,12 +102,9 @@ gulp.task('scaff', () =>  {
                 // config
                     .pipe(template({ name: formatName }))
                     // rename file with response name
-                    .pipe(rename(formatName +'.less'))
+                    .pipe(rename(formatName +'.scss'))
                     // define Dest
                     .pipe(gulp.dest( (res.type === 'Component' ? path.components : path.pages) + formatName ));
-
-
-            }
 
 
 

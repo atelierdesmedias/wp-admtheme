@@ -1,33 +1,25 @@
 /**
-  * @Filename: body.less
+  * @Filename: body
   * @Description: body Layout style
 */
+//------------------------------------------------------------------------------  IMPORT
 
-//------------------------------------------------------------------------  IMPORT
+@import '../_common';
 
-@import '../common';
-
-//------------------------------------------------------------------------  BODY
+//------------------------------------------------------------------------------  BODY
 
 body
 {
-	// global font size
-	font-size: 16px;
-	
-	// global font
+  // global font size
+  font-size: 16px;
 
+  // global color
+  color: $color2;
 
-    // global color
-	color: $color2;
+  // global background
+  background: $color1;
 
-	// global background
-	background: $color1;
- 	
+  // global font
+
 }
-
-.body-home
-{
-	background: $color1;
-}
-
 

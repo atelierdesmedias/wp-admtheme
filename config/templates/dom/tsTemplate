@@ -1,20 +1,18 @@
 /**
-  * this is "<%= name %>" JS export class
-  * follow workflow instructions
+ * this is "<%= name %>" TS export class
+ * follow workflow instructions
  */
 
-// ----------------------------------------------------------------------------- IMPORTS
+// ------------------------------------------------------------------------- IMPORTS
 
-import {jView} from '../../models/jView';
+import {jView} from '../../../common/core/jView';
 
-// ----------------------------------------------------------------------------- START EXPORT CLASS
+// ------------------------------------------------------------------------- START EXPORT CLASS
 
 export class <%= name %> extends jView
 {
 
-    // ------------------------------------------------------------------------- TYPE ELEMENTS
-
-
+    // ------------------------------------------------------------------------- TYPE
 
     // ------------------------------------------------------------------------- INIT
 
@@ -22,7 +20,7 @@ export class <%= name %> extends jView
      * prepare nodes
      * (method overwriting jView and move to constructor via init)
      */
-    protected prepareNodes ()
+    protected prepareNodes()
     {
 
     }
@@ -31,7 +29,7 @@ export class <%= name %> extends jView
      * prepare dependencies
      * (method overwriting jView and move to constructor via init)
      */
-    protected prepareDependencies ()
+    protected prepareDependencies()
     {
 
     }
@@ -40,7 +38,7 @@ export class <%= name %> extends jView
      * prepare events
      * (method overwriting jView and move to constructor via init)
      */
-    protected prepareEvents ()
+    protected prepareEvents()
     {
 
     }
@@ -49,7 +47,7 @@ export class <%= name %> extends jView
      * after Init
      * (method overwriting jView and move to constructor via init)
      */
-    protected afterInit ()
+    protected afterInit()
     {
 
     }
@@ -57,6 +55,6 @@ export class <%= name %> extends jView
     // ------------------------------------------------------------------------- HANDLERS
 
 
-
+    // ------------------------------------------------------------------------- END EXPORT CLASS
 }
 

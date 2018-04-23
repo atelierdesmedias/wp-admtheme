@@ -1,21 +1,18 @@
 /**
-  * this is "<%= name %>" JS export class
-  * follow workflow instructions
+ * this is "homePage" TS export class
+ * follow workflow instructions
  */
 
 // ------------------------------------------------------------------------- IMPORTS
 
-// TODO
-import {jView} from '../../models/jView';
+import {jView} from '../../../common/core/jView';
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class <%= name %> extends jView
+export class homePage extends jView
 {
 
-    // ------------------------------------------------------------------------- TYPE ELEMENTS
-
-
+    // ------------------------------------------------------------------------- TYPE
 
     // ------------------------------------------------------------------------- INIT
 
@@ -23,7 +20,7 @@ export class <%= name %> extends jView
      * prepare nodes
      * (method overwriting jView and move to constructor via init)
      */
-    prepareNodes ()
+    protected prepareNodes()
     {
 
     }
@@ -32,7 +29,7 @@ export class <%= name %> extends jView
      * prepare dependencies
      * (method overwriting jView and move to constructor via init)
      */
-    prepareDependencies ()
+    protected prepareDependencies()
     {
 
     }
@@ -41,7 +38,7 @@ export class <%= name %> extends jView
      * prepare events
      * (method overwriting jView and move to constructor via init)
      */
-    prepareEvents ()
+    protected prepareEvents()
     {
 
     }
@@ -50,14 +47,19 @@ export class <%= name %> extends jView
      * after Init
      * (method overwriting jView and move to constructor via init)
      */
-    afterInit ()
+    protected afterInit()
     {
-
+        this.test();
     }
 
     // ------------------------------------------------------------------------- HANDLERS
 
+    protected test()
+    {
+        console.log('test');
+    }
 
 
+    // ------------------------------------------------------------------------- END EXPORT CLASS
 }
 

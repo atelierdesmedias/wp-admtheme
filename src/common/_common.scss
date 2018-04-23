@@ -8,13 +8,13 @@
 // helpers
 
 // atoms
-@import "atoms/colors";
+@import "atoms/_colors";
 
 // sizes, path
-@import "atoms/properties";
+@import "atoms/_properties";
 
 // elements
-@import "elements/title";
+@import "elements/_title";
 
 // fonts (reference + inline dans le root pour le @font-face declaration
-@import "fonts/fonts";
+@import "fonts/_fonts";
