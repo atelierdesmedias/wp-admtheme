@@ -1,9 +1,6 @@
 {
 
 	"compilerOptions": {
-//		"paths": {
-//			"solidify-lib": ["./node_modules/solidify-lib/*"]
-//		},
 
 		"outDir": "./public",
 		"sourceMap": true,
@@ -34,7 +31,6 @@
 
 	"include": [
 		"./src/**/**/*"
-//		"./node_modules/solidify-lib/*"
 	],
 	"exclude": [
 		"./node_modules/*"

@@ -19,20 +19,14 @@ let root = '';
 
 path = {
 
-    // Path to config
-    build       : root + 'build',
-
-    // Path to tasks
-    tasks       : root + 'config/tasks/',
+    // template folder
+    template : root + 'src/config/templates/',
 
     // Path to components
     components  : root + 'src/project/components/',
 
     // Path to pages
-    pages       : root + 'src/project/pages/',
-
-    // Path to helpers
-    whelpers    : root + 'node_modules/whelpers/',
+    pages       : root + 'src/project/pages/'
 
 };
 
@@ -51,14 +45,14 @@ let changeCase              = require('change-case');
 let gutil                   = require("gulp-util");
 
 
-let vueJsTemplate           = path.whelpers + 'templates/vue/jsTemplate';
-let vueLessTemplate         = path.whelpers + 'templates/vue/lessTemplate';
-let vueHtmlTemplate         = path.whelpers + 'templates/vue/vueTemplate';
+let vueJsTemplate           = path.template + 'templates/vue/jsTemplate';
+let vueLessTemplate         = path.template + 'templates/vue/lessTemplate';
+let vueHtmlTemplate         = path.template + 'templates/vue/vueTemplate';
 
-let vueSingleFileTemplate   = path.whelpers + 'templates/vue-singleFileComponent/vueTemplate';
+let vueSingleFileTemplate   = path.template + 'templates/vue-singleFileComponent/vueTemplate';
 
-let DOMJsTemplate           = path.whelpers + 'templates/jquery/jsTemplate';
-let DOMLessTemplate         = path.whelpers + 'templates/jquery/lessTemplate';
+let DOMJsTemplate           = path.template + 'templates/jquery/jsTemplate';
+let DOMLessTemplate         = path.template + 'templates/jquery/lessTemplate';
 
 
 gulp.task('scaff', () =>  {
