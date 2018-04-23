@@ -59,7 +59,6 @@ export class homePage extends jView
         console.log('test');
     }
 
-
     // ------------------------------------------------------------------------- END EXPORT CLASS
 }
 

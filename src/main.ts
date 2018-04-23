@@ -12,7 +12,7 @@ import 'normalize.css'
 import './common/helpers/reset.scss'
 
 // declare inline @fontFace
-import './common/fonts/fonts.scss'
+import './common/fonts/_fonts.scss'
 
 // layout
 import './common/layouts/body.scss'
