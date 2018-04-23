@@ -8,9 +8,3 @@ Créer une page ou un componsant dans le dossier [src](../src/) :
 // @root
 $ gulp scaff
 ```
-
-
-
-
-
-

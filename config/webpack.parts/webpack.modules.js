@@ -90,7 +90,7 @@ exports.cssMiniExtractModule = {
                     {
                         loader: 'css-loader',
                         options: {
-                            minimize: !isDev,
+                            // minimize: !isDev,
                         },
                     },
                     {

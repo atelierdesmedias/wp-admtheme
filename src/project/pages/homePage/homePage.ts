@@ -5,7 +5,8 @@
 
 // ------------------------------------------------------------------------- IMPORTS
 
-import {jView} from '../../../common/core/jView';
+import {jView} from '../../../common/core/jView'
+import './homePage.scss'
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
