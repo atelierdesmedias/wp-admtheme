@@ -38,6 +38,7 @@ export class main extends jView
      * (method overwriting jView and move to constructor via init)
      */
     protected afterInit() {
+
         // load scripts depend of the page page
         this.showPage();
 
@@ -52,6 +53,18 @@ export class main extends jView
      */
     protected InitRootComponents() {
 
+        /**
+         * instance d'un composant
+         * @desc: penser à passer en param l'objet zepto relatif à la class principale du composant
+         * cela permet de cibler ce block via "this.$root" à l'interieur du .ts du composant instancié
+         *
+         * ex :
+         *  - si le composant à instancier est "menu",
+         *  passer en param d'instance - $('.menu')
+         *
+         * @doc: http://zeptojs.com/
+         */
+
     }
 
     /**
@@ -59,8 +72,22 @@ export class main extends jView
      */
     protected showPage() {
 
-        // instancier les pages
-         this._homePage = new homePage();
+        /**
+         * instance d'une page
+         * @type {homePage}
+         * @private
+         * @desc: penser à passer en param l'objet zepto relatif à la class principale du composant
+         * cela permet de cibler ce block via "this.$root" à l'interieur du .ts du composant instancié
+         *
+         * ex :
+         *  - si le composant page à instancier est "homePage",
+         *  passer en param d'instance - $('.homePage')
+         *
+         * @doc: http://zeptojs.com/
+         *
+         */
+
+         this._homePage = new homePage( $('.homePage') );
 
     }
 

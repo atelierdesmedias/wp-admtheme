@@ -23,7 +23,7 @@ const resolve = {
 
         // alias
         alias: {
-            // 'bourbon': 'bourbon/_bourbon.scss',
+
         },
 
         modules: [

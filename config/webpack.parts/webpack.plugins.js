@@ -26,7 +26,7 @@ exports.ProvidePlugin = {
 
     plugins: [
         new webpack.ProvidePlugin({
-            Vue: "vue",
+            $: 'zepto-webpack'
         })
     ],
 
