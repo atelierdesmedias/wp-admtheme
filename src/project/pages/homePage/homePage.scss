@@ -2,6 +2,7 @@
   * "homePage" stylesheet
   * follow workflow instructions
  */
+
 // -----------------------------------------------------------------------------  IMPORT
 
 // common style & mixins
@@ -13,7 +14,6 @@
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
-
     // Call block element anywhere. Use it like this : .#{$this}_element
     $this : homePage;
 
@@ -21,11 +21,22 @@
 
   // --------------------------------------------------------------------------- ELEMENTS
 
+  &_header
+  {
+
+  }
+
   &_title
   {
     display: block;
-    @include title();
+    font-family: $font-stack-lucida-grande;
   }
+
+  &_content
+  {
+
+  }
+
 
   // --------------------------------------------------------------------------- MODIFIERS
 

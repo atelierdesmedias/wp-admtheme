@@ -1,11 +1,16 @@
 /**
-  * @Filename: main.less (@import (reference) style)
+  * @Filename: common (@import (reference) style)
   * @Description: common styles
 **/
 
-//------------------------------------------------------------------------  COMMON
+//------------------------------------------------------------------------------  COMMON
 
-// helpers
+// libs
+// bourbon - https://www.bourbon.io/docs/latest/
+@import '~bourbon/core/_bourbon.scss';
+
+// custom mixins
+@import 'helpers/_mixins';
 
 // atoms
 @import "atoms/_colors";
@@ -16,5 +21,5 @@
 // elements
 @import "elements/_title";
 
-// fonts (reference + inline dans le root pour le @font-face declaration
+// fonts
 @import "fonts/_fonts";

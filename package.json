@@ -2,7 +2,7 @@
 	"name": "adm",
 	"version": "1.0.0",
 	"description": "adm wordpress theme",
-	"repository": "webpack.config.js",
+	"repository": "webpack.config.babel.js",
 	"scripts": {
 		"dev": "NODE_ENV=dev webpack-dev-server --mode=development --hot --color --progress",
 		"prod": "NODE_ENV=prod webpack --mode=production --color --progress --hide-modules",
@@ -12,6 +12,7 @@
 	"author": "willy brauner",
 	"license": "ISC",
 	"dependencies": {
+		"bourbon": "^5.0.0",
 		"normalize.css": "^7.0.0",
 		"npm": "^5.8.0"
 	},

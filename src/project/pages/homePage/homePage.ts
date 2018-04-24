@@ -57,7 +57,7 @@ export class homePage extends jView
 
     protected test()
     {
-        console.log('test');
+        console.log('test console log');
     }
 
     // ------------------------------------------------------------------------- END EXPORT CLASS

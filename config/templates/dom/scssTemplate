@@ -2,6 +2,7 @@
   * "<%= name %>" stylesheet
   * follow workflow instructions
  */
+
 // -----------------------------------------------------------------------------  IMPORT
 
 // common style & mixins

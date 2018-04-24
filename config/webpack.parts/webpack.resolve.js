@@ -23,7 +23,7 @@ const resolve = {
 
         // alias
         alias: {
-            'vue': isDev ? 'vue/dist/vue.js' : 'vue/dist/vue.min.js',
+            // 'bourbon': 'bourbon/_bourbon.scss',
         },
 
         modules: [
