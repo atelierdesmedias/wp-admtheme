@@ -2,9 +2,25 @@
 
 Un système de création de **page** et de **composant** est intégré au projet via gulp.
 
-Créer une page ou un componsant dans le dossier [src](../src/) :
-
-```shell
-// @root
-$ gulp scaff
-```
+7. Tester le système de scaffolding développé avec gulp permettant de créer une page
+ou un composant : 
+  
+    ```shell
+    // créer une page 
+    gulp scaff 
+    // selectionner page 
+    // donner un nom en camelCase au composant page  
+    ```       
+   aller voir dans le dossier [src/project/pages/](../src/project/pages/) si le composant à bien été créé : 
+   
+ 
+    ```shell
+    src/                         
+    ├── ...                
+    ├── project/                       
+    │       └── monComposantPage          
+    │              |── monComposantPage.scss      # → feuille de style sass     
+    │              └── monComposantPage.ts        # → fichier ts relatif à ce composant          
+    ```  
+ 
+  
