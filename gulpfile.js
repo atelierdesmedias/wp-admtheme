@@ -5,7 +5,7 @@
 
 // ----------------------------------------------------------------------------- DEPENDENCIES
 
-let gulp            = require('gulp');
+let gulp = require('gulp');
 
 // ----------------------------------------------------------------------------- PATHS
 
@@ -24,13 +24,11 @@ path = {
     components  : root + 'src/project/components/',
 
     // Path to pages
-    pages       : root + 'src/project/pages/'
+    pages       : root + 'src/project/pages/',
 
+    // Path to config
+    env         : root + 'config/env/',
 };
-
-
-// Require all tasks
-// requireDir( path.config );
 
 
 // ----------------------------------------------------------------------------- SCAFF TASK
@@ -46,37 +44,27 @@ let DOMLessTemplate         = path.template + 'dom/scssTemplate';
 
 
 
-gulp.task('scaff', () =>  {
+gulp.task('scaff', () => {
 
-    gulp.src( DOMTsTemplate )
+    gulp.src(DOMTsTemplate)
 
         .pipe(prompt.prompt([
 
-        // question 1 : techno
-        // {
-        //     type: 'list',
-        //     name: 'techno',
-        //     message: 'Techno ?',
-        //     choices: [
-        //         'dom'
-        //     ]
-        // },
+            // question 2 : type page / component
+            {
+                type: 'list',
+                name: 'type',
+                message: 'Type of scaffolding ?',
+                choices: ['Page', 'Component']
+            },
+            // question 3 : name
+            {
+                type: 'input',
+                name: 'name',
+                message: 'What\'s your component name (camelCase) ?'
+            }
 
-        // question 2 : type page / component
-        {
-            type: 'list',
-            name: 'type',
-            message: 'Type of scaffolding ?',
-            choices: ['Page', 'Component']
-        },
-        // question 3 : name
-        {
-            type:'input',
-            name: 'name',
-            message: 'What\'s your component name (camelCase) ?'
-        }
-
-        ], function(res){
+        ], function (res) {
 
             // change case of name
             let formatName = changeCase.camelCase(res.name); // debut lowerCase
@@ -85,27 +73,26 @@ gulp.task('scaff', () =>  {
             // ----------------------------------------------------------------- dom (2 files)
 
 
-                // ---- JS template
-                gulp.src( DOMTsTemplate )
+            // ---- JS template
+            gulp.src(DOMTsTemplate)
 
-                // config
-                    .pipe(template({ name: formatName }))
-                    // rename file with response name
-                    .pipe(rename(formatName +'.ts'))
-                    // define Dest
-                    .pipe(gulp.dest( (res.type === 'Component' ? path.components : path.pages) + formatName ));
+            // config
+                .pipe(template({name: formatName}))
+                // rename file with response name
+                .pipe(rename(formatName + '.ts'))
+                // define Dest
+                .pipe(gulp.dest((res.type === 'Component' ? path.components : path.pages) + formatName));
 
 
-                // ---- LESS template
-                gulp.src( DOMLessTemplate )
+            // ---- LESS template
+            gulp.src(DOMLessTemplate)
 
-                // config
-                    .pipe(template({ name: formatName }))
-                    // rename file with response name
-                    .pipe(rename(formatName +'.scss'))
-                    // define Dest
-                    .pipe(gulp.dest( (res.type === 'Component' ? path.components : path.pages) + formatName ));
-
+            // config
+                .pipe(template({name: formatName}))
+                // rename file with response name
+                .pipe(rename(formatName + '.scss'))
+                // define Dest
+                .pipe(gulp.dest((res.type === 'Component' ? path.components : path.pages) + formatName));
 
 
             // ----------------------------------------------------------------- END - console message
@@ -114,8 +101,80 @@ gulp.task('scaff', () =>  {
                 gutil.colors.yellow('Your ' + (res.type === 'Component' ? 'component' : 'pages')),
                 gutil.colors.cyan(formatName),
                 gutil.colors.yellow('has just been built in'),
-                gutil.colors.cyan( res.type === 'Component' ? 'src/project/components/' : 'src/project/pages/'),
+                gutil.colors.cyan(res.type === 'Component' ? 'src/project/components/' : 'src/project/pages/'),
                 gutil.colors.yellow('folder :)')
+            );
+
+        }));
+
+
+});
+
+
+
+
+
+
+// ----------------------------------------------------------------------------- ENV SCAFFOLDER
+
+
+/**
+ * Define Env Scaffolder
+ * @type {string}
+ */
+
+let envTemplate              = path.template + 'config/env';
+let envPropertiesTemplate    = path.template + 'config/properties';
+
+gulp.task('env', () =>  {
+
+    gulp.src( envTemplate )
+
+        .pipe(prompt.prompt([
+
+        // question 1 : name
+        {
+            type:'input',
+            name: 'name',
+            message: 'What\'s your name ? (ex: john)'
+        }
+
+        ], function(res){
+
+            // change case of name
+            let formatName = changeCase.camelCase(res.name);
+
+            // ----------------------------------------------------------------- env files
+
+
+                // env file
+                gulp.src( envTemplate )
+
+                // config
+                    .pipe(template({ name: formatName }))
+                    // rename file with response name
+                    .pipe(rename('env.js'))
+                    // define Dest
+                    .pipe(gulp.dest( path.env));
+
+
+                // properties file
+                gulp.src( envPropertiesTemplate )
+
+                // config
+                    .pipe(template({ name: formatName }))
+                    // rename file with response name
+                    .pipe(rename(formatName +'.properties.js'))
+                    // define Dest
+                    .pipe(gulp.dest( path.env));
+
+            // ----------------------------------------------------------------- END - console message
+
+            gutil.log(
+                gutil.colors.yellow('Env is now define with the name'),
+                gutil.colors.cyan(formatName+ ' !'),
+                gutil.colors.yellow('Change your local Path variable in'),
+                gutil.colors.cyan( 'config/env/'+formatName+'.properties.js'),
             );
 
         }));

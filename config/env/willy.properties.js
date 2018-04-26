@@ -1,13 +1,8 @@
+/**
+ * Set willy env properties
+ */
+
 module.exports = {
-
-    /**
-     * Application url.
-     * Set url of your local server
-     *
-     */
-
-    url: 'http://localhost:8080',
-
 
     /**
      * Application base.
@@ -21,7 +16,7 @@ module.exports = {
      *        Base should be : "/"
      */
 
-    base: '/',
+    base: '/adm/adm-trunk/',
 
 };
 

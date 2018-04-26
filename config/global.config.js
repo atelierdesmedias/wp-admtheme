@@ -8,22 +8,23 @@
  */
 
 /**
- * TODO : faire pointer les propriétés du tableaux vers celles qui sont définie dans
  * "name.properties.js" qui dépend de env.js (env.js n'étant pas versionné)
  */
 
 // ----------------------------------------------------------------------------- IMPORTS
 
+// get env name
 import {env} from './env/env.js';
+
+// get relative env properties depend of env.js configuration
+let customEnv = require('./env/'+env+'.properties.js');
 
 // ----------------------------------------------------------------------------- EXPORTS
 
 /**
- *
- * @type {{devServer: {url: string, base: string, env: string}}}
+ * Global Config
  */
 const globalConfig = {
-
 
     /**
      * Dev Server Informations
@@ -31,50 +32,19 @@ const globalConfig = {
     devServer: {
 
         /**
-         * Application url.
-         * Set url of your local server
-         *
+         * Application base
+         * Depend of env Name configuration
+         * Need to create a new user env ?
+         * $ gulp env
+         */
+        base: customEnv.base,
+
+        /**
+         * Application webpack devServer url (default webpack url)
          */
         url: 'http://localhost:8080',
 
-        /**
-         * Application base.
-         *
-         * - Set path from domain name to application. Starting and ending with slash.
-         * - ex :
-         * 		If application is installed here : http://domain.com/my-sub-folder/my-app/
-         * 		Base should be : "/my-sub-folder/my-app/"
-         * - ex :
-         * 		If application is installed here : http://domain.com/
-         * 		Base should be : "/"
-         */
-
-        base: '/',
-
-        env : env,
-
-
-
     },
-
-    // /**
-    //  * Staging Server Informations
-    //  */
-    // stagingServer: {
-    //
-    //     url: 'http://',
-    //     base: '/',
-    //
-    // },
-    //
-    // /**
-    //  * Prod Server Informations
-    //  */
-    // prodServer: {
-    //
-    //     url: 'http://',
-    //     base: '/',
-    // },
 
 };
 

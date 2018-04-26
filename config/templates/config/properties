@@ -1,13 +1,8 @@
+/**
+ * Set <%= name %> env properties
+ */
+
 module.exports = {
-
-    /**
-     * Application url.
-     * Set url of your local server
-     *
-     */
-
-    url: '',
-
 
     /**
      * Application base.
