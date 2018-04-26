@@ -42,7 +42,24 @@ et placer le contenu du dossier dézipé dans le dossier précédement créé.
    $ npm i  
    ```    
 
-6. Une fois les dépendances installées, tester module bundler 
+6. Une fois les dépendances installées, définir son propre environnement local :   
+      
+    ```shell
+    // from @root
+    $ gulp env
+    // donner son prenom à l'environnement
+    ```
+    Un fichier de propriété relatif à l'environement créé apparait dans [src/env/](../src/env). 
+    Configurer les propriétés d'environnement local (facultatif sur ce projet).
+       
+    ```shell
+    config/                                         
+    ├── env/                       
+    │       └── env.js                          # → contient le nom de l'environement défini
+    │       └── myname.properties.js            # → contient les propriétés de l'environnement nommé...   
+    ```
+    
+7. Tester le module bundler webpack
  
    ```shell
    // lancer webpack + devServer + hot reload
@@ -52,8 +69,7 @@ et placer le contenu du dossier dézipé dans le dossier précédement créé.
    $ npm run prod
    ```       
  
-7. Tester le système de scaffolding développé avec gulp permettant de créer une page
-ou un composant : 
+8. Tester le système de scaffolding permettant de créer une page ou un composant : 
   
     ```shell
     // créer une page 
@@ -61,7 +77,7 @@ ou un composant :
     // selectionner page 
     // donner un nom en camelCase au composant page  
     ```       
-   aller voir dans le dossier [src/project/pages/](../src/project/pages/) si le composant à bien été créé : 
+    Un composant "page" devrait être créé [src/project/pages/](../src/project/pages/) : 
     
     ```shell
     src/                         
