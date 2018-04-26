@@ -27,12 +27,12 @@ const globalPath = {
         jsEntryFile: path.resolve(__dirname, root + '/src/' + jsMainName),
 
         // Path to the public folder (output files pushed on the server)
-        dist: path.resolve(__dirname, root + '/dist/'),
+        dist: path.resolve(__dirname, root),
 
         // IMPORTANT
         // Change assets destination only here (others paths are relative to this one)
         // Path to dist > assets
-        assets: path.resolve(__dirname, root + '/dist/assets/'),
+        assets: path.resolve(__dirname, root + '/assets/'),
 
         // // Path to dist > assets > images
         images: () =>  this.assets + 'images/',

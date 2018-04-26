@@ -1,5 +1,69 @@
 <?php
 
+// -----------------------------------------------------------------------------  LOAD SCRIPTS
+
+/**
+ * Gestion de chargement assets JS et CSS
+ *
+ * Logic : en production, webpack est configuré pour générer un fichier "manifest.json"
+ * qui contient les noms (avec hash) des assets compilés.
+ *
+ * Si ce fichier existe : enregistrer le chargement de ces scripts via
+ * "wp_register_style" et "wp_register_script" de WP.
+ * Si non, en mode développement : servire uniquement le fichier JS sur le port par
+ * defaut de webpack dev server http://localhost:8080/
+ *
+ */
+function load_scripts() {
+
+    // get du fichier manifest
+    $manifest =  dirname(__FILE__).'/assets/manifest.json';
+
+    // Si le fichier "manifest.json" existe, chercher le nom du fichier généré
+    if (realpath($manifest)) {
+
+        // check le content de manifest
+        $content = file_get_contents($manifest);
+        $json = json_decode($content);
+        $css = '/assets/'.$json->{"apps.css"};
+        $js = '/assets/'.$json->{"apps.js"};
+
+        // register
+        wp_register_style( 'css', get_template_directory_uri() . $css , array(), '', 'all' );
+        wp_register_script( 'js', get_template_directory_uri() . $js , array(), '', true );
+        wp_enqueue_style( 'css' );
+        wp_enqueue_script( 'js' );
+
+    // si le fichier "manifest.json" n'existe pas
+    } else {
+
+        $js = '/assets/apps.js';
+        // en mode development, les assets sonts servis sur http://localhost:8080/ par webpack
+        wp_register_script( 'js', 'http://localhost:8080' . $js , array(), '', true );
+        wp_enqueue_script( 'js' );
+
+    };
+
+}
+add_action('wp_enqueue_scripts', 'load_scripts', 10);
+
+
+/**
+ * Supprimer les scripts inutils ajoutés par WP
+ */
+function remove_wp_scripts() {
+    // désactiver les scripts suivants :
+    remove_action( 'wp_print_styles', 'print_emoji_styles' );
+    remove_action( 'admin_print_styles', 'print_emoji_styles' );
+    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+}
+add_action('wp_enqueue_scripts', 'remove_wp_scripts', 10);
+
+
+
+// -----------------------------------------------------------------------------  CONFIG
+
 /**
  * Set FR locale
  */
@@ -313,12 +377,5 @@ if( !function_exists('async_google_analytics'))  {
 }*/
 
 
-/**
- * register apps script from webpack compilation
- * TODO : le lien vers la distribution de l'asset js doit être relatif !
- */
-
-wp_register_script('js', 'http://localhost:8080/assets/apps.js', array(), '', true);
-wp_enqueue_script('js');
 
 ?>
