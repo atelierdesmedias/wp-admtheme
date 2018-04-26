@@ -2,7 +2,7 @@
 
 	"compilerOptions": {
 
-		"outDir": "./public",
+		"outDir": "./dist",
 		"sourceMap": true,
 		"module": "es2015",
 		"moduleResolution": "node",
@@ -10,21 +10,22 @@
 		"experimentalDecorators": true,
 		"allowSyntheticDefaultImports": true,
 		"strictPropertyInitialization": false,
-		"strict": true
+		"strict": true,
+		"allowJs": true,
+		"noImplicitAny": true
 //
 //		"isolatedModules": false,
 //		"noEmitOnError": false,
 //		"emitDecoratorMetadata": true,
 //
 //		"declaration": false,
-//		"noImplicitAny": false,
 //		"suppressImplicitAnyIndexErrors": true,
 //
 //		"removeComments": true,
 //		"preserveConstEnums": true,
 //
 //		"importHelpers" : true,
-//		"noEmitHelpers" : true
+//		"noEmitHelpers" : true,
 
 //		"allowUnreachableCode" : true
 	},

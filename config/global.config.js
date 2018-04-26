@@ -7,7 +7,23 @@
  * @type {{devServer: {url: string, base: string}, stagingServer: {url: string, base: string}, prodServer: {url: string, base: string}}}
  */
 
+/**
+ * TODO : faire pointer les propriétés du tableaux vers celles qui sont définie dans
+ * "name.properties.js" qui dépend de env.js (env.js n'étant pas versionné)
+ */
+
+// ----------------------------------------------------------------------------- IMPORTS
+
+import {env} from './env/env.js';
+
+// ----------------------------------------------------------------------------- EXPORTS
+
+/**
+ *
+ * @type {{devServer: {url: string, base: string, env: string}}}
+ */
 const globalConfig = {
+
 
     /**
      * Dev Server Informations
@@ -35,26 +51,30 @@ const globalConfig = {
 
         base: '/',
 
-    },
+        env : env,
 
-    /**
-     * Staging Server Informations
-     */
-    stagingServer: {
 
-        url: 'http://',
-        base: '/',
 
     },
 
-    /**
-     * Prod Server Informations
-     */
-    prodServer: {
-
-        url: 'http://',
-        base: '/',
-    },
+    // /**
+    //  * Staging Server Informations
+    //  */
+    // stagingServer: {
+    //
+    //     url: 'http://',
+    //     base: '/',
+    //
+    // },
+    //
+    // /**
+    //  * Prod Server Informations
+    //  */
+    // prodServer: {
+    //
+    //     url: 'http://',
+    //     base: '/',
+    // },
 
 };
 

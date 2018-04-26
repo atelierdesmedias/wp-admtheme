@@ -21,6 +21,7 @@ import './common/layouts/body.scss'
 
 import {jView} from './common/core/jView';
 import {homePage} from "./project/pages/homePage/homePage";
+import globalConfig from "../config/global.config";
 
 // ----------------------------------------------------------------------------- START EXPORT CLASS
 
@@ -89,6 +90,8 @@ export class main extends jView
 
          this._homePage = new homePage( $('.homePage') );
 
+
+        console.log(globalConfig.devServer);
     }
 
     // ------------------------------------------------------------------------- END EXPORT CLASS
