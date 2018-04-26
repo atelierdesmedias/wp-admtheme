@@ -49,6 +49,7 @@ et placer le contenu du dossier dézipé dans le dossier précédement créé.
    $ npm run dev
    
    // lancer webpack avec compile des assets minifiés et optimizés
+   $ npm run prod
    ```       
  
 7. Tester le système de scaffolding développé avec gulp permettant de créer une page
@@ -56,7 +57,7 @@ ou un composant :
   
     ```shell
     // créer une page 
-    gulp scaff 
+    $ gulp scaff 
     // selectionner page 
     // donner un nom en camelCase au composant page  
     ```       
