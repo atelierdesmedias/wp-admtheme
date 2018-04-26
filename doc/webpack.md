@@ -8,7 +8,7 @@ Les assets ts et scss du projet sont compilé via webpack.
         // @root folder
         $ npm run dev
         
-- delploy assets:  
+- deploy assets:  
         
         // @root folder
         $ npm run prod
