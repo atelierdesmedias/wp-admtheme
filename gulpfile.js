@@ -1,11 +1,16 @@
 /**
-  * @Filename: gulpfile.js
-  * @Description: config gulp builder
-*/
+ * @Filename: gulpfile.js
+ * @Description: config gulp builder
+ */
 
 // ----------------------------------------------------------------------------- DEPENDENCIES
 
-let gulp = require('gulp');
+const gulp = require('gulp');
+const prompt = require('gulp-prompt');
+const template = require('gulp-template');
+const rename = require('gulp-rename');
+const changeCase = require('change-case');
+const gutil = require("gulp-util");
 
 // ----------------------------------------------------------------------------- PATHS
 
@@ -13,35 +18,28 @@ let gulp = require('gulp');
  * project Paths
  */
 
-let root = '';
+const root = './';
 
 path = {
 
     // template folder
-    template : root + 'config/templates/',
+    templates: root + 'config/templates/',
 
     // Path to components
-    components  : root + 'src/project/components/',
+    components: root + 'src/project/components/',
 
     // Path to pages
-    pages       : root + 'src/project/pages/',
+    pages: root + 'src/project/pages/',
 
     // Path to config
-    env         : root + 'config/env/',
+    env: root + 'config/env/',
 };
-
 
 // ----------------------------------------------------------------------------- SCAFF TASK
 
-let prompt                  = require('gulp-prompt');
-let template                = require('gulp-template');
-let rename                  = require('gulp-rename');
-let changeCase              = require('change-case');
-let gutil                   = require("gulp-util");
 
-let DOMTsTemplate           = path.template + 'dom/tsTemplate';
-let DOMLessTemplate         = path.template + 'dom/scssTemplate';
-
+let DOMTsTemplate = path.templates + 'dom/tsTemplate';
+let DOMLessTemplate = path.templates + 'dom/scssTemplate';
 
 
 gulp.task('scaff', () => {
@@ -70,7 +68,7 @@ gulp.task('scaff', () => {
             let formatName = changeCase.camelCase(res.name); // debut lowerCase
 
 
-            // ----------------------------------------------------------------- dom (2 files)
+            // ----------------------------------------------------------------- DOM (2 files)
 
 
             // ---- JS template
@@ -111,11 +109,7 @@ gulp.task('scaff', () => {
 });
 
 
-
-
-
-
-// ----------------------------------------------------------------------------- ENV SCAFFOLDER
+// ----------------------------------------------------------------------------- ENV
 
 
 /**
@@ -123,58 +117,57 @@ gulp.task('scaff', () => {
  * @type {string}
  */
 
-let envTemplate              = path.template + 'config/env';
-let envPropertiesTemplate    = path.template + 'config/properties';
+let envTemplate = path.templates + 'config/env';
+let envPropertiesTemplate = path.templates + 'config/properties';
 
-gulp.task('env', () =>  {
+gulp.task('env', () => {
 
-    gulp.src( envTemplate )
+    gulp.src(envTemplate)
 
         .pipe(prompt.prompt([
 
-        // question 1 : name
-        {
-            type:'input',
-            name: 'name',
-            message: 'What\'s your name ? (ex: john)'
-        }
+            // question 1 : name
+            {
+                type: 'input',
+                name: 'name',
+                message: 'What\'s your name ? (ex: john)'
+            }
 
-        ], function(res){
+        ], function (res) {
 
             // change case of name
             let formatName = changeCase.camelCase(res.name);
 
-            // ----------------------------------------------------------------- env files
+            // ----------------------------------------------------------------- ENV SCAFFOLDER
+
+            // env file
+            gulp.src(envTemplate)
+
+            // config
+                .pipe(template({name: formatName}))
+                // rename file with response name
+                .pipe(rename('env.js'))
+                // define Dest
+                .pipe(gulp.dest(path.env));
 
 
-                // env file
-                gulp.src( envTemplate )
+            // properties file
+            gulp.src(envPropertiesTemplate)
 
-                // config
-                    .pipe(template({ name: formatName }))
-                    // rename file with response name
-                    .pipe(rename('env.js'))
-                    // define Dest
-                    .pipe(gulp.dest( path.env));
-
-
-                // properties file
-                gulp.src( envPropertiesTemplate )
-
-                // config
-                    .pipe(template({ name: formatName }))
-                    // rename file with response name
-                    .pipe(rename(formatName +'.properties.js'))
-                    // define Dest
-                    .pipe(gulp.dest( path.env));
+            // config
+                .pipe(template({name: formatName}))
+                // rename file with response name
+                .pipe(rename(formatName + '.properties.js'))
+                // define Dest
+                .pipe(gulp.dest(path.env));
 
             // ----------------------------------------------------------------- END - console message
 
             gutil.log(
                 gutil.colors.yellow('Env is now define with the name'),
-                gutil.colors.cyan(formatName+ ' !'),
-                gutil.colors.yellow('Change your local Path variable in'),
-                gutil.colors.cyan( 'config/env/'+formatName+'.properties.js'),
+                gutil.colors.cyan(formatName + ' !'),
+                gutil.colors.yellow('Change your locale Paths variable in'),
+                gutil.colors.cyan('config/env/' + formatName + '.properties.js'),
             );
 
         }));

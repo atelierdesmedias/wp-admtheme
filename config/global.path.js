@@ -20,6 +20,8 @@ const globalPath = {
 
     PATHS : {
 
+        config: path.resolve(__dirname, root + '/config/'),
+
         // Path to the source (my project)
         src: path.resolve(__dirname, root + '/src/'),
 
@@ -42,6 +44,18 @@ const globalPath = {
 
         // Path to dist > assets > css
         css: () => this.assets + 'css/',
+
+        // Path to templates
+        templates: () => this.config + 'templates/',
+
+        // Path to components
+        components: () => this.src + 'project/components/',
+
+        // Path to pages
+        pages: () => this.src + 'project/pages/',
+
+        // Path to env config
+        env: () => this.config + 'env/',
 
     },
 
