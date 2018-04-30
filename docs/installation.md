@@ -1,0 +1,95 @@
+# Installation
+
+
+1. lancer son serveur local php (avec [MAMP](https://www.mamp.info/en/downloads/) par exemple)
+
+2. créer un dossier nommé "adm" (ou whatever...)
+
+3. Le projet étant un thême wordpress, télécharger le core wordpress sur [worpdress.org](http://wordpress.org/)
+et placer le contenu du dossier dézipé dans le dossier précédement créé.
+ 
+4. Aller dans le dossier `wp-content/themes/` :
+    
+    ```shell
+    $ cd wp-content/themes/
+    ``` 
+
+    puis cloner le projet [wp-admtheme](https://github.com/atelierdesmedias/wp-admtheme) avec ssh.
+
+    ```shell
+    $ git clone git@github.com:atelierdesmedias/wp-admtheme.git
+    ```
+    
+    ```shell
+    adm/                         
+    ├── index.php               
+    ├── ...   
+    ├── wp-content
+    │       ├── ...          
+    │       ├── plugins/        # → insller les plugins wp ici (TODO)
+    │       └── themes/         # → installer le thème ici
+    ├── ...        
+    ```
+5. se déplacer dans le dossier du thème fraichement installé :
+  
+   ```shell
+   $ cd wp-admtheme 
+   ``` 
+   puis installer les dépendances front du projet via [npm](https://www.npmjs.com/)
+   avec la commande bash suivante : (la liste des dépendances se trouve dans `package.json`)
+  
+   ```shell
+   $ npm i  
+   ```    
+
+6. Une fois les dépendances installées, définir son propre environnement local :   
+      
+    ```shell
+    // from @root
+    $ npm run env
+    // donner son prenom à l'environnement
+    ```
+    Un fichier de propriété relatif à l'environement créé apparait dans [src/env/](../src/env). 
+    Configurer les propriétés d'environnement local (facultatif sur ce projet).
+       
+    ```shell
+    config/                                         
+    ├── env/                       
+    │       └── env.js                          # → contient le nom de l'environement défini
+    │       └── myname.properties.js            # → contient les propriétés de l'environnement nommé...   
+    ```
+    
+7. Tester le module bundler webpack
+ 
+   ```shell
+   // lancer webpack + devServer + hot reload
+   $ npm run dev
+   
+   // lancer webpack avec compile des assets minifiés et optimizés
+   $ npm run prod
+   ```       
+ 
+8. Tester le système de scaffolding permettant de créer une page ou un composant : 
+  
+    ```shell
+    // créer une page 
+    $ npm run scaff 
+    // selectionner page 
+    // donner un nom en camelCase au composant page  
+    ```       
+    Un composant "page" devrait être créé [src/project/pages/](../src/project/pages/) : 
+    
+    ```shell
+    src/                         
+    ├── ...                
+    ├── project/                       
+    │       └── monComposantPage          
+    │              |── monComposantPage.scss      # → feuille de style sass     
+    │              └── monComposantPage.ts        # → fichier typescript relatif à ce composant          
+    ```  
+ 
+
+
+
+
+

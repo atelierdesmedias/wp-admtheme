@@ -1,0 +1,82 @@
+# Workflow
+
+## Root 
+
+Le projet contient les fichiers necessaires au bon fonctionnement d'un thème wordpress basic.
+Celui-ci comprend également des fichiers relatif à l'environement de développement.
+
+Ce thême s'oganise de la manière suivante (tous les fichiers ne sont pas décris ici, seul ceux qui nécessitent explication) : 
+
+```shell
+wp-admtheme/                         
+├── config/                     # → dossier de configuration de l'environement de développement
+│       ├── templates           # → les templates utlisés lors du scaffolding de pages et de composants             
+│       ├── webpack.parts/      # → les fichiers de configuration de webpack (modules, plugins etc...) 
+│       ├── global.config.js    # → path dev server / prod server 
+│       ├── global.path.js      # → les chemins utilisés par webpack 
+│       └── postcss.config.js   # → configuration du module postcss utilisé par webpack 
+├── ...   
+├── doc/                        # → documentations du projet 
+├── ...       
+├── .babelrc                    # → configuration du transpileur babel
+├── ...       
+├── package.json                # → contient les dépendances à charger via npm
+├── package-lock.json           # → dependances versionnées (ne pas effacer) 
+├── ...       
+├── gulpfile.js                 # → fichier gulp contenant la configuration de scaffolding (voir la doc scaffolder)
+├── ...              
+├── webpack.config.babel.js     # → config principale webpack (l'extention babel pemet d'utiliser les import ES6 dans ce fichier)
+├── ...              
+├── tsconfig.json               # → config de typescript 
+├── ...
+              
+``` 
+ 
+
+## Sources : (dossier [src/](../src)) 
+
+Le dossier [src](../src/) contient toutes **les sources de développement front**, 
+hormis la DOM qui est directement appliquée dans les fichiers php.
+
+```shell
+src/                         
+├── common/                     # → tout ce qui est valable sur l'ensemble du projet
+│       ├── atoms               # → variables             
+│       ├── core                # → fonctionnement général du framework front
+│       ├── element             # → elements mixins (title, subtitle...)   
+│       ├── fonts               # → fonts delclaration    
+│       ├── helpers             # → helpers mixins (grid, posiiton...)   
+│       ├── images              # → images fav, library and sprites    
+│       ├── layout              # → layouts styles   
+│       └── _common.scss        # → IMPORTANT : point de sortie de l'ensemble des fichiers scss qui va être importé en référence dans tous les autres fichiers scss
+├── project/                    # → le contenu du projet
+│       ├── components          # → composants              
+│       └── pages               # → composant spéciquement "page"  
+└── main.ts                     # → IMPORTANT : point de sortie JS compilé par webpack
+``` 
+ 
+### STYLE (Sass)
+
+Chaque page et composant est doté d'un fichier [scss](https://sass-lang.com/).
+Voir l'exemple [dummyComponent.scss](../src/project/components/dummyComponent/dummyComponent.scss)
+
+
+### JS (Typescript)
+
+Chaque page et composant est doté d'un fichier [typescript](https://www.typescriptlang.org/).
+Voir l'exemple [dummyComponent.ts](../src/project/components/dummyComponent/dummyComponent.ts)
+
+Voici l'arborescence du [dummyComponent](../src/project/components/dummyComponent) : 
+
+```shell
+src/                         
+├── ..                    
+├── project/                   
+│       └── components         
+│              └── dummyComponent
+│                     └── dummyComponent.scss
+│                     └── dummyComponent.ts  
+└── main.ts
+              
+``` 
+ 

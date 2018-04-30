@@ -1,0 +1,39 @@
+{
+
+	"compilerOptions": {
+
+		"outDir": "./dist",
+		"sourceMap": true,
+		"module": "es2015",
+		"moduleResolution": "node",
+		"target": "es6",
+		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true,
+		"strictPropertyInitialization": false,
+		"strict": true,
+		"allowJs": true,
+		"noImplicitAny": true
+//
+//		"isolatedModules": false,
+//		"noEmitOnError": false,
+//		"emitDecoratorMetadata": true,
+//
+//		"declaration": false,
+//		"suppressImplicitAnyIndexErrors": true,
+//
+//		"removeComments": true,
+//		"preserveConstEnums": true,
+//
+//		"importHelpers" : true,
+//		"noEmitHelpers" : true,
+
+//		"allowUnreachableCode" : true
+	},
+
+	"include": [
+		"./src/**/**/*"
+	],
+	"exclude": [
+		"./node_modules/*"
+	]
+}

@@ -1,0 +1,25 @@
+/**
+  * @Filename: common (@import (reference) style)
+  * @Description: common styles
+**/
+
+//------------------------------------------------------------------------------  COMMON
+
+// libs
+// bourbon - https://www.bourbon.io/docs/latest/
+@import '~bourbon/core/_bourbon.scss';
+
+// custom mixins
+@import 'helpers/_mixins';
+
+// atoms
+@import "atoms/_colors";
+
+// sizes, path
+@import "atoms/_properties";
+
+// elements
+@import "elements/_title";
+
+// fonts
+@import "fonts/_fonts";
