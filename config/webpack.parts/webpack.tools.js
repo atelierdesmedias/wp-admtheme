@@ -6,6 +6,7 @@
 // ----------------------------------------------------------------------------- IMPORTS
 
 import globalPath from "../global.path";
+import globalConfig from "../global.config.js";
 
 // ----------------------------------------------------------------------------- DEV SERVER
 
@@ -16,8 +17,11 @@ exports.devServerTool = {
 
     devServer: {
 
-        // content base to serve local dev project
+        // content base to serve local dev assets
         contentBase: globalPath.PATHS.dist,
+
+        // port to serve local dev assets
+        port: globalConfig.devServer.port,
 
         // display error overlay on screen
         overlay: true,

@@ -11,7 +11,7 @@
  * Si ce fichier existe : enregistrer le chargement de ces scripts via
  * "wp_register_style" et "wp_register_script" de WP.
  * Si non, en mode développement : servire uniquement le fichier JS sur le port par
- * defaut de webpack dev server http://localhost:8080/
+ * defaut de webpack dev server http://localhost:4321/
  *
  */
 function load_scripts() {
@@ -38,8 +38,8 @@ function load_scripts() {
     } else {
 
         $js = '/assets/apps.js';
-        // en mode development, les assets sonts servis sur http://localhost:8080/ par webpack
-        wp_register_script( 'js', 'http://localhost:8080' . $js , array(), '', true );
+        // en mode development, les assets sonts servis sur http://localhost:4321/ par webpack
+        wp_register_script( 'js', 'http://localhost:4321' . $js , array(), '', true );
         wp_enqueue_script( 'js' );
 
     };

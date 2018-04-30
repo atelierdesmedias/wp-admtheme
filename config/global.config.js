@@ -23,6 +23,7 @@ let customEnv = require('./env/'+env+'.properties.js');
 
 /**
  * Global Config
+ * DO NOT TOUCH !
  */
 const globalConfig = {
 
@@ -35,14 +36,15 @@ const globalConfig = {
          * Application base
          * Depend of env Name configuration
          * Need to create a new user env ?
-         * $ gulp env
+         * $ npm run env
          */
         base: customEnv.base,
 
-        /**
-         * Application webpack devServer url (default webpack url)
-         */
-        url: 'http://localhost:8080',
+        // local devServer port
+        port: 4321,
+
+        // Application webpack devServer url (default webpack url)
+        url: 'http://localhost:4321/'
 
     },
 

@@ -26,7 +26,7 @@ const output = {
 
         // pas de public path en prod, on ne récupère que le nom du fichier dans le manifeste
         publicPath: isDev
-            ? globalConfig.devServer.url + "/" + globalPath.DIRNAME.assets
+            ? globalConfig.devServer.url + globalPath.DIRNAME.assets
             : '',
     },
 

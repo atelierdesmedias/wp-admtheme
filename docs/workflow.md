@@ -53,16 +53,15 @@ src/
 │       ├── components          # → composants              
 │       └── pages               # → composant spéciquement "page"  
 └── main.ts                     # → IMPORTANT : point de sortie JS compilé par webpack
-              
 ``` 
  
-### SASS
+### STYLE (Sass)
 
 Chaque page et composant est doté d'un fichier [scss](https://sass-lang.com/).
 Voir l'exemple [dummyComponent.scss](../src/project/components/dummyComponent/dummyComponent.scss)
 
 
-### JS (TYPESCRIPT)
+### JS (Typescript)
 
 Chaque page et composant est doté d'un fichier [typescript](https://www.typescriptlang.org/).
 Voir l'exemple [dummyComponent.ts](../src/project/components/dummyComponent/dummyComponent.ts)

@@ -7,7 +7,7 @@ ou un composant :
   
     ```shell
     // créer une page 
-    gulp scaff 
+    npm run scaff 
     // selectionner page 
     // donner un nom en camelCase au composant page  
     ```       
@@ -21,6 +21,4 @@ ou un composant :
     │       └── monComposantPage          
     │              |── monComposantPage.scss      # → feuille de style sass     
     │              └── monComposantPage.ts        # → fichier ts relatif à ce composant          
-    ```  
- 
-  
+    ```

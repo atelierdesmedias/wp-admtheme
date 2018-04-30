@@ -1,7 +1,7 @@
-# installation
+# Installation
 
 
-1. lancer son serveur local php
+1. lancer son serveur local php (avec [MAMP](https://www.mamp.info/en/downloads/) par exemple)
 
 2. créer un dossier nommé "adm" (ou whatever...)
 
@@ -24,7 +24,7 @@ et placer le contenu du dossier dézipé dans le dossier précédement créé.
     adm/                         
     ├── index.php               
     ├── ...   
-    ├── wp-content        
+    ├── wp-content
     │       ├── ...          
     │       ├── plugins/        # → insller les plugins wp ici (TODO)
     │       └── themes/         # → installer le thème ici
@@ -46,7 +46,7 @@ et placer le contenu du dossier dézipé dans le dossier précédement créé.
       
     ```shell
     // from @root
-    $ gulp env
+    $ npm run env
     // donner son prenom à l'environnement
     ```
     Un fichier de propriété relatif à l'environement créé apparait dans [src/env/](../src/env). 
@@ -73,7 +73,7 @@ et placer le contenu du dossier dézipé dans le dossier précédement créé.
   
     ```shell
     // créer une page 
-    $ gulp scaff 
+    $ npm run scaff 
     // selectionner page 
     // donner un nom en camelCase au composant page  
     ```       
@@ -85,14 +85,9 @@ et placer le contenu du dossier dézipé dans le dossier précédement créé.
     ├── project/                       
     │       └── monComposantPage          
     │              |── monComposantPage.scss      # → feuille de style sass     
-    │              └── monComposantPage.ts        # → fichier ts relatif à ce composant          
+    │              └── monComposantPage.ts        # → fichier typescript relatif à ce composant          
     ```  
  
- 
-
-
-
-
 
 
 
