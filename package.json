@@ -16,7 +16,7 @@
 	"dependencies": {
 		"bourbon": "^5.0.0",
 		"normalize.css": "^7.0.0",
-		"npm": "^5.8.0",
+		"npm": "^6.0.0",
 		"zepto-webpack": "^1.2.1"
 	},
 	"devDependencies": {
