@@ -187,7 +187,7 @@ exports.imagesModule = {
                                 : "[name].[hash:8].[ext]",
 
                             publicPath: isDev
-                                ? globalConfig.devServer.url + "/" + globalPath.DIRNAME.assets + globalPath.DIRNAME.images
+                                ? globalConfig.devServer.url + globalPath.DIRNAME.assets + globalPath.DIRNAME.images
                                 : "/" + globalPath.DIRNAME.assets + globalPath.DIRNAME.images,
 
                             outputPath: globalPath.DIRNAME.images
@@ -220,7 +220,7 @@ exports.fontsModule = {
                             name: isDev ? '[name].[ext]' : '[hash:8].[ext]',
 
                             publicPath: isDev
-                                ? globalConfig.devServer.url + "/" + globalPath.DIRNAME.assets + globalPath.DIRNAME.fonts
+                                ? globalConfig.devServer.url + globalPath.DIRNAME.assets + globalPath.DIRNAME.fonts
                                 : "/" + globalPath.DIRNAME.assets + globalPath.DIRNAME.fonts,
 
                             outputPath: globalPath.DIRNAME.fonts
