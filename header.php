@@ -54,11 +54,31 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-22457099-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
 	<?php wp_head(); ?>
 
 	</head>
 
-<body <?php body_class(); ?> >
+<body <?php body_class() ?> >
+
+<?php
+
+
+if
+// tout ce contenu doit continuer à apparaitre sur le site
+// si l'on est pas sur la nouvelle home page
+( !is_home() && !is_front_page() ) :
+?>
 	<div class="container">
 		<header role="banner">
             <div class="site-title">
@@ -68,14 +88,12 @@
             </div>
 
 			<nav class="site-menu" id="menu" role="navigation">
-				<?php
-					wp_nav_menu( array( 'container_class' => 'menu', 'theme_location' => 'primary' ) );
-                ?>
+
 			</nav>
 			<ul class="social-links">
-			<li class="icon-twitter"><a href="https://twitter.com/Coworking_lyon" title="Twitter ADM" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/iconeTwitter.png" </img></a></li>
-			<li class="icon-facebook"><a href="https://www.facebook.com/Coworkinglyon" title="Facebook ADM" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/iconeFB.png"></img></a></li>						
-			<li class="icon-intranet"><a href="https://intra.atelier-medias.org" title="Intranet coworkers" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/iconeWiki.png"></img></a></li>
+                <li class="icon-twitter"><a href="https://twitter.com/Coworking_lyon" title="Twitter ADM" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/iconeTwitter.png" </img></a></li>
+                <li class="icon-facebook"><a href="https://www.facebook.com/Coworkinglyon" title="Facebook ADM" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/iconeFB.png"></img></a></li>
+                <li class="icon-intranet"><a href="https://intra.atelier-medias.org" title="Intranet coworkers" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/iconeWiki.png"></img></a></li>
 			</ul>
 
 		</header>
@@ -94,3 +112,11 @@
       <?php } ?>
 
 
+<?php
+
+// si on est sur la nouvelle home page :
+else : ?>
+
+    <main class="app" role="main">
+
+<?php endif; ?>

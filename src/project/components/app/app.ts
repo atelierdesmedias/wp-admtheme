@@ -1,17 +1,19 @@
 /**
- * this is "<%= name %>" TS export class
+ * this is "app" TS export class
  * follow workflow instructions
  */
 
 // ------------------------------------------------------------------------- IMPORTS
 
 import {jView} from '../../../common/core/jView'
-import './<%= name %>.scss'
+import './app.scss'
+import {menu} from "../menu/menu";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class <%= name %> extends jView
+export class app extends jView
 {
+    private _menu: menu;
 
     // ------------------------------------------------------------------------- TYPE
 
@@ -43,6 +45,8 @@ export class <%= name %> extends jView
     protected prepareDependencies()
     {
 
+        // importer le menu
+        this._menu = new menu( $('.menu') );
     }
 
     /**

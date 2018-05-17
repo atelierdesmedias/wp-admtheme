@@ -10,16 +10,31 @@
 
 body
 {
-  // global font size
-  font-size: 16px;
 
-  // global color
-  color: $color2;
 
-  // global background
-  //background: $color1;
 
-  // global font
+
+  // en attendant de globaliser le style pour toutes les pages
+  &.home
+  {
+    background: $color1;
+
+    // global font size
+    font-size: 16px;
+
+    // global color
+    color: $color2;
+
+    // global background
+    //background: $color1;
+
+
+  }
+
+
+
+
+
 
 }
 

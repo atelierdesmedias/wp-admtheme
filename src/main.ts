@@ -22,6 +22,7 @@ import './common/layouts/body.scss'
 import {jView} from './common/core/jView';
 import {homePage} from "./project/pages/homePage/homePage";
 import globalConfig from "../config/global.config";
+import {app} from "./project/components/app/app";
 
 // ----------------------------------------------------------------------------- START EXPORT CLASS
 
@@ -31,6 +32,7 @@ export class main extends jView
     // ------------------------------------------------------------------------- TYPE
 
     private _homePage: homePage;
+    private _app: app;
 
     // ------------------------------------------------------------------------- INIT
 
@@ -52,7 +54,8 @@ export class main extends jView
     /**
      * Components that are not concatenated in specific page
      */
-    protected InitRootComponents() {
+    protected InitRootComponents()
+    {
 
         /**
          * instance d'un composant
@@ -66,12 +69,16 @@ export class main extends jView
          * @doc: http://zeptojs.com/
          */
 
+
+        this._app = new app( $('.app'));
+
     }
 
     /**
      * Load script depend of pages
      */
-    protected showPage() {
+    protected showPage()
+    {
 
         /**
          * instance d'une page
@@ -88,10 +95,9 @@ export class main extends jView
          *
          */
 
+
          this._homePage = new homePage( $('.homePage') );
 
-
-        console.log(globalConfig.devServer);
     }
 
     // ------------------------------------------------------------------------- END EXPORT CLASS

@@ -1,10 +1,21 @@
 <?php 
 /**
  * footer.php
- *
+ * IMPORTANT : Une partie du template appartient aux anciennes pages que l'on
+ * garde visible dans un premier temps
  */
 ?>
-    </div><!-- #main  -->
+
+
+<?php
+if
+// tout ce contenu doit continuer à apparaitre sur le site
+// si l'on est pas sur la nouvelle home page
+( !is_home() && !is_front_page() ) :
+?>
+
+
+</div><!-- #main  -->
 </div><!-- .container -->
 
 <div id="page-footer-container">
@@ -23,22 +34,21 @@
     </footer>
 </div>
 
+
+<?php
+// si on est sur la nouvelle home page :
+else : ?>
+
+</main>
+
+<?php endif; ?>
+
 <?php wp_footer(); ?>
 
 <!-- JS files -->
 <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 
 </body>
-
-<!-- Google Analytics -->
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-22457099-1', 'auto');
-    ga('send', 'pageview');
-</script>
 
 </html>
 

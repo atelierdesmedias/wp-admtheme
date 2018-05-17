@@ -1,16 +1,16 @@
 /**
- * this is "<%= name %>" TS export class
+ * this is "menu" TS export class
  * follow workflow instructions
  */
 
 // ------------------------------------------------------------------------- IMPORTS
 
 import {jView} from '../../../common/core/jView'
-import './<%= name %>.scss'
+import './menu.scss'
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class <%= name %> extends jView
+export class menu extends jView
 {
 
     // ------------------------------------------------------------------------- TYPE

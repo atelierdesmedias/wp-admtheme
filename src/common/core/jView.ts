@@ -37,11 +37,18 @@ export class jView {
      * This method get method
      */
     protected init() {
+        this.targetRoot();
         this.prepareNodes();
         this.prepareDependencies();
         this.prepareEvents();
         this.afterInit();
     }
+
+
+    /**
+     * Target our root if not already defined via constructor params
+     */
+    protected targetRoot () {}
 
     /**
      * prepare Nodes
