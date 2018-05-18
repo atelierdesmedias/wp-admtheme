@@ -4,9 +4,14 @@
  * @Description: Cette page inclu la vue PHP de la page correspondante
  * NOTE : le traitement des pages se fait directement dans
  * "src/project/page/maPage/maPage.php"
- *
  */
-?>
-<?php get_header(); ?>
-    <?php include_once('src/project/pages/homePage/homePage.php') ?>
-<?php get_footer(); ?>
+require 'config.php';
+/**
+ * ----------------------------------------------------------------------------- TEMPLATE
+ */
+
+
+ get_header();
+ include( ROOT_PATH .'/src/project/pages/homePage/homePage.php');
+ get_footer();
+
