@@ -1,0 +1,10 @@
+<?php
+/**
+ * @title: "<%= name %>" PHP View component
+ * @description:
+ */
+?>
+
+<div class="<%= name %>">
+    <%= name %>
+</div>

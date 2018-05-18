@@ -118,5 +118,5 @@ if
 else : ?>
 
     <main class="app" role="main">
-
+        
 <?php endif; ?>

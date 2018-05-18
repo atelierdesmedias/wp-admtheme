@@ -1,5 +1,5 @@
 /**
-  * "homePage" stylesheet
+  * "navBar" stylesheet
   * follow workflow instructions
  */
 
@@ -10,34 +10,17 @@
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.homePage
+.navBar
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
+
     // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : homePage;
+    $this : navBar;
 
   // --------------------------------------------------------------------------- BLOCK
 
-
   // --------------------------------------------------------------------------- ELEMENTS
-
-  &_header
-  {
-  }
-
-  &_title
-  {
-    display: block;
-    font-family: $font-stack-lucida-grande;
-    color: rebeccapurple;
-  }
-
-  &_content
-  {
-
-  }
-
 
   // --------------------------------------------------------------------------- MODIFIERS
 

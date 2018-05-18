@@ -28,8 +28,14 @@ path = {
     // Path to components
     components: root + 'src/project/components/',
 
+    // Path to PHP View component
+    phpViewComponent: root + 'view/components/',
+
     // Path to pages
     pages: root + 'src/project/pages/',
+
+    // Path to PHP View page
+    phpViewPage: root + 'view/pages/',
 
     // Path to config
     env: root + 'config/env/',
@@ -40,6 +46,7 @@ path = {
 
 let DOMTsTemplate = path.templates + 'dom/tsTemplate';
 let DOMLessTemplate = path.templates + 'dom/scssTemplate';
+let PHPDOMTemplate = path.templates + 'dom/phpTemplate';
 
 
 gulp.task('scaff', () => {
@@ -53,7 +60,7 @@ gulp.task('scaff', () => {
                 type: 'list',
                 name: 'type',
                 message: 'Type of scaffolding ?',
-                choices: ['Page', 'Component']
+                choices: ['Component', 'Page']
             },
             // question 3 : name
             {
@@ -74,7 +81,7 @@ gulp.task('scaff', () => {
             // ---- JS template
             gulp.src(DOMTsTemplate)
 
-            // config
+                // config
                 .pipe(template({name: formatName}))
                 // rename file with response name
                 .pipe(rename(formatName + '.ts'))
@@ -85,12 +92,23 @@ gulp.task('scaff', () => {
             // ---- LESS template
             gulp.src(DOMLessTemplate)
 
-            // config
+                // config
                 .pipe(template({name: formatName}))
                 // rename file with response name
                 .pipe(rename(formatName + '.scss'))
                 // define Dest
                 .pipe(gulp.dest((res.type === 'Component' ? path.components : path.pages) + formatName));
+
+
+            // ---- PHP View template
+            gulp.src(PHPDOMTemplate)
+            // config
+                .pipe(template({name: formatName}))
+                // rename file with response name
+                .pipe(rename(formatName + '.php'))
+                // define Dest
+                .pipe(gulp.dest((res.type === 'Component' ? path.components : path.pages) + formatName));
+
 
 
             // ----------------------------------------------------------------- END - console message

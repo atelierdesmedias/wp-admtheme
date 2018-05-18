@@ -17,7 +17,8 @@ See [website documentation](https://docs.google.com/spreadsheet/ccc?key=0AnxUXXN
 
 ## Design
 
-See [design online](https://projects.invisionapp.com/share/C6IXCXDH#/screens/11034828?maintainScrollPosition=false)
+See [design online](https://projects.invisionapp.com/share/FMGJ96E57TB#/screens/287421915_Desktop_HD_-_Home)
+
     
 ## Plugins
 

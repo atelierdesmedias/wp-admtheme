@@ -1,21 +1,22 @@
 /**
- * this is "app" TS export class
+ * this is "navBar" TS export class
  * follow workflow instructions
  */
 
 // ------------------------------------------------------------------------- IMPORTS
 
 import {jView} from '../../../common/core/jView'
-import './app.scss'
-import {navBar} from "../navBar/navBar";
+import './navBar.scss'
+import {menu} from "../menu/menu";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class app extends jView
+export class navBar extends jView
 {
+
     // ------------------------------------------------------------------------- TYPE
 
-    private _navBar: navBar;
+    private _menu: menu;
 
     // ------------------------------------------------------------------------- INIT
 
@@ -44,7 +45,10 @@ export class app extends jView
      */
     protected prepareDependencies()
     {
-        this._navBar = new navBar( $('.navBar') );
+
+        // importer le menu
+        this._menu = new menu( $('.menu') );
+        
     }
 
     /**

@@ -14,6 +14,8 @@ body
 
 
 
+
+
   // en attendant de globaliser le style pour toutes les pages
   &.home
   {
@@ -25,8 +27,11 @@ body
     // global color
     color: $color2;
 
+    // global font
+    @include lato-regular();
+
     // global background
-    //background: $color1;
+    background: $color1;
 
 
   }
