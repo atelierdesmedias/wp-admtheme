@@ -3,6 +3,8 @@
   * @Description: all globales properties needed for this project
 */
 
+@import '~bourbon/core/_bourbon.scss';
+
 // ----------------------------------------------------------------------------- PATHS
 
 /**
@@ -10,6 +12,13 @@
  * Mandatory to use the declareFontFace mixin
  */
 $fontBasePath: '../fonts/';
+
+// ----------------------------------------------------------------------------- BOURBON LIB CONFIG
+
+$bourbon: (
+        "rails-asset-pipeline": true,
+        "global-font-file-formats": ("eot","ttf", "woff2", "woff"),
+);
 
 
 // ----------------------------------------------------------------------------- BREAK POINT
@@ -43,3 +52,5 @@ $totalGrid: 12;
 
 // size of 1 column : divise screen in ... column
 $columnWidth: ( 100vw / $totalGrid );
+
+
