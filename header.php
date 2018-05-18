@@ -98,7 +98,7 @@ else : ?>
         <?php
             // include "navBar" component
             $classElement = "app_navBar";
-            include(SRC_COMPONENTS_DIR .'/navBar/navBar.php');
+            include(SRC_COMPONENTS_DIR . '/navBar/navBar.php');
         ?>
 
 

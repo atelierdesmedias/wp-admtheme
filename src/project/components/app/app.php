@@ -5,6 +5,14 @@
  */
 ?>
 
-<div class="app">
+<!--<div class="app">-->
 
-</div>
+    <?php
+    /**
+     * Cette div "app" est wrapper des "pages"
+     * L'ouverture se trouve dans le header.php
+     * La fermeture se trouve dans footer.php
+     */
+    ?>
+
+<!--</div>-->

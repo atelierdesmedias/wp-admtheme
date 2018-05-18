@@ -1,24 +1,19 @@
 /**
- * this is "navBar" TS export class
+ * this is "socialBlock" TS export class
  * follow workflow instructions
  */
 
 // ------------------------------------------------------------------------- IMPORTS
 
 import {jView} from '../../../common/core/jView'
-import './navBar.scss'
-import {menu} from "../menu/menu";
-import {socialBlock} from "../socialBlock/socialBlock";
+import './socialBlock.scss'
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class navBar extends jView
+export class socialBlock extends jView
 {
 
     // ------------------------------------------------------------------------- TYPE
-
-    private _menu: menu;
-    private _socialBlock: socialBlock;
 
     // ------------------------------------------------------------------------- INIT
 
@@ -47,12 +42,6 @@ export class navBar extends jView
      */
     protected prepareDependencies()
     {
-
-        // importer le menu
-        this._menu = new menu( $('.menu') );
-
-        // importer le social block
-        this._socialBlock = new socialBlock( $('.socialBlock') );
 
     }
 

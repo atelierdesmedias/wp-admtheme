@@ -1,5 +1,5 @@
 /**
-  * "navBar" stylesheet
+  * "socialBlock" stylesheet
   * follow workflow instructions
  */
 
@@ -10,33 +10,68 @@
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.navBar
+.socialBlock
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
-
-    // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : navBar;
-    $navBarHeight : 3rem;
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this : socialBlock;
 
   // --------------------------------------------------------------------------- BLOCK
 
-  @include size(100%, $navBarHeight);
-  background: grey;
-  display: flex;
-  align-items: center;
+  background: gold;
 
   // --------------------------------------------------------------------------- ELEMENTS
 
-  &_menu
+  &_items
+  {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+
+    //background: green;
+  }
+
+  &_item
+  {
+    @include size(30px);
+    background: red;
+  }
+
+  &_link
   {
 
   }
-  
-  &_socialBlock 
+
+  &_icon
   {
 
+    &-facebook
+    {
+      & > svg
+      {
+        @include size(24px);
+      }
+    }
+
+    &-twitter
+    {
+      & > svg
+      {
+        @include size(20px, 20px);
+
+      }
+    }
+
+    & *
+    {
+      fill: $color3;
+    }
+
   }
+
+
 
   // --------------------------------------------------------------------------- MODIFIERS
 
