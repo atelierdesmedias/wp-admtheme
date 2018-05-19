@@ -1,5 +1,5 @@
 /**
-  * "app" stylesheet
+  * "mainHeader" stylesheet
   * follow workflow instructions
  */
 
@@ -10,27 +10,17 @@
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.app
+.mainHeader
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
     // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : app;
+    $this : mainHeader;
 
   // --------------------------------------------------------------------------- BLOCK
 
   // --------------------------------------------------------------------------- ELEMENTS
-
-  &_mainHeader
-  {
-
-  }
-
-  &_mainFooter
-  {
-
-  }
 
   // --------------------------------------------------------------------------- MODIFIERS
 

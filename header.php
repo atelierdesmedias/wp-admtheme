@@ -96,9 +96,9 @@ else : ?>
     <main class="app" role="main">
 
         <?php
-            // include "navBar" component
-            $classElement = "app_navBar";
-            include(SRC_COMPONENTS_DIR . '/navBar/navBar.php');
+            // include "mainHeader" component
+            $classElement = "app_mainHeader";
+            include(SRC_COMPONENTS_DIR . '/mainHeader/mainHeader.php');
         ?>
 
 

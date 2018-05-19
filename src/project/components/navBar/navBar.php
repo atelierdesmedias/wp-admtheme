@@ -1,11 +1,11 @@
 <?php
 /**
  * @title: "navBar" PHP view component
- * @description: Ce fichier correspond à la vue PHP du composant
+ * @description:
  */
 ?>
 
-<div class="navBar">
+<div class="navBar <?php echo $classElement ?>">
     <?php
         // include "menu" component
         $classElement = "navBar_menu";

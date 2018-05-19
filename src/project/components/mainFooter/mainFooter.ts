@@ -1,23 +1,19 @@
 /**
- * this is "app" TS export class
+ * this is "mainFooter" TS export class
  * follow workflow instructions
  */
 
 // ------------------------------------------------------------------------- IMPORTS
 
 import {jView} from '../../../common/core/jView'
-import './app.scss'
-import {mainFooter} from "../mainFooter/mainFooter";
-import {mainHeader} from "../mainHeader/mainHeader";
+import './mainFooter.scss'
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class app extends jView
+export class mainFooter extends jView
 {
-    // ------------------------------------------------------------------------- TYPE
 
-    private _mainFooter: mainFooter;
-    private _mainHeader: mainHeader;
+    // ------------------------------------------------------------------------- TYPE
 
     // ------------------------------------------------------------------------- INIT
 
@@ -46,11 +42,7 @@ export class app extends jView
      */
     protected prepareDependencies()
     {
-        // importer le main header
-        this._mainHeader = new mainHeader( $('.mainHeader') );
 
-        // importer le main footer
-        this._mainFooter = new mainFooter( $('.mainFooter') );
     }
 
     /**

@@ -39,6 +39,12 @@ if
 // si on est sur la nouvelle home page :
 else : ?>
 
+    <?php
+        // include "mainFooter" component
+        $classElement = "app_mainFooter";
+        include(SRC_COMPONENTS_DIR . '/mainFooter/mainFooter.php');
+    ?>
+
 </main>
 
 <?php endif; ?>
