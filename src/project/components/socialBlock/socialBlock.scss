@@ -33,7 +33,7 @@
   {
     position: relative;
     @include size(4rem, $navBarHeight);
-    margin: auto 5px;
+    //margin: auto 5px;
     border-right: 1px solid $color4;
   }
 
