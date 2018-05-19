@@ -20,7 +20,61 @@
 
   // --------------------------------------------------------------------------- BLOCK
 
+  // position
+
+  // style
+  text-transform: uppercase;
+  @include lato-light;
+  font-size: 0.8rem;
+  color: $color3;
+
   // --------------------------------------------------------------------------- ELEMENTS
+
+  /**
+     EXCEPTION :
+     Normalement, on ne doit jamais styler le markup DOM directement
+     mais plutôt la class associée à ce markup.
+
+     Ici le menu est généré par WP sans class custom, donc on se permet
+     l'exception de styler les markups enfants de "menu"
+   */
+
+  & > ul
+  {
+    // position
+    position: relative;
+    @include size(100%, $navBarHeight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // style
+    // ...
+  }
+
+  & > ul > li
+  {
+
+    // position
+    position: relative;
+    @include size(100%, $navBarHeight);
+    padding: 0 3.2rem;
+
+    // style
+    border-right: 1px solid $color4;
+
+  }
+
+  & > ul > li > a
+  {
+    // position
+    @include center();
+    color: $color3;
+
+    // style reset
+    border: 0;
+
+
+  }
 
   // --------------------------------------------------------------------------- MODIFIERS
 

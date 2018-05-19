@@ -17,14 +17,17 @@
 
     // Call block element anywhere. Use it like this : .#{$this}_element
     $this : navBar;
-    $navBarHeight : 3rem;
+    //$navBarHeight : 3rem;
 
   // --------------------------------------------------------------------------- BLOCK
 
   @include size(100%, $navBarHeight);
-  background: grey;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+
+  // style
+  border-bottom: 1px solid $color4;
 
   // --------------------------------------------------------------------------- ELEMENTS
 

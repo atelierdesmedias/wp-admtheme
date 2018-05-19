@@ -19,54 +19,73 @@
 
   // --------------------------------------------------------------------------- BLOCK
 
-  background: gold;
-
   // --------------------------------------------------------------------------- ELEMENTS
 
   &_items
   {
+    position: relative;
     list-style: none;
     display: flex;
     align-items: center;
-
-
-    //background: green;
   }
 
   &_item
   {
-    @include size(30px);
-    background: red;
+    position: relative;
+    @include size(4rem, $navBarHeight);
+    margin: auto 5px;
+    border-right: 1px solid $color4;
   }
 
   &_link
   {
-
+    // cercle autour de l'icon
+    &:after {
+      content: '';
+      @include center();
+      border: 1px solid $color4;
+      @include size(28px);
+      border-radius: 4rem;
+    }
   }
 
   &_icon
   {
 
+    @include center();
+
     &-facebook
     {
+      // ajustement du positionnement de l'icon
+      margin: 1px 0 0 -2px;
+
       & > svg
       {
-        @include size(24px);
+        @include size(18px);
       }
     }
 
     &-twitter
     {
+      // ajustement du positionnement de l'icon
+      margin: 1px 0 0 0;
+
       & > svg
       {
-        @include size(20px, 20px);
+        @include size(14px);
 
       }
     }
 
     & *
     {
+      // couleur appliquée sur tous les élements enfants
       fill: $color3;
+
+      &:hover
+      {
+
+      }
     }
 
   }
