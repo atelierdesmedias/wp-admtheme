@@ -46,7 +46,8 @@ path = {
 
 let DOMTsTemplate = path.templates + 'dom/tsTemplate';
 let DOMLessTemplate = path.templates + 'dom/scssTemplate';
-let PHPDOMTemplate = path.templates + 'dom/phpTemplate';
+let DOMPHPTemplate = path.templates + 'dom/phpTemplate';
+let wpPageTemplate = path.templates + 'dom/wpPageTemplate';
 
 
 gulp.task('scaff', () => {
@@ -73,7 +74,7 @@ gulp.task('scaff', () => {
 
             // change case of name
             let formatName = changeCase.camelCase(res.name); // debut lowerCase
-
+            let wpPageFormatName = changeCase.paramCase(res.name); //  ma-page.php
 
             // ----------------------------------------------------------------- DOM (2 files)
 
@@ -101,7 +102,7 @@ gulp.task('scaff', () => {
 
 
             // ---- PHP View template
-            gulp.src(PHPDOMTemplate)
+            gulp.src(DOMPHPTemplate)
             // config
                 .pipe(template({name: formatName}))
                 // rename file with response name
@@ -109,6 +110,23 @@ gulp.task('scaff', () => {
                 // define Dest
                 .pipe(gulp.dest((res.type === 'Component' ? path.components : path.pages) + formatName));
 
+
+            /**
+             * Seulement si c'est une page  :
+             * Créer un template de page type "WP" à la racine du projet
+             * dans lequel on inclu le composant page
+             */
+            if (res.type === 'Page')
+            {
+                // ---- PHP page template
+                gulp.src(wpPageTemplate)
+                // config
+                    .pipe(template({name: formatName}))
+                    // rename file with response name
+                    .pipe(rename(wpPageFormatName + '.php'))
+                    // define Dest
+                    .pipe(gulp.dest( root ));
+            }
 
 
             // ----------------------------------------------------------------- END - console message
