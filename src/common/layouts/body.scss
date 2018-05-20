@@ -19,20 +19,16 @@ body
   // en attendant de globaliser le style pour toutes les pages
   &.home
   {
-    background: $color1;
+    background: url('../images/background-01.jpg') repeat;
 
     // global font size
     font-size: 16px;
-
+;
     // global color
     color: $color2;
 
     // global font
     @include lato-regular();
-
-    // global background
-    background: $color1;
-
 
   }
 

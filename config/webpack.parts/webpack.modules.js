@@ -173,7 +173,7 @@ exports.imagesModule = {
             {
                 // images & videos
 
-                test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+                test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
                 use: [
                     {
                         loader: "sizeof-loader",
