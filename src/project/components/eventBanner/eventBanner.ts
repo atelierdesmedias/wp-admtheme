@@ -1,24 +1,31 @@
 /**
- * this is "bigCover" TS export class
+ * this is "eventBanner" TS export class
  * follow workflow instructions
  */
 
 // ------------------------------------------------------------------------- IMPORTS
 
 import {jView} from '../../../common/core/jView'
-import './bigCover.scss'
-import {eventBanner} from "../eventBanner/eventBanner";
+import './eventBanner.scss'
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class bigCover extends jView
+export class eventBanner extends jView
 {
 
     // ------------------------------------------------------------------------- TYPE
 
-    private _eventBanner: eventBanner;
-
     // ------------------------------------------------------------------------- INIT
+
+
+    /**
+     * Target our root if not already defined via constructor params
+     * (method overwriting DOMView and move to constructor via init)
+     */
+    protected targetRoot ()
+    {
+
+    }
 
     /**
      * prepare nodes
@@ -35,7 +42,7 @@ export class bigCover extends jView
      */
     protected prepareDependencies()
     {
-        this._eventBanner = new eventBanner( $('.eventBanner') )
+
     }
 
     /**

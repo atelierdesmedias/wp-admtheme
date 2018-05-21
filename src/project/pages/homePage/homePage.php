@@ -9,9 +9,9 @@
 
     <header class="homePage_header">
         <?php
-        // include "bigCover" component
-        $classElement = "homePage_bigCover";
-        include(SRC_COMPONENTS_DIR . '/bigCover/bigCover.php');
+            // include "bigCover" component
+            $classElement = "homePage_bigCover";
+            include(SRC_COMPONENTS_DIR . '/bigCover/bigCover.php');
         ?>
     </header>
     <section class="homePage_content" role="main">

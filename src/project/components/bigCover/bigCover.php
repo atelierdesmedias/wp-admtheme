@@ -12,6 +12,13 @@
     </div>
     <div class="bigCover_backgroundImage"
          style="background-image: url('<?php echo SRC_IMAGE_DIR . 'home-header.jpg' ?>')">
+
+        <?php
+            // include "eventBanner" component
+            $classElement = "bigCover_eventBanner";
+            include(SRC_COMPONENTS_DIR . '/eventBanner/eventBanner.php');
+        ?>
+
         <div class="bigCover_banner">
             <p class="bigCover_bannerText">
                 <?php // TODO DICO ?>

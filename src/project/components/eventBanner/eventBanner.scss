@@ -1,5 +1,5 @@
 /**
-  * "bigCover" stylesheet
+  * "eventBanner" stylesheet
   * follow workflow instructions
  */
 
@@ -10,84 +10,89 @@
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.bigCover
+.eventBanner
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
     // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : bigCover;
+    $this : eventBanner;
 
   // --------------------------------------------------------------------------- BLOCK
 
+  max-width: 420px;
+
   // --------------------------------------------------------------------------- ELEMENTS
 
-  // la div sur laquelle est appliquée l'image
-  &_backgroundImage
+  &_content
   {
     // position
     position: relative;
-    @include size(100%, 100vh);
-    
+    display: flex;
+    align-items: center;
+    text-align: right;
+
     // style
-    // background-image : directement dans la DOM
-    background-size: cover;
-    background-position: center;
+    border: 2px solid $color1;
+    border-radius: 5px 0 0 5px;
+    background-color: rgba(0,0,0,0.3);
+    text-decoration: none;
+  }
+
+  &_title
+  {
+    // position
+    position: relative;
+    @include size(100%, 100%);
+    padding: 0 1rem;
+
+    // style
+    font-size: 1.1rem;
+    color:$color1;
+    @include lato-bold();
 
   }
 
-  // zone de texte au bottom de la cover
-  &_banner
+  &_date
   {
     // position
-    @include size(100%, auto);
-    @include position(absolute, null 0 0 0);
-    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    @include size(110px, auto);
+    padding: 5px 0;
 
     // style
-    background-color: rgba(0,0,0,0.4);
-    color: $color1;
+    color:$color2;
+    background: $color1;
     text-align: center;
-    @include lato-light();
-    font-size: 1.05rem;
-    //letter-spacing: 1px;
   }
 
-  &_bannerText
+  &_dayName
   {
-    // reset
-    margin:0;
+    // style
+    @include title-smallUppercase($color2);
+    font-size: 0.7rem;
   }
 
-  &_arrowDown
+  &_dayNumber
   {
     // position
-    margin: 1rem auto 0;
-    position: relative;
-    @include size(13px);
+    margin-top: -3px;
 
     // style
-    border-left: 3px solid $color6;
-    border-bottom: 3px solid $color6;
-    transform: rotate(-45deg);
+    @include lato-bold();
+    font-size: 1.6rem;
 
   }
 
-  // gros logo ADM centré sur l'image
-  &_logo
+  &_month
   {
-    @include center();
-    top:46%;
-    z-index: 1;
+    // position
+    margin-top: -3px;
 
-    & > svg {
-      @include size(400px);
-    }
-  }
-
-  &_eventBanner
-  {
-    @include position(absolute, ($navBarHeight + 1rem) 0 null null);
+    // style
+    @include title-smallUppercase($color2);
+    font-size: 0.7rem;
   }
 
   // --------------------------------------------------------------------------- MODIFIERS
