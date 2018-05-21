@@ -16,5 +16,8 @@
 
         $classElement = "navBar_intranetConnection";
         include(SRC_COMPONENTS_DIR .'/intranetConnection/intranetConnection.php');
+
+        $classElement = "navBar_languageBlock";
+        include(SRC_COMPONENTS_DIR .'/languageBlock/languageBlock.php');
     ?>
 </div>

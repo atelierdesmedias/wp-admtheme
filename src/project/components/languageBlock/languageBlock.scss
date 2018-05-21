@@ -1,5 +1,5 @@
 /**
-  * "navBar" stylesheet
+  * "languageBlock" stylesheet
   * follow workflow instructions
  */
 
@@ -10,54 +10,50 @@
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.navBar
+.languageBlock
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
     // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : navBar;
-    //$navBarHeight : 3rem;
+    $this : languageBlock;
 
   // --------------------------------------------------------------------------- BLOCK
 
-  @include size(100%, $navBarHeight);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
-  // style
-  background: $color1;
-  border-bottom: 1px solid $color4;
-
   // --------------------------------------------------------------------------- ELEMENTS
 
-  &_menu
+  &_items
   {
+    // position
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 1.5rem;
 
-  }
-  
-  &_socialBlock 
-  {
-
-  }
-
-  &_intranetConnection
-  {
-    // ligne de séparation
-    // (placée sur le parent pour qu'elle soit relative uniquement au composant
-    // navBar et que l'on puisse réutiliser le composant "intranetConnection" sans
-    // cette ligne de séparation à un autre endroit dans le projet)
-    border-right: 1px solid $color4;
-    @include size(auto, $navBarHeight);
-    padding: 0 1.5rem;
+    // style
+    list-style: none;
   }
 
-  &_languageBlock
+  &_item
   {
-
+    &:last-child
+    {
+      margin-left: 0.5rem;
+    }
   }
 
+  &_link
+  {
+
+    // style
+    @include title-smallUppercase($color5);
+
+    &-active
+    {
+      color: $color3;
+    }
+
+  }
   // --------------------------------------------------------------------------- MODIFIERS
 
   // --------------------------------------------------------------------------- CHILDREN

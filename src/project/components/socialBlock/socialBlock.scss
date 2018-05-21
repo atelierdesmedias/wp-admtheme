@@ -32,7 +32,7 @@
   &_item
   {
     position: relative;
-    @include size(4rem, $navBarHeight);
+    @include size(5.5rem, $navBarHeight);
     //margin: auto 5px;
     border-right: 1px solid $color4;
   }

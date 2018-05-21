@@ -23,14 +23,12 @@
 
   display: flex;
   align-items: center;
-  margin: auto 1.5rem;
 
   // --------------------------------------------------------------------------- ELEMENTS
 
   &_title
   {
     @include title-smallUppercase($color5);
-
   }
 
   &_form
@@ -71,7 +69,6 @@
     &-password {}
   }
 
-
   // le button de validation du formulaire
   &_button
   {
@@ -81,11 +78,11 @@
     // style
     border:0;
     outline: none;
-    @include size(40px, $inputHeight);
+    @include size(30px, $inputHeight);
     @include title-smallUppercase($color1);
     @include lato-regular();
+    font-size: 0.7rem;
     background: $color3;
-
   }
 
 
