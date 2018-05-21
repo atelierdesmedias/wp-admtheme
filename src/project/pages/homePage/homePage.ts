@@ -7,13 +7,15 @@
 
 import {jView} from '../../../common/core/jView'
 import './homePage.scss'
+import {bigCover} from "../../components/bigCover/bigCover";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
 export class homePage extends jView
 {
-
     // ------------------------------------------------------------------------- TYPE
+
+    private _bigCover: bigCover;
 
     // ------------------------------------------------------------------------- INIT
 
@@ -32,7 +34,8 @@ export class homePage extends jView
      */
     protected prepareDependencies()
     {
-
+        // inclure la big Cover
+        this._bigCover = new bigCover( $('.bigCover') );
     }
 
     /**

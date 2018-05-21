@@ -38,13 +38,12 @@
   {
     &:last-child
     {
-      margin-left: 0.5rem;
+      margin-left: 0.8rem;
     }
   }
 
   &_link
   {
-
     // style
     @include title-smallUppercase($color5);
 

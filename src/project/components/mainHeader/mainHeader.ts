@@ -19,16 +19,6 @@ export class mainHeader extends jView
 
     // ------------------------------------------------------------------------- INIT
 
-
-    /**
-     * Target our root if not already defined via constructor params
-     * (method overwriting DOMView and move to constructor via init)
-     */
-    protected targetRoot ()
-    {
-
-    }
-
     /**
      * prepare nodes
      * (method overwriting jView and move to constructor via init)
@@ -44,7 +34,7 @@ export class mainHeader extends jView
      */
     protected prepareDependencies()
     {
-
+        // inclure la nav Bar
         this._navBar = new navBar( $('.navBar') );
 
     }

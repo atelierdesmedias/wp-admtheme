@@ -8,8 +8,11 @@
 <div class="homePage">
 
     <header class="homePage_header">
-        <h1 class="homePage_title"><?php the_title() ?></h1>
-
+        <?php
+        // include "bigCover" component
+        $classElement = "homePage_bigCover";
+        include(SRC_COMPONENTS_DIR . '/bigCover/bigCover.php');
+        ?>
     </header>
     <section class="homePage_content" role="main">
         <?php while ( have_posts() ) : the_post(); ?>

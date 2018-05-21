@@ -33,7 +33,7 @@
 
    */
 
-  @include position(absolute, null 0 0 0);
+  @include position(relative, null 0 0 0);
   @include size(100%, 100px);
 
   background: $color3;

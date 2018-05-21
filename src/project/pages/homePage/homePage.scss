@@ -24,13 +24,13 @@
 
   &_header
   {
+    margin: 0;
   }
 
-  &_title
+  &_bigCover
   {
-    display: block;
-    font-family: $font-stack-lucida-grande;
-    color: rebeccapurple;
+    @include position(relative, 0);
+    z-index: 0;
   }
 
   &_content
