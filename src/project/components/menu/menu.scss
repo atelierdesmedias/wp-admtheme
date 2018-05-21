@@ -23,10 +23,7 @@
   // position
 
   // style
-  text-transform: uppercase;
-  @include lato-light;
-  font-size: 0.8rem;
-  color: $color3;
+  @include title-smallUppercase();
 
   // --------------------------------------------------------------------------- ELEMENTS
 

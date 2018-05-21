@@ -3,6 +3,10 @@
   * @Description: mixin for this project
 */
 
+// importer les couleurs
+@import "../atoms/colors";
+@import "../fonts/fonts";
+
 // ----------------------------------------------------------------------------- MIXIN
 
 @mixin title()
@@ -11,6 +15,17 @@
 	text-align: center;
 }
 
+
+// formatage des titres petit et uppercase
+// prend une couleur en paramètre
+@mixin title-smallUppercase( $color: $color3 )
+{
+  text-transform: uppercase;
+  @include lato-light();
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  color: $color;
+}
 
 
 

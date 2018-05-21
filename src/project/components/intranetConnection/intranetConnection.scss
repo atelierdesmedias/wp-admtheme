@@ -1,0 +1,101 @@
+/**
+  * "intranetConnection" stylesheet
+  * follow workflow instructions
+ */
+
+// -----------------------------------------------------------------------------  IMPORT
+
+// common style & mixins
+@import '../../../common/_common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.intranetConnection
+{
+  // --------------------------------------------------------------------------- PROPERTIES
+
+
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this : intranetConnection;
+  $inputHeight : 20px;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  display: flex;
+  align-items: center;
+  margin: auto 1.5rem;
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_title
+  {
+    @include title-smallUppercase($color5);
+
+  }
+
+  &_form
+  {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 1.5rem;
+  }
+
+  &_input
+  {
+    // position
+    position: relative;
+    margin: 0;
+    padding: 0;
+    @include size(140px, $inputHeight);
+
+    // style
+    border:1px solid $color4;
+    line-height: 0;
+
+    // style du texte placeholder dans le input
+    &::-webkit-input-placeholder
+    {
+      text-align: center;
+      @include title-smallUppercase($color4);
+    }
+
+    // traitement du dernier input de la liste
+    &:last-child
+    {
+      // décaller d'un px vers la gauche pour que le border left se fonde dans
+      // le border right de l'input précédent
+      margin-left: -1px;
+    }
+
+    &-login {}
+    &-password {}
+  }
+
+
+  // le button de validation du formulaire
+  &_button
+  {
+    // position
+    margin-left: 0.5rem;
+
+    // style
+    border:0;
+    outline: none;
+    @include size(40px, $inputHeight);
+    @include title-smallUppercase($color1);
+    @include lato-regular();
+    background: $color3;
+
+  }
+
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+
