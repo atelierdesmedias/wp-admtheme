@@ -1,105 +1,11 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]> <html <?php language_attributes(); ?> class="lteie9 lteie8 lteie7 lteie6 ie6 no-js"> <![endif]-->
-<!--[if IE 7 ]>    <html <?php language_attributes(); ?> class="lteie9 lteie8 lteie7 ie7 no-js"> <![endif]-->
-<!--[if IE 8 ]>    <html <?php language_attributes(); ?> class="lteie9 lteie8 ie8 no-js"> <![endif]-->
-<!--[if IE 9 ]>    <html <?php language_attributes(); ?> class="lteie9 ie9 no-js"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<title><?php
-	/*
-	 * Print the <title> tag based on what is being viewed.
-	 */
-	global $page, $paged;
-	wp_title( '|', true, 'right' );
-	// Add the blog name.
-	bloginfo( 'name' );
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'themename' ), max( $paged, $page ) );
-	?></title>
-
-	<!--  Mobile Viewport Fix -->
-	<meta name="viewport" content="initial-scale=1.0">
-	<!-- Place favicon.ico and apple-touch-icon.png in the images folder -->
-	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
-	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png"><!--60X60-->
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.min.css" media="screen, projection">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700,400,600,300' rel='stylesheet' type='text/css'>
-	<?php wp_enqueue_script("jquery"); ?>
-	<?php // Use this url to get your personnal build http://www.modernizr.com/download/ ?>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.custom.js"></script>
-	<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- Google Analytics -->
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-22457099-1', 'auto');
-        ga('send', 'pageview');
-    </script>
-	<?php wp_head(); ?>
-	</head>
-
-
-
-
-<body <?php body_class() ?> >
 <?php
-// tout ce contenu doit continuer à apparaitre sur le site
-// si l'on est pas sur la nouvelle home page
-if ( !is_home() && !is_front_page() ) :
-?>
-	<div class="container">
-		<header role="banner">
-            <div class="site-title">
-                <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
-                    <img class="site-logo" src="<?php echo get_template_directory_uri(); ?>/images/logo-atelier-des-medias.png" alt="Logo de <?php bloginfo('name'); ?>"/>
-                </a>
-            </div>
-			<nav class="site-menu" id="menu" role="navigation">
-			</nav>
-			<ul class="social-links">
-                <li class="icon-twitter"><a href="https://twitter.com/Coworking_lyon" title="Twitter ADM" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/iconeTwitter.png" </img></a></li>
-                <li class="icon-facebook"><a href="https://www.facebook.com/Coworkinglyon" title="Facebook ADM" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/iconeFB.png"></img></a></li>
-                <li class="icon-intranet"><a href="https://intra.atelier-medias.org" title="Intranet coworkers" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/iconeWiki.png"></img></a></li>
-			</ul>
-		</header>
-		<div class="contentWrapper">
-			<?php if (is_page()) {?>
-        <?php if (has_post_thumbnail( $post->ID ) ): ?>
-          <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-          <img id="home_picture" class="content-bandeauImage" src='<?php echo $image[0]; ?>'/>
-        <?php endif; ?>
-      <?php } ?>
+/**
+ * Third party plugins that hijack the theme will call wp_head() to get the header template.
+ * We use this to start our output buffer and render into the view/page-plugin.twig template in footer.php
+ *
+ * If you're not using a plugin that requries this behavior (ones that do include Events Calendar Pro and 
+ * WooCommerce) you can delete this file and footer.php
+ */
 
-			<?php if (!is_page()){ ?>
-          <section id="content" role="region" class="content mod left w70">
-      <?php } ?>
-
-
-<?php
-// si on est sur la nouvelle home page :
-else : ?>
-
-    <main class="app" role="main">
-
-        <?php
-            // include "mainHeader" component
-            $classElement = "app_mainHeader";
-            include(SRC_COMPONENTS_DIR . '/mainHeader/mainHeader.php');
-        ?>
-
-
-<?php endif; ?>
+$GLOBALS['timberContext'] = Timber::get_context();
+ob_start();

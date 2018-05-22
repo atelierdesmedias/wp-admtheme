@@ -1,22 +1,35 @@
-<?php get_header(); ?>
-<?php the_post(); ?>
+<?php
+/**
+ * The template for displaying all pages.
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site will use a
+ * different template.
+ *
+ * To generate specific templates for your pages you can use:
+ * /mytheme/views/page-mypage.twig
+ * (which will still route through this PHP file)
+ * OR
+ * /mytheme/page-mypage.php
+ * (in which case you'll want to duplicate this file and save to the above path)
+ *
+ * Methods for TimberHelper can be found in the /lib sub-directory
+ *
+ * @package  WordPress
+ * @subpackage  Timber
+ * @since    Timber 0.1
+ */
+use Timber\Timber;
 
-    <section class="content">
+$context = Timber::get_context();
+$post = new Timber\Post();
+$context['post'] = $post;
+Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );
 
-        <aside class="content-aside">
-        </aside>
-
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
-            <header class="entry-header">
-                <h1 class="entry-title"><?php the_title(); ?></h1>
-            </header>
-
-            <div class="entry-content">
-                <?php the_content(); ?>
-                <?php wp_link_pages(array('before' => '<div class="page-link">Pages : ', 'after' => '</div>')); ?>
-                <?php edit_post_link('Editer', '<span class="edit-link">', '</span>'); ?>
-            </div>
-        </article>
-    </section>
-
-<?php get_footer(); ?>
+//
+//$context = Timber::get_context();
+//$template = 'page.twig';
+//// Posts
+//$context['posts'] = Timber::get_posts();
+//Timber::render($template, $context);

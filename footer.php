@@ -1,60 +1,17 @@
-<?php 
+<?php
 /**
- * footer.php
- * IMPORTANT : Une partie du template appartient aux anciennes pages que l'on
- * garde visible dans un premier temps
+ * Third party plugins that hijack the theme will call wp_footer() to get the footer template.
+ * We use this to end our output buffer (started in header.php) and render into the view/page-plugin.twig template.
+ *
+ * If you're not using a plugin that requries this behavior (ones that do include Events Calendar Pro and 
+ * WooCommerce) you can delete this file and header.php
  */
-?>
 
-
-<?php
-if
-// tout ce contenu doit continuer à apparaitre sur le site
-// si l'on est pas sur la nouvelle home page
-( !is_home() && !is_front_page() ) :
-?>
-
-
-</div><!-- #main  -->
-</div><!-- .container -->
-
-<div id="page-footer-container">
-    <footer id="page-footer" class="container" role="contentinfo">
-        <div id="page-footer-information">
-            <img id="page-footer-logo" src="<?php echo get_template_directory_uri(); ?>/images/logo-footer.png" />
-            <span id="page-footer-adress">9 quai André Lassagne - 69001 Lyon</span>
-            <span id="page-footer-phone">Tel : 09 72 33 20 92</span>
-        </div>
-        <nav id="page-footer-links">
-            <a href="<?php echo home_url('/credits'); ?>">Crédits</a> -
-            <a href="<?php echo home_url('/mentions-legales'); ?>">Mentions légales</a> -
-            <a href="<?php echo home_url('/nos-partenaires'); ?>">Nos partenaires</a> -
-            <a href="<?php echo home_url('/espace-presse'); ?>">Espace presse</a>
-        </nav>
-    </footer>
-</div>
-
-
-<?php
-// si on est sur la nouvelle home page :
-else : ?>
-
-    <?php
-        // include "mainFooter" component
-        $classElement = "app_mainFooter";
-        include(SRC_COMPONENTS_DIR . '/mainFooter/mainFooter.php');
-    ?>
-
-</main>
-
-<?php endif; ?>
-
-<?php wp_footer(); ?>
-
-<!-- JS files -->
-<script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
-
-</body>
-
-</html>
-
+$timberContext = $GLOBALS['timberContext'];
+if ( ! isset( $timberContext ) ) {
+	throw new \Exception( 'Timber context not set in footer.' );
+}
+$timberContext['content'] = ob_get_contents();
+ob_end_clean();
+$templates = array( 'page-plugin.twig' );
+Timber::render( $templates, $timberContext );
