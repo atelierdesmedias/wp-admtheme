@@ -20,16 +20,8 @@
  * @subpackage  Timber
  * @since    Timber 0.1
  */
-use Timber\Timber;
 
 $context = Timber::get_context();
-$post = new Timber\Post();
+$post = new TimberPost();
 $context['post'] = $post;
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );
-
-//
-//$context = Timber::get_context();
-//$template = 'page.twig';
-//// Posts
-//$context['posts'] = Timber::get_posts();
-//Timber::render($template, $context);
