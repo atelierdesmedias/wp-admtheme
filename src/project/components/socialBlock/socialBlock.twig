@@ -1,0 +1,29 @@
+{#
+ * @title: "socialBlock" PHP View component
+ * @description: block icon social
+#}
+
+<div class="socialBlock {{ classElement }}">
+    <ul class="socialBlock_items">
+
+        {# facebook #}
+        <li class="socialBlock_item">
+            <a class="socialBlock_link">
+                <i class="socialBlock_icon socialBlock_icon-facebook">
+                    {% include 'src/common/images/icon-facebook.svg' %}
+
+                </i>
+            </a>
+        </li>
+
+        {# twitter #}
+        <li class="socialBlock_item">
+            <a class="socialBlock_link">
+                <i class="socialBlock_icon socialBlock_icon-twitter">
+                    {% include 'src/common/images/icon-twitter.svg' %}
+                </i>
+            </a>
+        </li>
+
+    </ul>
+</div>

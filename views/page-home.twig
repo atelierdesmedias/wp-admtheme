@@ -1,11 +1,13 @@
-{% extends "base.twig" %}
+{#
+ * @title: "page-home" TWIG template
+ * @description: Ce fichier import est un template de page WP TWIG
+#}
 
+{# Etendu de app.twig #}
+{% extends "templates/base.twig" %}
+
+{# contenu du template #}
 {% block content %}
-    <p>{{ 'coucou' }}</p>
-    {% include %}
+    {# inclu le template composnant de la page #}
+    {% include 'src/project/pages/homePage/homePage.twig' %}
 {% endblock%}
-
-
-
-
-
