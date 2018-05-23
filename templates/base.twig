@@ -25,10 +25,12 @@
 	<body class="{{body_class}}" data-template="base.twig">
         <main id="app" role="main" class="app">
 
+            {% block header %}
             {%
                 include "src/project/components/mainHeader/mainHeader.twig"
                 with { 'classElement': 'app_mainHeader' }
             %}
+            {% endblock %}
 
             {% block content %}
                 {# Le contenu du site est chargé dans ce block #}
