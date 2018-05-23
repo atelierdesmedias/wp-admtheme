@@ -36,6 +36,7 @@ You need to install the following plugins:
 * Install the "[Events Made Easy](https://wordpress.org/plugins/events-made-easy/)" plugin (read the [doc](http://www.e-dynamics.be/wordpress/?cat=22))
 * Install the [Facebook adapter](https://wordpress.org/support/plugin/eme-sync-facebook-events). Input your API Key / Secret
 * Copy/paste the template the following code in ```Events/Settings/Events``` in the field ```Default event list format```:
+
 ```
 <li>
     <div class="calendar-event">
@@ -54,6 +55,7 @@ You need to install the following plugins:
 ```
 
 * Copy/paste the template following code in ```Events/Settings/Events``` in the field ```Default single event format```:
+
 ```
 <div class="calendar-event-single">
     <div class="calendar-single-inner">
