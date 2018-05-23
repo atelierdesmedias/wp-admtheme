@@ -22,20 +22,14 @@ const root = './';
 
 path = {
 
-    // template folder
-    templates: root + 'config/templates/',
+    // skeletons folder
+    skeletons: root + 'config/skeletons/',
 
     // Path to components
     components: root + 'src/project/components/',
 
-    // Path to PHP View component
-    phpViewComponent: root + 'view/components/',
-
     // Path to pages
     pages: root + 'src/project/pages/',
-
-    // Path to PHP View page
-    phpViewPage: root + 'view/pages/',
 
     // Path to config
     env: root + 'config/env/',
@@ -44,10 +38,11 @@ path = {
 // ----------------------------------------------------------------------------- SCAFF TASK
 
 
-let DOMTsTemplate = path.templates + 'dom/tsTemplate';
-let DOMLessTemplate = path.templates + 'dom/scssTemplate';
-let DOMPHPTemplate = path.templates + 'dom/phpTemplate';
-let wpPageTemplate = path.templates + 'dom/wpPageTemplate';
+let DOMTsTemplate = path.skeletons + 'dom/tsTemplate';
+let DOMLessTemplate = path.skeletons + 'dom/scssTemplate';
+let DOMTWIGTemplate = path.skeletons + 'dom/twigTemplate';
+let wpPageTemplate = path.skeletons + 'dom/wpPageTemplate';
+let DOMPHPTemplate = path.skeletons + 'dom/phpTemplate';
 
 
 gulp.task('scaff', () => {
@@ -101,12 +96,12 @@ gulp.task('scaff', () => {
                 .pipe(gulp.dest((res.type === 'Component' ? path.components : path.pages) + formatName));
 
 
-            // ---- PHP View template
-            gulp.src(DOMPHPTemplate)
+            // ---- TWIG View template
+            gulp.src(DOMTWIGTemplate)
             // config
                 .pipe(template({name: formatName}))
                 // rename file with response name
-                .pipe(rename(formatName + '.php'))
+                .pipe(rename(formatName + '.twig'))
                 // define Dest
                 .pipe(gulp.dest((res.type === 'Component' ? path.components : path.pages) + formatName));
 
@@ -153,8 +148,8 @@ gulp.task('scaff', () => {
  * @type {string}
  */
 
-let envTemplate = path.templates + 'config/env';
-let envPropertiesTemplate = path.templates + 'config/properties';
+let envTemplate = path.skeletons + 'config/env';
+let envPropertiesTemplate = path.skeletons + 'config/properties';
 
 gulp.task('env', () => {
 

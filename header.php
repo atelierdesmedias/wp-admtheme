@@ -97,8 +97,8 @@ else : ?>
 
         <?php
             // include "mainHeader" component
-            $classElement = "app_mainHeader";
-            include(SRC_COMPONENTS_DIR . '/mainHeader/mainHeader.php');
+            $context = Timber::get_context();
+            Timber::render(SRC_COMPONENTS_DIR . '/mainHeader/mainHeader.twig', $context);
         ?>
 
 

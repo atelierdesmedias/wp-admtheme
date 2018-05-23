@@ -1,0 +1,11 @@
+{#
+ * @title: "mainHeader" TWIG View component
+ * @description:
+#}
+
+<header class="mainHeader {{ classElement }}">
+    {%
+        include "src/project/components/navBar/navBar.twig"
+        with { 'classElement': 'mainHeader_navBar' }
+    %}
+</header>

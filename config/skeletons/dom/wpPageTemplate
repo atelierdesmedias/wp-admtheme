@@ -1,0 +1,23 @@
+<?php
+/**
+ * @title: WP page file of <%= name %> component
+ * @Description: Cette page inclu la vue Twig de la page correspondante
+ * le traitement des pages se fait directement dans :
+ * "src/project/pages/<%= name %>/<%= name %>.twig"
+ */
+
+require 'config.php';
+
+/**
+ * ----------------------------------------------------------------------------- INCLUDE TEMPLATE
+ */
+
+  get_header();
+
+     // include "<%= name %>" component
+     $context = Timber::get_context();
+     Timber::render(SRC_PAGES_DIR . '/<%= name %>/<%= name %>.twig', $context);
+
+  get_footer();
+
+

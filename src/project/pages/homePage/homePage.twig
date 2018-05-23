@@ -1,0 +1,16 @@
+{#
+ * @title: "homePage" TWIG view component
+ * @description: Ce fichier correspond à la vue TWIG du composant
+#}
+
+<div class="homePage">
+    <header class="homePage_header">
+        {%
+            include "./src/project/components/bigCover/bigCover.twig"
+            with { 'classElement': 'homePage_bigCover' }
+        %}
+    </header>
+    <section class="homePage_content" role="main">
+        homePage content
+    </section>
+</div>

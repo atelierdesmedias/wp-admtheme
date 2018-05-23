@@ -40,10 +40,11 @@ if
 else : ?>
 
     <?php
-        // include "mainFooter" component
-        $classElement = "app_mainFooter";
-        include(SRC_COMPONENTS_DIR . '/mainFooter/mainFooter.php');
-    ?>
+            // include "mainFooter" component
+            $context = Timber::get_context();
+            Timber::render(SRC_COMPONENTS_DIR . '/mainFooter/mainFooter.twig', $context);
+        ?>
+
 
 </main>
 

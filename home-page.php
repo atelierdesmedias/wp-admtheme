@@ -13,6 +13,10 @@ require 'config.php';
  */
 
  get_header();
- include( ROOT_PATH .'/src/project/pages/homePage/homePage.php');
+
+    // include "homePage" component
+    $context = Timber::get_context();
+    Timber::render(SRC_PAGES_DIR . '/homePage/homePage.twig', $context);
+
  get_footer();
 

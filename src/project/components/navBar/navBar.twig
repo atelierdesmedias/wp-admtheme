@@ -1,0 +1,31 @@
+{#
+ * @title: "navBar" PHP view component
+ * @description:
+#}
+
+<div class="navBar {{ classElement }}">
+        {# include "menu" component #}
+        {%
+            include "src/project/components/menu/menu.twig"
+            with { 'classElement': 'navBar_menu' }
+        %}
+
+        {# include "socialBlock" component #}
+        {%
+            include "src/project/components/socialBlock/socialBlock.twig"
+            with { 'classElement': 'navBar_socialBlock' }
+        %}
+
+        {# include "intranetConnection" component #}
+        {%
+            include "src/project/components/intranetConnection/intranetConnection.twig"
+            with { 'classElement': 'navBar_intranetConnection' }
+        %}
+
+        {# include "languageBlock" component #}
+        {%
+            include "src/project/components/languageBlock/languageBlock.twig"
+            with { 'classElement': 'navBar_languageBlock' }
+        %}
+
+</div>

@@ -1,0 +1,17 @@
+{#
+ * @title : "menu" TWIG view component
+#}
+
+{% if menu %}
+<nav class="menu {{ classElement }}">
+    <ul class="menu_items">
+        {% for item in menu %}
+            <li class="menu_item {{ item.classes | join(' ') }}">
+                <a class="menu_link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+                {% include "menu.twig" with {'menu': item.get_children} %}
+            </li>
+        {% endfor %}
+
+    </ul>
+</nav>
+{% endif %}
