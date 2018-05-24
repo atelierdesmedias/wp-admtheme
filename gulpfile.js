@@ -104,24 +104,23 @@ gulp.task('scaff', () => {
                 .pipe(rename(formatName + '.twig'))
                 // define Dest
                 .pipe(gulp.dest((res.type === 'Component' ? path.components : path.pages) + formatName));
-
-
+            
             /**
              * Seulement si c'est une page  :
              * Créer un template de page type "WP" à la racine du projet
              * dans lequel on inclu le composant page
              */
-            if (res.type === 'Page')
-            {
-                // ---- PHP page template
-                gulp.src(wpPageTemplate)
-                // config
-                    .pipe(template({name: formatName}))
-                    // rename file with response name
-                    .pipe(rename(wpPageFormatName + '.php'))
-                    // define Dest
-                    .pipe(gulp.dest( root ));
-            }
+            // if (res.type === 'Page')
+            // {
+            //     // ---- PHP page template
+            //     gulp.src(wpPageTemplate)
+            //     // config
+            //         .pipe(template({name: formatName}))
+            //         // rename file with response name
+            //         .pipe(rename(wpPageFormatName + '.php'))
+            //         // define Dest
+            //         .pipe(gulp.dest( root ));
+            // }
 
 
             // ----------------------------------------------------------------- END - console message
@@ -140,7 +139,6 @@ gulp.task('scaff', () => {
 });
 
 // ----------------------------------------------------------------------------- ENV
-
 
 /**
  * Define Env Scaffolder

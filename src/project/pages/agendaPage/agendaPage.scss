@@ -1,5 +1,5 @@
 /**
-  * "menu" stylesheet
+  * "agendaPage" stylesheet
   * follow workflow instructions
  */
 
@@ -10,65 +10,17 @@
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.menu
+.agendaPage
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
     // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : menu;
+    $this : agendaPage;
 
   // --------------------------------------------------------------------------- BLOCK
 
-  // position
-
-  // style
-  @include title-smallUppercase();
-
   // --------------------------------------------------------------------------- ELEMENTS
-
-  &_items
-  {
-    // position
-    position: relative;
-    @include size(100%, $navBarHeight);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    // style
-    // ...
-    list-style: none;
-  }
-
-  &_item
-  {
-
-    // position
-    position: relative;
-    @include size(100%, $navBarHeight);
-    padding: 0 3.2rem;
-
-    // style
-    border-right: 1px solid $color4;
-
-  }
-
-  &_link
-  {
-    // position
-    @include center();
-    color: $color3;
-
-    // style reset
-    border: 0;
-    text-decoration: none;
-
-    &:hover
-    {
-      color:$color2;
-    }
-
-  }
 
   // --------------------------------------------------------------------------- MODIFIERS
 
