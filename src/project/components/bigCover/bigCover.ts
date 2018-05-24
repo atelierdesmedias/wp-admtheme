@@ -8,6 +8,9 @@
 import {jView} from '../../../common/core/jView'
 import './bigCover.scss'
 import {eventBanner} from "../eventBanner/eventBanner";
+import { TweenLite } from "gsap";
+
+
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
@@ -18,6 +21,7 @@ export class bigCover extends jView
 
     private _eventBanner: eventBanner;
     private $video: ZeptoCollection;
+
 
     // ------------------------------------------------------------------------- INIT
 
@@ -56,22 +60,28 @@ export class bigCover extends jView
      */
     protected afterInit()
     {
-        console.log('coucou bigCover');
+        // init la taille du container
+        this.applyVideoHeightHandler();
     }
 
     // ------------------------------------------------------------------------- HANDLERS
 
     protected applyVideoHeightHandler () :void
     {
-     console.log('resize');
-    }
+        // appliquer la taille du container a la video
+        // pour qu'elle fasse toujours 100% de hauteur
+        TweenLite.set( this.$root, {
+            height: $(window).height()
+        })
 
+
+    }
 
     // ------------------------------------------------------------------------- DISPOSE
 
-    // supprimer l'écoute de l'event
-    dispose ()
+    public dispose () :void
     {
+        // supprimer l'écoute de l'event
         window.removeEventListener('resize', this.applyVideoHeightHandler.bind(this))
     }
 

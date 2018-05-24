@@ -15,12 +15,14 @@
 	"license": "ISC",
 	"dependencies": {
 		"bourbon": "^5.0.0",
+		"gsap": "^2.0.0",
 		"normalize.css": "^7.0.0",
 		"npm": "^6.0.0",
 		"solidify-lib": "^1.7.2",
 		"zepto-webpack": "^1.2.1"
 	},
 	"devDependencies": {
+		"@types/gsap": "^1.19.2",
 		"@types/zepto": "^1.0.29",
 		"babel-core": "^6.26.2",
 		"babel-eslint": "^8.0.2",

@@ -17,7 +17,7 @@ const resolve = {
 
         // extentions preference order
         extensions: [
-            '.ts', '.js', '.vue'
+            '.ts', '.js'
         ],
 
 
