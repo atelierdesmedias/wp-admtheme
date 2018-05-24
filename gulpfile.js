@@ -104,7 +104,7 @@ gulp.task('scaff', () => {
                 .pipe(rename(formatName + '.twig'))
                 // define Dest
                 .pipe(gulp.dest((res.type === 'Component' ? path.components : path.pages) + formatName));
-            
+
             /**
              * Seulement si c'est une page  :
              * Créer un template de page type "WP" à la racine du projet

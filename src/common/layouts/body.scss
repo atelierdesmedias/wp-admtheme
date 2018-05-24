@@ -10,16 +10,6 @@
 
 body
 {
-
-
-
-
-
-
-  // en attendant de globaliser le style pour toutes les pages
-  &.home
-  {
-
     // background motif
     background: url('../images/background-01.jpg') repeat;
 
@@ -29,15 +19,14 @@ body
     // global color
     color: $color2;
 
+    // global interlignage
+    line-height: 1.5rem;
+
+    // global interlettrage
+    letter-spacing: 0.03rem;
+
     // global font
     @include lato-regular();
-
-  }
-
-
-
-
-
 
 }
 

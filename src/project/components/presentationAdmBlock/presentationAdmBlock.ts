@@ -1,25 +1,31 @@
 /**
- * this is "homePage" TS export class
+ * this is "presentationAdmBlock" TS export class
  * follow workflow instructions
  */
 
 // ------------------------------------------------------------------------- IMPORTS
 
 import {jView} from '../../../common/core/jView'
-import './homePage.scss'
-import {bigCover} from "../../components/bigCover/bigCover";
-import {presentationAdmBlock} from "../../components/presentationAdmBlock/presentationAdmBlock";
+import './presentationAdmBlock.scss'
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class homePage extends jView
+export class presentationAdmBlock extends jView
 {
+
     // ------------------------------------------------------------------------- TYPE
 
-    private _bigCover: bigCover;
-    private _presentationAdmBlock: presentationAdmBlock;
-
     // ------------------------------------------------------------------------- INIT
+
+
+    /**
+     * Target our root if not already defined via constructor params
+     * (method overwriting DOMView and move to constructor via init)
+     */
+    protected targetRoot ()
+    {
+
+    }
 
     /**
      * prepare nodes
@@ -36,11 +42,7 @@ export class homePage extends jView
      */
     protected prepareDependencies()
     {
-        // inclure la big Cover
-        this._bigCover = new bigCover( $('.bigCover') );
-        
-        // inclure le texte de présentation 
-        this._presentationAdmBlock = new presentationAdmBlock( $('.presentationAdmBlock') );
+
     }
 
     /**
@@ -63,7 +65,6 @@ export class homePage extends jView
 
     // ------------------------------------------------------------------------- HANDLERS
 
-    // ------------------------------------------------------------------------- CONFIG
 
     // ------------------------------------------------------------------------- END EXPORT CLASS
 }

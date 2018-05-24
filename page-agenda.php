@@ -1,6 +1,6 @@
 <?php
 /**
- Template Name: agenda
+Template Name: agenda
  * @title: WP page file of agendaPage component
  * @Description: Cette page inclu la vue Twig de la page correspondante
  * le traitement des pages se fait directement dans :

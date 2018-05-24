@@ -76,20 +76,13 @@
 
   &_dayNumber
   {
-    // position
-    margin-top: -3px;
-
     // style
     @include lato-bold();
     font-size: 1.6rem;
-
   }
 
   &_month
   {
-    // position
-    margin-top: -3px;
-
     // style
     @include title-smallUppercase($color2);
     font-size: 0.7rem;

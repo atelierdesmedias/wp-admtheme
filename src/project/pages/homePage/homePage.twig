@@ -11,6 +11,12 @@
         %}
     </header>
     <section class="homePage_content" role="main">
-        homePage content
+
+        {# importer "presentation Adm Block" component #}
+        {%
+            include "./src/project/components/presentationAdmBlock/presentationAdmBlock.twig"
+            with { 'classElement': 'homePage_presentationAdmBlock' }
+        %}
+
     </section>
 </div>
