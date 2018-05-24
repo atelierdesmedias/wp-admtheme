@@ -42,7 +42,7 @@ let DOMTsTemplate = path.skeletons + 'dom/tsTemplate';
 let DOMLessTemplate = path.skeletons + 'dom/scssTemplate';
 let DOMTWIGTemplate = path.skeletons + 'dom/twigTemplate';
 let wpPageTemplate = path.skeletons + 'dom/wpPageTemplate';
-let DOMPHPTemplate = path.skeletons + 'dom/phpTemplate';
+// let DOMPHPTemplate = path.skeletons + 'dom/phpTemplate';
 
 
 gulp.task('scaff', () => {
@@ -138,7 +138,6 @@ gulp.task('scaff', () => {
 
 
 });
-
 
 // ----------------------------------------------------------------------------- ENV
 
