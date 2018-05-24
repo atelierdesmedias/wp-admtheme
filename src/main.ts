@@ -23,6 +23,8 @@ import {jView} from './common/core/jView';
 import {homePage} from "./project/pages/homePage/homePage";
 import globalConfig from "../config/global.config";
 import {app} from "./project/components/app/app";
+import {agendaPage} from "./project/pages/agendaPage/agendaPage";
+import {blogPage} from "./project/pages/blogPage/blogPage";
 
 // ----------------------------------------------------------------------------- START EXPORT CLASS
 
@@ -32,7 +34,9 @@ export class main extends jView
     // ------------------------------------------------------------------------- TYPE
 
     private _homePage: homePage;
+    private _agendaPage: agendaPage;
     private _app: app;
+    private _blogPage: blogPage;
 
     // ------------------------------------------------------------------------- INIT
 
@@ -69,7 +73,6 @@ export class main extends jView
          * @doc: http://zeptojs.com/
          */
 
-
         this._app = new app( $('.app'));
 
     }
@@ -95,11 +98,29 @@ export class main extends jView
          *
          */
 
+        // si Home Page
+        if ( this.$root.find('.homePage').length )
+        {
+            this._homePage = new homePage( $('.homePage') );
+            console.log('homePage');
+        }
 
-         this._homePage = new homePage( $('.homePage') );
+        // Agenda Page
+        if ( this.$root.find('.agendaPage').length )
+        {
+            this._agendaPage = new agendaPage( $('.agendaPage') );
+            console.log('agendaPage')
+        }
+
+        // Blog Page
+        if ( this.$root.find('.blogPage').length )
+        {
+            this._blogPage = new blogPage( $('.blogPage') );
+            console.log('blogPage')
+
+        }
 
     }
-
     // ------------------------------------------------------------------------- END EXPORT CLASS
 
 }
@@ -108,6 +129,6 @@ export class main extends jView
  * FINAL
  * instancier la class "main"
  */
-new main();
+new main( $('body') );
 
 

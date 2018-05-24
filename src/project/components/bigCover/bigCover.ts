@@ -17,6 +17,7 @@ export class bigCover extends jView
     // ------------------------------------------------------------------------- TYPE
 
     private _eventBanner: eventBanner;
+    private $video: ZeptoCollection;
 
     // ------------------------------------------------------------------------- INIT
 
@@ -26,7 +27,8 @@ export class bigCover extends jView
      */
     protected prepareNodes()
     {
-
+        // la video qui tourne en boucle
+        this.$video = this.$root.find('.bigCover_video');
     }
 
     /**
@@ -35,7 +37,8 @@ export class bigCover extends jView
      */
     protected prepareDependencies()
     {
-        this._eventBanner = new eventBanner( $('.eventBanner') )
+        // importer event Banner
+        this._eventBanner = new eventBanner( $('.eventBanner') );
     }
 
     /**
@@ -44,7 +47,7 @@ export class bigCover extends jView
      */
     protected prepareEvents()
     {
-
+        window.addEventListener('resize', this.applyVideoHeightHandler.bind(this))
     }
 
     /**
@@ -53,12 +56,25 @@ export class bigCover extends jView
      */
     protected afterInit()
     {
-
+        console.log('coucou bigCover');
     }
 
     // ------------------------------------------------------------------------- HANDLERS
 
+    protected applyVideoHeightHandler () :void
+    {
+     console.log('resize');
+    }
 
-    // ------------------------------------------------------------------------- END EXPORT CLASS
+
+    // ------------------------------------------------------------------------- DISPOSE
+
+    // supprimer l'écoute de l'event
+    dispose ()
+    {
+        window.removeEventListener('resize', this.applyVideoHeightHandler.bind(this))
+    }
+
+
 }
 

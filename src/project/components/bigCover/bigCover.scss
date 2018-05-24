@@ -26,12 +26,12 @@
   {
     display: block;
     @include position(relative, 0);
-    @include size(100vw, 100vh);
+    @include size(100vw, 100%);
+    //max-height: 100%;
     margin: 0;
-
-
-    // TODO checker can I use
-    object-fit: cover;
+    //object-fit: cover; // Not support by IE
+    // solution: placer la video en absolute center et appliquer en JS la taille
+    // du window height sur le container video
   }
 
   // la div sur laquelle est appliquée l'image

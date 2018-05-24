@@ -3,9 +3,12 @@
  * IMPORTANT : do not edit this class
  */
 
+import {Disposable} from "./Disposable";
+
 // -------------------------------------------------------------------------------  START EXPORT CLASS
 
-export class jView {
+export class jView extends Disposable
+{
 
     // ------------------------------------------------------------------------- TYPE ELEMENTS
 
@@ -18,7 +21,10 @@ export class jView {
      * Load all methods
      *
      */
-    constructor($pRoot: any = null) {
+    constructor( $pRoot: any = null )
+    {
+        // relay
+        super();
 
         // if $pRoot exist
         if ($pRoot != null) {
@@ -34,16 +40,16 @@ export class jView {
 
     /**
      * init
-     * This method get method
+     * This method get all methods
      */
-    protected init() {
+    protected init()
+    {
         this.targetRoot();
         this.prepareNodes();
         this.prepareDependencies();
         this.prepareEvents();
         this.afterInit();
     }
-
 
     /**
      * Target our root if not already defined via constructor params

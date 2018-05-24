@@ -5,37 +5,40 @@
 
 <div class="bigCover {{ classElement }}">
 
+    {# video #}
+    <video class="bigCover_video" src="{{ theme.path }}/src/common/videos/clip.mp4"
+           autoplay muted loop type="video/mp4" ></video>
+
+    {# logo ADM #}
     <div class="bigCover_logo">
         {% include "src/common/images/logo-adm-blanc.svg" %}
     </div>
 
-    <video class="bigCover_video" src="{{ theme.path }}/src/common/videos/clip.mp4"
-           autoplay muted loop type="video/mp4"></video>
+    {# // TODO : link image url "home-header.jpg" avec WP back post thumbnail (image à la une) ?>#}
+    {#<div class="bigCover_backgroundImage" #}
+         {#style="background-image: url('{{ theme.path }}/src/common/images/home-header.jpg')">#}
 
-        {# // TODO : link image url "home-header.jpg" avec WP back post thumbnail (image à la une) ?>#}
-        {#<div class="bigCover_backgroundImage" #}
-             {#style="background-image: url('{{ theme.path }}/src/common/images/home-header.jpg')">#}
+        {# importer le composant eventBanner #}
+        {%
+            include "src/project/components/eventBanner/eventBanner.twig"
+            with { 'classElement': 'bigCover_eventBanner' }
+        %}
 
-            {# importer le composant eventBanner #}
-            {%
-                include "src/project/components/eventBanner/eventBanner.twig"
-                with { 'classElement': 'bigCover_eventBanner' }
-            %}
-
-            <div class="bigCover_banner">
-                <p class="bigCover_bannerText">
-                    {#  TODO DICO #}
-                    Créé en 2008, l’Atelier des Médias est le 1er espace de
-                    coworking lyonnais.<br>
-                    C’est une association qui regroupe des professionnels des
-                    médias (journalisme, web, graphisme, traduction,
-                    vidéo/photo, etc.),<br>
-                    un vivier de compétences qui collabore et invente de
-                    nouveaux modes de travail dans ce lieu de 212 m2 en centre
-                    ville.
-                </p>
-                <div class="bigCover_arrowDown"></div>
-            </div>
-        {#</div>#}
+    {# banner #}
+    <div class="bigCover_banner">
+        <p class="bigCover_bannerText">
+            {#  TODO DICO #}
+            Créé en 2008, l’Atelier des Médias est le 1er espace de
+            coworking lyonnais.<br>
+            C’est une association qui regroupe des professionnels des
+            médias (journalisme, web, graphisme, traduction,
+            vidéo/photo, etc.),<br>
+            un vivier de compétences qui collabore et invente de
+            nouveaux modes de travail dans ce lieu de 212 m2 en centre
+            ville.
+        </p>
+        <div class="bigCover_arrowDown"></div>
+    </div>
+    {#</div>#}
 
 </div>
