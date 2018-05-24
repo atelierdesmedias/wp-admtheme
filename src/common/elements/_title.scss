@@ -2,8 +2,8 @@
   * @Filename: title
   * @Description: mixin for this project
 */
-
 // importer les couleurs
+
 @import "../atoms/colors";
 @import "../fonts/fonts";
 
@@ -11,11 +11,12 @@
 
 @mixin title()
 {
-	font-size: 2.5em;
-    @include sofia-regular();
-    font-weight: normal;
+  display: block;
+  font-size: 2.5em;
+  line-height: 1em;
+  @include sofia-regular();
+  font-weight: normal;
 }
-
 
 // formatage des titres petit et uppercase
 // prend une couleur en paramètre

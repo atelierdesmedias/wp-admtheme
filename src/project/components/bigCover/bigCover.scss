@@ -22,6 +22,18 @@
 
   // --------------------------------------------------------------------------- ELEMENTS
 
+  &_video
+  {
+    display: block;
+    @include position(relative, 0);
+    @include size(100vw, 100vh);
+    margin: 0;
+
+
+    // TODO checker can I use
+    object-fit: cover;
+  }
+
   // la div sur laquelle est appliquée l'image
   &_backgroundImage
   {
@@ -40,9 +52,11 @@
   &_banner
   {
     // position
+    position: relative;
     @include size(100%, auto);
     @include position(absolute, null 0 0 0);
     padding: 2rem 3rem;
+    z-index: 2;
 
     // style
     background-color: rgba(0,0,0,0.4);

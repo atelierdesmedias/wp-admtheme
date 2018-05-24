@@ -20,18 +20,39 @@
 
   // --------------------------------------------------------------------------- BLOCK
 
-
+  padding: 3rem 0;
+  background: $color1;
 
   // --------------------------------------------------------------------------- ELEMENTS
 
+  &_wrapper
+  {
+    @include size( ($columnWidth * 6), auto );
+    max-width: 960px;
+    margin: auto;
+  }
+
+  &_content
+  {
+    display: flex;
+    align-items: center;
+  }
+
   &_title
   {
+    @include size( ( (100% / $totalGrid) * 4 ), auto );
     @include title();
   }
 
   &_text
   {
-    width: $columnWidth;
+    @include size( ( (100% / $totalGrid) * 8 ), auto );
+    display: block;
+
+    // <p> généré par l'admin WP
+    & > p:not(:first-child) {
+      margin-top: 1rem;
+    }
   }
 
   // --------------------------------------------------------------------------- MODIFIERS

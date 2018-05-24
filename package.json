@@ -1,6 +1,6 @@
 {
 	"name": "adm",
-	"version": "1.0.0",
+	"version": "3.0.0",
 	"description": "adm wordpress theme",
 	"repository": "webpack.config.babel.js",
 	"scripts": {
