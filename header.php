@@ -36,6 +36,7 @@
         ga('create', 'UA-22457099-1', 'auto');
         ga('send', 'pageview');
     </script>
+
 	<?php wp_head(); ?>
 	</head>
 

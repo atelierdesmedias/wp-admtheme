@@ -47,7 +47,6 @@ function load_scripts() {
 }
 add_action('wp_enqueue_scripts', 'load_scripts', 10);
 
-
 /**
  * Supprimer les scripts inutils ajoutés par WP
  */
@@ -63,9 +62,10 @@ add_action('wp_enqueue_scripts', 'remove_wp_scripts', 10);
 
 // -----------------------------------------------------------------------------  TIMBER
 
-
+// activer Timber (twig WP extension)
 require_once(__DIR__ . '/vendor/autoload.php');
 $timber = new \Timber\Timber();
+
 
 //class StarterSite extends Timber\Site {
 //
@@ -121,18 +121,8 @@ $timber = new \Timber\Timber();
  * Set FR locale
  */
 setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
-
 /*** clean ups and enhancements, uncomment to use */
-require_once('functions/custom_post_types.php');
-
-
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if (!isset($content_width)) {
-    $content_width = 640;
-}
-
+//require_once('functions/custom_post_types.php');
 
 /**
  * This theme uses wp_nav_menus() for the header menu, utility menu and footer menu.
@@ -140,13 +130,6 @@ if (!isset($content_width)) {
 register_nav_menus(array(
     'primary' => __('Primary Menu', 'adm')
 ));
-
-
-/**** Add some theme support, uncomment what you need ****/
-/**
- * Add default posts and comments RSS feed links to head
- */
-add_theme_support('automatic-feed-links');
 
 /**
  * This theme uses post thumbnails
@@ -159,51 +142,6 @@ add_theme_support('post-thumbnails');
 add_image_size('coworker-list-item', 172, 174, true);
 add_image_size('blog-list', 220, 200, true);
 add_image_size('coworker-banner', 690, 200, array('center', 'center'));
-
-
-/**
- * This enables post formats. If you use this, make sure to delete any that you aren't going to use.
- */
-//add_theme_support( 'post-formats', array( 'aside', 'audio', 'image', 'video', 'gallery', 'chat', 'link', 'quote', 'status' ) );
-
-
-/**
- * Disable the admin bar in 3.1
- */
-//show_admin_bar( false );
-
-
-/**
- * Register widgetized area and update sidebar with default widgets
- */
-
-if (!function_exists('handcraftedwp_widgets_init')) {
-
-    function handcraftedwp_widgets_init()
-    {
-        register_sidebar(array(
-            'name' => __('Sidebar', 'wp-admtheme'),
-            'id' => 'sidebar',
-            'before_widget' => '<aside id="%1$s" class="widget %2$s" role="complementary">',
-            'after_widget' => "</aside>",
-            'before_title' => '<h4 class="widget-title">',
-            'after_title' => '</h4>',
-        ));
-
-        // Area 3, located in the footer. Empty by default.
-        register_sidebar(array(
-            'name' => __('Footer', 'wp-admtheme'),
-            'id' => 'footer-widget-area',
-            'description' => __('The footer area', 'themename'),
-            'before_widget' => '<aside id="%1$s" class="widget-container %2$s">',
-            'after_widget' => '</aside>',
-            'before_title' => '<h2 class="widget-title">',
-            'after_title' => '</h2>',
-        ));
-    }
-
-}
-add_action('init', 'handcraftedwp_widgets_init');
 
 
 // This theme uses wp_nav_menu() in one location.
@@ -219,7 +157,6 @@ if (!function_exists('twentyeleven_excerpt_length')) {
         return 30;
     }
 }
-
 add_filter('excerpt_length', 'twentyeleven_excerpt_length');
 
 /**
@@ -359,7 +296,6 @@ function set_html_content_type()
     return 'text/html';
 }
 
-
 /**
  * Get excerpt from string
  *
@@ -381,7 +317,6 @@ function getExcerpt($str, $startPos = 0, $maxLength = 50)
     return $excerpt;
 }
 
-
 /**
  * Events custom rewrite
  *
@@ -393,41 +328,6 @@ function events_custom_rewrite()
 }
 
 add_action('init', 'events_custom_rewrite');
-
-// function my_js_include_function() {
-//     wp_enqueue_script( 'my_script.js', '/path/to/myscript.js', array('jquery') );
-// }
-// add_action( 'wp_enqueue_scripts', 'my_js_include_function' );
-
-/*----------------------------------------------------------------------- **/
-
-/*  please don't but if you need to remove width/height on template use this */
-/* add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
-if( !function_exists('function remove_thumbnail_dimensions'))  {
-	function remove_thumbnail_dimensions( $html ) {
-		$html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
-		return $html;
-	} 
-}*/
-
-
-// asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
-//	 change the UA-XXXXX-X to be your site's ID
-/*add_action('wp_head', 'async_google_analytics');
-if( !function_exists('async_google_analytics'))  {
-	function async_google_analytics() { ?>
-		<script>
-		var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
-			(function(d, t) {
-				var g = d.createElement(t),
-					s = d.getElementsByTagName(t)[0];
-				g.async = true;
-				g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				s.parentNode.insertBefore(g, s);
-			})(document, 'script');
-		</script>
-	<?php }
-}*/
 
 
 
