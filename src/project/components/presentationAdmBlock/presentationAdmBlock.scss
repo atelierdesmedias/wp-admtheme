@@ -30,24 +30,42 @@
     @include size( ($columnWidth * 6), auto );
     max-width: 960px;
     margin: auto;
+
+    @media screen and (max-width: $large) {
+      @include size( ($columnWidth * 9), auto );
+    }
   }
 
   &_content
   {
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: $large) {
+      display: block;
+    }
+
   }
 
   &_title
   {
     @include size( ( $relativeColumnWidth * 4 ), auto );
     @include title();
+
+    @media screen and (max-width: $large) {
+      @include size( 100%, auto );
+    }
+
   }
 
   &_text
   {
     @include size( ( $relativeColumnWidth * 8 ), auto );
     display: block;
+
+    @media screen and (max-width: $large) {
+      @include size( 100%, auto );
+    }
 
     // <p> généré par l'admin WP
     & > p:not(:first-child) {

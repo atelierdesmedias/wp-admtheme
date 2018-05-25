@@ -40,7 +40,7 @@
   {
     display: flex;
     justify-content: flex-start;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
   }
 
   &_input
@@ -88,7 +88,7 @@
     @include title-smallUppercase($color1);
     @include lato-regular();
     font-size: 0.7rem;
-    background: $color3;
+    background: none;
   }
 
 
