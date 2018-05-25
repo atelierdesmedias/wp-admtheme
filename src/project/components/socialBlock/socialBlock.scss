@@ -34,18 +34,28 @@
     position: relative;
     @include size(5.5rem, $navBarHeight);
     //margin: auto 5px;
-    border-right: 1px solid $color4;
+    border-right: 1px solid $colorNavBarLine;
   }
 
   &_link
   {
+    cursor: pointer;
+
     // cercle autour de l'icon
     &:after {
       content: '';
       @include center();
-      border: 1px solid $color4;
       @include size(28px);
       border-radius: 4rem;
+
+    }
+
+    &:hover
+    {
+      .#{$this}_icon *
+      {
+        fill: $color1;
+      }
     }
   }
 

@@ -24,11 +24,16 @@
   display: flex;
   align-items: center;
 
+  #{$all-text-inputs} {
+    background: transparent;
+  }
+
   // --------------------------------------------------------------------------- ELEMENTS
 
+  // INTRANET
   &_title
   {
-    @include title-smallUppercase($color5);
+    @include title-smallUppercase($color4);
   }
 
   &_form
@@ -48,13 +53,14 @@
 
     // style
     border:1px solid $color4;
-    line-height: 0;
+    line-height: 22px;
 
     // style du texte placeholder dans le input
     &::-webkit-input-placeholder
     {
       text-align: center;
       @include title-smallUppercase($color4);
+      font-size: 0.75rem;
     }
 
     // traitement du dernier input de la liste

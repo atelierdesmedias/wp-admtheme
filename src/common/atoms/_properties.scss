@@ -53,5 +53,9 @@ $totalGrid: 12;
 // size of 1 column : divise screen in ... column
 $columnWidth: ( 100vw / $totalGrid );
 
+// relative column width
+$relativeColumnWidth: (100% / $totalGrid);
+
+// hauteur de la navBar
 $navBarHeight : 5.8rem;
 

@@ -40,13 +40,13 @@
 
   &_title
   {
-    @include size( ( (100% / $totalGrid) * 4 ), auto );
+    @include size( ( $relativeColumnWidth * 4 ), auto );
     @include title();
   }
 
   &_text
   {
-    @include size( ( (100% / $totalGrid) * 8 ), auto );
+    @include size( ( $relativeColumnWidth * 8 ), auto );
     display: block;
 
     // <p> généré par l'admin WP

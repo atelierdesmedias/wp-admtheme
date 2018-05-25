@@ -27,8 +27,7 @@
   justify-content: flex-end;
 
   // style
-  background: $color1;
-  border-bottom: 1px solid $color4;
+  background: $color7;
 
   // --------------------------------------------------------------------------- ELEMENTS
 
@@ -48,7 +47,7 @@
     // (placée sur le parent pour qu'elle soit relative uniquement au composant
     // navBar et que l'on puisse réutiliser le composant "intranetConnection" sans
     // cette ligne de séparation à un autre endroit dans le projet)
-    border-right: 1px solid $color4;
+    border-right: 1px solid $colorNavBarLine;
     @include size(auto, $navBarHeight);
     padding: 0 1.5rem;
   }

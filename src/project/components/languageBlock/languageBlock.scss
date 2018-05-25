@@ -20,6 +20,8 @@
 
   // --------------------------------------------------------------------------- BLOCK
 
+  @include size( ($relativeColumnWidth * 1) , auto );
+
   // --------------------------------------------------------------------------- ELEMENTS
 
   &_items
@@ -45,7 +47,7 @@
   &_link
   {
     // style
-    @include title-smallUppercase($color5);
+    @include title-smallUppercase($color1);
 
     &-active
     {

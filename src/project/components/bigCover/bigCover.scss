@@ -61,7 +61,7 @@
     z-index: 2;
 
     // style
-    background-color: rgba(0,0,0,0.4);
+    background-color: $color7;
     color: $color1;
     text-align: center;
     @include lato-light();
@@ -103,6 +103,7 @@
 
   &_eventBanner
   {
+    display: none;
     @include position(absolute, ($navBarHeight + 1rem) 0 null null);
   }
 
