@@ -7,6 +7,7 @@
 
 import {jView} from '../../../common/core/jView'
 import './hamburgerButton.scss'
+import {navBar} from "../navBar/navBar";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
@@ -51,7 +52,9 @@ export class hamburgerButton extends jView
      */
     protected prepareEvents()
     {
-
+        // executer la methode qui se trouve dans le composant navBar sans avoir besoin
+        // de l'instancer (la méthode est static)
+        this.$root.on('click', navBar.mobileToggleNavBarHandler.bind(this));
     }
 
     /**

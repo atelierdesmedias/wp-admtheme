@@ -14,18 +14,19 @@
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
-
     // Call block element anywhere. Use it like this : .#{$this}_element
     $this : navBar;
-    //$navBarHeight : 3rem;
 
   // --------------------------------------------------------------------------- BLOCK
 
-
   // style
   background: $color7;
+  visibility: visible;
+
   @media screen and (max-width: $large) {
     background: rgba(0,0,0,0.9);
+    // cacher le menu par defaut en mobile
+    visibility: hidden;
   }
 
   // --------------------------------------------------------------------------- ELEMENTS

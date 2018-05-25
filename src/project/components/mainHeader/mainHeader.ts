@@ -18,6 +18,7 @@ export class mainHeader extends jView
 
     private _navBar: navBar;
     private _hamburgerButton: hamburgerButton;
+    private $navBar: ZeptoCollection;
 
     // ------------------------------------------------------------------------- INIT
 
@@ -27,7 +28,7 @@ export class mainHeader extends jView
      */
     protected prepareNodes()
     {
-
+        // this.$navBar = this.$root.find('.mainHeader_navBar');
     }
 
     /**
