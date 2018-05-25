@@ -22,6 +22,10 @@
 
   @include size( ($relativeColumnWidth * 1) , auto );
 
+  @media screen and (max-width: $large) {
+    @include size( auto , auto );
+  }
+
   // --------------------------------------------------------------------------- ELEMENTS
 
   &_items
@@ -48,6 +52,10 @@
   {
     // style
     @include title-smallUppercase($color1);
+    @media screen and (max-width: $large) {
+     font-size: 1rem;
+    }
+
 
     &-active
     {

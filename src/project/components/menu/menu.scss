@@ -24,6 +24,9 @@
 
   // style
   @include title-smallUppercase();
+  @media screen and (max-width: $large) {
+    font-size: 1.5rem;
+  }
 
   // --------------------------------------------------------------------------- ELEMENTS
 
@@ -38,6 +41,12 @@
     // style
     // ...
     list-style: none;
+
+    @media screen and (max-width: $large) {
+      display: block;
+      @include size(100%, auto);
+    }
+    
   }
 
   &_item
@@ -51,6 +60,9 @@
     // style
     border-right: 1px solid $colorNavBarLine;
 
+    @media screen and (max-width: $large) {
+      border-right: 0px;
+    }
   }
 
   &_link
@@ -62,6 +74,9 @@
     // style reset
     border: 0;
     text-decoration: none;
+
+
+
 
     &:hover
     {

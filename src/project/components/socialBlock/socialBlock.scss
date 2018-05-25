@@ -27,14 +27,24 @@
     list-style: none;
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: $large) {
+      width: 6.5rem;
+      margin: auto;
+    }
+
   }
 
   &_item
   {
     position: relative;
-    @include size(5.5rem, $navBarHeight);
-    //margin: auto 5px;
+    @include size((6.5rem / 2), $navBarHeight);
     border-right: 1px solid $colorNavBarLine;
+
+    @media screen and (max-width: $large) {
+      //@include size(5rem, $navBarHeight);
+      border-right: 0px; // reset
+    }
   }
 
   &_link
@@ -47,7 +57,7 @@
       @include center();
       @include size(28px);
       border-radius: 4rem;
-
+      //border: 1px solid $color4;
     }
 
     &:hover
@@ -72,6 +82,10 @@
       & > svg
       {
         @include size(18px);
+        @media screen and (max-width: $large) {
+          @include size(35px);
+        }
+
       }
     }
 
@@ -79,10 +93,16 @@
     {
       // ajustement du positionnement de l'icon
       margin: 1px 0 0 0;
+      @media screen and (max-width: $large) {
+        margin: 4px 0 0 0;
+      }
 
       & > svg
       {
         @include size(14px);
+        @media screen and (max-width: $large) {
+          @include size(28px);
+        }
 
       }
     }
