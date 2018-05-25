@@ -27,12 +27,9 @@
   &_video
   {
     display: block;
-
     @include center();
     @include size(auto);
-    //@include minSize(100%);
-    min-width: 100%;
-    min-height: 100%;
+    @include minSize(100%);
 
     //object-fit: cover; // Not support by IE
     // solution: placer la video en absolute center et appliquer en JS la taille

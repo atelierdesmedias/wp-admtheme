@@ -4,7 +4,7 @@
   * declare common font face
  */
 
-@import '~bourbon/core/_bourbon.scss';
+@import '~willybe-bourbon/core/_bourbon.scss';
 
 // ----------------------------------------------------------------------------- DECLARE FONTFACE
 
@@ -14,7 +14,6 @@
 
 @include font-face( "lato-regular", "./lato/lato-regular", ("eot", "ttf", "woff"))
 @include font-face( "sofia-regular", "./sofia/sofia-regular", ("eot", "ttf", "woff"))
-
 
 @mixin fontProperties()
 {
