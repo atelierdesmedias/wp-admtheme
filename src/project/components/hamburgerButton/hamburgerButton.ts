@@ -1,25 +1,31 @@
 /**
- * this is "mainHeader" TS export class
+ * this is "hamburgerButton" TS export class
  * follow workflow instructions
  */
 
 // ------------------------------------------------------------------------- IMPORTS
 
 import {jView} from '../../../common/core/jView'
-import './mainHeader.scss'
-import {navBar} from "../navBar/navBar";
-import {hamburgerButton} from "../hamburgerButton/hamburgerButton";
+import './hamburgerButton.scss'
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class mainHeader extends jView
+export class hamburgerButton extends jView
 {
+
     // ------------------------------------------------------------------------- TYPE
 
-    private _navBar: navBar;
-    private _hamburgerButton: hamburgerButton;
-
     // ------------------------------------------------------------------------- INIT
+
+
+    /**
+     * Target our root if not already defined via constructor params
+     * (method overwriting DOMView and move to constructor via init)
+     */
+    protected targetRoot ()
+    {
+
+    }
 
     /**
      * prepare nodes
@@ -36,11 +42,6 @@ export class mainHeader extends jView
      */
     protected prepareDependencies()
     {
-        // inclure la nav Bar
-        this._navBar = new navBar( $('.navBar') );
-        
-        // importer le hamburger button
-        this._hamburgerButton = new hamburgerButton( $('.hamburgerButton') );
 
     }
 

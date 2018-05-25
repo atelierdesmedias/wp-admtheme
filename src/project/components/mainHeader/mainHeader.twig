@@ -4,8 +4,16 @@
 #}
 
 <header class="mainHeader">
+
+    {%
+        include "src/project/components/hamburgerButton/hamburgerButton.twig"
+        with { 'classElement': 'mainHeader_hamburgerButton' }
+    %}
+
+    <div class="mainHeader_content">
     {%
         include "src/project/components/navBar/navBar.twig"
         with { 'classElement': 'mainHeader_navBar' }
     %}
+    </div>
 </header>

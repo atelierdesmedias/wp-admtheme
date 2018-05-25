@@ -1,5 +1,5 @@
 /**
-  * "mainHeader" stylesheet
+  * "hamburgerButton" stylesheet
   * follow workflow instructions
  */
 
@@ -10,48 +10,53 @@
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.mainHeader
+.hamburgerButton
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
     // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : mainHeader;
+    $this : hamburgerButton;
 
   // --------------------------------------------------------------------------- BLOCK
 
-  // reset
-  margin: 0;
+  @include size(26px, 26px);
+  cursor: pointer;
+  outline: 0;
 
   // --------------------------------------------------------------------------- ELEMENTS
 
-  &_hamburgerButton
+
+  &_inner
   {
-    display: none;
-    @media screen and (max-width: $large) {
-      display: block;
-      @include position(fixed, 0 null null 0);
-      background: $color7;
-      padding: 2rem;
-      z-index: 1;
-    }
+    @include center();
+    @include size(26px, 1em);
   }
 
-  &_content
+  &_line
   {
     display: block;
+    position: absolute;
+    @include size(100%, 2px);
+    background: $color1;
+    border-radius: 1em;
 
-    @media screen and (max-width: $large) {
-      display: none;
+    &-top
+    {
+      top: 0;
+    }
+    &-center
+    {
+      opacity: 1;
+      @include center();
+    }
+    &-bottom
+    {
+      bottom: 0;
     }
 
   }
 
-  &_navBar
-  {
-    @include position(fixed, 0 0 null 0);
-    z-index: 1;
-  }
 
   // --------------------------------------------------------------------------- MODIFIERS
 
