@@ -5,11 +5,14 @@
 
 <header class="mainHeader">
 
+
+    {# include du bouton menu mobile #}
     {%
         include "src/project/components/hamburgerButton/hamburgerButton.twig"
         with { 'classElement': 'mainHeader_hamburgerButton' }
     %}
 
+    {# include de la bav bar  #}
     {%
         include "src/project/components/navBar/navBar.twig"
         with { 'classElement': 'mainHeader_navBar' }
