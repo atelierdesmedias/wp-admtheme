@@ -10,6 +10,16 @@ import './mainHeader.scss'
 import {navBar} from "../navBar/navBar";
 import {hamburgerButton} from "../hamburgerButton/hamburgerButton";
 import {TweenLite} from "gsap";
+import {breakPoint} from '../../../common/helpers/breakPoint';
+
+
+// States de la navBar Handler
+enum EToggleNavBarHandler
+{
+    OPEN,
+    CLOSE,
+    TOGGLE
+}
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
@@ -32,6 +42,7 @@ export class mainHeader extends jView
     private $lineCenter: ZeptoCollection;
     private $lineBottom: ZeptoCollection;
     private $navBar: ZeptoCollection;
+
 
     // ------------------------------------------------------------------------- INIT
 
@@ -70,10 +81,17 @@ export class mainHeader extends jView
      */
     protected prepareEvents()
     {
+        // changer l'affichage de la navBar en function du click hamburger Button
+        this.$hamburgerButton.click( () =>
+        {
+            // passer la methode toggle navBar avec le param toggle
+            this.changeStateNavBarHandler(EToggleNavBarHandler.TOGGLE)
+        });
 
-        this.$hamburgerButton.on('click', this.mobileToggleNavBarHandler.bind(this));
-
-        this.$hamburgerButton.on('click', this.hamburgerButtonLinesAnim.bind(this));
+        // reset le state de la navBar en function du reszie
+        // si mobile : le reset est de cacher la nav bar
+        // si laptop : le reset est de montrer la nav bar
+        $(window).on('resize', this.resetNavBarStateHandler.bind(this));
     }
 
     /**
@@ -90,25 +108,46 @@ export class mainHeader extends jView
     /**
      * Mobile toggle
      */
-    public mobileToggleNavBarHandler ()
+    protected changeStateNavBarHandler (pState: EToggleNavBarHandler)
     {
-        // changer le state de isHidden
-        this.changeNavBarState();
-        console.log(this._isOpen);
 
-        // animer l'apparition
+        if (pState == EToggleNavBarHandler.TOGGLE)
+        {
+            // toggle du state
+            this._isOpen = !this._isOpen;
+        }
+        else if (pState == EToggleNavBarHandler.OPEN)
+        {
+            // passer open à true
+            this._isOpen = true;
+        }
+        else  if (pState == EToggleNavBarHandler.CLOSE)
+        {
+            // passer open à false (cacher la navBar)
+            this._isOpen = false;
+        }
+
+        // animer l'apparition de la navBar
         this.navBarAnim();
+
+        // changer l'affichage des lignes du hamburger button
+        this.hamburgerButtonLinesAnim();
     }
 
-    // ------------------------------------------------------------------------- STATES
-
     /**
-     * changer le state de la visiblilté de la navBar
+     * Reset le state de la nav Bar
+     * si mobile : le reset est de cacher la nav bar
+     * si laptop : le reset est de montrer la nav bar
      */
-    protected changeNavBarState () :void
+    protected resetNavBarStateHandler()
     {
-        // changer le state de isHidden
-        this._isOpen = !this._isOpen;
+        // si plus grand que large
+        breakPoint('large')
+            // monter la nav bar
+            ? this.changeStateNavBarHandler( EToggleNavBarHandler.OPEN )
+            // cacher la nav bar
+            : this.changeStateNavBarHandler( EToggleNavBarHandler.CLOSE );
+
     }
 
     // ------------------------------------------------------------------------- ANIM
