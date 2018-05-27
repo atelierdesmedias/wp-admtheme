@@ -1,27 +1,31 @@
 /**
- * this is "homePage" TS export class
+ * this is "formuleBlock" TS export class
  * follow workflow instructions
  */
 
 // ------------------------------------------------------------------------- IMPORTS
 
 import {jView} from '../../../common/core/jView'
-import './homePage.scss'
-import {bigCover} from "../../components/bigCover/bigCover";
-import {presentationAdmBlock} from "../../components/presentationAdmBlock/presentationAdmBlock";
-import {formuleSection} from "../../components/formuleSection/formuleSection";
+import './formuleBlock.scss'
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class homePage extends jView
+export class formuleBlock extends jView
 {
+
     // ------------------------------------------------------------------------- TYPE
 
-    private _bigCover: bigCover;
-    private _presentationAdmBlock: presentationAdmBlock;
-    private _formuleSection: formuleSection;
-
     // ------------------------------------------------------------------------- INIT
+
+
+    /**
+     * Target our root if not already defined via constructor params
+     * (method overwriting DOMView and move to constructor via init)
+     */
+    protected targetRoot ()
+    {
+
+    }
 
     /**
      * prepare nodes
@@ -38,14 +42,7 @@ export class homePage extends jView
      */
     protected prepareDependencies()
     {
-        // inclure la big Cover
-        this._bigCover = new bigCover( $('.bigCover') );
-        
-        // inclure le texte de présentation 
-        this._presentationAdmBlock = new presentationAdmBlock( $('.presentationAdmBlock') );
-        
-        // inclure la section "formule"
-        this._formuleSection = new formuleSection( $('.formuleSection') );
+
     }
 
     /**
@@ -68,7 +65,6 @@ export class homePage extends jView
 
     // ------------------------------------------------------------------------- HANDLERS
 
-    // ------------------------------------------------------------------------- CONFIG
 
     // ------------------------------------------------------------------------- END EXPORT CLASS
 }

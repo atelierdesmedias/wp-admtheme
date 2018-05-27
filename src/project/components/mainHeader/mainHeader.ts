@@ -111,17 +111,17 @@ export class mainHeader extends jView
     protected changeStateNavBarHandler (pState: EToggleNavBarHandler)
     {
 
-        if (pState == EToggleNavBarHandler.TOGGLE)
+        if ( pState == EToggleNavBarHandler.TOGGLE )
         {
             // toggle du state
             this._isOpen = !this._isOpen;
         }
-        else if (pState == EToggleNavBarHandler.OPEN)
+        else if ( pState == EToggleNavBarHandler.OPEN )
         {
             // passer open à true
             this._isOpen = true;
         }
-        else  if (pState == EToggleNavBarHandler.CLOSE)
+        else  if ( pState == EToggleNavBarHandler.CLOSE )
         {
             // passer open à false (cacher la navBar)
             this._isOpen = false;
@@ -165,7 +165,6 @@ export class mainHeader extends jView
 
     /**
      * animation des lignes du hamburger Button
-     * @param {number} pDuration
      */
     protected hamburgerButtonLinesAnim () :void
     {
