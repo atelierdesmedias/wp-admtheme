@@ -23,7 +23,7 @@
 
   display: flex;
   align-items: center;
-  @include size(auto, $navBarHeight);
+  @include size(auto, $mainMenuHeight);
 
   @media screen and (max-width: $large) {
     margin-top: 2rem;

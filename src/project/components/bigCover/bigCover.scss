@@ -104,7 +104,7 @@
   &_eventBanner
   {
     display: none;
-    @include position(absolute, ($navBarHeight + 1rem) 0 null null);
+    @include position(absolute, ($mainMenuHeight + 1rem) 0 null null);
   }
 
   // --------------------------------------------------------------------------- MODIFIERS

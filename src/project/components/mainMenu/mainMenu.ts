@@ -1,12 +1,12 @@
 /**
- * this is "navBar" TS export class
+ * this is "mainMenu" TS export class
  * follow workflow instructions
  */
 
 // ------------------------------------------------------------------------- IMPORTS
 
 import {jView} from '../../../common/core/jView'
-import './navBar.scss'
+import './mainMenu.scss'
 import {menu} from "../menu/menu";
 import {socialBlock} from "../socialBlock/socialBlock";
 import {intranetConnection} from "../intranetConnection/intranetConnection";
@@ -14,14 +14,14 @@ import {languageBlock} from "../languageBlock/languageBlock";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class navBar extends jView
+export class mainMenu extends jView
 {
     // ------------------------------------------------------------------------- TYPE
 
-    private _menu: menu;
     private _socialBlock: socialBlock;
     private _intranetConnection: intranetConnection;
     private _languageBlock: languageBlock;
+    private _menu: menu;
 
     // ------------------------------------------------------------------------- INIT
 
@@ -41,7 +41,7 @@ export class navBar extends jView
     protected prepareDependencies()
     {
 
-        // importer le menu
+        // importer la menu
         this._menu = new menu( $('.menu') );
 
         // importer le social block

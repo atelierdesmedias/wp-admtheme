@@ -1,33 +1,33 @@
 {#
- * @title: "navBar" TWIG view component
+ * @title: "mainMenu" TWIG view component
  * @description:
 #}
 
-<div class="navBar {{ classElement }}">
-    <div class="navBar_content">
+<div class="mainMenu {{ classElement }}">
+    <div class="mainMenu_content">
 
         {# include "menu" component #}
         {%
             include "src/project/components/menu/menu.twig"
-            with { 'classElement': 'navBar_menu' }
+            with { 'classElement': 'mainMenu_menu' }
         %}
 
         {# include "socialBlock" component #}
         {%
             include "src/project/components/socialBlock/socialBlock.twig"
-            with { 'classElement': 'navBar_socialBlock' }
+            with { 'classElement': 'mainMenu_socialBlock' }
         %}
 
         {# include "intranetConnection" component #}
         {%
             include "src/project/components/intranetConnection/intranetConnection.twig"
-            with { 'classElement': 'navBar_intranetConnection' }
+            with { 'classElement': 'mainMenu_intranetConnection' }
         %}
 
         {# include "languageBlock" component #}
         {%
             include "src/project/components/languageBlock/languageBlock.twig"
-            with { 'classElement': 'navBar_languageBlock' }
+            with { 'classElement': 'mainMenu_languageBlock' }
         %}
 
     </div>
