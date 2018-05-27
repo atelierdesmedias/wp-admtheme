@@ -1,0 +1,160 @@
+/**
+  * "adherentBlock" stylesheet
+  * follow workflow instructions
+ */
+
+// -----------------------------------------------------------------------------  IMPORT
+
+// common style & mixins
+@import '../../../common/_common';
+
+// -----------------------------------------------------------------------------  DEBUT STYLE
+
+.adherentBlock
+{
+  // --------------------------------------------------------------------------- PROPERTIES
+
+
+    // Call block element anywhere. Use it like this : .#{$this}_element
+    $this : adherentBlock;
+
+  // --------------------------------------------------------------------------- BLOCK
+
+  position: relative;
+  @include size( ($relativeColumnWidth * 6));
+  //@include minSize(960px / 2);
+  min-height: (960px / 2);
+  color: $color1;
+  margin: auto;
+  padding:3rem;
+
+  // --------------------------------------------------------------------------- ELEMENTS
+
+  &_wrapper
+  {
+    @include center();
+    width:75%;
+  }
+
+  &_header
+  {
+
+  }
+
+  &_title
+  {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: normal;
+    justify-content: center;
+
+  }
+
+  &_verb
+  {
+    @include lato-light();
+    //text-transform: uppercase;
+  }
+
+  &_calificatif
+  {
+    @include title();
+    font-size: 2.5rem;
+    margin-top: -10px;
+    margin-left: 10px;
+  }
+
+  &_content
+  {
+
+  }
+
+  &_description
+  {
+    @include lato-bold();
+  }
+
+  &_items
+  {
+    margin-top: 2rem;
+    list-style: circle;
+  }
+
+  &_item
+  {
+    @include lato-light();
+  }
+
+  &_priceBlock
+  {
+    display: flex;
+    justify-content: center;
+    border: 1px solid $color1;
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  &_price
+  {
+    @include lato-bold();
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  &_labelPrice
+  {
+    margin-left: .5rem;
+  }
+
+  &_note
+  {
+    @include lato-light();
+    font-size: .73rem;
+    //text-align: center;
+  }
+
+
+  // --------------------------------------------------------------------------- MODIFIERS
+
+  /**
+  le background change en fonction du modifier block
+   */
+
+  &-adherent
+  {
+    background: $color9;
+  }
+
+  &-fixe
+  {
+    background: $color8;
+
+    .#{$this}_item
+    {
+      color: $color2;
+    }
+
+  }
+
+  &-nomade
+  {
+    background: $color3;
+
+    .#{$this}_item
+    {
+      color: $color2;
+    }
+
+  }
+
+
+
+  // --------------------------------------------------------------------------- CHILDREN
+
+  // --------------------------------------------------------------------------- PATCHES
+
+}
+
+
+

@@ -1,20 +1,20 @@
 /**
- * this is "mainMenu" TS export class
+ * this is "mainNav" TS export class
  * follow workflow instructions
  */
 
-// ------------------------------------------------------------------------- IMPORTS
+// ----------------------------------------------------------------------------- IMPORTS
 
 import {jView} from '../../../common/core/jView'
-import './mainMenu.scss'
+import './mainNav.scss'
 import {menu} from "../menu/menu";
 import {socialBlock} from "../socialBlock/socialBlock";
 import {intranetConnection} from "../intranetConnection/intranetConnection";
 import {languageBlock} from "../languageBlock/languageBlock";
 
-// ------------------------------------------------------------------------- START EXPORT CLASS
+// ----------------------------------------------------------------------------- START EXPORT CLASS
 
-export class mainMenu extends jView
+export class mainNav extends jView
 {
     // ------------------------------------------------------------------------- TYPE
 

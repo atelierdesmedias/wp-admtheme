@@ -38,6 +38,19 @@
 
   }
 
+  &_presentationAdmSection
+  {
+
+  }
+
+  &_adherentSection
+  {
+
+    // sortie top du container du block enfant
+    position: relative;
+    top: -15rem;
+  }
+
 
   // --------------------------------------------------------------------------- MODIFIERS
 

@@ -14,18 +14,15 @@
 
         {# importer "presentation Adm Block" component #}
         {%
-            include "./src/project/components/presentationAdmBlock/presentationAdmBlock.twig"
-            with { 'classElement': 'homePage_presentationAdmBlock' }
+            include "./src/project/components/presentationAdmSection/presentationAdmSection.twig"
+            with { 'classElement': 'homePage_presentationAdmSection' }
         %}
 
-        {# importer "formule Section" component #}
+         {#importer "adherent Section" component#}
         {%
-            include "./src/project/components/formuleSection/formuleSection.twig"
-            with { 'classElement': 'homePage_formuleSection' }
+            include "./src/project/components/adherentSection/adherentSection.twig"
+            with { 'classElement': 'homePage_adherentSection' }
         %}
-
-
-
 
     </section>
 </div>

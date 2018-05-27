@@ -1,5 +1,5 @@
 /**
-  * "formuleBlock" stylesheet
+  * "adherentSection" stylesheet
   * follow workflow instructions
  */
 
@@ -10,17 +10,38 @@
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.formuleBlock
+.adherentSection
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
     // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : formuleBlock;
+    $this : adherentSection;
 
   // --------------------------------------------------------------------------- BLOCK
 
+  @include pageGrid();
+
   // --------------------------------------------------------------------------- ELEMENTS
+
+  &_content
+  {
+
+  }
+
+  &_inlineWrapper
+  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    //margin-top: 0.5rem;
+  }
+
+  &_adherentBlock
+  {
+
+  }
+
 
   // --------------------------------------------------------------------------- MODIFIERS
 

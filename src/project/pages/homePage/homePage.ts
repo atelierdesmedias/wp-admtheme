@@ -8,8 +8,8 @@
 import {jView} from '../../../common/core/jView'
 import './homePage.scss'
 import {bigCover} from "../../components/bigCover/bigCover";
-import {presentationAdmBlock} from "../../components/presentationAdmBlock/presentationAdmBlock";
-import {formuleSection} from "../../components/formuleSection/formuleSection";
+import {presentationAdmSection} from "../../components/presentationAdmSection/presentationAdmSection";
+import {adherentSection} from "../../components/adherentSection/adherentSection";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
@@ -18,8 +18,8 @@ export class homePage extends jView
     // ------------------------------------------------------------------------- TYPE
 
     private _bigCover: bigCover;
-    private _presentationAdmBlock: presentationAdmBlock;
-    private _formuleSection: formuleSection;
+    private _presentationAdmSection: presentationAdmSection;
+    private _adherentSection: adherentSection;
 
     // ------------------------------------------------------------------------- INIT
 
@@ -42,10 +42,10 @@ export class homePage extends jView
         this._bigCover = new bigCover( $('.bigCover') );
         
         // inclure le texte de présentation 
-        this._presentationAdmBlock = new presentationAdmBlock( $('.presentationAdmBlock') );
+        this._presentationAdmSection = new presentationAdmSection( $('.presentationAdmSection') );
         
-        // inclure la section "formule"
-        this._formuleSection = new formuleSection( $('.formuleSection') );
+        // inclure la section "adherent"
+        this._adherentSection = new adherentSection( $('.adherentSection') );
     }
 
     /**

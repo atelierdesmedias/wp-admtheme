@@ -38,11 +38,11 @@
   &_item
   {
     position: relative;
-    @include size((6.5rem / 2), $mainMenuHeight);
+    @include size((6.5rem / 2), $mainNavHeight);
     border-right: 1px solid $colorNavBarLine;
 
     @media screen and (max-width: $large) {
-      //@include size(5rem, $mainMenuHeight);
+      //@include size(5rem, $mainNavHeight);
       border-right: 0px; // reset
     }
   }

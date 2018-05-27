@@ -1,16 +1,16 @@
 /**
- * this is "formuleBlock" TS export class
+ * this is "adherentBlock" TS export class
  * follow workflow instructions
  */
 
 // ------------------------------------------------------------------------- IMPORTS
 
 import {jView} from '../../../common/core/jView'
-import './formuleBlock.scss'
+import './adherentBlock.scss'
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class formuleBlock extends jView
+export class adherentBlock extends jView
 {
 
     // ------------------------------------------------------------------------- TYPE

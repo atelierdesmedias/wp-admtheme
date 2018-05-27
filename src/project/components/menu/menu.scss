@@ -34,7 +34,7 @@
   {
     // position
     position: relative;
-    @include size(100%, $mainMenuHeight);
+    @include size(100%, $mainNavHeight);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,7 +54,7 @@
 
     // position
     position: relative;
-    @include size(100%, $mainMenuHeight);
+    @include size(100%, $mainNavHeight);
     padding: 0 3.2rem;
 
     // style

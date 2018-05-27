@@ -1,0 +1,76 @@
+{#
+ * @title: "adherentSection" TWIG view component
+ * @description:
+ #}
+
+<div class="adherentSection {{ classElement }}">
+    <div class="adherentSection_content">
+
+    {# importer "adherent Block" #}
+    {%
+        include "./src/project/components/adherentBlock/adherentBlock.twig"
+        with {
+            classElement: 'adherentSection_adherentBlock',
+            blockModifier: 'adherent',
+            title: {
+                verb: 'devenir',
+                calificatif: 'Adhérent',
+            },
+            description: 'Devenir adhérent de l\'association est ouvert à tous et permet de :',
+            items: [
+                'Recevoir des invitations à tous les évènements de l\'association',
+                'participer aux assemblées générales',
+                'Avoir la possibilité de se présenter aux élections du CA'
+            ],
+            price: '15',
+            labelPrice: 'TTC/an'
+        }
+    %}
+
+    <div class="adherentSection_inlineWrapper">
+    {# importer "adherent Block" #}
+    {%
+        include "./src/project/components/adherentBlock/adherentBlock.twig"
+        with {
+            classElement: 'adherentSection_adherentBlock',
+            blockModifier: 'fixe',
+            title: {
+                verb: 'formule',
+                calificatif: 'Fixe',
+            },
+            items: [
+                'Recevoir des invitations à tous les évènements de l\'association',
+                'participer aux assemblées générales',
+                'Avoir la possibilité de se présenter aux élections du CA'
+            ],
+            price: '15',
+            labelPrice: 'TTC/an',
+            note: '* sous condition de s\'être acquité de l\'hadésion annuelle de 15 €'
+        }
+    %}
+
+    {# importer "adherent Block" #}
+    {%
+        include "./src/project/components/adherentBlock/adherentBlock.twig"
+        with {
+            classElement: 'adherentSection_adherentBlock',
+            blockModifier: 'nomade',
+            title: {
+                verb: 'formule',
+                calificatif: 'Nomade',
+            },
+            items: [
+                'Recevoir des invitations à tous les évènements de l\'association',
+                'participer aux assemblées générales',
+                'Avoir la possibilité de se présenter aux élections du CA'
+            ],
+            price: '15',
+            labelPrice: 'TTC/an',
+            note: '* sous condition de s\'être acquité de l\'hadésion annuelle de 15 €'
+        }
+    %}
+
+    </div>
+
+    </div>
+</div>

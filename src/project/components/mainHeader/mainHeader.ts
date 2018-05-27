@@ -7,14 +7,14 @@
 
 import {jView} from '../../../common/core/jView'
 import './mainHeader.scss'
-import {mainMenu} from "../mainMenu/mainMenu";
+import {mainNav} from "../mainNav/mainNav";
 import {hamburgerButton} from "../hamburgerButton/hamburgerButton";
 import {TweenLite} from "gsap";
 import {breakPoint} from '../../../common/helpers/breakPoint';
 
 
-// States de la mainMenu Handler
-enum EToggleMainMenuHandler
+// States de la mainNav Handler
+enum EToggleMainNavHandler
 {
     OPEN,
     CLOSE,
@@ -33,7 +33,7 @@ export class mainHeader extends jView
     // ------------------------------------------------------------------------- TYPE
 
     private _hamburgerButton: hamburgerButton;
-    private _mainMenu: mainMenu;
+    private _mainNav: mainNav;
 
 
     // hamburger Button
@@ -41,7 +41,7 @@ export class mainHeader extends jView
     private $lineTop: ZeptoCollection;
     private $lineCenter: ZeptoCollection;
     private $lineBottom: ZeptoCollection;
-    private $mainMenu: ZeptoCollection;
+    private $mainNav: ZeptoCollection;
 
 
     // ------------------------------------------------------------------------- INIT
@@ -53,7 +53,8 @@ export class mainHeader extends jView
     protected prepareNodes()
     {
 
-        this.$mainMenu            = this.$root.find('.mainMenu');
+        // ciblier le mainNav
+        this.$mainNav            = this.$root.find('.mainNav');
 
         // cibler le hamburger bouton qui se trouve dans ce composant
         this.$hamburgerButton   = this.$root.find('.hamburgerButton');
@@ -72,7 +73,7 @@ export class mainHeader extends jView
         this._hamburgerButton = new hamburgerButton( $('.hamburgerButton') );
 
         // inclure le main menu
-        this._mainMenu = new mainMenu( $('.mainMenu') );
+        this._mainNav = new mainNav( $('.mainNav') );
     }
 
     /**
@@ -81,17 +82,17 @@ export class mainHeader extends jView
      */
     protected prepareEvents()
     {
-        // changer l'affichage de la mainMenu en function du click hamburger Button
+        // changer l'affichage de la mainNav en function du click hamburger Button
         this.$hamburgerButton.click( () =>
         {
-            // passer la methode toggle mainMenu avec le param toggle
-            this.changeStateNavBarHandler(EToggleMainMenuHandler.TOGGLE)
+            // passer la methode toggle mainNav avec le param toggle
+            this.changeStateMainNavHandler( EToggleMainNavHandler.TOGGLE )
         });
 
-        // reset le state de la mainMenu en function du reszie
-        // si mobile : le reset est de cacher le mainMenu
-        // si laptop : le reset est de montrer le mainMenu
-        $(window).on('resize', this.resetMainMenuStateHandler.bind(this));
+        // reset le state de la mainNav en function du reszie
+        // si mobile : le reset est de cacher le mainNav
+        // si laptop : le reset est de montrer le mainNav
+        $(window).on('resize', this.resetMainNavStateHandler.bind(this));
     }
 
     /**
@@ -108,57 +109,57 @@ export class mainHeader extends jView
     /**
      * Mobile toggle
      */
-    protected changeStateNavBarHandler (pState: EToggleMainMenuHandler)
+    protected changeStateMainNavHandler ( pState: EToggleMainNavHandler )
     {
 
-        if ( pState == EToggleMainMenuHandler.TOGGLE )
+        if ( pState == EToggleMainNavHandler.TOGGLE )
         {
             // toggle du state
             this._isOpen = !this._isOpen;
         }
-        else if ( pState == EToggleMainMenuHandler.OPEN )
+        else if ( pState == EToggleMainNavHandler.OPEN )
         {
             // passer open à true
             this._isOpen = true;
         }
-        else  if ( pState == EToggleMainMenuHandler.CLOSE )
+        else  if ( pState == EToggleMainNavHandler.CLOSE )
         {
-            // passer open à false (cacher le mainMenu)
+            // passer open à false (cacher le mainNav)
             this._isOpen = false;
         }
 
-        // animer l'apparition de la mainMenu
-        this.mainMenuAnim();
+        // animer l'apparition de la mainNav
+        this.mainNavAnim();
 
         // changer l'affichage des lignes du hamburger button
         this.hamburgerButtonLinesAnim();
     }
 
     /**
-     * Reset le state du mainMenu
-     * si mobile : le reset est de cacher le mainMenu
-     * si laptop : le reset est de montrer le mainMenu
+     * Reset le state du mainNav
+     * si mobile : le reset est de cacher le mainNav
+     * si laptop : le reset est de montrer le mainNav
      */
-    protected resetMainMenuStateHandler()
+    protected resetMainNavStateHandler()
     {
         // si plus grand que large
         breakPoint('large')
-            // monter le mainMenu
-            ? this.changeStateNavBarHandler( EToggleMainMenuHandler.OPEN )
-            // cacher le mainMenu
-            : this.changeStateNavBarHandler( EToggleMainMenuHandler.CLOSE );
+            // monter le mainNav
+            ? this.changeStateMainNavHandler( EToggleMainNavHandler.OPEN )
+            // cacher le mainNav
+            : this.changeStateMainNavHandler( EToggleMainNavHandler.CLOSE );
 
     }
 
     // ------------------------------------------------------------------------- ANIM
 
     /**
-     * Animer la mainMenu en function du state
+     * Animer la mainNav en function du state
      */
-    protected mainMenuAnim () :void
+    protected mainNavAnim () :void
     {
         // animer l'apparition
-        TweenLite.to(this.$mainMenu, .3, {
+        TweenLite.to(this.$mainNav, .3, {
             autoAlpha: this._isOpen ? 1 : 0
         });
     }

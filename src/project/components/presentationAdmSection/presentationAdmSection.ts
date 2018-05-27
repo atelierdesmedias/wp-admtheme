@@ -1,16 +1,16 @@
 /**
- * this is "formuleSection" TS export class
+ * this is "presentationAdmBlock" TS export class
  * follow workflow instructions
  */
 
 // ------------------------------------------------------------------------- IMPORTS
 
 import {jView} from '../../../common/core/jView'
-import './formuleSection.scss'
+import './presentationAdmSection.scss'
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class formuleSection extends jView
+export class presentationAdmSection extends jView
 {
 
     // ------------------------------------------------------------------------- TYPE

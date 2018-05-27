@@ -1,0 +1,34 @@
+{#
+ * @title: "adherentBlock" TWIG view component
+ * @description:
+ #}
+
+<div class="adherentBlock adherentBlock-{{ blockModifier }} {{ classElement }}">
+
+    <div class="adherentBlock_wrapper">
+        <header class="adherentBlock_header">
+            <h1 class="adherentBlock_title">
+                <div class="adherentBlock_verb">{{ title.verb }}</div>
+                <div class="adherentBlock_calificatif">{{ title.calificatif }}</div>
+            </h1>
+        </header>
+        <section class="adherentBlock_content">
+            {% if description %}
+            <div class="adherentBlock_description">{{ description }}</div>
+            {% endif %}
+            <ul class="adherentBlock_items">
+                {% for item in items %}
+                    <li class="adherentBlock_item">{{ item }}</li>
+                {% endfor %}
+            </ul>
+            <div class="adherentBlock_priceBlock">
+                <div class="adherentBlock_price">{{ price }} €</div>
+                <div class="adherentBlock_labelPrice">{{ labelPrice }}</div>
+            </div>
+            {% if note %}
+                <div class="adherentBlock_note">{{ note }}</div>
+            {% endif %}
+        </section>
+    </div>
+
+</div>

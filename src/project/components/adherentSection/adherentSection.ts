@@ -1,31 +1,23 @@
 /**
- * this is "presentationAdmBlock" TS export class
+ * this is "adherentSection" TS export class
  * follow workflow instructions
  */
 
 // ------------------------------------------------------------------------- IMPORTS
 
 import {jView} from '../../../common/core/jView'
-import './presentationAdmBlock.scss'
+import './adherentSection.scss'
+import {adherentBlock} from "../adherentBlock/adherentBlock";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
-export class presentationAdmBlock extends jView
+export class adherentSection extends jView
 {
-
     // ------------------------------------------------------------------------- TYPE
 
+    private _adherentBlock: adherentBlock;
+
     // ------------------------------------------------------------------------- INIT
-
-
-    /**
-     * Target our root if not already defined via constructor params
-     * (method overwriting DOMView and move to constructor via init)
-     */
-    protected targetRoot ()
-    {
-
-    }
 
     /**
      * prepare nodes
@@ -42,7 +34,8 @@ export class presentationAdmBlock extends jView
      */
     protected prepareDependencies()
     {
-
+        // importer adherent block
+        this._adherentBlock = new adherentBlock( $('.adherentBlock') );
     }
 
     /**
