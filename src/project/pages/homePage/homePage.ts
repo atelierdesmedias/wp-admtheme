@@ -34,7 +34,6 @@ export class homePage extends jView
     {
         this.$bigCover = this.$root.find('.bigCover');
         this.$bigCoverBanner = this.$bigCover.find('.bigCover_banner');
-        // console.log(this.$bigCoverBanner);
     }
 
     /**
@@ -77,9 +76,15 @@ export class homePage extends jView
 
     moveBannerOnResizeHandler ()
     {
-        if (breakPoint('medium'))
+        if (!breakPoint('medium'))
         {
-            // this.$bigCoverBanner.clone();
+            console.log('clone');
+            this.$bigCoverBanner.clone().addClass('clone');
+            let $clone = this.$root.find('.clone');
+            $clone.prepend(this.$root);
+
+            console.log($clone);
+
 
         } else
         {
