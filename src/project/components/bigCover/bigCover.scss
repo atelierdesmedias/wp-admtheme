@@ -37,17 +37,16 @@
   }
 
   // la div sur laquelle est appliquée l'image
+  // TODO : image pour mobile
   &_backgroundImage
   {
     // position
     position: relative;
     @include size(100%, 100vh);
-    
     // style
-    // background-image : directement dans la DOM
     background-size: cover;
     background-position: center;
-
+    // background-image : directement dans la DOM
   }
 
   // zone de texte au bottom de la cover
@@ -59,20 +58,24 @@
     @include position(absolute, null 0 0 0);
     padding: 2rem 3rem;
     z-index: 2;
-
     // style
     background-color: $color7;
     color: $color1;
     text-align: center;
     @include lato-light();
     font-size: 1.05rem;
-    //letter-spacing: 1px;
+
+    @media screen and (max-width: $small){
+      //display: none;
+    }
   }
 
   &_bannerText
   {
-    // reset
-    margin:0;
+    margin:0; // reset
+    @media screen and (max-width: $small){
+     //display: none;
+    }
   }
 
   &_arrowDown
@@ -81,15 +84,13 @@
     margin: 1rem auto 0;
     position: relative;
     @include size(13px);
-
     // style
     border-left: 3px solid $color6;
     border-bottom: 3px solid $color6;
     transform: rotate(-45deg);
-
   }
 
-  // gros logo ADM centré sur l'image
+  // gros LOGO ADM centré sur l'image ou la video
   &_logo
   {
     @include center();
@@ -98,6 +99,9 @@
 
     & > svg {
       @include size(400px);
+      @media screen and (max-width: $small){
+        @include size(320px);
+      }
     }
   }
 

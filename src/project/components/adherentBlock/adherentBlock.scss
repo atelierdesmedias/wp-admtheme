@@ -28,12 +28,32 @@
   margin: auto;
   padding:3rem;
 
+  @media screen and (max-width: $medium) {
+    @include size( ($relativeColumnWidth * 10));
+      margin-top: 1rem;
+  }
+  @media screen and (max-width: $small) {
+    @include size( 100% );
+    padding:2rem 2rem 3rem;
+  }
+
   // --------------------------------------------------------------------------- ELEMENTS
 
   &_wrapper
   {
     @include center();
     width:75%;
+    
+    @media screen and (max-width: $medium) {
+
+      position: relative;
+      top:auto;
+      left:auto;
+      width: 100%;
+      transform: none;
+      margin-top: 1rem;
+    }
+    
   }
 
   &_header
@@ -48,6 +68,11 @@
     font-size: 1.5rem;
     font-weight: normal;
     justify-content: center;
+    line-height: 3em;
+
+    @media screen and (max-width: $small) {
+      display: block;
+    }
 
   }
 
@@ -111,7 +136,11 @@
   {
     @include lato-light();
     font-size: .73rem;
-    //text-align: center;
+    line-height: 1rem;
+
+    @media screen and (max-width: $small){
+      margin-top: 1rem;
+    }
   }
 
 
