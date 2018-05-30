@@ -1,5 +1,4 @@
 <?php
-
 // -----------------------------------------------------------------------------  LOAD SCRIPTS
 
 /**
@@ -101,15 +100,16 @@ class StarterSite extends \Timber\Site
 
     function add_to_context( $context ) {
 
-        // dictionary
+
         $url = __DIR__ . '/src/common/dictionary/FR.json';
         $dicoContent = file_get_contents($url);
         $dico = json_decode($dicoContent);
 
-//        $url = '/src/common/dictionary/FR.yaml';
+//        $url = __DIR__ . '/src/common/dictionary/FR.yaml';
 //        $dico = Yaml::parseFile($url);
-//        $dico = Yaml::parse(file_get_contents($url));
 
+
+        // dico
         $context['dico'] = $dico;
 
         // menu

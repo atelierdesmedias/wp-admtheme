@@ -8,16 +8,13 @@
 
     <section class="presentationAdmSection_wrapper">
         <div class="presentationAdmSection_content">
-            <h1 class="presentationAdmSection_title">Travailler à l'atelier</h1>
+            <h1 class="presentationAdmSection_title">{{ dico.presentationAdmSection.title }}</h1>
+
             <div class="presentationAdmSection_text">
-                <p>Créé en 2008, l’Atelier des Médias est le 1er espace de coworking lyonnais.
-                C’est une association qui regroupe des professionnels des médias (journalisme, web, graphisme, traduction, vidéo/photo, etc.),
-                un vivier de compétences qui collabore et invente de nouveaux modes de travail dans ce lieu de 212 m2 en centre ville.
-                </p>
-                <p>Créé en 2008, l’Atelier des Médias est le 1er espace de coworking lyonnais.
-                    C’est une association qui regroupe des professionnels des médias (journalisme, web, graphisme, traduction, vidéo/photo, etc.),
-                    un vivier de compétences qui collabore et invente de nouveaux modes de travail dans ce lieu de 212 m2 en centre ville.
-                </p>
+                {# TODO text en ADMIN depuis la page "home" #}
+                {% for paragraph in dico.presentationAdmSection.paragraphs %}
+                    <p>{{ paragraph }}</p>
+                {% endfor %}
             </div>
         </div>
     </section>

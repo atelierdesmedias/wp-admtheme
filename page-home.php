@@ -13,8 +13,7 @@ require 'config.php';
  */
 
 
-
-
+//phpinfo();
 
  get_header();
 

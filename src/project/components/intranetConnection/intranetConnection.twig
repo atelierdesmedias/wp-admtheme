@@ -7,19 +7,26 @@
 <div class="intranetConnection {{ classElement }}">
 
     {# TODO dico #}
-    <h1 class="intranetConnection_title">INTRANET</h1>
+    <h1 class="intranetConnection_title">{{ dico.intranetConnection.title }}</h1>
 
     <form class="intranetConnection_form" id="intranetConnection_form">
 
         {# login #}
         <input class="intranetConnection_input intranetConnection_input-login"
-               title="login" type="text" name="login" placeholder="login">
+               title="{{ dico.intranetConnection.login }}"
+               name="{{ dico.intranetConnection.login }}"
+               placeholder="{{ dico.intranetConnection.login }}"
+               type="text"
+        >
 
         {# password #}
         <input class="intranetConnection_input intranetConnection_input-password"
-               title="password" type="text" name="password" placeholder="password">
+               title="{{ dico.intranetConnection.password }}"
+               name="{{ dico.intranetConnection.password }}"
+               placeholder="{{ dico.intranetConnection.password }}"
+               type="text" >
     </form>
 
     {# button valider #}
-    <button class="intranetConnection_button"  type="submit" value="ok" form="intranetConnection_form">OK</button>
+    <button class="intranetConnection_button"  type="submit" value="ok" form="intranetConnection_form">{{ dico.intranetConnection.buttonLabel }}</button>
 </div>
