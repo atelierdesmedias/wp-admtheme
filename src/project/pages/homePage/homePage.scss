@@ -33,7 +33,7 @@
     z-index: 0;
   }
 
-  // zone de texte au bottom de la cover
+  // zone de texte au bottom de bigCover
   &_banner
   {
     // position
@@ -49,6 +49,7 @@
     @include lato-light();
     font-size: 1.05rem;
 
+    //  la banner passe en dessous du header
     @media screen and (max-width: $medium){
       @include position(relative, null);
       background: $color1;
@@ -73,8 +74,6 @@
     border-bottom: 3px solid $color6;
     transform: rotate(-45deg);
   }
-
-
 
   &_content
   {

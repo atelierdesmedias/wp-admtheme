@@ -1,6 +1,7 @@
 {
   "require" : {
     "facebook/php-sdk-v4" : "~5.0",
-    "timber/timber": "^1.7"
+    "timber/timber": "^1.7",
+    "symfony/yaml": "^4.0"
   }
 }

@@ -12,6 +12,10 @@ require 'config.php';
  * ----------------------------------------------------------------------------- TEMPLATE
  */
 
+
+
+
+
  get_header();
 
     // include "homePage" component

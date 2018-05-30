@@ -66,11 +66,20 @@ add_action('wp_enqueue_scripts', 'remove_wp_scripts', 10);
 require_once(__DIR__ . '/vendor/autoload.php');
 $timber = new \Timber\Timber();
 
+// dep
+use Symfony\Component\Yaml\Yaml;
+//use Symfony\Component\Yaml\Parser;
+//use Symfony\Component\Yaml\Exception\ParseException;
 
+
+/**
+ * Class StarterSite
+ */
 class StarterSite extends \Timber\Site
 {
 
-    function __construct() {
+    function __construct()
+    {
         add_theme_support( 'post-formats' );
         add_theme_support( 'post-thumbnails' );
         add_theme_support( 'menus' );
@@ -92,8 +101,21 @@ class StarterSite extends \Timber\Site
 
     function add_to_context( $context ) {
 
-        $context['notes'] = 'These values are available everytime you call Timber::get_context();';
+        // dictionary
+        $url = __DIR__ . '/src/common/dictionary/FR.json';
+        $dicoContent = file_get_contents($url);
+        $dico = json_decode($dicoContent);
+
+//        $url = '/src/common/dictionary/FR.yaml';
+//        $dico = Yaml::parseFile($url);
+//        $dico = Yaml::parse(file_get_contents($url));
+
+        $context['dico'] = $dico;
+
+        // menu
         $context['menu'] = new Timber\Menu();
+
+        // site context
         $context['site'] = $this;
         return $context;
     }
@@ -101,16 +123,20 @@ class StarterSite extends \Timber\Site
     function add_to_twig( $twig ) {
         /* this is where you can add your own functions to twig */
         $twig->addExtension( new Twig_Extension_StringLoader() );
-        $twig->addFilter('myfoo', new Twig_SimpleFilter('myfoo', array($this, 'myfoo')));
+        // $twig->addFilter('myfoo', new Twig_SimpleFilter('myfoo', array($this, 'myfoo')));
         return $twig;
     }
 
 }
 
+/**
+ * Instance staterSite
+ */
 new StarterSite();
 
 
 // -----------------------------------------------------------------------------  CONFIG
+
 
 /**
  * Set FR locale
