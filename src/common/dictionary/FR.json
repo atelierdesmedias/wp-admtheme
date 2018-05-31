@@ -40,13 +40,15 @@
 			"verb": "formule",
 			"calificatif": "fixe",
 			"items": [
-				"Recevoir des invitations à tous les évènements de l'association",
-				"participer aux assemblées générales",
-				"Avoir la possibilité de se présenter aux élections du CA"
+				"Un bureau fixe en open space",
+				"Petits rangements ouverts",
+				"Un badge d'accès 24h/24 et 7j/7",
+				"Règlement mensuel par prélèvement automatique",
+				"2 mois de préavis"
 			],
 			"price": {
-				"price": "15",
-				"labelPrice": "TTC/an"
+				"price": "168",
+				"labelPrice": "TTC/mois"
 			},
 			"note": "* sous condition de s'être acquité de l'hadésion annuelle de 15 €"
 		},
@@ -54,13 +56,15 @@
 			"verb": "formule",
 			"calificatif": "nomade",
 			"items": [
-				"Recevoir des invitations à tous les évènements de l'association",
-				"participer aux assemblées générales",
-				"Avoir la possibilité de se présenter aux élections du CA"
+				"Un bureau sans place attitrée",
+				"Un casier personnel",
+				"Un badge d'accès 24h/24 et 7j/7",
+				"Règlement mensuel par prélèvement automatique",
+				"2 mois de préavis"
 			],
 			"price": {
-				"price": "15",
-				"labelPrice": "TTC/an"
+				"price": "96",
+				"labelPrice": "TTC/mois"
 			},
 			"note": "* sous condition de s'être acquité de l'hadésion annuelle de 15 €"
 		}
@@ -122,6 +126,14 @@
 				"événements"
 			]
 		}
-	]
+	],
+	"interestSection": {
+		"description":[
+			"Vous voulez rejoindre notre espace de coworking ?",
+			"Pour vous présenter les lieux de l'association et pour apprendre à vous connaître,",
+			"nous vous invitons à déjeuner avec nous un mardi midi !"
+		],
+		"labelButton": "ça m'interesse !"
+	}
 }
 

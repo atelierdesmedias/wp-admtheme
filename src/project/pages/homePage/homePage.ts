@@ -12,6 +12,7 @@ import {presentationAdmSection} from "../../components/presentationAdmSection/pr
 import {adherentSection} from "../../components/adherentSection/adherentSection";
 import {breakPoint} from '../../../common/helpers/breakPoint';
 import {featuresSection} from "../../components/featuresSection/featuresSection";
+import {interestSection} from "../../components/interestSection/interestSection";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
@@ -22,9 +23,11 @@ export class homePage extends jView
     private _bigCover: bigCover;
     private _presentationAdmSection: presentationAdmSection;
     private _adherentSection: adherentSection;
+    private _featuresSection: featuresSection;
+    private _interestSection: interestSection;
+
     private $bigCover: ZeptoCollection;
     private $bigCoverBanner: ZeptoCollection;
-    private _featuresSection: featuresSection;
 
     // ------------------------------------------------------------------------- INIT
 
@@ -56,6 +59,9 @@ export class homePage extends jView
         // inclure features section
         this._featuresSection = new featuresSection( $('.featuresSection') );
 
+        // inclure interest section
+        this._interestSection = new interestSection( $('.interestSection') );
+        
     }
 
     /**
@@ -80,23 +86,23 @@ export class homePage extends jView
 
     // ------------------------------------------------------------------------- HANDLERS
 
-    moveBannerOnResizeHandler ()
-    {
-        if (!breakPoint('medium'))
-        {
-            console.log('clone');
-            this.$bigCoverBanner.clone().addClass('clone');
-            let $clone = this.$root.find('.clone');
-            $clone.prepend(this.$root);
-
-            console.log($clone);
-
-
-        } else
-        {
-
-        }
-    }
+    // moveBannerOnResizeHandler ()
+    // {
+    //     if (!breakPoint('medium'))
+    //     {
+    //         console.log('clone');
+    //         this.$bigCoverBanner.clone().addClass('clone');
+    //         let $clone = this.$root.find('.clone');
+    //         $clone.prepend(this.$root);
+    //
+    //         console.log($clone);
+    //
+    //
+    //     } else
+    //     {
+    //
+    //     }
+    // }
 
     // ------------------------------------------------------------------------- CONFIG
 

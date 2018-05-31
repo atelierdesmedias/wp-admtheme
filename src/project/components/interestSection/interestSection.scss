@@ -1,5 +1,5 @@
 /**
-  * "featureBlock" stylesheet
+  * "interestSection" stylesheet
   * follow workflow instructions
  */
 
@@ -10,57 +10,75 @@
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.featureBlock
+.interestSection
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
     // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : featureBlock;
+    $this : interestSection;
 
   // --------------------------------------------------------------------------- BLOCK
 
-  
+  position: relative;
+  background: $color1;
+  padding: 3rem 0;
+
   // --------------------------------------------------------------------------- ELEMENTS
+
+  &_wrapper
+  {
+    @include pageGrid();
+  }
 
   &_content
   {
-    //background:darkkhaki;
-    @include flex (flex, column, wrap, flex-start, center);
+    margin: auto;
   }
 
-  &_icon
-  {
-    display: block;
-    position: relative;
-    & > svg
-    {
-      @include size(50px);
-    }
-  }
-  
   &_description
   {
-    margin-top: 1rem;
+    
   }
-
-  &_text
+  
+  &_p
   {
     text-align: center;
+    color: $color7;
+  }
+
+  &_button
+  {
+
+    //reset
+    background: none;
+    font: inherit;
+    line-height: normal;
+    outline: none;
+    cursor: pointer;
+
+    // position
+    margin: 1.5rem auto 0;
+    border: 1px solid $color3;
+    padding:2rem ;
+
+    // text
+    display: block;
+    text-align: center;
     text-transform: uppercase;
-    color:$color9;
+    color: $color3;
+    font-size: 1.7rem;
+    @include lato-regular();
 
-    &:nth-child(1)
-    {
-      @include lato-light();
-      font-size: 0.9rem;
-    }
-    &:nth-child(2)
-    {
-      @include lato-bold();
-      font-size: 1.2rem;
+    // transition
+    transition: 200ms all ease-in-out;
 
+    &:hover
+    {
+      color: $color1;
+      background: $color3;
     }
+
   }
 
   // --------------------------------------------------------------------------- MODIFIERS

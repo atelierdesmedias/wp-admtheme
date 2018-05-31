@@ -4,7 +4,6 @@
  */
 
 // -----------------------------------------------------------------------------  IMPORT
-
 // common style & mixins
 @import '../../../common/_common';
 
@@ -14,17 +13,13 @@
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
-    // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : featuresSection;
+  // Call block element anywhere. Use it like this : .#{$this}_element
+  $this: featuresSection;
 
   // --------------------------------------------------------------------------- BLOCK
 
-  background: $color1;
-
-  top: -30rem;
   position: relative;
-  padding: 20rem 0 5rem;
-  z-index: -1;
+  background: $color1;
 
   // --------------------------------------------------------------------------- ELEMENTS
 
@@ -35,15 +30,22 @@
 
   &_content
   {
-   @include flex (flex, row, wrap, flex-start, flex-start, 1rem);
+    @include flex (flex, row, wrap, flex-start, flex-start, 1rem);
   }
 
   &_featureBlock
   {
-    margin-top: 1rem;
+    margin-top: 3rem;
     @include flexCol (4, 1, 1rem, false);
-  }
 
+    @media screen and (max-width: $medium) {
+      @include flexCol (2, 1, 1rem, false);
+    }
+
+    @media screen and (max-width: $small) {
+      @include flexCol (1, 1, 1rem, false);
+    }
+  }
 
   // --------------------------------------------------------------------------- MODIFIERS
 
