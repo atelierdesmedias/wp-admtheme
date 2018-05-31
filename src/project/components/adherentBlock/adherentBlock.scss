@@ -21,12 +21,10 @@
   // --------------------------------------------------------------------------- BLOCK
 
   position: relative;
-  @include size( ($relativeColumnWidth * 6));
-  //@include minSize(960px / 2);
   min-height: (960px / 2);
   color: $color1;
   margin: auto;
-  padding:3rem;
+  padding: 3.5rem 2rem;
 
   @media screen and (max-width: $medium) {
     @include size( ($relativeColumnWidth * 10));
@@ -43,15 +41,20 @@
   {
     @include center();
     width:75%;
+    margin: auto;
     
     @media screen and (max-width: $medium) {
 
       position: relative;
       top:auto;
       left:auto;
-      width: 100%;
+      width: 75%;
       transform: none;
       margin-top: 1rem;
+    }
+
+    @media screen and (max-width: $small) {
+      width: 100%;
     }
     
   }
@@ -68,7 +71,9 @@
     font-size: 1.5rem;
     font-weight: normal;
     justify-content: center;
-    line-height: 3em;
+    //line-height: 3em;
+    padding: 0;
+    margin: 0;
 
     @media screen and (max-width: $small) {
       display: block;
@@ -88,6 +93,10 @@
     font-size: 2.5rem;
     margin-top: -10px;
     margin-left: 10px;
+
+    @media screen and (max-width: $small) {
+     margin-top: 0;
+    }
   }
 
   &_content
@@ -98,6 +107,8 @@
   &_description
   {
     @include lato-bold();
+    margin-top: 2rem;
+
   }
 
   &_items
@@ -137,12 +148,8 @@
     @include lato-light();
     font-size: .73rem;
     line-height: 1rem;
-
-    @media screen and (max-width: $small){
-      margin-top: 1rem;
-    }
+    margin-top: 1rem;
   }
-
 
   // --------------------------------------------------------------------------- MODIFIERS
 

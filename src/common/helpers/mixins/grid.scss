@@ -40,7 +40,7 @@
  * flex
  * (à placer sur les éléments enfant)
  */
-@mixin flexCol ($totalGrid:$totalGrid, $numberOfGrid:$numberOfGrid, $gutter:0, $center:false)
+@mixin flexCol ($totalGrid, $numberOfGrid, $gutter:0, $center:false)
 {
   width: calc(100% / #{$totalGrid} * #{$numberOfGrid} - #{$gutter});
   flex: 0 0 auto;
