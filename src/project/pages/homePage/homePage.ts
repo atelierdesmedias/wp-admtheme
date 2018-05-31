@@ -11,6 +11,7 @@ import {bigCover} from "../../components/bigCover/bigCover";
 import {presentationAdmSection} from "../../components/presentationAdmSection/presentationAdmSection";
 import {adherentSection} from "../../components/adherentSection/adherentSection";
 import {breakPoint} from '../../../common/helpers/breakPoint';
+import {featuresSection} from "../../components/featuresSection/featuresSection";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
@@ -23,6 +24,7 @@ export class homePage extends jView
     private _adherentSection: adherentSection;
     private $bigCover: ZeptoCollection;
     private $bigCoverBanner: ZeptoCollection;
+    private _featuresSection: featuresSection;
 
     // ------------------------------------------------------------------------- INIT
 
@@ -50,6 +52,10 @@ export class homePage extends jView
         
         // inclure la section "adherent"
         this._adherentSection = new adherentSection( $('.adherentSection') );
+        
+        // inclure features section
+        this._featuresSection = new featuresSection( $('.featuresSection') );
+
     }
 
     /**

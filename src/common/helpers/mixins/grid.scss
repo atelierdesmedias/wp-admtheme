@@ -9,3 +9,50 @@
 
 //------------------------------------------------------------------------------  MIXIN
 
+/**
+  * @Filename: grid
+  * @Description: custom grid for this project
+  *
+  *
+*/
+
+// --------------------------------------------------------------------------- FLEX GRID
+
+/**
+ * flex
+ * (à placer sur le parent)
+ */
+@mixin flex ($display:flex, $direction:row, $wrap:wrap, $justifyContent:flex-start, $alignItems:flex-start, $firstChildGutter:0)
+{
+  display: $display;                   // flex | inline-flex
+  flex-direction: $direction;          // row | row-reverse | column | column-reverse
+  flex-wrap: $wrap;                    // nowrap | wrap | wrap-reverse
+  justify-content: $justifyContent;    // flex-start | flex-end | center | space-between | space-around
+  align-items: $alignItems;            // flex-start | flex-end | center | baseline | stretch
+
+  // remove gutter of children first-child
+  @if ($firstChildGutter > 0) {
+  margin-left: -$firstChildGutter;
+  }
+}
+
+/**
+ * flex
+ * (à placer sur les éléments enfant)
+ */
+@mixin flexCol ($totalGrid:$totalGrid, $numberOfGrid:$numberOfGrid, $gutter:0, $center:false)
+{
+  width: calc(100% / #{$totalGrid} * #{$numberOfGrid} - #{$gutter});
+  flex: 0 0 auto;
+
+  @if ($center = false) {
+  margin-left: $gutter;
+}
+  @if ($center = true) {
+  margin-left:auto;
+  margin-right:auto;
+}
+}
+
+
+

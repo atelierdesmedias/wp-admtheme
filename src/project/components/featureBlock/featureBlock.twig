@@ -1,0 +1,17 @@
+{#
+ * @title: "featureBlock" TWIG view component
+ * @description:
+ #}
+
+<div class="featureBlock {{ classElement }}">
+    <div class="featureBlock_content">
+        <div class="featureBlock_icon">
+            {% include "src/common/images/#{ icon }" %}
+        </div>
+        <div class="featureBlock_description">
+           {% for desc in description %}
+            <div class="featureBlock_text">{{ desc }}</div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

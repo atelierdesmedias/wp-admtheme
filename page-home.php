@@ -12,14 +12,11 @@ require 'config.php';
  * ----------------------------------------------------------------------------- TEMPLATE
  */
 
-
-//phpinfo();
-
- get_header();
+get_header();
 
     // include "homePage" component
     $context = Timber::get_context();
     Timber::render(SRC_PAGES_DIR . '/homePage/homePage.twig', $context);
 
- get_footer();
+get_footer();
 

@@ -62,8 +62,65 @@
 				"price": "15",
 				"labelPrice": "TTC/an"
 			}
-
 		}
-	}
+	},
+	"featureBlock": [
+		{
+			"icon": "icon-open-space.svg",
+			"description": [
+				"30 posts de travail",
+				"5 open spaces"
+			]
+		},
+		{
+			"icon": "icon-dimenssions.svg",
+			"description": [
+				"plus de",
+				"200m2"
+			]
+		},
+		{
+			"icon": "icon-salle-reunion.svg",
+			"description": [
+				"une salle de ",
+				"réunion"
+			]
+		},
+		{
+			"icon": "icon-flechettes.svg",
+			"description": [
+				"jeu de",
+				"fléchettes"
+			]
+		},
+		{
+			"icon": "icon-imprimante.svg",
+			"description": [
+				"scanner",
+				"imprimante"
+			]
+		},
+		{
+			"icon": "icon-phone.svg",
+			"description": [
+				"une salle de",
+				"téléphone"
+			]
+		},
+		{
+			"icon": "icon-the.svg",
+			"description": [
+				"une cuisine avec",
+				"thé & café"
+			]
+		},
+		{
+			"icon": "icon-incentive.svg",
+			"description": [
+				"une salle",
+				"événements"
+			]
+		}
+	]
 }
 

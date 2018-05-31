@@ -1,0 +1,23 @@
+{#
+ * @title: "featuresSection" TWIG view component
+ * @description:
+ #}
+
+<div class="featuresSection {{ classElement }}">
+    <div class="featuresSection_wrapper">
+        <section class="featuresSection_content">
+
+            {% for feature in dico.featureBlock %}
+                {# importer "feature block component #}
+                {%
+                    include "./src/project/components/featureBlock/featureBlock.twig"
+                    with {
+                        classElement: 'featuresSection_featureBlock',
+                        icon: feature.icon,
+                        description: feature.description
+                    }
+                %}
+            {% endfor %}
+        </section>
+    </div>
+</div>
