@@ -61,7 +61,8 @@
 			"price": {
 				"price": "15",
 				"labelPrice": "TTC/an"
-			}
+			},
+			"note": "* sous condition de s'être acquité de l'hadésion annuelle de 15 €"
 		}
 	},
 	"featureBlock": [

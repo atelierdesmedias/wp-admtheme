@@ -6,10 +6,9 @@
 <div class="adherentSection {{ classElement }}">
     <div class="adherentSection_content">
 
-    {# importer "adherent Block" #}
-    {%
-        include "./src/project/components/adherentBlock/adherentBlock.twig"
-        with {
+        {# importer "adherent Block" #}
+        {% include "./src/project/components/adherentBlock/adherentBlock.twig"
+            with {
             classElement: 'adherentSection_adherentBlock',
             blockModifier: 'adherent',
             title: {
@@ -20,53 +19,40 @@
             items: dico.adherentBlock.adherent.items,
             price: dico.adherentBlock.adherent.price.price,
             labelPrice: dico.adherentBlock.adherent.price.labelPrice
-        }
-    %}
+        } %}
 
-    <div class="adherentSection_inlineWrapper">
-    {# importer "adherent Block" #}
-    {%
-        include "./src/project/components/adherentBlock/adherentBlock.twig"
-        with {
-            classElement: 'adherentSection_adherentBlock',
-            blockModifier: 'fixe',
-            title: {
-                verb: 'formule',
-                calificatif: 'Fixe',
-            },
-            items: [
-                'Recevoir des invitations à tous les évènements de l\'association',
-                'participer aux assemblées générales',
-                'Avoir la possibilité de se présenter aux élections du CA'
-            ],
-            price: '15',
-            labelPrice: 'TTC/an',
-            note: '* sous condition de s\'être acquité de l\'hadésion annuelle de 15 €'
-        }
-    %}
+        <div class="adherentSection_inlineWrapper">
+            {# importer "adherent Block" #}
+            {% include "./src/project/components/adherentBlock/adherentBlock.twig"
+                with {
+                classElement: 'adherentSection_adherentBlock',
+                blockModifier: 'fixe',
+                title: {
+                    verb: dico.adherentBlock.fixe.verb,
+                    calificatif: dico.adherentBlock.fixe.calificatif,
+                },
+                description: dico.adherentBlock.fixe.description,
+                items: dico.adherentBlock.fixe.items,
+                price: dico.adherentBlock.fixe.price.price,
+                labelPrice: dico.adherentBlock.fixe.price.labelPrice,
+                note: dico.adherentBlock.fixe.note
+            } %}
 
-    {# importer "adherent Block" #}
-    {%
-        include "./src/project/components/adherentBlock/adherentBlock.twig"
-        with {
-            classElement: 'adherentSection_adherentBlock',
-            blockModifier: 'nomade',
-            title: {
-                verb: 'formule',
-                calificatif: 'Nomade',
-            },
-            items: [
-                'Recevoir des invitations à tous les évènements de l\'association',
-                'participer aux assemblées générales',
-                'Avoir la possibilité de se présenter aux élections du CA'
-            ],
-            price: '15',
-            labelPrice: 'TTC/an',
-            note: '* sous condition de s\'être acquité de l\'hadésion annuelle de 15 €'
-        }
-    %}
-
-    </div>
-
+            {# importer "adherent Block" #}
+            {% include "./src/project/components/adherentBlock/adherentBlock.twig"
+                with {
+                classElement: 'adherentSection_adherentBlock',
+                blockModifier: 'nomade',
+                title: {
+                    verb: dico.adherentBlock.fixe.verb,
+                    calificatif: dico.adherentBlock.fixe.calificatif,
+                },
+                description: dico.adherentBlock.fixe.description,
+                items: dico.adherentBlock.fixe.items,
+                price: dico.adherentBlock.fixe.price.price,
+                labelPrice: dico.adherentBlock.fixe.price.labelPrice,
+                note: dico.adherentBlock.fixe.note
+            } %}
+        </div>
     </div>
 </div>
