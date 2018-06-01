@@ -1,5 +1,5 @@
 /**
-  * "presentationAdmSection" stylesheet
+  * "activityFilterBar" stylesheet
   * follow workflow instructions
  */
 
@@ -10,59 +10,64 @@
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.presentationAdmSection
+.activityFilterBar
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
     // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : presentationAdmSection;
+    $this : activityFilterBar;
 
   // --------------------------------------------------------------------------- BLOCK
+
+  background: $color1;
+  padding: 3rem 0;
 
 
   // --------------------------------------------------------------------------- ELEMENTS
 
-  &_wrapper
+  &_items
   {
-    @include pageGrid();
+    @include flex (flex, row, wrap, center, center, 2rem);
+    list-style: none;
   }
 
-  &_content
+  &_item
   {
-    display: flex;
-    align-items: center;
+    &:not(:first-child) {
+      margin-left: 1rem;
 
-    @media screen and (max-width: $large) {
-      display: block;
+      // la ligne de séparation entres les items
+      &:before {
+        content: "";
+        position: relative;
+        display: inline-block;
+        margin-right: 1rem;
+        @include size(1px, 10px);
+        background: $color7;
+      }
     }
+
+    //@include flexCol(7, 1, 2rem, false );
+
+    @media screen and (max-width: $small) {
+
+    }
+
 
   }
 
-  &_title
+  &_link
   {
-    @include size( ( $relativeColumnWidth * 4 ), auto );
-    @include title();
+    text-decoration: none;
+    text-transform: uppercase;
+    color:$color2;
 
-    @media screen and (max-width: $large) {
-      @include size( 100%, auto );
+    &:hover
+    {
+      color:$color3;
     }
 
-  }
-
-  &_text
-  {
-    @include size( ( $relativeColumnWidth * 8 ), auto );
-    display: block;
-
-    @media screen and (max-width: $large) {
-      @include size( 100%, auto );
-    }
-
-    // <p> généré par l'admin WP
-    & > p:not(:first-child) {
-      margin-top: 1rem;
-    }
   }
 
   // --------------------------------------------------------------------------- MODIFIERS

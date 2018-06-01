@@ -22,19 +22,95 @@
     </header>
     <section class="homePage_content" role="main">
 
-        {# importer "presentation Adm Block" component #}
+        {#importer "coworkersPresentationSection" component#}
+        {%
+            include "./src/project/components/coworkersPresentationSection/coworkersPresentationSection.twig"
+            with { 'classElement': 'homePage_coworkersPresentationSection' }
+        %}
+
+        {#importer "coworkersPatchworkSection" component#}
+        {# TODO: SYNC avec le BACK #}
+        {%
+            include "./src/project/components/coworkersPatchworkSection/coworkersPatchworkSection.twig"
+            with {
+                classElement: 'homePage_coworkersPatchworkSection',
+                coworkers: [
+                    {
+                        thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-01.png',
+                        name: 'Lelia Whitney',
+                        activity: 'graphiste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-02.png',
+                        name: 'Mylène Coucou',
+                        activity: 'touriste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-01.png',
+                        name: 'Lelia Whitney',
+                        activity: 'graphiste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-02.png',
+                        name: 'Mylène Coucou',
+                        activity: 'touriste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-01.png',
+                        name: 'Lelia Whitney',
+                        activity: 'graphiste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-02.png',
+                        name: 'Mylène Coucou',
+                        activity: 'touriste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-01.png',
+                        name: 'Lelia Whitney',
+                        activity: 'graphiste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-02.png',
+                        name: 'Mylène Coucou',
+                        activity: 'touriste'
+                    },                    {
+                        thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-01.png',
+                        name: 'Lelia Whitney',
+                        activity: 'graphiste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-02.png',
+                        name: 'Mylène Coucou',
+                        activity: 'touriste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-01.png',
+                        name: 'Lelia Whitney',
+                        activity: 'graphiste'
+                    },
+                    {
+                        thumbUrl: theme.link ~ '/src/common/images/thumb-coworker-02.png',
+                        name: 'Mylène Coucou',
+                        activity: 'touriste'
+                    },
+                ]
+            }
+        %}
+
+        {# importer "presentationAdmBlock" component #}
         {%
             include "./src/project/components/presentationAdmSection/presentationAdmSection.twig"
             with { 'classElement': 'homePage_presentationAdmSection' }
         %}
 
-         {#importer "adherent Section" component#}
+        {#importer "adherentSection" component#}
         {%
             include "./src/project/components/adherentSection/adherentSection.twig"
             with { 'classElement': 'homePage_adherentSection' }
         %}
 
-         {#importer "features Section" component#}
+         {#importer "featuresSection" component#}
         {%
             include "./src/project/components/featuresSection/featuresSection.twig"
             with { 'classElement': 'homePage_featuresSection' }

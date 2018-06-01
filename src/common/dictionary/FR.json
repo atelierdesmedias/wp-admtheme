@@ -14,6 +14,13 @@
 		"description": "descdesc",
 		"banner": "Créé en 2008, l’Atelier des Médias est le 1er espace de coworking lyonnais.<br> C’est une association qui regroupe des professionnels des médias (journalisme, web, graphisme, traduction,vidéo/photo, etc.),<br>un vivier de compétences qui collabore et invente denouveaux modes de travail dans ce lieu de 212 m2 en centreville."
 	},
+	"coworkersPresentationSection": {
+		"title": "Qui sont les coworkers ?",
+		"paragraphs": [
+			"Graphistes, développeurs, éditeurs, journalistes, conseils en communication, rédacteurs, traducteurs, réalisateurs, photographes, et autres inventeurs des médias d’aujourd’hui, ils sont indépendants ou télétravailleurs et offrent une expertise inégalée dans le domaine des médias et de la communication.",
+			"Des professionnels qui travaillent en solo ou en équipe et s’appuient sur la force du réseau pour collaborer."
+		]
+	},
 	"presentationAdmSection": {
 		"title": "Travailler à l'atelier",
 		"paragraphs": [

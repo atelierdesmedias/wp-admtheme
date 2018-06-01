@@ -11,14 +11,18 @@
 
 @mixin pageGrid ()
 {
-  // laptop
-  @include size( ($columnWidth * 8), auto );
-  max-width: 960px;
-  margin: auto;
+    // laptop
+    @include size( ($columnWidth * 8), auto );
+    max-width: 960px;
+    margin: auto;
 
-  // mobile
-  @media screen and (max-width: $large) {
-    @include size( ($columnWidth * 10), auto );
-  }
+    // mobile
+    @media screen and (max-width: $large) {
+      @include size( ($columnWidth * 10), auto );
+    }
 
 }
+
+
+
+

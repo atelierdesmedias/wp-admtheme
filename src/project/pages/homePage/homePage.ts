@@ -13,6 +13,8 @@ import {adherentSection} from "../../components/adherentSection/adherentSection"
 import {breakPoint} from '../../../common/helpers/breakPoint';
 import {featuresSection} from "../../components/featuresSection/featuresSection";
 import {interestSection} from "../../components/interestSection/interestSection";
+import {coworkersPatchworkSection} from "../../components/coworkersPatchworkSection/coworkersPatchworkSection";
+import {coworkersPresentationSection} from "../../components/coworkersPresentationSection/coworkersPresentationSection";
 
 // ------------------------------------------------------------------------- START EXPORT CLASS
 
@@ -21,6 +23,8 @@ export class homePage extends jView
     // ------------------------------------------------------------------------- TYPE
 
     private _bigCover: bigCover;
+    private _coworkersPresentationSection: coworkersPresentationSection;
+    private _coworkersPatchworkSection: coworkersPatchworkSection;
     private _presentationAdmSection: presentationAdmSection;
     private _adherentSection: adherentSection;
     private _featuresSection: featuresSection;
@@ -50,6 +54,13 @@ export class homePage extends jView
         // inclure la big Cover
         this._bigCover = new bigCover( $('.bigCover') );
 
+
+        // inclure coworkersPresentationSection
+        this._coworkersPresentationSection = new coworkersPresentationSection( $('.coworkersPresentationSection') );
+
+        // inclure coworkersPatchworkSection
+        this._coworkersPatchworkSection = new coworkersPatchworkSection( $('.coworkersPatchworkSection') );
+
         // inclure le texte de présentation 
         this._presentationAdmSection = new presentationAdmSection( $('.presentationAdmSection') );
         
@@ -61,6 +72,8 @@ export class homePage extends jView
 
         // inclure interest section
         this._interestSection = new interestSection( $('.interestSection') );
+        
+
         
     }
 

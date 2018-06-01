@@ -1,5 +1,5 @@
 /**
-  * "presentationAdmSection" stylesheet
+  * "coworkersPresentationSection" stylesheet
   * follow workflow instructions
  */
 
@@ -10,16 +10,17 @@
 
 // -----------------------------------------------------------------------------  DEBUT STYLE
 
-.presentationAdmSection
+.coworkersPresentationSection
 {
   // --------------------------------------------------------------------------- PROPERTIES
 
 
     // Call block element anywhere. Use it like this : .#{$this}_element
-    $this : presentationAdmSection;
+    $this : coworkersPresentationSection;
 
   // --------------------------------------------------------------------------- BLOCK
 
+  //padding: 5rem 0;
 
   // --------------------------------------------------------------------------- ELEMENTS
 
@@ -30,6 +31,7 @@
 
   &_content
   {
+
     display: flex;
     align-items: center;
 
@@ -64,7 +66,6 @@
       margin-top: 1rem;
     }
   }
-
   // --------------------------------------------------------------------------- MODIFIERS
 
   // --------------------------------------------------------------------------- CHILDREN

@@ -77,12 +77,23 @@
 
   &_content
   {
+    // contient toutes les sections de la homePage
+  }
 
+  &_coworkersPresentationSection
+  {
+    padding: 5rem 0;
+  }
+
+  &_coworkersPatchworkSection
+  {
+    //padding: 5rem 0;
   }
 
   &_presentationAdmSection
   {
-
+    padding: 5rem 0 (10 + 10rem);
+    background: $color1;
   }
 
   &_adherentSection
