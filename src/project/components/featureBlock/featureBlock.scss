@@ -35,7 +35,8 @@
     position: relative;
     & > svg
     {
-      @include size(50px);
+      // taille de l'icon
+      @include size(75px, 50px);
     }
   }
   
