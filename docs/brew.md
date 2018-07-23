@@ -17,12 +17,10 @@ DocumentRoot "/usr/local/var/www"
 By
 
 ```
-DocumentRoot "/Users/martin/dev/clone/Wordpress"
-<Directory "/Users/martin/dev/clone/Wordpress">
+DocumentRoot "/path/to/wordpress"
+<Directory "/path/to/wordpress">
 ...
 ```
-
-(Change `/Users/martin/dev/clone/Wordpress` to the folder where you put Wordpress root folder)
 
 And add the following line:
 
@@ -46,6 +44,12 @@ Replace the following:
 <FilesMatch \.php$>
     SetHandler application/x-httpd-php
 </FilesMatch>
+```
+
+Link the theme to your Wordpress:
+
+```
+$ ln -sf /path/to/wp-admtheme /path/to/wordpress/wp-content/theme/wp-admtheme
 ```
 
 Start apache server:
