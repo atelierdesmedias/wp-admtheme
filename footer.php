@@ -12,7 +12,7 @@
         <div id="page-footer-information">
             <img id="page-footer-logo" src="<?php echo get_template_directory_uri(); ?>/images/logo-footer.png" />
             <span id="page-footer-adress">9 quai André Lassagne - 69001 Lyon</span>
-            <span id="page-footer-phone">Tel : 09 72 33 20 92</span>
+            <span id="page-footer-phone">Tel : 04 28 29 94 35</span>
         </div>
         <nav id="page-footer-links">
             <a href="<?php echo home_url('/credits'); ?>">Crédits</a> -
